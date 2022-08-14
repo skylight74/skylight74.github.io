@@ -1,0 +1,224 @@
+
+---Upload files---
+Content file was not uploaded. Error: No file provided.
+
+---Upload files---
+Customizer file was not uploaded. Error: No file provided.
+
+---Upload files---
+Redux file was not uploaded. Error: No file provided.
+
+---Upload files---
+The import files were successfully uploaded!
+Initial max execution time = 600
+Files info:
+Site URL = http://localhost
+Data file = not defined!
+Widget file = /var/www/html/wp-content/uploads/2022/08/sysadmin.json
+Customizer file = not defined!
+Redux files:
+not defined!
+
+---Importing widgets---
+name : Sidebar does not exist in theme (moving widget to Inactive)
+
+
+data : Sidebar does not exist in theme (moving widget to Inactive)
+
+0 - No Title - Site does not support widget
+1 - No Title - Site does not support widget
+2 - No Title - Site does not support widget
+3 - No Title - Site does not support widget
+4 - No Title - Site does not support widget
+5 - No Title - Site does not support widget
+6 - No Title - Site does not support widget
+7 - No Title - Site does not support widget
+8 - No Title - Site does not support widget
+9 - No Title - Site does not support widget
+10 - No Title - Site does not support widget
+11 - No Title - Site does not support widget
+12 - No Title - Site does not support widget
+13 - No Title - Site does not support widget
+14 - No Title - Site does not support widget
+15 - No Title - Site does not support widget
+16 - No Title - Site does not support widget
+17 - No Title - Site does not support widget
+18 - No Title - Site does not support widget
+19 - No Title - Site does not support widget
+20 - No Title - Site does not support widget
+21 - No Title - Site does not support widget
+22 - No Title - Site does not support widget
+23 - No Title - Site does not support widget
+24 - No Title - Site does not support widget
+25 - No Title - Site does not support widget
+26 - No Title - Site does not support widget
+27 - No Title - Site does not support widget
+28 - No Title - Site does not support widget
+29 - No Title - Site does not support widget
+30 - No Title - Site does not support widget
+31 - No Title - Site does not support widget
+32 - No Title - Site does not support widget
+33 - No Title - Site does not support widget
+34 - No Title - Site does not support widget
+35 - No Title - Site does not support widget
+36 - No Title - Site does not support widget
+37 - No Title - Site does not support widget
+38 - No Title - Site does not support widget
+39 - No Title - Site does not support widget
+40 - No Title - Site does not support widget
+41 - No Title - Site does not support widget
+42 - No Title - Site does not support widget
+43 - No Title - Site does not support widget
+44 - No Title - Site does not support widget
+45 - No Title - Site does not support widget
+46 - No Title - Site does not support widget
+47 - No Title - Site does not support widget
+48 - No Title - Site does not support widget
+49 - No Title - Site does not support widget
+50 - No Title - Site does not support widget
+51 - No Title - Site does not support widget
+52 - No Title - Site does not support widget
+53 - No Title - Site does not support widget
+54 - No Title - Site does not support widget
+55 - No Title - Site does not support widget
+56 - No Title - Site does not support widget
+57 - No Title - Site does not support widget
+58 - No Title - Site does not support widget
+59 - No Title - Site does not support widget
+60 - No Title - Site does not support widget
+61 - No Title - Site does not support widget
+62 - No Title - Site does not support widget
+63 - No Title - Site does not support widget
+64 - No Title - Site does not support widget
+65 - No Title - Site does not support widget
+66 - No Title - Site does not support widget
+67 - No Title - Site does not support widget
+68 - No Title - Site does not support widget
+69 - No Title - Site does not support widget
+70 - No Title - Site does not support widget
+71 - No Title - Site does not support widget
+72 - No Title - Site does not support widget
+73 - No Title - Site does not support widget
+74 - No Title - Site does not support widget
+75 - No Title - Site does not support widget
+76 - No Title - Site does not support widget
+77 - No Title - Site does not support widget
+78 - No Title - Site does not support widget
+79 - No Title - Site does not support widget
+80 - No Title - Site does not support widget
+81 - No Title - Site does not support widget
+82 - No Title - Site does not support widget
+83 - No Title - Site does not support widget
+84 - No Title - Site does not support widget
+85 - No Title - Site does not support widget
+86 - No Title - Site does not support widget
+87 - No Title - Site does not support widget
+88 - No Title - Site does not support widget
+89 - No Title - Site does not support widget
+90 - No Title - Site does not support widget
+91 - No Title - Site does not support widget
+92 - No Title - Site does not support widget
+93 - No Title - Site does not support widget
+94 - No Title - Site does not support widget
+95 - No Title - Site does not support widget
+96 - No Title - Site does not support widget
+97 - No Title - Site does not support widget
+98 - No Title - Site does not support widget
+99 - No Title - Site does not support widget
+100 - No Title - Site does not support widget
+101 - No Title - Site does not support widget
+102 - No Title - Site does not support widget
+103 - No Title - Site does not support widget
+104 - No Title - Site does not support widget
+105 - No Title - Site does not support widget
+106 - No Title - Site does not support widget
+107 - No Title - Site does not support widget
+108 - No Title - Site does not support widget
+109 - No Title - Site does not support widget
+110 - No Title - Site does not support widget
+111 - No Title - Site does not support widget
+112 - No Title - Site does not support widget
+113 - No Title - Site does not support widget
+114 - No Title - Site does not support widget
+115 - No Title - Site does not support widget
+116 - No Title - Site does not support widget
+117 - No Title - Site does not support widget
+118 - No Title - Site does not support widget
+119 - No Title - Site does not support widget
+120 - No Title - Site does not support widget
+121 - No Title - Site does not support widget
+122 - No Title - Site does not support widget
+123 - No Title - Site does not support widget
+124 - No Title - Site does not support widget
+125 - No Title - Site does not support widget
+126 - No Title - Site does not support widget
+127 - No Title - Site does not support widget
+128 - No Title - Site does not support widget
+129 - No Title - Site does not support widget
+130 - No Title - Site does not support widget
+131 - No Title - Site does not support widget
+132 - No Title - Site does not support widget
+133 - No Title - Site does not support widget
+134 - No Title - Site does not support widget
+135 - No Title - Site does not support widget
+136 - No Title - Site does not support widget
+137 - No Title - Site does not support widget
+138 - No Title - Site does not support widget
+139 - No Title - Site does not support widget
+140 - No Title - Site does not support widget
+141 - No Title - Site does not support widget
+142 - No Title - Site does not support widget
+143 - No Title - Site does not support widget
+144 - No Title - Site does not support widget
+145 - No Title - Site does not support widget
+146 - No Title - Site does not support widget
+147 - No Title - Site does not support widget
+148 - No Title - Site does not support widget
+149 - No Title - Site does not support widget
+150 - No Title - Site does not support widget
+151 - No Title - Site does not support widget
+152 - No Title - Site does not support widget
+153 - No Title - Site does not support widget
+154 - No Title - Site does not support widget
+155 - No Title - Site does not support widget
+156 - No Title - Site does not support widget
+157 - No Title - Site does not support widget
+158 - No Title - Site does not support widget
+159 - No Title - Site does not support widget
+160 - No Title - Site does not support widget
+161 - No Title - Site does not support widget
+162 - No Title - Site does not support widget
+163 - No Title - Site does not support widget
+164 - No Title - Site does not support widget
+165 - No Title - Site does not support widget
+166 - No Title - Site does not support widget
+167 - No Title - Site does not support widget
+168 - No Title - Site does not support widget
+169 - No Title - Site does not support widget
+170 - No Title - Site does not support widget
+171 - No Title - Site does not support widget
+172 - No Title - Site does not support widget
+173 - No Title - Site does not support widget
+174 - No Title - Site does not support widget
+175 - No Title - Site does not support widget
+176 - No Title - Site does not support widget
+177 - No Title - Site does not support widget
+178 - No Title - Site does not support widget
+179 - No Title - Site does not support widget
+180 - No Title - Site does not support widget
+181 - No Title - Site does not support widget
+182 - No Title - Site does not support widget
+183 - No Title - Site does not support widget
+184 - No Title - Site does not support widget
+185 - No Title - Site does not support widget
+186 - No Title - Site does not support widget
+187 - No Title - Site does not support widget
+188 - No Title - Site does not support widget
+189 - No Title - Site does not support widget
+190 - No Title - Site does not support widget
+191 - No Title - Site does not support widget
+
+
+
+---ocdi/after_import---
+
