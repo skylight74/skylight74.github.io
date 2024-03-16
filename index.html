@@ -1198,44 +1198,44 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col col-d-6 col-t-12 col-m-12 border-line-v">
-                                                                <div class="info-list">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <strong>
-                                                                                <span>
-                                                                                    Age: </span>
-                                                                            </strong>
-                                                                            <span>
-                                                                                27 </span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <strong>
-                                                                                <span>
-                                                                                    Residence: </span>
-                                                                            </strong>
-                                                                            <span>
-                                                                                Turkey </span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <strong>
-                                                                                <span>
-                                                                                    Freelance: </span>
-                                                                            </strong>
-                                                                            <span>
-                                                                                Available </span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <strong>
-                                                                                <span>
-                                                                                    Address: </span>
-                                                                            </strong>
-                                                                            <span>
-                                                                                Ankara, Turkey </span>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
+         <div class="col col-d-6 col-t-12 col-m-12 border-line-v">
+    <div class="info-list">
+        <ul>
+            <li>
+                <strong><span>Age: </span></strong>
+                <span id="age"></span>
+            </li>
+            <li>
+                <strong><span>Residence: </span></strong>
+                <span>Turkey</span>
+            </li>
+            <li>
+                <strong><span>Freelance: </span></strong>
+                <span>Available</span>
+            </li>
+            <li>
+                <strong><span>Address: </span></strong>
+                <span>Ankara, Turkey</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<input type="hidden" id="dob" value="1995-12-10">
+<script>
+window.onload = function calculateAge() {
+    var dob = new Date(document.getElementById('dob').value);
+    var today = new Date();
+    var age = today.getFullYear() - dob.getFullYear();
+    var m = today.getMonth() - dob.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+        age--;
+    }
+
+    document.getElementById('age').innerText = age;
+}
+</script>
+
 
                                                             <div class="clear"></div>
                                                         </div>
