@@ -1147,7 +1147,7 @@ git mv static/wp-content/plugins/elementor             static/vendor/elementor
 git mv static/wp-content/plugins/contact-form-7        static/vendor/contact-form-7
 git mv static/wp-content/plugins/ryancv-plugin/elementor/assets static/vendor/ryancv-widgets
 git mv static/wp-content/uploads/elementor/css         static/theme/elementor-css
-git mv static/wp-content/uploads/2022/08               static/media/2022-08
+git mv static/wp-content/uploads/2022/08/*             static/media/
 git mv static/wp-includes/js                           static/vendor/wpjs
 git mv static/wp-includes/css/dist/block-library       static/vendor/wpjs/block-library
 find static/wp-content static/wp-includes -type f      # expected: NOTHING listed
@@ -1172,7 +1172,7 @@ sed -i \
  -e 's|/wp-content/plugins/contact-form-7|/vendor/contact-form-7|g' \
  -e 's|/wp-content/plugins/ryancv-plugin/elementor/assets|/vendor/ryancv-widgets|g' \
  -e 's|/wp-content/uploads/elementor/css|/theme/elementor-css|g' \
- -e 's|/wp-content/uploads/2022/08|/media/2022-08|g' \
+ -e 's|/wp-content/uploads/2022/08|/media|g' \
  -e 's|/wp-includes/css/dist/block-library|/vendor/wpjs/block-library|g' \
  -e 's|/wp-includes/js|/vendor/wpjs|g' \
  $(cat /tmp/wp-refs.txt)
