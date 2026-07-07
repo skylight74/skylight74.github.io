@@ -1079,13 +1079,20 @@ hugo --quiet && sha256sum public/index.html | tee /tmp/stage2-before.sha
 Schema (values copied verbatim from `card-profile.html` — the grep commands locate them):
 
 ```yaml
-name: ""        # grep -n 'Mohamed Aly Amin' layouts/partials/card-profile.html
-subtitle: ""    # grep -n 'Blockchain Architect' layouts/partials/card-profile.html
+name: ""        # grep -n 'Mohamed Aly Amin' layouts/partials/card-profile.html — single text node
+roles: []       # the typed.js rotator: an ORDERED list of the <p> strings inside
+                # <div class="typing-title">. Verify the exact set and order first:
+                #   grep -n -A8 'typing-title' layouts/partials/card-profile.html
+                # As of origin/main the five roles are, in order: Full-stack Developer,
+                # Blockchain Architect, System Admin, DevSecOps Engineer, Cyber Security Engineer.
+                # NOTE: the .typing-title block appears in TWO card locations in this partial —
+                # both must render the identical list. Copy the verified list verbatim; do not
+                # rely on this comment if the grep shows a different set.
 socials: []     # list of {icon: "<exact class attr>", url: "<exact href>"} from the
                 # social-links block; grep -n 'discordapp\|linkedin\|github\|wa.me\|t.me\|social' layouts/partials/card-profile.html
 ```
 
-Replace name/subtitle text nodes with `{{ site.Data.profile.name }}` / `{{ site.Data.profile.subtitle }}`. Replace the social anchors block with a range over `site.Data.profile.socials` ONLY IF the anchors are structurally identical (same classes, differing only in href/icon); otherwise keep anchors literal and move just the hrefs into YAML one field each. Run **GATE-BYTE**: hash must equal `/tmp/stage2-before.sha`. Commit: `git add -A && git commit -m "Extract profile text to data/profile.yaml (byte-identical)"`.
+Replace the name text node with `{{ site.Data.profile.name }}`. For the subtitle: the `.typing-title` block is NOT a single text node — it is N sibling `<p>` elements typed.js cycles through. Replace each block's inner `<p>…</p>` list with `{{ range site.Data.profile.roles }}<p>{{ . }}</p>{{ end }}`, applied identically in BOTH locations the block appears; keep the surrounding `.subtitle`/`.typing-title` wrappers literal. If the range's whitespace can't be made byte-identical to the original `<p>` indentation, keep the `<p>` list literal in the template and skip moving roles to YAML — GATE-BYTE, not YAML-completeness, is the requirement. Replace the social anchors block with a range over `site.Data.profile.socials` ONLY IF the anchors are structurally identical (same classes, differing only in href/icon); otherwise keep anchors literal and move just the hrefs into YAML one field each. Run **GATE-BYTE**: hash must equal `/tmp/stage2-before.sha`. Commit: `git add -A && git commit -m "Extract profile text to data/profile.yaml (byte-identical)"`.
 
 - [ ] **Step 3: resume.yaml**
 
