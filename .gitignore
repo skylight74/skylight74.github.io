@@ -13,3 +13,9 @@ resources/
 # Local reference screenshots (original vs old attempt comparison)
 originalwebsitecolor.jpg
 hugodeploymentcolor.jpg
+
+# Local verification artifacts (reference copy, screenshots, diffs)
+verification/
+
+# Python bytecode caches
+__pycache__/
