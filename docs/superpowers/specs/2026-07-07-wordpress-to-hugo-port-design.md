@@ -134,7 +134,7 @@ Every difference between the original and the port must match one of:
 
 ## 7. Feature fixes — detail
 
-- **Contact form:** markup/classes stay CF7-identical. `action` → `https://formspree.io/f/{FORM_ID}`. Our ~30-line vanilla JS submits via fetch, shows CF7-style inline success/error messages; with JS disabled, plain POST to Formspree's hosted page still delivers. **Input needed from Mohamed: Formspree form ID** (free account; click-by-click instructions will be provided at implementation).
+- **Contact form:** markup/classes stay CF7-identical. `action` → `https://formspree.io/f/mwvdzgqv` (provided by Mohamed 2026-07-07; verified live — GET returns 405 Method Not Allowed, the expected response for a valid POST-only endpoint). Our ~30-line vanilla JS submits via fetch, shows CF7-style inline success/error messages; with JS disabled, plain POST to Formspree's hosted page still delivers.
 - **Search:** Hugo emits `search-index.json` (title, date, category, plain-text content, URL per post). `/search/` reads `?s=`, filters client-side (vanilla JS, no library unless >100 posts someday), renders results in the rows style. No-results state styled; empty query lists all posts.
 - **Blog:** posts in `content/blog/*.md`; one real category to start. Seed post (Mohamed may rewrite/delete): short "This site now runs on Hugo" note. Sidebar "Recent Posts" = 5 latest real posts; "Categories" = real taxonomy terms. RSS auto-generated.
 - **BLOG rail item:** 4th item under CONTACT, same markup pattern (icon + small-caps label, theme icon font). On blog/search/404 pages the rail persists; portfolio items link to `/#home-e` etc.
@@ -175,6 +175,6 @@ Evidence (diff summaries, screenshot pairs, 404 report) is attached to the PR de
 
 ## 11. Inputs Mohamed owes implementation
 
-1. Formspree form ID (instructions will be provided)
+1. ~~Formspree form ID~~ — **received 2026-07-07**: `https://formspree.io/f/mwvdzgqv` (verified live)
 2. Confirmation the 2-page CV PDF is current
 3. (Post-port) his queued non-critical blog design edits
