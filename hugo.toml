@@ -1,0 +1,25 @@
+baseURL = "https://mohamedalyamin.com/"
+languageCode = "en-US"
+title = "The Legend – My portfolio"
+timeZone = "Europe/Istanbul"
+
+# Only the categories taxonomy is used (sidebar widget); no tags.
+[taxonomies]
+  category = "categories"
+
+[pagination]
+  pagerSize = 10
+
+# Home emits HTML + RSS (allow-list #6) + the client-side search index.
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+
+[outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "search-index"
+  isPlainText = true
+  notAlternative = true
+
+[markup.goldmark.renderer]
+  # Blog posts may embed raw HTML (same trust level as the site itself).
+  unsafe = true
