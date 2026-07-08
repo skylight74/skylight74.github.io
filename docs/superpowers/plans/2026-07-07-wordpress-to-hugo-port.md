@@ -14,6 +14,7 @@
 
 - Branch: `hugo-port` (exists, cut from `origin/main`@`b4d128a`). Never commit to `main` directly.
 - Hugo pinned: **0.163.3 extended** (`hugo version` must show it). Never use `--minify` (poisons DOM diffs).
+- **HTML output uses `text/template`, not `html/template`** (Task 4 set `[outputFormats.HTML] isPlainText = true` in hugo.toml). Reason: Go's `html/template` strips HTML comments and rewrites `<style>`/`<script>` bodies during contextual autoescaping, which corrupts the verbatim WordPress export; `isPlainText` makes Hugo a pure byte-assembler, which is what Stage 1's byte-identity requires. **Consequence for later tasks: template interpolations are NOT auto-escaped.** For byte-identical work (Tasks 5, 6, 9) this is correct — you WANT verbatim passthrough, so extract values verbatim (entities included). For NEW dynamic content (Task 7 blog/search: post titles, search results), escape explicitly (`| htmlEscape`, or `jsonify` for JSON) since author input is no longer auto-escaped. `.Content` is already safe HTML regardless.
 - Title copy (allow-list #1, exact): `The Legend &#8211; My portfolio`
 - Formspree endpoint (exact): `https://formspree.io/f/mwvdzgqv`
 - Never commit: `public/`, `resources/`, `verification/`, `.hugo_build.lock` (all gitignored; verify before every commit with `git status`).
@@ -53,6 +54,8 @@ bash scripts/verify/pixel_diff.sh verification/shots-ref verification/shots-port
 cat verification/noise-floor.txt   # compare: each AE count must be <= 2x its noise-floor line,
                                    # except regions the task allow-lists (inspect diff-*.png visually)
 ```
+
+GATE-PIX reliability (measured 2026-07-08 post-Firefox-152, see `noise-floor.txt` annotation): **home-{1440,768,390} and contacts-e-768 are tight (~0 noise) — trust the count.** The anchored-section mobile captures (resume-e-390 ~21%, resume-e-768, contacts-e-390 ~2%) carry vertical scroll-jitter (JS hash-scroll settles at a slightly different Y each run), so a large count there is usually a benign uniform vertical smear — **judge those diff-*.png visually** (uniform offset = benign; localized colour/text change = real). Byte/DOM identity (GATE-DOM) is the primary gate; GATE-PIX is corroboration.
 
 **GATE-404** — every local reference the page loads resolves:
 
