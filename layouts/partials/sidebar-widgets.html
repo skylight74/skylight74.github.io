@@ -18,16 +18,9 @@
                                 <div class="wp-block-group__inner-container">
                                     <h2>Recent Posts</h2>
                                     <ul class="wp-block-latest-posts__list wp-block-latest-posts">
-                                        <li><a class="wp-block-latest-posts__post-title" href="/?p=1">Hello world!</a>
-                                        </li>
-                                        <li><a class="wp-block-latest-posts__post-title" href="/?p=98">By spite about do
-                                                of allow</a></li>
-                                        <li><a class="wp-block-latest-posts__post-title" href="/?p=96">A Song And Dance
-                                                Act</a></li>
-                                        <li><a class="wp-block-latest-posts__post-title" href="/?p=94">Music Player
-                                                Design</a></li>
-                                        <li><a class="wp-block-latest-posts__post-title" href="/?p=92">Designing the
-                                                perfect</a></li>
+                                        {{ range first 5 (where site.RegularPages "Section" "blog") }}
+                                        <li><a class="wp-block-latest-posts__post-title" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                                        {{ end }}
                                     </ul>
                                 </div>
                             </div>
@@ -37,15 +30,9 @@
                                 <div class="wp-block-group__inner-container">
                                     <h2>Categories</h2>
                                     <ul class="wp-block-categories-list wp-block-categories">
-                                        <li class="cat-item cat-item-2">
-                                            <a href="/?cat=2">Design</a>
-                                        </li>
-                                        <li class="cat-item cat-item-3">
-                                            <a href="/?cat=3">Music</a>
-                                        </li>
-                                        <li class="cat-item cat-item-1">
-                                            <a href="/?cat=1">Uncategorized</a>
-                                        </li>
+                                        {{ range site.Taxonomies.categories.ByCount }}
+                                        <li class="cat-item"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+                                        {{ end }}
                                     </ul>
                                 </div>
                             </div>

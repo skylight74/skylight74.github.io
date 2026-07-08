@@ -55,6 +55,9 @@ $(function() {
 			/* vars */
 			var width = $(window).width();
 			var id = $(this).attr('href');
+			/* Real-page links (e.g. /blog/, or /#home-e from a subpage) are not
+			   one-page anchors: let the browser navigate instead of hijacking them. */
+			if(id && id.charAt(0) !== '#'){ return true; }
 			if(id=='') id = '#home';
 			var card_item = $('#card-'+id.replace('#', ''));
 			var h = parseFloat(card_item.offset().top);
