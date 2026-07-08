@@ -6,8 +6,11 @@
              document.querySelector('form[action^="https://formspree.io"]');
   if (!form) return;
   var output = form.querySelector('.wpcf7-response-output');
+  var submitBtn = form.querySelector('[type="submit"]');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    if (submitBtn && submitBtn.disabled) return;  // already sending — ignore double clicks
+    if (submitBtn) submitBtn.disabled = true;
     output.textContent = '';
     output.className = 'wpcf7-response-output';
     output.removeAttribute('aria-hidden');
@@ -31,6 +34,8 @@
     }).catch(function () {
       output.textContent = 'There was an error trying to send your message. Please try again later.';
       output.classList.add('wpcf7-mail-sent-ng');
+    }).finally(function () {
+      if (submitBtn) submitBtn.disabled = false;  // re-enable for another message
     });
   });
 })();
