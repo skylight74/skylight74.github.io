@@ -1,0 +1,42 @@
+baseURL = "https://mohamedalyamin.com/"
+languageCode = "en-US"
+title = "The Legend – My portfolio"
+timeZone = "Europe/Istanbul"
+
+# Task 6 removes the dead WordPress <meta name="generator"> tag (allow-list
+# #7). Without this, Hugo backfills its own generator meta tag on any page
+# that has none, which would silently reintroduce generator metadata the
+# task is meant to eliminate.
+disableHugoGeneratorInject = true
+
+# Only the categories taxonomy is used (sidebar widget); no tags.
+[taxonomies]
+  category = "categories"
+
+[pagination]
+  pagerSize = 10
+
+# Home emits HTML + RSS (allow-list #6) + the client-side search index.
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+
+# Go's html/template (Hugo's default for the HTML format) silently strips
+# ordinary HTML comments AND CSS/JS comments inside <style>/<script> bodies
+# as part of its contextual autoescaping. The carved partials are verbatim
+# WordPress export bytes full of such comments (design-critical inline CSS
+# customizer values, Elementor/CF7 script config), so the built-in escaper
+# would corrupt them on every render. Switching to Go's text/template (no
+# contextual escaping) preserves the export byte-for-byte; safe here since
+# all interpolated data is site-owner-controlled, not third-party input.
+[outputFormats.HTML]
+  isPlainText = true
+
+[outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "search-index"
+  isPlainText = true
+  notAlternative = true
+
+[markup.goldmark.renderer]
+  # Blog posts may embed raw HTML (same trust level as the site itself).
+  unsafe = true

@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="card-inner animated active" id="card-post">
+  <div class="card-wrap">
+    <div class="content blog-post">
+      <div class="title"><span class="title_inner">{{ .Title }}</span></div>
+      <div class="date">{{ .Date.Format "2 Jan 2006" }}{{ range .Params.categories }} &middot; <a href="/categories/{{ . | urlize }}/">{{ . }}</a>{{ end }}</div>
+      <div class="single-post-text">{{ .Content }}</div>
+      <p><a class="lnk" href="/blog/"><span class="text">&laquo; All posts</span></a></p>
+    </div>
+  </div>
+</div>
+{{/* Close .container and .page (opened in body-open.html); on the home page section-contacts.html closes these. */}}
+</div>
+</div>
+{{ end }}

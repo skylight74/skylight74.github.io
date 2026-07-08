@@ -1,0 +1,22 @@
+# Profile card content (layouts/partials/card-profile.html).
+#
+# "roles" (the typed.js rotator <p> list in .typing-title) is intentionally
+# NOT here: the list has 6 lines but only 5 share the same indentation (a
+# 6th role, "Security Researcher", was hand-added later using tabs instead
+# of the surrounding spaces), and the same block also appears with different
+# indentation in layouts/partials/sidebar-nav.html. A Hugo {{ range }} always
+# emits uniform whitespace per iteration, so it cannot reproduce that mixed
+# indentation byte-for-byte. Left literal in the template per Task 9's
+# escape hatch (GATE-BYTE over YAML-completeness).
+name: "Mohamed Aly Amin"
+socials:
+  - icon: "fab fa-brands fa-whatsapp"
+    url: "https://wa.link/5rdlst"
+  - icon: "fab fa-brands fa-telegram"
+    url: "https://t.me/skylight74"
+  - icon: "fab fa-brands fa-github"
+    url: "https://github.com/skylight74"
+  - icon: "fab fa-brands fa-discord"
+    url: "https://discordapp.com/users/skylight74#3990"
+  - icon: "fab fa-brands fa-linkedin-in"
+    url: "https://www.linkedin.com/in/mohamedalyamin"
