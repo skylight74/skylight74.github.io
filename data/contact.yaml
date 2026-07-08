@@ -1,0 +1,7 @@
+# Contact card values (layouts/partials/section-contacts.html).
+# Labels ("Address:", "Email:", "Phone:", "Freelance:") stay literal in the
+# template; only these value text nodes were moved here.
+address: "Çankaya/Ankara"
+email: "contact@mohamedalyamin.com"
+phone: "+90 552 554 8660"
+freelance: "Available"

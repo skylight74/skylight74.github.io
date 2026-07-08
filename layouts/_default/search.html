@@ -1,0 +1,55 @@
+{{ define "main" }}
+<div class="card-inner animated active" id="card-search">
+  <div class="card-wrap">
+    <div class="content blog">
+      <div class="title"><span class="title_inner">Search</span></div>
+      <p id="search-summary">Loading&hellip;</p>
+      <div class="resume-items" id="search-results"></div>
+    </div>
+  </div>
+</div>
+{{/* Close .container and .page (opened in body-open.html); on the home page section-contacts.html closes these. */}}
+</div>
+</div>
+<script>
+(function () {
+  var q = (new URLSearchParams(window.location.search).get('s') || '').trim();
+  var summary = document.getElementById('search-summary');
+  var box = document.getElementById('search-results');
+  fetch('/search-index.json').then(function (r) { return r.json(); }).then(function (posts) {
+    var hits = q ? posts.filter(function (p) {
+      var hay = (p.title + ' ' + p.content + ' ' + (p.categories || []).join(' ')).toLowerCase();
+      return hay.indexOf(q.toLowerCase()) !== -1;
+    }) : posts;
+    summary.textContent = q
+      ? hits.length + ' result' + (hits.length === 1 ? '' : 's') + ' for “' + q + '”'
+      : 'All ' + hits.length + ' posts';
+    // Build results with DOM APIs (textContent / setAttribute) rather than
+    // innerHTML, so index values can never inject markup (no DOM-XSS).
+    box.textContent = '';
+    if (!hits.length) {
+      var none = document.createElement('p');
+      none.textContent = 'No posts matched. Try a shorter word.';
+      box.appendChild(none);
+      return;
+    }
+    hits.forEach(function (p) {
+      var item = document.createElement('div');
+      item.className = 'resume-item';
+      var date = document.createElement('div');
+      date.className = 'date';
+      date.textContent = p.date;
+      var name = document.createElement('div');
+      name.className = 'name';
+      var a = document.createElement('a');
+      a.setAttribute('href', p.url);
+      a.textContent = p.title;
+      name.appendChild(a);
+      item.appendChild(date);
+      item.appendChild(name);
+      box.appendChild(item);
+    });
+  }).catch(function () { summary.textContent = 'Search index failed to load.'; });
+})();
+</script>
+{{ end }}
