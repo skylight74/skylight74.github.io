@@ -14,6 +14,17 @@ timeZone = "Europe/Istanbul"
 [outputs]
   home = ["HTML", "RSS", "SearchIndex"]
 
+# Go's html/template (Hugo's default for the HTML format) silently strips
+# ordinary HTML comments AND CSS/JS comments inside <style>/<script> bodies
+# as part of its contextual autoescaping. The carved partials are verbatim
+# WordPress export bytes full of such comments (design-critical inline CSS
+# customizer values, Elementor/CF7 script config), so the built-in escaper
+# would corrupt them on every render. Switching to Go's text/template (no
+# contextual escaping) preserves the export byte-for-byte; safe here since
+# all interpolated data is site-owner-controlled, not third-party input.
+[outputFormats.HTML]
+  isPlainText = true
+
 [outputFormats.SearchIndex]
   mediaType = "application/json"
   baseName = "search-index"
