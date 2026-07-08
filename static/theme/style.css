@@ -4494,7 +4494,7 @@ dd {
 	top: 3px;
 	width: 14px;
 	height: 14px;
-	background: url(/wp-content/themes/ryancv/assets/images/quote.svg) no-repeat;
+	background: url(/theme/assets/images/quote.svg) no-repeat;
 	background-size: contain;
 	opacity: 0.65;
 }
@@ -5296,7 +5296,7 @@ h2.screen-reader-text {
 	display: block;
 	width: 11px;
 	height: 12px;
-	background: url(/wp-content/themes/ryancv/assets/images/pag.png) no-repeat center center;
+	background: url(/theme/assets/images/pag.png) no-repeat center center;
 	background-size: contain;
 	-webkit-transform: scaleX(-1);
 	transform: scaleX(-1);
@@ -5393,7 +5393,7 @@ a.next.page-numbers:hover {
 	display: block;
 	width: 11px;
 	height: 20px;
-	background: url(/wp-content/themes/ryancv/assets/images/pag.png) no-repeat center center;
+	background: url(/theme/assets/images/pag.png) no-repeat center center;
 	-webkit-transform: scaleX(-1);
 	transform: scaleX(-1);
 	-webkit-transition: all 0.3s ease 0s;
@@ -6284,7 +6284,7 @@ a.next.page-numbers:hover {
 	right: 0;
 	width: 50px;
 	height: 50px;
-	background: url(/wp-content/themes/ryancv/assets/images/android-search.png) no-repeat center center;
+	background: url(/theme/assets/images/android-search.png) no-repeat center center;
 	background-size: 18px 18px;
 	font-size: 0;
 	border: none;
@@ -6292,7 +6292,7 @@ a.next.page-numbers:hover {
 
 .search-form input.search-submit:hover,
 .wp-block-search .wp-block-search__button:hover {
-	background: url(/wp-content/themes/ryancv/assets/images/android-search.png) no-repeat center center;
+	background: url(/theme/assets/images/android-search.png) no-repeat center center;
 	background-size: 18px 18px;
 }
 
