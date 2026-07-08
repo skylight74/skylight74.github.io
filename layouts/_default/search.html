@@ -21,11 +21,31 @@
     summary.textContent = q
       ? hits.length + ' result' + (hits.length === 1 ? '' : 's') + ' for “' + q + '”'
       : 'All ' + hits.length + ' posts';
-    box.innerHTML = hits.map(function (p) {
-      return '<div class="resume-item"><div class="date">' + p.date +
-             '</div><div class="name"><a href="' + p.url + '">' + p.title +
-             '</a></div></div>';
-    }).join('') || '<p>No posts matched. Try a shorter word.</p>';
+    // Build results with DOM APIs (textContent / setAttribute) rather than
+    // innerHTML, so index values can never inject markup (no DOM-XSS).
+    box.textContent = '';
+    if (!hits.length) {
+      var none = document.createElement('p');
+      none.textContent = 'No posts matched. Try a shorter word.';
+      box.appendChild(none);
+      return;
+    }
+    hits.forEach(function (p) {
+      var item = document.createElement('div');
+      item.className = 'resume-item';
+      var date = document.createElement('div');
+      date.className = 'date';
+      date.textContent = p.date;
+      var name = document.createElement('div');
+      name.className = 'name';
+      var a = document.createElement('a');
+      a.setAttribute('href', p.url);
+      a.textContent = p.title;
+      name.appendChild(a);
+      item.appendChild(date);
+      item.appendChild(name);
+      box.appendChild(item);
+    });
   }).catch(function () { summary.textContent = 'Search index failed to load.'; });
 })();
 </script>
