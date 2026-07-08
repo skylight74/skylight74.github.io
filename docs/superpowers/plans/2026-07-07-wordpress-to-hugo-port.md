@@ -55,7 +55,7 @@ cat verification/noise-floor.txt   # compare: each AE count must be <= 2x its no
                                    # except regions the task allow-lists (inspect diff-*.png visually)
 ```
 
-GATE-PIX reliability (measured 2026-07-08 post-Firefox-152, see `noise-floor.txt` annotation): **home-{1440,768,390} and contacts-e-768 are tight (~0 noise) — trust the count.** The anchored-section mobile captures (resume-e-390 ~21%, resume-e-768, contacts-e-390 ~2%) carry vertical scroll-jitter (JS hash-scroll settles at a slightly different Y each run), so a large count there is usually a benign uniform vertical smear — **judge those diff-*.png visually** (uniform offset = benign; localized colour/text change = real). Byte/DOM identity (GATE-DOM) is the primary gate; GATE-PIX is corroboration.
+GATE-PIX reliability (measured 2026-07-08 post-Firefox-152, see `noise-floor.txt`): **only home-{1440,768,390} are reliably tight (~0) — trust the count there.** ALL `#anchor` captures (resume-e AND contacts-e, every width) are INTERMITTENTLY scroll-jittery — the JS hash-scroll settles at a slightly different Y each run, so the same capture reads 0 on one run and 20%+ on another (observed on contacts-e-768 in Task 6e). For any `#anchor` width, **judge diff-*.png visually** (uniform vertical smear = benign scroll offset; localized colour/text change = real regression) — never by raw count. Byte/DOM identity (GATE-DOM) is the deterministic primary gate; GATE-PIX corroborates, and its home captures are the trustworthy signal.
 
 **GATE-404** — every local reference the page loads resolves:
 
