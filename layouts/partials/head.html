@@ -10,9 +10,10 @@
 
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
-    <title>The Legend &#8211; My portfolio</title>
+    <title>{{ if .IsHome }}The Legend &#8211; My portfolio{{ else }}{{ .Title }} &#8211; The Legend{{ end }}</title>
     <meta name="robots" content="max-image-preview:large">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="alternate" type="application/rss+xml" title="The Legend &raquo; Feed" href="/index.xml">
     <style type="text/css">
         img.wp-smiley,
         img.emoji {

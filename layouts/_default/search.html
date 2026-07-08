@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="card-inner animated active" id="card-search">
+  <div class="card-wrap">
+    <div class="content blog">
+      <div class="title"><span class="title_inner">Search</span></div>
+      <p id="search-summary">Loading&hellip;</p>
+      <div class="resume-items" id="search-results"></div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var q = (new URLSearchParams(window.location.search).get('s') || '').trim();
+  var summary = document.getElementById('search-summary');
+  var box = document.getElementById('search-results');
+  fetch('/search-index.json').then(function (r) { return r.json(); }).then(function (posts) {
+    var hits = q ? posts.filter(function (p) {
+      var hay = (p.title + ' ' + p.content + ' ' + (p.categories || []).join(' ')).toLowerCase();
+      return hay.indexOf(q.toLowerCase()) !== -1;
+    }) : posts;
+    summary.textContent = q
+      ? hits.length + ' result' + (hits.length === 1 ? '' : 's') + ' for “' + q + '”'
+      : 'All ' + hits.length + ' posts';
+    box.innerHTML = hits.map(function (p) {
+      return '<div class="resume-item"><div class="date">' + p.date +
+             '</div><div class="name"><a href="' + p.url + '">' + p.title +
+             '</a></div></div>';
+    }).join('') || '<p>No posts matched. Try a shorter word.</p>';
+  }).catch(function () { summary.textContent = 'Search index failed to load.'; });
+})();
+</script>
+{{ end }}
