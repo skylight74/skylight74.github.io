@@ -3,6 +3,12 @@ languageCode = "en-US"
 title = "The Legend – My portfolio"
 timeZone = "Europe/Istanbul"
 
+# Task 6 removes the dead WordPress <meta name="generator"> tag (allow-list
+# #7). Without this, Hugo backfills its own generator meta tag on any page
+# that has none, which would silently reintroduce generator metadata the
+# task is meant to eliminate.
+disableHugoGeneratorInject = true
+
 # Only the categories taxonomy is used (sidebar widget); no tags.
 [taxonomies]
   category = "categories"
