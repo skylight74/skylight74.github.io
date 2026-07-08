@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="card-inner animated active" id="card-blog">
+  <div class="card-wrap">
+    <div class="content blog">
+      <div class="title"><span class="title_inner">{{ .Title }}</span></div>
+      <div class="resume-items">
+        {{ range .Paginator.Pages }}
+        <div class="resume-item">
+          <div class="date">{{ .Date.Format "2 Jan 2006" }}</div>
+          <div class="name"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          <div class="text"><p>{{ .Summary | plainify }}</p></div>
+        </div>
+        {{ end }}
+      </div>
+      {{ if gt .Paginator.TotalPages 1 }}
+      <div class="pager">
+        {{ if .Paginator.HasPrev }}<a class="lnk" href="{{ .Paginator.Prev.URL }}"><span class="text">&laquo; Newer</span></a>{{ end }}
+        {{ if .Paginator.HasNext }}<a class="lnk" href="{{ .Paginator.Next.URL }}"><span class="text">Older &raquo;</span></a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{/* Close .container and .page (opened in body-open.html); on the home page section-contacts.html closes these. */}}
+</div>
+</div>
+{{ end }}
