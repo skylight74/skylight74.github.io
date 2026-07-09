@@ -1,86 +1,58 @@
 # Resume experience/education entries (layouts/partials/section-resume.html).
+# Synced 2026-07-09 to the attested master CV (Projects/CV/base-cv.yaml) and
+# LinkedIn: titles and dates identical across all three surfaces.
 # Elementor wrapper divs (data-ids, active-state classes) stay literal in the
 # template; only the per-entry text nodes and description inner-HTML live here.
 experience:
-  - period: "July 2021 - June 2022"
-    title: "CYBER SECURITY ANALYST"
+  - period: "Jan 2023 - Present"
+    title: "SECURITY & SOFTWARE ENGINEER"
+    company: "INDEPENDENT / FREELANCE (PROJECT-BASED)"
+    body_html: |-
+      <ul>
+          <li>Sole-built the 10-microservice rebuild of a 270k-registered-user real-estate platform on AWS (EC2, RDS, S3); currently in staging.</li>
+          <li>Built protocol adapters (OCPP for EV chargers, SunSpec/Modbus for solar inverters) to normalize multi-vendor energy-device data for a smart-grid monitoring stack (InfluxDB, Grafana).</li>
+          <li>Assessed 15+ crypto/fintech ventures' codebases, architecture, and technical risk to inform venture-capital investment decisions.</li>
+      </ul>
+  - period: "Aug 2024 - May 2025"
+    title: "R&D ENGINEER - CYBERSECURITY"
+    company: "DOLUSOFT"
+    body_html: |-
+      <ul>
+          <li>Sustained ~400k events/sec by sole-designing and building a modular real-time filtering engine in Go, ingesting security events from 80+ sources (Kafka in, filter/aggregate, ClickHouse out, Redis-backed state, OpenTelemetry tracing).</li>
+          <li>Built a Go multi-channel alerting service (Slack, email, webhook) with rate limiting and policy-based routing for faster incident response.</li>
+      </ul>
+  - period: "Jan 2022 - Apr 2025"
+    title: "RESEARCH ASSISTANT (PART-TIME, TÜBİTAK-FUNDED)"
+    company: "MIDDLE EAST TECHNICAL UNIVERSITY (METU)"
+    body_html: |-
+      <ul>
+          <li>Reached 98.11% intrusion-detection accuracy by developing an SGD one-class SVM model for containerized microservices; first-author publication at AINA 2024 (Springer).</li>
+          <li>Built the end-to-end GPU training pipeline (GPU-enabled Kubernetes cluster, dataset curation, evaluation) for the DIONA LSTM intrusion-detection system.</li>
+      </ul>
+  - period: "Jul 2021 - May 2022"
+    title: "CYBER SECURITY SPECIALIST (TECH LEAD - OSSARCH)"
     company: "INTERPROBE BILGI TEKNOLOJILERI"
     body_html: |-
-      <p>Collaborate with creative and development
-                                                                                  teams on the execution of ideas.</p>
-  - period: "Oct 2020 - Present"
-    title: "Freelancing / Private Tutor"
-    body_html: |-
       <ul>
-                                                                                  <li>Work with a group to optimize our work
-                                                                                      loads (Web-development)</li>
-                                                                                  <li>Worked with students graduation projects
-                                                                                      (Block-chain / Malware development)</li>
-                                                                                  <li>Instructed Private lessons for Python,
-                                                                                      JAVA and SQL</li>
-                                                                                  <li>Day trading</li>
-                                                                                  <li>High Freqency trading app development ,
-                                                                                      Open scoure work</li>
-                                                                              </ul>
-  - period: "Jun 2018 - Sep 2018"
-    title: "BUSINESS DEVELOPMENT ANALYST"
-    company: "BORAQ-GROUP"
-    body_html: |-
-      <ul>
-                                                                                  <li>Proposal development and pitching to
-                                                                                      leads &amp; prospective clients.</li>
-                                                                                  <li>Maintain Business Relationships &amp;
-                                                                                      CRM using direct and indirect R&amp;D in
-                                                                                      addition to extensive market research.
-                                                                                  </li>
-                                                                                  <li>Market Data Analysis.</li>
-                                                                              </ul>
-  - period: "JUN 2019 – Jan 2020"
-    title: "System Admin"
-    company: "APPLY CENTER (STARTUP)"
-    body_html: |-
-      <p>Deploying CRM's and Setting up An e-commerce
-                                                                                  website. </p>
-  - period: "April 2016 - Sep 2018"
-    title: "CHAIRMAN"
-    company: "METU INTERNATIONAL STUDENT ASSOCIATION"
-    body_html: |-
-      <p>Optimize website and apps performance using
-                                                                                  latest technology.</p>
+          <li>Shipped an MVP SIEM/SOAR platform (OSSArch) in 3 months, against the company's 6-12 month norm, by forming and technically leading a 6-engineer DevSecOps team (TDD, DDD, daily agile).</li>
+          <li>Automated threat enrichment by integrating ELK, Wazuh, TheHive, Cortex, MISP, and Suricata with OSINT feeds (VirusTotal, AlienVault OTX).</li>
+      </ul>
 education:
   - period: "Class of 2023"
-    title: "Middle East Technical University (ODTÜ)"
-    place: "Turkey"
+    title: "Middle East Technical University (METU)"
+    place: "Ankara, Turkey"
     body_html: |-
-      <p>Turkish government Scholarship holder. </p>
-  - period: "May 2021- Nov 2021"
-    title: "Cyber security specialty program."
+      <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient.</p>
+  - period: "May 2021 - Nov 2021"
+    title: "Cyber security specialty program"
     place: "Ankara"
     body_html: |-
-      <p>Certificate prepration program at
-                                                                                  Interprobe<br><strong>Coursework:</strong>
-                                                                              </p>
-                                                                              <ul>
-                                                                                  <li>Pentesting (Web application + Networks)
-                                                                                  </li>
-                                                                                  <li>Security tools utilization</li>
-                                                                                  <li>System Security monitoring</li>
-                                                                                  <li>Malware analysis</li>
-                                                                                  <li>Bash/PowerShell Scripting</li>
-                                                                                  <li>Secure &amp; Security production
-                                                                                      deplyment</li>
-                                                                              </ul>
-  - period: "Dec 2017 - Jan 2018"
-    title: "MIT Enterprise Forum Pan Arab leadership program\n                                                                        2nd edition"
-    place: "Jordan, amman"
-    body_html: |-
-      <p>Leader ship training programs sponsored by
-                                                                                  MIT</p>
-  - period: "2003 - 2013"
-    title: "Royal International language Schools"
-    place: "Egypt, Cairo"
-    body_html: |-
-      <p>Photoshop, Visual basic , Online Marketing
-                                                                                  and</p>
-                                                                              <p>Hardware Trouble shooting .<br>Build My first
-                                                                                  PC when I was 12 😛</p>
+      <p>Certificate preparation program at Interprobe.<br><strong>Coursework:</strong></p>
+      <ul>
+          <li>Pentesting (web applications + networks)</li>
+          <li>Security tools utilization</li>
+          <li>System security monitoring</li>
+          <li>Malware analysis</li>
+          <li>Bash/PowerShell scripting</li>
+          <li>Secure production deployment</li>
+      </ul>

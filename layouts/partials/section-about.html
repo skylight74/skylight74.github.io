@@ -31,11 +31,19 @@
                                                                 <div class="text-box">
                                                                     <div>
                                                                         <p><strong>Hello! I’m Mohamed Aly
-                                                                                Amin.</strong><br>Full stack security
-                                                                            developer from Turkey, Ankara. I have rich
-                                                                            experience in Cloud Computing, Crypto &amp;
-                                                                            Cyber Security, also I am good at Big
-                                                                            Data-analytics &amp; scientific computing.
+                                                                                Amin.</strong><br>Security and
+                                                                            infrastructure engineer based in Ankara.
+                                                                            I work where security meets systems:
+                                                                            building the pipelines, then making sure
+                                                                            they hold up. Most recently I built a
+                                                                            real-time stream filtering engine in Go
+                                                                            (Kafka, Redis, ClickHouse, OpenTelemetry);
+                                                                            before that I founded and led a
+                                                                            six-engineer DevSecOps team that shipped
+                                                                            a SIEM/SOAR platform in three months on
+                                                                            open-source tools. First author on a
+                                                                            peer-reviewed intrusion-detection paper
+                                                                            (AINA 2024, Springer).
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -44,10 +52,6 @@
          <div class="col col-d-6 col-t-12 col-m-12 border-line-v">
     <div class="info-list">
         <ul>
-            <li>
-                <strong><span>Age: </span></strong>
-                <span id="age"></span>
-            </li>
             <li>
                 <strong><span>Residence: </span></strong>
                 <span>Turkey</span>
@@ -63,252 +67,10 @@
         </ul>
     </div>
 </div>
-<input type="hidden" id="dob" value="1995-12-10">
-<script>
-window.onload = function calculateAge() {
-    var dob = new Date(document.getElementById('dob').value);
-    var today = new Date();
-    var age = today.getFullYear() - dob.getFullYear();
-    var m = today.getMonth() - dob.getMonth();
-
-    if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
-        age--;
-    }
-
-    document.getElementById('age').innerText = age;
-}
-</script>
 
 
                                                             <div class="clear"></div>
                                                         </div>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section
-                                class="elementor-section elementor-top-section elementor-element elementor-element-ac2a78f elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                                data-id="ac2a78f" data-element_type="section">
-                                <div class="elementor-container elementor-column-gap-no">
-                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-15d3f26"
-                                        data-id="15d3f26" data-element_type="column">
-                                        <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-7412363 elementor-widget elementor-widget-ryancv-services"
-                                                data-id="7412363" data-element_type="widget"
-                                                data-widget_type="ryancv-services.default">
-                                                <div class="elementor-widget-container">
-
-                                                    <!-- Services -->
-                                                    <div class="content services">
-
-                                                        <!-- title -->
-                                                        <div class="title">
-                                                            <span>My Services</span>
-                                                        </div>
-
-                                                        <!-- content -->
-                                                        <div class="row service-items border-line-v">
-
-                                                            <!-- service item -->
-                                                            <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-                                                                <div class="service-item">
-                                                                    <div class="icon">
-                                                                        <span class="fa fa-columns"></span>
-                                                                    </div>
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Web-site Development </span>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div>
-                                                                            <p>Modern and deployment-ready website that
-                                                                                will help you reach all of your
-                                                                                marketin targets</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- service item -->
-                                                            <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-                                                                <div class="service-item">
-                                                                    <div class="icon">
-                                                                        <span class="fa fa-cloud"></span>
-                                                                    </div>
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Cloud/on-premise System Deplyments </span>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div>
-                                                                            <p>Desgin, Integrate, Test and Deploy your
-                                                                                services.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- service item -->
-                                                            <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-                                                                <div class="service-item">
-                                                                    <div class="icon">
-                                                                        <span class="fa fa-server"></span>
-                                                                    </div>
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Cyber Security Analysis </span>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div>
-                                                                            <p>Process of visibility and activity on
-                                                                                your servers, by tracking and monitoring
-                                                                                server Security.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- service item -->
-                                                            <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-                                                                <div class="service-item">
-                                                                    <div class="icon">
-                                                                        <span class="fa fa-laptop"></span>
-                                                                    </div>
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Pentesting </span>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div>
-                                                                            <p>Security consultant can check the code
-                                                                                and scan for vulnerabilities.</p>
-                                                                            <p> </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- service item -->
-                                                            <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-                                                                <div class="service-item">
-                                                                    <div class="icon">
-                                                                        <span class="fa fa-line-chart"></span>
-                                                                    </div>
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Statistical/Technical Analysis </span>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div>
-                                                                            <p>Crypto currencies tracking ,<br>Day &amp;
-                                                                                High frequency trading.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- service item -->
-                                                            <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-                                                                <div class="service-item">
-                                                                    <div class="icon">
-                                                                        <span class="fa fa-bar-chart"></span>
-                                                                    </div>
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Scientific Computing &amp; Data anlaytics
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div>
-                                                                            <p>Code-optimization, GPU utilization.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="clear"></div>
-
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section
-                                class="elementor-section elementor-top-section elementor-element elementor-element-4ab94b5 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                                data-id="4ab94b5" data-element_type="section">
-                                <div class="elementor-container elementor-column-gap-no">
-                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7bb6851"
-                                        data-id="7bb6851" data-element_type="column">
-                                        <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-cd90f3f elementor-widget elementor-widget-ryancv-services"
-                                                data-id="cd90f3f" data-element_type="widget"
-                                                data-widget_type="ryancv-services.default">
-                                                <div class="elementor-widget-container">
-
-                                                    <!-- Service Offerings -->
-                                                    <div class="content services">
-
-                                                        <!-- title -->
-                                                        <div class="title">
-                                                            <span>Service Offerings</span>
-                                                        </div>
-
-                                                        <!-- content -->
-                                                        <div class="row service-items border-line-v">
-
-                                                            <!-- Freelancing services -->
-                                                            <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-                                                                <div class="service-item">
-                                                                    <div class="icon">
-                                                                        <span class="fa fa-battery-quarter"></span>
-                                                                    </div>
-                                                                    <div class="name">
-                                                                        <span>Freelancing</span>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div>
-                                                                            <ul style="list-style: disc; padding-left: 20px; margin: 10px 0;">
-                                                                                <li>Full-stack Development</li>
-                                                                                <li>Cloud Deployments</li>
-                                                                                <li>Pentesting</li>
-                                                                                <li>Data modeling</li>
-                                                                                <li>Web3 Development <strong>new</strong></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- Contract services -->
-                                                            <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-                                                                <div class="service-item">
-                                                                    <div class="icon">
-                                                                        <span class="fa fa-battery-three-quarters"></span>
-                                                                    </div>
-                                                                    <div class="name">
-                                                                        <span>Contract</span>
-                                                                    </div>
-                                                                    <div class="desc">
-                                                                        <div>
-                                                                            <ul style="list-style: disc; padding-left: 20px; margin: 10px 0;">
-                                                                                <li>All Freelancing Services +</li>
-                                                                                <li>On-premise Deployments</li>
-                                                                                <li>Cyber Security Analysis</li>
-                                                                                <li>Code-optimization</li>
-                                                                                <li>Blockchain Security <strong>new</strong></li>
-                                                                                <li>Financial Consultancy <strong>new</strong></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="clear"></div>
 
                                                     </div>
 
