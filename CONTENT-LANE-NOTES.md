@@ -565,6 +565,5 @@ blended:**
   company/role research, not his personal-bio content anyway);
   immigration-career-plan.md (career/immigration strategy planning, a
   different content category from past professional history — deliberately
-  out of scope for a website content audit, not a missed file).</new_string>
-</invoke>
+  out of scope for a website content audit, not a missed file).
 
