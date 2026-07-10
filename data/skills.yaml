@@ -1,0 +1,26 @@
+# Skills content, prepared 2026-07-10. NOTHING RENDERS THIS YET: the current
+# "Skills" section in layouts/partials/section-resume.html is fully hardcoded
+# HTML with no site.Data reference at all. It lists Haskell, Java, Flutter,
+# Django/Flask/Spring, and a "German" language line, plus invented percentage
+# numbers (English 99%, Turkish 80%...) none of which are attested. Per
+# shared memory (cv_system.md calibration decisions), Flutter and
+# Java-beyond-coursework were dropped for good, and German isn't one of his
+# languages (Arabic native, Turkish B2, English C1). Content below mirrors
+# Projects/CV/base-cv.yaml skills section exactly: same 7 categories, same
+# label/details text, no invention. Wiring a data-driven replacement is
+# layouts scope and belongs to the rebuild lane.
+categories:
+  - label: "Security & DevSecOps"
+    details: "DevSecOps, secure SDLC, SAST/DAST/SCA, SIEM/SOAR (ELK, Wazuh, TheHive, Cortex, MISP, Suricata, Microsoft Sentinel), detection engineering, MITRE ATT&CK, threat hunting, vulnerability management, red/blue team, penetration-testing tooling (Burp Suite, OWASP ZAP, Nmap, Metasploit), FortiGate (NGFW), ISO 27001"
+  - label: "Cloud & Infrastructure"
+    details: "Kubernetes (Helm, Skaffold, Istio, Kind, MetalLB), Docker, Terraform, Ansible, AWS (EC2, Lightsail, RDS, S3, IAM), CI/CD, GitOps, OpenTelemetry, Prometheus, Grafana, Proxmox"
+  - label: "Backend & Streaming"
+    details: "Go, Python, C#, TypeScript, Bash, Kafka, ClickHouse, Redis, PostgreSQL, MongoDB, gRPC, REST, microservices, event-driven architecture, high-throughput pipelines"
+  - label: "Applied ML & Data"
+    details: "PyTorch, TensorFlow, scikit-learn, OpenCV, MLOps (GPU Kubernetes, training pipelines), anomaly detection, LSTM, InfluxDB"
+  - label: "Fintech & DLT"
+    details: "Technical due diligence (crypto/fintech ventures), Hyperledger Fabric (permissioned chaincode), transaction-grade streaming pipelines, PCI DSS & SOC 2 (familiarity)"
+  - label: "Certifications"
+    details: "Planned for 2026: AWS Solutions Architect – Associate, then Certified Kubernetes Administrator (CKA)"
+  - label: "Languages"
+    details: "Arabic (native), Turkish (B2 – professional), English (C1 – full professional)"
