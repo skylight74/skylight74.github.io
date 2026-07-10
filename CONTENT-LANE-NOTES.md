@@ -567,3 +567,33 @@ blended:**
   different content category from past professional history — deliberately
   out of scope for a website content audit, not a missed file).
 
+## COLLABORATIVE PASS (2026-07-10 evening) — team-lead now also on content-sync-cv
+
+Mohamed directly told team-lead to collapse the lane boundary for this
+pass ("you edit here in content... just fill up the sections") — a
+deliberate exception granted in his conversation with them, separate from
+what he told me. Team-lead committed two commits on this branch: 465fd46
+(data) and 9ca7090 (layouts: range loops replacing hardcoded blocks,
+wiring publications/honors/projects/services). Verified both directly
+(read the actual files, checked the live :1313 render), not just trusted
+the message:
+- services.yaml: Web3 Development + Blockchain Security added, matching
+  his KEEP ruling exactly.
+- honors.yaml: MIT Enterprise Forum date corrected to **January 2018** —
+  this resolves the 2017-vs-2018 discrepancy flagged in the full scan
+  above. No longer an open question.
+- NEW data/projects.yaml: SmartGridLedger, Real-Time Detection Engine, and
+  DIONA. The DIONA entry was handled carefully — only the attested GPU-
+  training-pipeline fact, explicitly leaving out the unverified "Koç
+  Sistem enterprise pilot" detail from open item #1 above until he
+  confirms it. Same caution I'd have applied.
+- resume.yaml: logo: fields added to 3 more entries (Freelance,
+  Interprobe, Apply Center) — untouched otherwise.
+- Rotator correction (supersedes the "Engineering Lead" plan from my scan
+  doc): his direct answer to team-lead was "add only Tech Lead / Project
+  Manager" (8 lines total, BOTH "Security Researcher" and "Security-ML
+  Researcher" kept — so my earlier flag of that as a leftover duplicate
+  was wrong, it's intentional). No "Engineering Lead" line.
+- Build verified clean, hardcoded Skills content (Haskell/Flutter/German/
+  fake percentages) confirmed gone from the rendered page.
+
