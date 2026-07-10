@@ -119,6 +119,21 @@ each hugo-build-verified before committing.
 5. **`data/services.yaml` needs template wiring** (already known per task
    brief) — content is ready, no partial renders it yet.
 
+6. **NEW REQUEST (2026-07-10) — "split the resume page, it's too long."**
+   The resume page (`layouts/partials/section-resume.html`, rendered as one
+   long anchor-section `#card-resume-e` on the single-page site) bundles
+   Experience, Education, two Skills columns ×3 rows, and a quote block, all
+   in one scroll. Splitting this into separate pages/tabs/routes is
+   information-architecture + routing + template work — new page templates,
+   nav changes, possibly a content-type change. Every option here lives in
+   layouts/ (and probably static/css for pagination/tab styling), which is
+   this lane's hard ban. Content lane is also scoped to content/blog/*.md
+   only, not content/ generally, so even adding new content/*.md pages for a
+   split is out of bounds here. Needs the rebuild-lane session. If it's
+   useful, content lane can propose a split (e.g., which sections group onto
+   which page/tab, in what order) for the rebuild session to execute, but
+   won't touch the implementation. Asked team-lead for routing/clarification.
+
 ## Do-not-touch reminders (self, for continuity across runs)
 - layouts/, static/css/, any template file — hard ban, rebuild lane owns it.
 - job-hunt files under /home/mohamed/Projects/CV/job-hunt/ — off-limits.
