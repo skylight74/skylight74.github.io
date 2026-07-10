@@ -9,7 +9,7 @@ experience:
     company: "INDEPENDENT / FREELANCE (PROJECT-BASED)"
     body_html: |-
       <ul>
-          <li>Sole-built the 10-microservice rebuild of a 270k-registered-user real-estate platform on AWS (EC2, RDS, S3); currently in staging.</li>
+          <li>Sole-built the 10-microservice PHP/Laravel rebuild of a 270k-registered-user real-estate platform on AWS (EC2, RDS, S3); currently in staging.</li>
           <li>Built protocol adapters (OCPP for EV chargers, SunSpec/Modbus for solar inverters) to normalize multi-vendor energy-device data for a smart-grid monitoring stack (InfluxDB, Grafana).</li>
           <li>Assessed 15+ crypto/fintech ventures' codebases, architecture, and technical risk to inform venture-capital investment decisions.</li>
       </ul>
@@ -19,6 +19,7 @@ experience:
     body_html: |-
       <ul>
           <li>Sustained ~400k events/sec by sole-designing and building a modular real-time filtering engine in Go, ingesting security events from 80+ sources (Kafka in, filter/aggregate, ClickHouse out, Redis-backed state, OpenTelemetry tracing).</li>
+          <li>Designed chained, first-seen, and z-score anomaly-detection rules in a configurable detection engine to cut false-positive noise.</li>
           <li>Built a Go multi-channel alerting service (Slack, email, webhook) with rate limiting and policy-based routing for faster incident response.</li>
       </ul>
   - period: "Jan 2022 - Apr 2025"
@@ -36,6 +37,20 @@ experience:
       <ul>
           <li>Shipped an MVP SIEM/SOAR platform (OSSArch) in 3 months, against the company's 6-12 month norm, by forming and technically leading a 6-engineer DevSecOps team (TDD, DDD, daily agile).</li>
           <li>Automated threat enrichment by integrating ELK, Wazuh, TheHive, Cortex, MISP, and Suricata with OSINT feeds (VirusTotal, AlienVault OTX).</li>
+          <li>Trained 4 engineers and ASELSAN partners and taught a Cyber Security course at Istanbul Aydın University; ran pre-sales demos/POCs at GISEC Dubai.</li>
+      </ul>
+  # Restored 2026-07-09 (LinkedIn keeps this entry; site/LinkedIn consistency rule).
+  # Dates: LinkedIn says Jul-Sep 2018, the old site said Jun-Sep 2018 - Jul used
+  # pending his confirmation. logo: is ignored by the current fixed-block template;
+  # it is there for the range-loop rework (rebuild lane).
+  - period: "Jul 2018 - Sep 2018"
+    title: "BUSINESS DEVELOPMENT ANALYST"
+    company: "BORAQ-GROUP"
+    logo: "/media/Boraq-Group_.png"
+    body_html: |-
+      <ul>
+          <li>Developed proposals and pitched them to leads and prospective clients.</li>
+          <li>Maintained business relationships and CRM records through direct and indirect research and market analysis.</li>
       </ul>
 education:
   - period: "Class of 2023"
