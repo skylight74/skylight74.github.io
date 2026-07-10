@@ -52,117 +52,15 @@
                                                         </div>
 
                                                         <div class="resume-items">
-                                                            <div class="resume-item border-line-h ">
-                                                                <div class="image">
-                                                                    <img src="/media/961e34a2-f8f6-42a8-8566-85ad6e895b04.jpeg"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 0).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 0).title }} </span>
-                                                                </div>
-                                                                <div class="company">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 0).company }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.experience 0).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
+{{ range site.Data.resume.experience }}
+                                                            <div class="resume-item border-line-h{{ if in .period "Present" }} active{{ end }}">
+                                                                <div class="image">{{ with .logo }}<img src="{{ . }}" alt="">{{ else }}<img alt="">{{ end }}</div>
+                                                                <div class="date"><span>{{ .period }}</span></div>
+                                                                <div class="name"><span>{{ .title }}</span></div>
+                                                                {{ with .company }}<div class="company"><span>{{ . }}</span></div>{{ end }}
+                                                                <div class="single-post-text"><div>{{ .body_html | safeHTML }}</div></div>
                                                             </div>
-                                                            <div class="resume-item border-line-h active">
-                                                                <div class="image">
-                                                                    <img src="/media/pngegg.png"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 1).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 1).title }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.experience 1).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="resume-item border-line-h ">
-                                                                <div class="image">
-                                                                    <img src="/media/Boraq-Group_.png"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 2).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 2).title }} </span>
-                                                                </div>
-                                                                <div class="company">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 2).company }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.experience 2).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="resume-item border-line-h ">
-                                                                <div class="image">
-                                                                    <img src="/media/ApplyCenter-Logo.png"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 3).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 3).title }} </span>
-                                                                </div>
-                                                                <div class="company">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 3).company }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.experience 3).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="resume-item border-line-h ">
-                                                                <div class="image">
-                                                                    <img src="/media/12038895_465014747004440_66675560747463149_o.png"
-                                                                        alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 4).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 4).title }} </span>
-                                                                </div>
-                                                                <div class="company">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.experience 4).company }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.experience 4).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+{{ end }}
                                                         </div>
                                                     </div>
 
@@ -188,94 +86,15 @@
                                                         </div>
 
                                                         <div class="resume-items">
-                                                            <div class="resume-item border-line-h active">
-                                                                <div class="image">
-                                                                    <img alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 0).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 0).title }} </span>
-                                                                </div>
-                                                                <div class="company">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 0).place }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.education 0).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
+{{ range $i, $e := site.Data.resume.education }}
+                                                            <div class="resume-item border-line-h{{ if eq $i 0 }} active{{ end }}">
+                                                                <div class="image">{{ with $e.logo }}<img src="{{ . }}" alt="">{{ else }}<img alt="">{{ end }}</div>
+                                                                <div class="date"><span>{{ $e.period }}</span></div>
+                                                                <div class="name"><span>{{ $e.title }}</span></div>
+                                                                {{ with $e.place }}<div class="company"><span>{{ . }}</span></div>{{ end }}
+                                                                <div class="single-post-text"><div>{{ $e.body_html | safeHTML }}</div></div>
                                                             </div>
-                                                            <div class="resume-item border-line-h ">
-                                                                <div class="image">
-                                                                    <img alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 1).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 1).title }} </span>
-                                                                </div>
-                                                                <div class="company">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 1).place }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.education 1).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="resume-item border-line-h ">
-                                                                <div class="image">
-                                                                    <img alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 2).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 2).title }} </span>
-                                                                </div>
-                                                                <div class="company">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 2).place }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.education 2).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="resume-item border-line-h ">
-                                                                <div class="image">
-                                                                    <img alt="">
-                                                                </div>
-                                                                <div class="date">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 3).period }} </span>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 3).title }} </span>
-                                                                </div>
-                                                                <div class="company">
-                                                                    <span>
-                                                                        {{ (index site.Data.resume.education 3).place }} </span>
-                                                                </div>
-                                                                <div class="single-post-text">
-                                                                    <div>
-                                                                        {{ (index site.Data.resume.education 3).body_html | safeHTML }}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+{{ end }}
                                                         </div>
                                                     </div>
 
@@ -361,575 +180,94 @@
                                 </div>
                             </section>
                             <section
-                                class="elementor-section elementor-top-section elementor-element elementor-element-77e9f37 elementor-section-full_width row elementor-section-height-default elementor-section-height-default"
-                                data-id="77e9f37" data-element_type="section">
+                                class="elementor-section elementor-top-section elementor-element elementor-section-full_width row elementor-section-height-default">
                                 <div class="elementor-container elementor-column-gap-no">
-                                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-552e9ac col"
-                                        data-id="552e9ac" data-element_type="column">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column col">
                                         <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-fd65c59 elementor-widget elementor-widget-ryancv-skills"
-                                                data-id="fd65c59" data-element_type="widget"
-                                                data-widget_type="ryancv-skills.default">
-                                                <div class="elementor-widget-container">
-
-                                                    <!-- skill item -->
-                                                    <div class="skills-item">
-                                                        <div class="skills-list circles">
-                                                            <div class="skill-title border-line-h">
-                                                                <div class="icon"><i class="fa fa-code"></i></div>
-                                                                <div class="name">
-                                                                    <span>Programming Languages</span>
-                                                                </div>
-                                                            </div>
-
-                                                            <ul>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            C/C++ </span>
-                                                                    </div>
-                                                                    <div class="progress p90">
-                                                                        <div class="percentage" style="width:90%;">
-                                                                        </div>
-                                                                        <span>90%</span>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Python </span>
-                                                                    </div>
-                                                                    <div class="progress p85">
-                                                                        <div class="percentage" style="width:85%;">
-                                                                        </div>
-                                                                        <span>85%</span>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Java </span>
-                                                                    </div>
-                                                                    <div class="progress p80">
-                                                                        <div class="percentage" style="width:80%;">
-                                                                        </div>
-                                                                        <span>80%</span>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Javascript / Typescript </span>
-                                                                    </div>
-                                                                    <div class="progress p85">
-                                                                        <div class="percentage" style="width:85%;">
-                                                                        </div>
-                                                                        <span>85%</span>
-                                                                    </div>
-                                                                </li>
-
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Haskell </span>
-                                                                    </div>
-                                                                    <div class="progress p70">
-                                                                        <div class="percentage" style="width:70%;">
-                                                                        </div>
-                                                                        <span>70%</span>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-
+{{ range site.Data.skills.categories }}
+                                        <div class="skills-item">
+                                            <div class="skills-list list">
+                                                <div class="skill-title border-line-h">
+                                                    <div class="icon"><i class="fa fa-code"></i></div>
+                                                    <div class="name"><span>{{ .label }}</span></div>
                                                 </div>
+                                                <ul>
+                                                    <li class="border-line-h">
+                                                        <div class="name"><span>{{ .details }}</span></div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3238565 col border-line-v"
-                                        data-id="3238565" data-element_type="column">
-                                        <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-7b18142 elementor-widget elementor-widget-ryancv-skills"
-                                                data-id="7b18142" data-element_type="widget"
-                                                data-widget_type="ryancv-skills.default">
-                                                <div class="elementor-widget-container">
-
-                                                    <!-- skill item -->
-                                                    <div class="skills-item">
-                                                        <div class="skills-list list">
-                                                            <div class="skill-title border-line-h">
-                                                                <div class="icon"><i class="fa fa-list"></i></div>
-                                                                <div class="name">
-                                                                    <span>Knowledge</span>
-                                                                </div>
-                                                            </div>
-
-                                                            <ul>
-
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Distributed Systems (Cloud (AWS, Azure,GCP) / On-premis(HDFS))
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Docker / K8s deployment-ready </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Big Data anlaytics & mining </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Cyber Security Analysis </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Pen-testing </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Bash / PowerShell / Python Scripting</span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Responsive and mobile-ready Web-development
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            SIEM / SOAR </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Web3 development </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            HoneyPot Deployments </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+{{ end }}
                                         </div>
                                     </div>
                                 </div>
                             </section>
                             <section
-                                class="elementor-section elementor-top-section elementor-element elementor-element-f74ec84 elementor-section-full_width row elementor-section-height-default elementor-section-height-default"
-                                data-id="f74ec84" data-element_type="section">
+                                class="elementor-section elementor-top-section elementor-element elementor-section-full_width row elementor-section-height-default">
                                 <div class="elementor-container elementor-column-gap-no">
-                                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c60c53c col"
-                                        data-id="c60c53c" data-element_type="column">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column col">
                                         <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-2808be1 elementor-widget elementor-widget-ryancv-skills"
-                                                data-id="2808be1" data-element_type="widget"
-                                                data-widget_type="ryancv-skills.default">
-                                                <div class="elementor-widget-container">
-
-                                                    <!-- skill item -->
-                                                    <div class="skills-item">
-                                                        <div class="skills-list percent">
-                                                            <div class="skill-title border-line-h">
-                                                                <div class="icon"><i class="fa fa-paint-brush"></i>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>Front-end</span>
-                                                                </div>
-                                                            </div>
-
-                                                            <ul>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            React (MERN) stack </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:90%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Flutter </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:87%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            \LateX </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:97%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Realm </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:75%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            WordPress </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:90%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            HTML / CSS </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:85%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
+                                        <div class="content custom-text">
+                                            <div class="title"><span>Publications</span></div>
+                                        </div>
+                                        <div class="skills-item">
+                                            <div class="skills-list list">
+                                                <ul>
+{{ range site.Data.publications.publications }}
+                                                    <li class="border-line-h">
+                                                        <div class="name"><span>{{ .title }} ({{ .venue }}, {{ .date }}){{ with .url }} &middot; <a href="{{ . }}" target="_blank">paper</a>{{ end }}</span></div>
+                                                    </li>
+{{ end }}
+                                                </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3238565 col border-line-v"
-                                        data-id="3238565" data-element_type="column">
-                                        <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-7b18142 elementor-widget elementor-widget-ryancv-skills"
-                                                data-id="7b18142" data-element_type="widget"
-                                                data-widget_type="ryancv-skills.default">
-                                                <div class="elementor-widget-container">
-
-                                                    <!-- skill item -->
-                                                    <div class="skills-item">
-                                                        <div class="skills-list list">
-                                                            <div class="skill-title border-line-h">
-                                                                <div class="icon"><i class="fa fa-list"></i></div>
-                                                                <div class="name">
-                                                                    <span>FramWorks & Libraries</span>
-                                                                </div>
-                                                            </div>
-
-                                                            <ul>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Django</span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Flask </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Spring </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            React </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Pytorch
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            TensorFlow </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            NumPy </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            OpenCV </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Pandas </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            MATLAB
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:%;"></div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </section>
                             <section
-                                class="elementor-section elementor-top-section elementor-element elementor-element-f74ec84 elementor-section-full_width row elementor-section-height-default elementor-section-height-default"
-                                data-id="f74ec84" data-element_type="section">
+                                class="elementor-section elementor-top-section elementor-element elementor-section-full_width row elementor-section-height-default">
                                 <div class="elementor-container elementor-column-gap-no">
-                                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c60c53c col"
-                                        data-id="c60c53c" data-element_type="column">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column col">
                                         <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-2808be1 elementor-widget elementor-widget-ryancv-skills"
-                                                data-id="2808be1" data-element_type="widget"
-                                                data-widget_type="ryancv-skills.default">
-                                                <div class="elementor-widget-container">
-
-                                                    <!-- skill item -->
-                                                    <div class="skills-item">
-                                                        <div class="skills-list percent">
-                                                            <div class="skill-title border-line-h">
-                                                                <div class="icon"><i class="fa fa-server"></i>
-                                                                </div>
-                                                                <div class="name">
-                                                                    <span>DevSecOps</span>
-                                                                </div>
-                                                            </div>
-
-                                                            <ul>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            DataBase Managment Systems </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:90%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Security infrastructure & HoneyPot
-                                                                            Deployments </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:80%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Distributed Systems and Web servers </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:90%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Virtualization technologies (Docker, K8s,
-                                                                            VMware ESXi) </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:85%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Cloud Deployments</span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:85%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
+                                        <div class="content custom-text">
+                                            <div class="title"><span>Honors</span></div>
+                                        </div>
+                                        <div class="skills-item">
+                                            <div class="skills-list list">
+                                                <ul>
+{{ range site.Data.honors.honors }}
+                                                    <li class="border-line-h">
+                                                        <div class="name"><span><strong>{{ .title }}</strong> {{ .detail }}</span></div>
+                                                    </li>
+{{ end }}
+                                                </ul>
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
-                                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9170935 col border-line-v"
-                                        data-id="9170935" data-element_type="column">
+                                </div>
+                            </section>
+                            <section
+                                class="elementor-section elementor-top-section elementor-element elementor-section-full_width row elementor-section-height-default">
+                                <div class="elementor-container elementor-column-gap-no">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column col">
                                         <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-af7804b elementor-widget elementor-widget-ryancv-skills"
-                                                data-id="af7804b" data-element_type="widget"
-                                                data-widget_type="ryancv-skills.default">
-                                                <div class="elementor-widget-container">
-
-                                                    <!-- skill item -->
-                                                    <div class="skills-item">
-                                                        <div class="skills-list dotted">
-                                                            <div class="skill-title border-line-h">
-                                                                <div class="icon"><i class="fa fa-flag"></i></div>
-                                                                <div class="name">
-                                                                    <span>Languages</span>
-                                                                </div>
-                                                            </div>
-
-                                                            <ul>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            English </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:99%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Turkish </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:80%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            German </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:40%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="border-line-h">
-                                                                    <div class="name">
-                                                                        <span>
-                                                                            Arabic </span>
-                                                                    </div>
-                                                                    <div class="progress ">
-                                                                        <div class="percentage" style="width:99%;">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
+                                        <div class="content custom-text">
+                                            <div class="title"><span>Projects</span></div>
+                                        </div>
+                                        <div class="skills-item">
+                                            <div class="skills-list list">
+                                                <ul>
+{{ range site.Data.projects.projects }}
+                                                    <li class="border-line-h">
+                                                        <div class="name"><span><strong>{{ .name }}</strong> ({{ .date }}). {{ .body }}{{ with .url }} <a href="{{ . }}" target="_blank">GitHub</a>{{ end }}</span></div>
+                                                    </li>
+{{ end }}
+                                                </ul>
                                             </div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>

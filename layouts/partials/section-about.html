@@ -234,6 +234,29 @@
                                     </div>
                                 </div>
                             </section>
+                            <section
+                                class="elementor-section elementor-top-section elementor-element elementor-section-full_width elementor-section-height-default">
+                                <div class="elementor-container elementor-column-gap-no">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="content services">
+                                                <div class="title"><span>My Services</span></div>
+                                                <div class="row service-items">
+{{ range site.Data.services.services }}
+                                                    <div class="col col-d-6 col-t-6 col-m-12 border-line-v">
+                                                        <div class="service-item">
+                                                            <div class="name"><span>{{ .title }}</span></div>
+                                                            <div class="single-post-text"><p>{{ .body }}</p></div>
+                                                        </div>
+                                                    </div>
+{{ end }}
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </div>
                     <!-- #post-30 -->
