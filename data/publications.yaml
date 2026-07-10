@@ -1,0 +1,27 @@
+# Publications content, prepared 2026-07-10. NOTHING RENDERS THIS YET: no
+# publications section exists on the site at all. The About text
+# (layouts/partials/section-about.html) mentions the AINA paper in prose
+# ("First author on a peer-reviewed intrusion-detection paper (AINA 2024,
+# Springer)") but that's hardcoded, not a structured list, and doesn't cover
+# the MedPower paper. Content below matches base-cv.yaml exactly, no
+# invention. NOTE: the AINA paper is Springer, never IEEE (a past drafting
+# error, corrected everywhere per cv_system.md memory) — do not reintroduce
+# "IEEE" here. Wiring a data-driven publications section is layouts scope and
+# belongs to the rebuild lane.
+publications:
+  - title: "Misuse Detection and Response for Orchestrated Microservices Based Software"
+    venue: "AINA 2024 (Springer)"
+    authors:
+      - "Mohamed Aly Amin"
+      - "Adnan Harun Dogan"
+      - "Elif Sena Kuru"
+      - "Yigit Sever"
+      - "Pelin Angin"
+    date: "2024-04"
+    url: "https://link.springer.com/chapter/10.1007/978-3-031-57942-4_22"
+  - title: "Permissioned Blockchain-Based Monitoring Framework for DER-Integrated Distribution Networks"
+    venue: "MedPower 2024"
+    authors:
+      - "Pelin Angin"
+      - "et al. (incl. Mohamed Aly Amin)"
+    date: "2024"
