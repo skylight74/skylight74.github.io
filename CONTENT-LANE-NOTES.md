@@ -181,6 +181,33 @@ each hugo-build-verified before committing.
 
    Sent this spec to team-lead via SendMessage so task #5 can unblock.
 
+## Original brief checklist — status as of 2026-07-10
+
+Every item team-lead named explicitly, checked against base-cv.yaml/memory:
+- Experience (titles, dates, bullets) — synced, 3 bullets restored.
+- Education (graduation year 2023 only) — already correct; one open
+  question on the Interprobe cert-program entry (see above).
+- Publications (AINA 2024 Springer, never IEEE; MedPower 2024) — was
+  missing entirely, now in data/publications.yaml.
+- Honors (IChO 2012, Türkiye Bursları 2014, MIT Pan-Arab 2017) — was
+  missing entirely, now in data/honors.yaml.
+- Languages (Arabic native, English C1, Turkish B2) — was wrong on-site
+  (hardcoded "German" line, invented percentages), corrected inside
+  data/skills.yaml's Languages category; site-side fix is rebuild-lane.
+- Skills — was hardcoded/wrong (Haskell, Java, Flutter, Django/Flask/
+  Spring, fake percentages), now in data/skills.yaml, 7 canon categories.
+- Contact info (phone/email/name) — already correct, verified, no change.
+- Projects (base-cv.yaml has SmartGridLedger + Real-Time Detection Engine)
+  — checked: NOT a gap. git history shows a portfolio grid was deliberately
+  removed as unused (commit 9c72d63, "Remove unused portfolio-ajax loader
+  (site has no portfolio grid; binds to 0 elements)"). Not rebuilding this
+  without Mohamed asking for a portfolio section back.
+- content/blog/*.md — checked for stale claims/privacy leaks, clean.
+
+Everything on the checklist now has accurate content either live or staged
+in data/*.yaml, ready for template wiring. Remaining work is rebuild-lane
+(tasks #1-5) plus Mohamed's answers to the 2 open questions above.
+
 ## Do-not-touch reminders (self, for continuity across runs)
 - layouts/, static/css/, any template file — hard ban, rebuild lane owns it.
 - job-hunt files under /home/mohamed/Projects/CV/job-hunt/ — off-limits.
