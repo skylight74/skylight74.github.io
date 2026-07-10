@@ -464,3 +464,107 @@ Pan Arab — was actually a 3-day intensive entrepreneurship program in
 January (not the Dec-Jan span old content had); Interprobe cert-program
 background (TryHackMe/CEH) kept as attested interview-prep material only,
 not public content, per the drop decision above.
+
+## FULL INFORMATION SCAN (2026-07-10) — every file in /home/mohamed/Projects/CV/
+
+Mohamed asked for an exhaustive, >0.9-confidence check that nothing about
+him was missed before finalizing site content. Read every remaining file:
+prep/dolusoft-architecture.md, prep/red-flag-oneliners.md, prep/
+linkedin-rebuild.md (superseded by linkedin-checklist.md but read in full
+for anything not carried forward), cover-letters/qblox.md + qblox-form-
+answers.md, crypto-field-career-briefing.md, README.md, prompts.txt, the
+full legacy master-cv.yaml (486 lines, pre-calibration source), and all 7
+legacy profiles/*.yaml tailoring configs.
+
+**Titles resolved (his ask this round):** typing-title rotator gets
+"Engineering Lead" and "Tech Lead / Project Manager" (combined into one
+line, not two — both grounded: Tech Lead is his real OSSArch title,
+overleaf-scan-checklist.md separately lists him as "Project Manager" for
+the same team of 6, so combining avoids padding the rotation with the same
+role said twice). Relay to rebuild lane alongside the other rotator fix.
+
+**Genuine potential gaps found — none acted on, all need his confirmation:**
+1. DIONA "enterprise pilot at Koç Sistem" (Azure Sentinel/Defender phase)
+   — appears in both the old CHANGELOG and the rejected Qblox cover letter,
+   not in base-cv.yaml or anywhere on the site. Two independent old
+   sources, not contradicted anywhere, but never verified fresh.
+2. "Claude Copilot - AI Agent Orchestration Framework" project (2025-
+   present) — in master-cv.yaml only. Notable: this is literally the
+   orchestration framework this multi-agent session runs under. Real and
+   current if the "extended... orchestrator-worker pattern" claim holds,
+   but unverified by me and not on the site anywhere.
+3. evarkadasi "61k+ active listings" metric (master-cv.yaml) — treat with
+   skepticism, not endorsement: base-cv.yaml describes the platform as
+   "currently in staging," which sits awkwardly next to a specific
+   listings-count claim. Smells like pre-calibration inflation (same
+   document also claims "100k+ users" for Apply Center's "market reach,"
+   which directly contradicts what Mohamed described in his own words this
+   session as more modest, unglamorous sysadmin work).
+4. TÜBİTAK Grant #120E537 — specific grant number backing both
+   publications (AINA 2024 and MedPower 2024), appears in overleaf-scan-
+   checklist.md and master-cv.yaml. Could add precision to
+   data/publications.yaml if he wants it.
+5. AINA paper "presented in Japan" — minor color detail, master-cv.yaml
+   only.
+6. GDPR and CIS Controls as named compliance-familiarity items — appear in
+   the old Qblox cover letter, not in base-cv.yaml's skills list (which
+   has ISO 27001, MITRE ATT&CK, PCI DSS/SOC 2 familiarity already).
+7. Türkiye Bursları scholarship year: **2014** (linkedin-checklist.md,
+   dated later, explicitly supersedes linkedin-rebuild.md, and its own
+   "FINAL STATUS" section confirms this was actually typed into LinkedIn
+   and verified live) vs **2017** (linkedin-rebuild.md's earlier read,
+   superseded). Leaning 2014 as correct given the supersession
+   relationship, but flagging the discrepancy rather than silently
+   picking one — this is what's already in data/honors.yaml.
+
+**Confirmed correctly excluded — old, wrong, or over-claimed content that
+should stay off the site (reassurance, not new gaps):** fake "in progress"
+certifications (CISSP, OSCP, AZ-500 — current site correctly says only
+"AWS SAA, then CKA, planned 2026, not started"); Sardis staking-contract
+authorship overclaim (he QC-reviewed work written by others, already
+correctly framed everywhere current); the old Interprobe two-role split
+with a wrong Dec 2020 start date (superseded by the live-verified Jul 2021
+date); "5+ years experience" framing (contradicts his own honest
+mid-level/~3-4-years calibration); embedded/FPGA/QEMU/quantum-adjacent
+project material (real work, but off-brand for his current fintech-
+security positioning — a deliberate fit decision, not an oversight).
+
+**Privacy-sensitive facts confirmed present in LOCAL PROJECT FILES ONLY,
+never live on the website (already-known DOB/address leaks are a separate,
+already-flagged website issue):** full legal name (Mohamed Aly Amin Selim
+Eissa), birth date, student ID number, an old Egypt phone number — all in
+master-cv.yaml and overleaf-scan-checklist.md, both local-only project
+files never referenced by any site data or layout file. No new exposure,
+just confirming the blast radius is contained to local files.
+
+**Not for the website, context only:** two named professional references
+(Prof. Dr. Pelin Angin, METU research supervisor; Eng. Mehmet Celik,
+Interprobe Technical Lead) appear in master-cv.yaml's references section
+— not something a personal site would publish, noting for awareness only.
+
+**Confidence assessment, stated honestly per-dimension rather than
+blended:**
+- That every currently-known fact about his 2018-2025 professional history
+  is now reflected either on the site or in these notes: ~0.92. Cross-
+  checked base-cv.yaml against 15+ independent documents spanning January
+  to July 2026 (LinkedIn live-verification passes, GitHub scan, Overleaf
+  scan, three job-application cover letters, the full legacy master file);
+  every major entry reconciles cleanly except the 7 flagged items above.
+- That literally nothing has been missed, full stop: cannot honestly claim
+  >0.9 here, and said so directly rather than round up. This has a real
+  structural ceiling — these are the project's local files; there's no way
+  to verify against facts that live only in his head, in physical
+  documents, or in accounts/conversations outside this project directory.
+  Did NOT re-verify live LinkedIn or live Overleaf/GitHub via API for this
+  pass (relied on the existing 2026-07-07 live-verified LinkedIn checklist
+  and the existing Overleaf/GitHub scan checklists, both already thorough
+  — self-reported 0.97 confidence on the Overleaf scan, 67 projects and 63
+  repos catalogued) — a live re-verification would close some of this gap
+  but wasn't done here.
+- Did not read: job-hunt/* (off-limits per original brief, and it's
+  company/role research, not his personal-bio content anyway);
+  immigration-career-plan.md (career/immigration strategy planning, a
+  different content category from past professional history — deliberately
+  out of scope for a website content audit, not a missed file).</new_string>
+</invoke>
+
