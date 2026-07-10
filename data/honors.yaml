@@ -1,0 +1,15 @@
+# Honors/awards content, prepared 2026-07-10. NOTHING RENDERS THIS YET: no
+# dedicated honors section exists on the site. The closest thing is one line
+# in the "Fun Facts" widget (layouts/partials/section-about.html) mentioning
+# the chemistry olympiad, mixed in with unrelated personal trivia (karate,
+# countries visited) — that stays as-is, it's a different content category
+# and out of this file's scope. Content below matches base-cv.yaml + LinkedIn
+# honors (user-attested, see project memory cv_system.md). Wiring a
+# data-driven honors section is layouts scope and belongs to the rebuild lane.
+honors:
+  - title: "International Chemistry Olympiad (IChO) 2012"
+    detail: "Egypt national team, competition held in Washington, D.C.; certificate of participation (no medal)."
+  - title: "Türkiye Bursları (Turkish Government Scholarship), 2014"
+    detail: "Funded his BSc studies at Middle East Technical University (METU)."
+  - title: "MIT Enterprise Forum Pan-Arab, 2017"
+    detail: "Startup competition finalist."
