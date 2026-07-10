@@ -39,10 +39,19 @@ experience:
           <li>Automated threat enrichment by integrating ELK, Wazuh, TheHive, Cortex, MISP, and Suricata with OSINT feeds (VirusTotal, AlienVault OTX).</li>
           <li>Trained 4 engineers and ASELSAN partners and taught a Cyber Security course at Istanbul Aydın University; ran pre-sales demos/POCs at GISEC Dubai.</li>
       </ul>
-  # Restored 2026-07-09 (LinkedIn keeps this entry; site/LinkedIn consistency rule).
-  # Dates: LinkedIn says Jul-Sep 2018, the old site said Jun-Sep 2018 - Jul used
-  # pending his confirmation. logo: is ignored by the current fixed-block template;
-  # it is there for the range-loop rework (rebuild lane).
+  # RESOLVED 2026-07-10 (his answer): Jul confirmed over Jun. "late June and
+  # early July... we could say July." LinkedIn (live-verified 2026-07-07) also
+  # said Jul-Sep 2018.
+  - period: "Jun 2019 - Jan 2020"
+    title: "SALES/IT MANAGER"
+    company: "APPLY CENTER (STARTUP)"
+    body_html: |-
+      <ul>
+          <li>Administered the company's Zoho CRM and ran its social media as Sales/IT Manager.</li>
+          <li>Worked with Odoo/Zoho ERP tooling across sales and IT operations.</li>
+      </ul>
+  # logo: is ignored by the current fixed-block template; it is there for the
+  # range-loop rework (rebuild lane).
   - period: "Jul 2018 - Sep 2018"
     title: "BUSINESS DEVELOPMENT ANALYST"
     company: "BORAQ-GROUP"
@@ -58,16 +67,16 @@ education:
     place: "Ankara, Turkey"
     body_html: |-
       <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient.</p>
-  - period: "May 2021 - Nov 2021"
-    title: "Cyber security specialty program"
-    place: "Ankara"
-    body_html: |-
-      <p>Certificate preparation program at Interprobe.<br><strong>Coursework:</strong></p>
-      <ul>
-          <li>Pentesting (web applications + networks)</li>
-          <li>Security tools utilization</li>
-          <li>System security monitoring</li>
-          <li>Malware analysis</li>
-          <li>Bash/PowerShell scripting</li>
-          <li>Secure production deployment</li>
-      </ul>
+  # DROPPED 2026-07-10 (his call, delegated: "do what you recommend and feel
+  # wouldn't push recruiters away"). Was: "Cyber security specialty program,"
+  # May 2021 - Nov 2021, "Certificate preparation program at Interprobe."
+  # He confirmed it's real (finished TryHackMe coursework, was preparing for
+  # CEH through the company) but the May 2021 start predates his attested
+  # Interprobe employment start (Jul 2021) by two months, and it duplicates
+  # ground already covered by the Interprobe experience entry. Recommendation:
+  # drop rather than keep a standalone entry with a confusing date range;
+  # CEH was never completed, so naming it risks reading as a claimed cert
+  # (the site's only cert language is "AWS SAA, then CKA, planned 2026, not
+  # started" - adding an abandoned 2021 CEH pursuit would muddy that clean
+  # line). Kept as attested background here for interview prep, not deleted
+  # from the record - just off the public page.
