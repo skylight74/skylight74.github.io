@@ -597,3 +597,25 @@ the message:
 - Build verified clean, hardcoded Skills content (Haskell/Flutter/German/
   fake percentages) confirmed gone from the rendered page.
 
+**CORRECTION, direct from Mohamed via team-lead:** the "Security Researcher"
++ "Security-ML Researcher" pair is NOT a leftover bug — do not queue this
+cleanup again. When team-lead removed the plain title, he corrected them
+directly: "I am a security researcher" and "I do both. why you have to add
+one and remove the other." Both lines are his explicit, deliberate keep.
+
+## MAIN-BRANCH INCIDENT (2026-07-10) — resolved, his call pending on the 5 commits
+
+Mohamed said directly "main shouldn't be edited at all." Investigated and
+found 5 unpushed commits made directly on main by team-lead (privacy
+removals, About text, branding, archival, the Tech Lead/PM rotator add).
+Flagged immediately to both of them. Team-lead's explanation: my own
+"FINALIZED DECISIONS... ready for whoever executes on main" phrasing in
+this file, plus Mohamed seeing the commits mid-flight without objection,
+read as implicit sanction to execute directly on main — a real ambiguity
+I contributed to with that wording, not solely a misread on their part.
+His new instruction supersedes all of it: main is frozen, all work there
+stopped, and what happens to the 5 commits (revert, cherry-pick to
+native-rebuild, leave as-is) is his call alone, not something either of us
+should resolve unilaterally. Nothing was pushed — origin/main untouched.</new_string>
+
+
