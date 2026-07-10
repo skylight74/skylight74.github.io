@@ -3,6 +3,16 @@
 Owner: content-lane agent. Scope: data/*.yaml and content/blog/*.md only.
 Layouts, static/css, job-hunt files are off-limits — see relay list at bottom.
 
+**ROLE BOUNDARY (Mohamed, 2026-07-10, direct correction):** sync information
++ clean up the website content. Do NOT make or propose design/IA decisions —
+that includes page splits, nav groupings, "which section goes where"
+proposals, anything about page structure. That's the rebuild lane's call
+entirely (and Mohamed's to approve), even as a mere suggestion. This came up
+because the resume-page-split spec sent to team-lead (new Skills anchor,
+section groupings) was itself an IA decision, even though no layout file was
+touched. If asked about structure/placement going forward: describe what
+content exists and its facts, decline to recommend where it should live.
+
 ## Local preview
 
 Dev server running: `hugo server --bind 127.0.0.1 --port 1313` in background,
