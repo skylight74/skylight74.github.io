@@ -1,0 +1,12 @@
+# Services content, prepared 2026-07-09. NOTHING RENDERS THIS YET:
+# the old "My Services" section was deleted with its rate-card content
+# (day-trading/crypto). Wiring a new section-services partial is layouts
+# scope and belongs to the rebuild lane. Content is exactly-true to
+# Projects/CV/base-cv.yaml. No pricing on the site.
+services:
+  - title: "DevSecOps & Cloud Security"
+    body: "CI/CD hardening, SIEM/SOAR on open-source stacks (ELK, Wazuh, TheHive), Kubernetes and Terraform infrastructure, AWS security."
+  - title: "Go Backend & Streaming Systems"
+    body: "Real-time pipelines in Go with Kafka, ClickHouse, and Redis; built a filtering engine sustaining ~400k events/sec with OpenTelemetry tracing end to end."
+  - title: "Security Assessment & Technical Due Diligence"
+    body: "Architecture and code review, penetration-testing tooling, and technical due diligence on venture investments (15+ ventures assessed)."
