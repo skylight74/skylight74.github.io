@@ -369,3 +369,98 @@ to avoid trusting a single unreliable probe).
 native-rebuild currently owns per the original briefs. This was an
 investigation-only pass; no edits made anywhere. Reported directly to
 Mohamed given the severity of the two live privacy leaks.
+
+## FINALIZED DECISIONS (2026-07-10) — from Mohamed, ready for whoever executes on main
+
+He answered every item from the questionnaire. **He said NO to me executing
+directly on main — route through team-lead first**, same as everything else
+in this file. Two items are already done on content-sync-cv (data-file
+scope, see commit 45f700c); everything else below lives in layout files on
+main and needs the rebuild lane.
+
+**Privacy (do regardless of sequencing):**
+- DOB/age script — remove.
+- Home address map embed — remove entirely, not just re-comment.
+
+**"The Legend" branding — remove everywhere** (hugo.toml, head.html, 404.html,
+tail-scripts.html elementor JSON, RSS feed title).
+- Testimonial "The Legend." — remove from the live page. He's open to
+  turning it into a blog memoir or just archiving it: "not a big deal,
+  especially if it's unprofessional."
+
+**About paragraph — HIS FINAL WORDING, use exactly this:**
+> "Security and infrastructure engineer. I work where security meets
+> systems: led a six-engineer DevSecOps team, sole-built a real-time Go
+> detection engine, and first-authored a peer-reviewed intrusion-detection
+> paper."
+(Not any of the three drafts I offered — he wrote his own, checked
+against the record and it's accurate. Use verbatim.)
+
+**Typing-title rotator** — replace with current target titles (already
+confirmed content: DevSecOps Engineer / Security Engineer / Backend
+Developer (Go) / Site Reliability Engineer / Solutions Engineer /
+Security-ML Researcher — matches what's already live on content-sync-cv
+and native-rebuild).
+
+**Old "Freelancing / Private Tutor" entry (day trading, HFT, malware-dev
+tutoring)** — ARCHIVE, don't delete outright: "we might find some use for
+it sometime." Needs a place to live off the public page (not spec'd where
+— that's implementation, not mine to decide).
+
+**Services — corrected from my earlier wrong assumption:**
+- "Web3 Development" — KEEP.
+- "Blockchain Security" — KEEP.
+- "Financial Consultancy" — DO NOT DROP, but genuinely unresolved: he'd be
+  recommending investments/companies/startups from his own financial
+  experience (he does day trading personally); his own words: "the
+  question can I do it professionally I'm not sure." Not a content-lane
+  call — needs his own further thought, not a decision to force now.
+- Old "My Services" section (day-trading/crypto tracking as a service) —
+  no explicit final answer captured on this exact item; his halal
+  pushback (see below) applies generally, treat as unresolved rather than
+  assume removal.
+
+**Halal/crypto framing — CORRECTION, do not repeat my earlier error:**
+I originally flatly said day-trading, Web3, Blockchain Security, and
+Financial Consultancy contradict his halal constraints. That was wrong —
+pattern-matched from "crypto-adjacent" without basis. His exact words:
+"trading and crypto arent all haram btw... as a muslim I'm also required
+to not make halal stuff haram." His locked constraints (memory:
+feedback/career_direction) are specifically riba/gharar/maysir
+(interest, excessive uncertainty, gambling-like speculation) — not
+trading or blockchain work in general. Do not re-apply a blanket
+crypto-is-bad filter to his content anywhere.
+
+**Fun facts (main's section-about.html, unchanged from original WordPress):**
+- "5 Countries Visited" — update to **6** (his count, includes Egypt).
+- "Black belt in Karate / Ex-Body builder" — true, keep; he's even open to
+  it going on LinkedIn/CV, not just the site.
+- IChO + "Fluent in 3 Languages" — keep as-is (already confirmed accurate).
+
+**DONE on content-sync-cv (data-file scope, no main/layout access needed):**
+- Boraq dates: Jul confirmed over Jun (his words: "late June and early
+  July... we could say July"; also matches LinkedIn's live-verified read).
+- Added Apply Center entry: "Sales/IT Manager," Jun 2019 - Jan 2020, Zoho
+  CRM administration + social media + Odoo/Zoho ERP work. Wasn't on the
+  site before. Worth flagging to him whether base-cv.yaml (a different
+  project/lane, not mine to edit) should get this too — it's already
+  referenced in memory as used in the solutions-engineer CV variant.
+- Dropped the standalone "Cyber security specialty program" education
+  entry (May 2021 - Nov 2021). Confirmed real by him (TryHackMe course +
+  CEH prep, never completed) but the date range predates his attested
+  Interprobe start by 2 months and duplicates the Interprobe experience
+  entry; recommended and executed the drop per his delegation ("do what
+  you recommend and feel wouldn't push recruiters away") rather than ask
+  again. Full reasoning in data/resume.yaml's comment at that spot.
+- Confirmed with evidence (not just asserted): the Interprobe placeholder
+  bullet ("Collaborate with creative and development teams...") predates
+  the Hugo port entirely — the port's spec (docs/superpowers/specs/
+  2026-07-07-wordpress-to-hugo-port-design.md) states the only source of
+  truth was a byte/DOM-verified WordPress export, so nothing was altered
+  by porting. It's original WordPress content, never introduced by Hugo.
+
+**Still open, his own uncertainty, not a blocker:** MIT Enterprise Forum
+Pan Arab — was actually a 3-day intensive entrepreneurship program in
+January (not the Dec-Jan span old content had); Interprobe cert-program
+background (TryHackMe/CEH) kept as attested interview-prep material only,
+not public content, per the drop decision above.
