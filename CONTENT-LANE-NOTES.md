@@ -222,3 +222,150 @@ in data/*.yaml, ready for template wiring. Remaining work is rebuild-lane
 - layouts/, static/css/, any template file — hard ban, rebuild lane owns it.
 - job-hunt files under /home/mohamed/Projects/CV/job-hunt/ — off-limits.
 - Never push. Commits stay local on content-sync-cv for Mohamed's hand only.
+
+## OLD-CONTENT AUDIT (2026-07-10) — main worktree = actual live mohamedalyamin.com
+
+Mohamed asked to investigate "the old content of the website" via the live
+site or the actual main worktree (`/home/mohamed/Projects/skylight74.github.io`,
+branch `main`). Important discovery: content-sync-cv is NOT a clean diff of
+main — a prior WIP commit (5b73c0a, before this lane split existed) already
+fixed several things on content-sync-cv (About text, DOB script removal, old
+services removal, page titles, typing-title rotator, the address map embed)
+that are STILL LIVE on main/production, unfixed. Verified via direct file
+diff (not just curl/WebFetch — a WebFetch AI-summary of the live page was
+cross-checked against raw curl + direct git diff of main vs content-sync-cv
+to avoid trusting a single unreliable probe).
+
+### CRITICAL — live privacy leaks on mohamedalyamin.com right now
+1. **DOB/age-calculator script**, `layouts/partials/section-about.html`
+   (main): a hidden `<input id="dob" value="1995-12-10">` plus JS that
+   computes and displays "Age: XX" live on the page. Exposes his exact
+   birthdate to every visitor. Already removed on content-sync-cv/
+   native-rebuild's version of this file; NOT removed on main.
+2. **Home address Google Maps embed**, `layouts/partials/section-contacts.html`
+   (main): HTML-commented-out (not visually rendered) but the full iframe
+   `src` with a street-level address (İşçi Blokları, 1523. Sk. No:7,
+   Çankaya/Ankara — his old, now-vacated address) is still in page SOURCE,
+   visible to anyone who views-source. Comments don't hide from view-source.
+   Already absent entirely on content-sync-cv; still present on main.
+
+### Dead "The Legend" branding, confirmed exact locations
+- `hugo.toml` site title (main only — already fixed on content-sync-cv)
+- `layouts/partials/head.html` `<title>` + RSS feed title (main only)
+- `layouts/404.html` title + fake terminal prompt "root@the-legend" (main only)
+- `layouts/partials/tail-scripts.html` elementor JSON `"title": "The%20Legend...My%20portifolio"` (misspelled) — **present on BOTH main and content-sync-cv, not yet fixed anywhere.** Confirmed identical file on both branches.
+- The one-word testimonial "The Legend." from Özgul Doğan (real named
+  colleague, Cyber Security Expert at InterProbe) — the sentiment is
+  presumably genuine, but a real quote (or dropping the testimonial) would
+  read better than the in-joke. His call.
+
+### Stale professional identity (fixed on content-sync-cv, still live on main)
+- Old About paragraph: "Full stack security developer... rich experience in
+  Cloud Computing, Crypto & Cyber Security... good at Big Data-analytics &
+  scientific computing" — vague, dated, no DevSecOps/Go/security-ML framing.
+- Old typing-title rotator: "Full-stack Developer / Blockchain Architect /
+  System Admin / Cyber Security Engineer / Security Researcher" — none of
+  his current target titles.
+
+### Stale/wrong experience entries — main's data/resume.yaml (pre-sync)
+- Interprobe: "CYBER SECURITY ANALYST", July 2021 - June 2022, with an
+  **unedited WordPress template placeholder bullet**: "Collaborate with
+  creative and development teams on the execution of ideas." Never
+  described his actual work. Already corrected on content-sync-cv.
+- "Freelancing / Private Tutor, Oct 2020 - Present" — not on current site
+  at all. Bullets: "Day trading", "High Frequency trading app development,
+  Open source work", tutoring "Block-chain / Malware development" for
+  student graduation projects, private Python/JAVA/SQL lessons. Flagging:
+  day-trading/HFT and "malware development" framing is bad optics for a
+  security professional's public site regardless, and day-trading/HFT
+  sits in the grey-to-excluded zone of his own halal constraints (maysir-
+  adjacent) — recommend this entry never gets revived in any form, his
+  call to confirm.
+- Boraq dates here say "Jun 2018 - Sep 2018" (vs "Jul" now on site) — this
+  is the actual SOURCE of the Jun/Jul discrepancy noted earlier. Given
+  linkedin-checklist.md's 2026-07-07 LIVE-VERIFIED LinkedIn read says
+  Jul-Sep 2018, and this WordPress content is much older/unmaintained,
+  treating LinkedIn as the tiebreaker — Jul is very likely correct, "Jun"
+  here is probably just old WordPress drift. Still his final call.
+- "System Admin, Apply Center (Startup), JUN 2019 – Jan 2020", bullet
+  "Deploying CRM's and Setting up An e-commerce website." **Conflicts with
+  memory**, which has "Sales/IT Manager 2019-20 (Odoo/Zoho ERP)" for the
+  same company/period — different title, different described work. This
+  entry doesn't exist on the currently-synced site at all (unlike Boraq,
+  it was never restored). Genuine discrepancy — needs his input on which
+  title/description is accurate, and whether he wants this entry back at
+  all (parallel to the Boraq restore decision).
+- "CHAIRMAN, METU INTERNATIONAL STUDENT ASSOCIATION, April 2016 - Sep 2018"
+  — bullet reads "Optimize website and apps performance using latest
+  technology," which describes a dev role, not chairman/leadership duties.
+  Clearly a copy-paste artifact. Also note: linkedin-checklist.md's
+  Volunteering entry for the same role says "Apr 2016 – Jan 2019" — a
+  different end date than this old entry's "Sep 2018." If this entry is
+  ever added back, it needs real bullets (200+ members, 5+ events per
+  memory), not this leftover text, and the date conflict needs resolving.
+
+### Stale/unverified education entries — main's data/resume.yaml
+- "Cyber security specialty program" at Interprobe, May 2021 - Nov 2021,
+  "Certificate prepration [sic] program at Interprobe" — this IS the exact
+  source of my earlier open question about this entry. Confirmed: literal
+  unedited old WordPress content, typo included, never cross-checked
+  against LinkedIn or base-cv.yaml by anyone. Still genuinely open.
+- "MIT Enterprise Forum Pan Arab leadership program 2nd edition, Dec 2017 -
+  Jan 2018, Jordan, Amman" — POTENTIALLY VALUABLE: more precise dates and
+  location than anywhere else currently has for this honor (team-lead's
+  brief just says "2017 finalist," no dates/location). But titled here as
+  "leadership program" not "finalist" — worth asking him whether these are
+  the same event (attending included both a leadership program and a
+  finalist result) or something needs reconciling before using the extra
+  precision.
+- "Royal International Language Schools, 2003-2013, Egypt, Cairo" — a high
+  school entry with an informal personal bullet ("Build My first PC when I
+  was 12 😛"). Charming, but doesn't belong in a professional Education
+  section (base-cv.yaml deliberately went university-only), and combined
+  with the 2003 start date is a soft age-signal on top of the DOB leak
+  above. Could be fun-fact material if he ever wants personal color
+  elsewhere, but recommend NOT reviving in Education regardless.
+
+### Stale/halal-conflicting services (fixed on content-sync-cv, still live on main)
+- Old "My Services" section: Web-site Development, Cloud/on-premise
+  Deployments, Cyber Security Analysis, Pentesting, "Statistical/Technical
+  Analysis" (described as "Crypto currencies tracking, Day & High
+  frequency trading"), Scientific Computing & Data analytics. The
+  crypto-trading service line directly contradicts his current locked
+  halal constraints (excludes maysir/speculation) — should never return.
+- Newer-but-still-old "Service Offerings" section: Freelancing tier
+  (includes "Web3 Development NEW") and Contract tier (includes
+  "Blockchain Security NEW", "Financial Consultancy NEW"). Crypto-general
+  positioning contradicts the locked career direction (crypto = niche
+  halal-curated tool now, not identity); "Financial Consultancy" doesn't
+  match current positioning. The already-drafted `data/services.yaml`
+  (DevSecOps & Cloud Security / Go Backend & Streaming / Security
+  Assessment & Technical Due Diligence) is a correct, ready replacement.
+
+### Confirmed identical on main and content-sync-cv (i.e., still needs fixing everywhere)
+- `layouts/partials/section-resume.html` — byte-identical on both branches.
+  The hardcoded Skills section (Haskell, Java, Flutter, Django/Flask/
+  Spring, a "German" language line, fake percentage bars) is exactly as
+  broken on main as documented earlier. Already staged fix: skills.yaml
+  (task #1, in progress on native-rebuild).
+- `layouts/partials/tail-scripts.html` — the "The Legend...portifolio"
+  elementor JSON title (see above), identical on both branches.
+
+### Genuinely good / worth keeping (verified, not urgent)
+- The downloadable CV PDF (`static/media/Mohamed_Aly_Amin_CV.pdf`) is
+  BYTE-IDENTICAL between main and content-sync-cv, and is fully current
+  and accurate against base-cv.yaml (checked earlier this session). One
+  bright spot: the "Download CV" button already serves correct content
+  even though the surrounding page is stale.
+- Contact info (`data/contact.yaml`, `data/profile.yaml`) — identical on
+  both branches, already correct, no privacy issues found there.
+- Fun Facts widget (`section-about.html`, unchanged on both branches):
+  "Black belt in Karate / Ex-Body builder" (unverifiable, low-stakes, his
+  call) · "International Chemistry Olympiad Student (USA)" (consistent
+  with attested IChO 2012 fact) · "Fluent in 3 Languages" (consistent) ·
+  "5 Countries Visited" (unverifiable, possibly outdated, his call).
+
+### Not touched — main is a third worktree neither content-sync-cv nor
+native-rebuild currently owns per the original briefs. This was an
+investigation-only pass; no edits made anywhere. Reported directly to
+Mohamed given the severity of the two live privacy leaks.
