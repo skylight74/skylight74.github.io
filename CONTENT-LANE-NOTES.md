@@ -116,6 +116,24 @@ each hugo-build-verified before committing.
    Flagging this as the highest-priority relay item: it's actively showing
    stale/inaccurate skill claims to anyone who visits the site.
 
+   **UPDATE 2026-07-10: fixed content-side.** Created `data/skills.yaml`
+   (7 categories, copied verbatim from base-cv.yaml's skills section, no
+   percentage bars, no invented numbers), plus two more canon sections that
+   had NO home anywhere on the site at all: `data/honors.yaml` (IChO 2012,
+   Türkiye Bursları 2014, MIT Enterprise Forum Pan-Arab 2017) and
+   `data/publications.yaml` (AINA 2024 Springer + MedPower 2024). All three
+   committed on content-sync-cv, all three still need template wiring —
+   rebuild-lane scope, same as services.yaml.
+
+   **DUPLICATION RISK, flagged to team-lead:** Task #1 in the shared task
+   list ("Rewrite Skills section: data/skills.yaml + template") is assigned
+   to a DIFFERENT worktree (skylight74-native, branch native-rebuild) and its
+   description says "Create data/skills.yaml from base-cv.yaml skills list"
+   — that's the exact file I already built here. Different worktrees don't
+   share a working tree, so my skills.yaml won't appear there automatically.
+   Told team-lead so effort isn't duplicated; my version (and honors.yaml,
+   publications.yaml) can be copied over or the branches reconciled.
+
 5. **`data/services.yaml` needs template wiring** (already known per task
    brief) — content is ready, no partial renders it yet.
 
@@ -133,6 +151,35 @@ each hugo-build-verified before committing.
    useful, content lane can propose a split (e.g., which sections group onto
    which page/tab, in what order) for the rebuild session to execute, but
    won't touch the implementation. Asked team-lead for routing/clarification.
+
+   **SPEC for task #5 (2026-07-10):** confirmed the site's nav
+   (`layouts/partials/sidebar-nav.html`) is a simple 4-item anchor-jump menu
+   (About → #home-e, Resume → #resume-e, Contact → #contacts-e, Blog → real
+   page at /blog/) — no client-side router, no page templates beyond the
+   existing card pattern. Adding a split is the same shape of change as the
+   4 items that already exist: a new anchor id + a new nav `<li>`, not a new
+   routing system. Proposal:
+
+   - **Keep "Resume" (#resume-e) to Experience + Education only.** That's
+     already a reasonable length (5 experience entries, 2 education entries)
+     once Skills is pulled out. Drop the "Favorite Quote" spacer block from
+     this page too if convenient — it's generic filler unrelated to resume
+     content, not sourced from any canon fact — but that's a nice-to-have,
+     not a requirement.
+   - **New "Skills" nav item (new anchor, e.g. #skills-e)** holding: Skills
+     (`data/skills.yaml`, 7 categories, already committed), then Publications
+     (`data/publications.yaml`, 2 entries) and Honors (`data/honors.yaml`,
+     3 entries) underneath as two short lists. All three are "credentials"
+     in nature and, once the fake percentage bars are dropped per task #1,
+     together they're still shorter than the current Skills block alone.
+   - **Services (`data/services.yaml`, task #3) is a separate concern** —
+     not part of the "resume too long" complaint, already has its own task,
+     no opinion on where it lands (About page or its own nav item both work).
+   - Same advice as task #1: whatever replaces the current Skills markup,
+     build it with a `{{ range }}` loop over the data file, not fixed-index
+     hardcoding — avoids reproducing the logo/index bug from task #2.
+
+   Sent this spec to team-lead via SendMessage so task #5 can unblock.
 
 ## Do-not-touch reminders (self, for continuity across runs)
 - layouts/, static/css/, any template file — hard ban, rebuild lane owns it.
