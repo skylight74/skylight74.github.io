@@ -10,3 +10,8 @@ services:
     body: "Real-time pipelines in Go with Kafka, ClickHouse, and Redis; built a filtering engine sustaining ~400k events/sec with OpenTelemetry tracing end to end."
   - title: "Security Assessment & Technical Due Diligence"
     body: "Architecture and code review, penetration-testing tooling, and technical due diligence on venture investments (15+ ventures assessed)."
+  # Added 2026-07-10 per Mohamed's KEEP ruling on the old services list.
+  - title: "Web3 Development"
+    body: "Permissioned blockchain development on Hyperledger Fabric: multi-org chaincode in TypeScript on Kubernetes, published at MedPower 2024 (SmartGridLedger)."
+  - title: "Blockchain Security"
+    body: "Smart-contract and chaincode review, permissioned-network security, and technical risk assessment of crypto ventures."

@@ -11,5 +11,7 @@ honors:
     detail: "Egypt national team, competition held in Washington, D.C.; certificate of participation (no medal)."
   - title: "Türkiye Bursları (Turkish Government Scholarship), 2014"
     detail: "Funded his BSc studies at Middle East Technical University (METU)."
-  - title: "MIT Enterprise Forum Pan-Arab, 2017"
-    detail: "Startup competition finalist."
+  # Date + framing corrected 2026-07-10 per Mohamed: three-day intensive in
+  # January (old site's "Dec 2017 - Jan 2018" span resolved to Jan 2018).
+  - title: "MIT Enterprise Forum Pan-Arab, January 2018"
+    detail: "Three-day intensive entrepreneurship program (Amman, Jordan)."

@@ -7,6 +7,7 @@ experience:
   - period: "Jan 2023 - Present"
     title: "SECURITY & SOFTWARE ENGINEER"
     company: "INDEPENDENT / FREELANCE (PROJECT-BASED)"
+    logo: "/media/pngegg.png"
     body_html: |-
       <ul>
           <li>Sole-built the 10-microservice PHP/Laravel rebuild of a 270k-registered-user real-estate platform on AWS (EC2, RDS, S3); currently in staging.</li>
@@ -33,6 +34,7 @@ experience:
   - period: "Jul 2021 - May 2022"
     title: "CYBER SECURITY SPECIALIST (TECH LEAD - OSSARCH)"
     company: "INTERPROBE BILGI TEKNOLOJILERI"
+    logo: "/media/961e34a2-f8f6-42a8-8566-85ad6e895b04.jpeg"
     body_html: |-
       <ul>
           <li>Shipped an MVP SIEM/SOAR platform (OSSArch) in 3 months, against the company's 6-12 month norm, by forming and technically leading a 6-engineer DevSecOps team (TDD, DDD, daily agile).</li>
@@ -45,6 +47,7 @@ experience:
   - period: "Jun 2019 - Jan 2020"
     title: "SALES/IT MANAGER"
     company: "APPLY CENTER (STARTUP)"
+    logo: "/media/ApplyCenter-Logo.png"
     body_html: |-
       <ul>
           <li>Administered the company's Zoho CRM and ran its social media as Sales/IT Manager.</li>
