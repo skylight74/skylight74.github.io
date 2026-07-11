@@ -23,6 +23,24 @@ experience:
           <li>Designed chained, first-seen, and z-score anomaly-detection rules in a configurable detection engine to cut false-positive noise.</li>
           <li>Built a Go multi-channel alerting service (Slack, email, webhook) with rate limiting and policy-based routing for faster incident response.</li>
       </ul>
+  # Added 2026-07-11 (his ask): LinkedIn-parity entries the site was missing.
+  # Wording/dates from prep/linkedin-checklist.md live-verified ledger 2026-07-07.
+  - period: "Dec 2023 - May 2024"
+    title: "TECHNICAL DUE DILIGENCE ENGINEER (CONTRACT)"
+    company: "CASTRUM"
+    body_html: |-
+      <ul>
+          <li>Assessed the codebases, architecture, and technical risk of 15-20 startup ventures to support investment decisions.</li>
+          <li>Joined investor meetings and produced feasibility assessments for prospective deals.</li>
+      </ul>
+  - period: "2023 - 2024"
+    title: "WEB3 SECURITY ENGINEER / DEVSECOPS (CONTRACT)"
+    company: "SARDIS"
+    body_html: |-
+      <ul>
+          <li>Investigated and remediated a security incident on the network's web infrastructure.</li>
+          <li>Reviewed and redesigned infrastructure, and quality-reviewed smart contracts written by the core team.</li>
+      </ul>
   - period: "Jan 2022 - Apr 2025"
     title: "RESEARCH ASSISTANT (PART-TIME, TÜBİTAK-FUNDED)"
     company: "MIDDLE EAST TECHNICAL UNIVERSITY (METU)"
