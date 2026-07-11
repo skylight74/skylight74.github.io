@@ -12,7 +12,6 @@ experience:
       <ul>
           <li>Sole-built the 10-microservice PHP/Laravel rebuild of a live housing-listings platform (270k registered users, 360k+ cumulative listings) on AWS (EC2, RDS, S3); rebuild currently in staging.</li>
           <li>Built protocol adapters (OCPP for EV chargers, SunSpec/Modbus for solar inverters, IEC 62056 for smart meters) to normalize multi-vendor energy-device data for a smart-grid monitoring stack (InfluxDB, Grafana).</li>
-          <li>Assessed 15+ crypto/fintech ventures' codebases, architecture, and technical risk to inform venture-capital investment decisions.</li>
       </ul>
   - period: "Aug 2024 - May 2025"
     title: "R&D ENGINEER - CYBERSECURITY"
