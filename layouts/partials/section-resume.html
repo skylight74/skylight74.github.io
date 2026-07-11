@@ -216,7 +216,7 @@
                                                 <ul>
 {{ range site.Data.publications.publications }}
                                                     <li class="border-line-h">
-                                                        <div class="name"><span>{{ .title }} ({{ .venue }}, {{ .date }}){{ with .url }} &middot; <a href="{{ . }}" target="_blank">paper</a>{{ end }}</span></div>
+                                                        <div class="name"><span>{{ .title }} ({{ .venue }}, {{ .date }}){{ with .note }} {{ . }}{{ end }}{{ with .url }} &middot; <a href="{{ . }}" target="_blank">paper</a>{{ end }}</span></div>
                                                     </li>
 {{ end }}
                                                 </ul>
