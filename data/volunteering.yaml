@@ -1,10 +1,10 @@
 # Volunteering (added 2026-07-11, his ask: "say the achievements and
 # participants and all the stuff"). Content from legacy master-cv.yaml
-# Chairman entry (the attested detail set). End date: Sep 2018 per legacy
-# master + old site; LinkedIn checklist wrote Jan 2019 — flagged to him,
-# unresolved.
+# Chairman entry (the attested detail set). End date RESOLVED 2026-07-11:
+# Jan 2019 — handover period Sep 2018 to Jan 2019 was one full semester,
+# his call that Jan 2019 fits better. Matches LinkedIn.
 volunteering:
-  - period: "Apr 2016 - Sep 2018"
+  - period: "Apr 2016 - Jan 2019"
     role: "Chairman"
     organization: "METU International Student Association"
     highlights:

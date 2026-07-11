@@ -28,14 +28,16 @@ experience:
   # End month corrected 2026-07-11, his attestation: "Dec 2023 to late April
   # 2024". LinkedIn shows May 2024 — off by one, his-hands fix queued.
   - period: "Dec 2023 - Apr 2024"
-    title: "TECHNICAL DUE DILIGENCE ENGINEER (CONTRACT)"
+    title: "TECHNICAL CONSULTANT (CONTRACT)"
     company: "CASTRUM"
     body_html: |-
       <ul>
           <li>Assessed the codebases, architecture, and technical risk of 15-20 startup ventures to support investment decisions.</li>
           <li>Joined investor meetings and produced feasibility assessments for prospective deals.</li>
       </ul>
-  - period: "2023 - 2024"
+  # Dates his attestation 2026-07-11 ("september not july") — LinkedIn's
+  # Jul 2023 - Jul 2024 is off; his-hands fix in the quick-edits doc.
+  - period: "Sep 2023 - Sep 2024"
     title: "WEB3 SECURITY ENGINEER / DEVSECOPS (CONTRACT)"
     company: "SARDIS"
     body_html: |-
