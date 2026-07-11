@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Aly Amin — SHT-01 REV C</title>
+<style>
+/* ====== DIRECTION D: engineering blueprint — CV as technical drawing ====== */
+:root{
+  --sheet:#0e2238;          /* deep drafting blue */
+  --sheet-2:#0a1b2d;
+  --line:#3d6a8f;           /* drawing lines */
+  --line-dim:#24445f;
+  --ink:#d9e8f2;            /* line-work white-blue */
+  --ink-dim:#7fa3bd;
+  --mark:#63d0e8;           /* cyan marker / dimensions */
+  --mark-dim:#63d0e822;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --cond:"IBM Plex Sans Condensed","IBM Plex Sans",sans-serif;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--sheet-2);color:var(--ink);font-family:var(--sans);
+  font-size:14.5px;line-height:1.55;min-height:100vh;padding:18px;
+  background-image:radial-gradient(circle,#63d0e80a 1px,transparent 1px);
+  background-size:28px 28px;
+}
+/* the drafting sheet */
+.sheet{
+  max-width:1060px;margin:0 auto;background:var(--sheet);
+  border:2px solid var(--line);outline:1px solid var(--line-dim);outline-offset:5px;
+  position:relative;
+  background-image:
+    linear-gradient(var(--line-dim) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line-dim) 1px,transparent 1px);
+  background-size:56px 56px;
+  background-position:-1px -1px;
+}
+/* corner crosshairs */
+.sheet::before,.sheet::after{content:"+";position:absolute;font:400 18px var(--mono);color:var(--mark)}
+.sheet::before{top:6px;left:10px}
+.sheet::after{bottom:6px;right:10px}
+
+/* zone strip (drawing header) */
+.zone{display:flex;align-items:center;border-bottom:2px solid var(--line);
+  font:400 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+.zone > *{padding:10px 16px;border-right:1px solid var(--line-dim)}
+.zone .doc{color:var(--mark)}
+.zone nav{margin-left:auto;display:flex;border-right:none;padding:0}
+.zone nav a{padding:10px 16px;border-left:1px solid var(--line-dim);color:var(--ink-dim);
+  text-decoration:none;letter-spacing:.14em}
+.zone nav a:hover{color:var(--ink);background:var(--mark-dim)}
+.zone nav a.on{color:var(--mark);border-bottom:2px solid var(--mark)}
+
+.body{padding:44px 48px 28px}
+
+/* hero: annotated figure */
+.fig{display:grid;grid-template-columns:250px 1fr;gap:52px;align-items:start}
+.photo{position:relative;margin:14px 0 0 14px}
+.photo img{width:232px;height:232px;object-fit:cover;display:block;
+  filter:grayscale(.25) contrast(1.05);border:1px solid var(--line)}
+/* dimension lines around the figure */
+.dim-x,.dim-y{position:absolute;font:400 10px var(--mono);color:var(--mark)}
+.dim-x{left:0;right:18px;top:-16px;border-top:1px solid var(--mark);text-align:center}
+.dim-x i{background:var(--sheet);padding:0 6px;position:relative;top:-8px;font-style:normal}
+.dim-x::before,.dim-x::after{content:"";position:absolute;top:-4px;width:1px;height:8px;background:var(--mark)}
+.dim-x::before{left:0}.dim-x::after{right:0}
+.dim-y{top:0;bottom:18px;left:-16px;border-left:1px solid var(--mark)}
+.dim-y i{position:absolute;top:50%;left:-8px;transform:rotate(-90deg) translateX(50%);
+  transform-origin:left;background:var(--sheet);padding:0 6px;font-style:normal;white-space:nowrap}
+.dim-y::before,.dim-y::after{content:"";position:absolute;left:-4px;height:1px;width:8px;background:var(--mark)}
+.dim-y::before{top:0}.dim-y::after{bottom:0}
+.fig-cap{margin-top:14px;font:400 10.5px var(--mono);color:var(--ink-dim);letter-spacing:.1em}
+.fig-cap b{color:var(--mark);font-weight:400}
+.avail{margin-top:10px;font:500 11px var(--mono);letter-spacing:.1em;color:var(--ink)}
+.avail .dot{display:inline-block;width:8px;height:8px;background:var(--mark);border-radius:50%;
+  margin-right:8px;box-shadow:0 0 8px var(--mark)}
+
+.spec .lbl{font:400 11px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--mark);
+  margin-bottom:10px}
+h1{font:700 52px/0.98 var(--cond);letter-spacing:.005em;text-transform:uppercase;margin-bottom:6px}
+.role{font:400 14px var(--mono);color:var(--ink-dim);margin-bottom:22px}
+.role .cur{display:inline-block;width:8px;height:15px;background:var(--mark);vertical-align:-2px;
+  animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sum{max-width:58ch;color:var(--ink);margin-bottom:22px}
+.sum b{color:var(--mark);font-weight:600}
+.kv{display:grid;gap:7px;font:400 12.5px var(--mono);color:var(--ink-dim);margin-bottom:26px}
+.kv .k{color:var(--mark);display:inline-block;width:104px}
+.kv b{color:var(--ink);font-weight:500}
+.cta{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn{font:500 11.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  padding:12px 22px;border:1px solid var(--mark);color:var(--mark);position:relative}
+.btn.solid{background:var(--mark);color:var(--sheet-2);font-weight:600}
+.btn.solid:hover{box-shadow:0 0 14px var(--mark-dim),0 0 4px var(--mark)}
+.btn.ghost:hover{background:var(--mark-dim)}
+.socials{display:flex;gap:16px;margin-left:6px}
+.socials a{font:400 11.5px var(--mono);color:var(--ink-dim);text-decoration:none;
+  border-bottom:1px dashed var(--line);padding-bottom:2px}
+.socials a:hover{color:var(--mark);border-bottom-color:var(--mark)}
+
+/* spec table (stats) */
+.table{margin-top:40px;border:1px solid var(--line)}
+.table .cap{font:400 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-dim);padding:8px 14px;border-bottom:1px solid var(--line)}
+.table .cap b{color:var(--mark);font-weight:400}
+.cells{display:grid;grid-template-columns:repeat(4,1fr)}
+.cell{padding:18px 20px;border-right:1px solid var(--line-dim)}
+.cell:last-child{border-right:none}
+.cell .num{font:700 26px var(--cond);color:var(--mark);letter-spacing:.01em}
+.cell .l{font:400 11px var(--mono);color:var(--ink-dim);margin-top:3px}
+
+/* details (services) */
+.details{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.detail{border:1px solid var(--line);padding:20px;position:relative;background:var(--sheet)}
+.detail::before{content:attr(data-ref);position:absolute;top:-9px;left:14px;background:var(--sheet);
+  padding:0 8px;font:400 10.5px var(--mono);letter-spacing:.14em;color:var(--mark)}
+.detail h3{font:600 17px var(--cond);text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
+.detail p{font-size:12.8px;color:var(--ink-dim)}
+
+/* revision table (honors) — the drawing's REV block */
+.rev{margin-top:40px;border:1px solid var(--line)}
+.rev .cap{font:400 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-dim);padding:8px 14px;border-bottom:1px solid var(--line)}
+.rev .cap b{color:var(--mark);font-weight:400}
+.rev table{width:100%;border-collapse:collapse;font-size:12.5px}
+.rev td{padding:10px 14px;border-top:1px solid var(--line-dim);vertical-align:top}
+.rev td:first-child{font:400 12px var(--mono);color:var(--mark);width:70px}
+.rev td:nth-child(2){font-weight:600;width:34%}
+.rev td:last-child{color:var(--ink-dim)}
+
+/* title block — the signature element */
+.tblock{margin-top:44px;border-top:2px solid var(--line);display:grid;
+  grid-template-columns:1fr 220px 190px;font:400 11px var(--mono)}
+.tblock > div{padding:12px 16px;border-right:1px solid var(--line-dim)}
+.tblock > div:last-child{border-right:none}
+.tblock .t{color:var(--ink-dim);letter-spacing:.14em;text-transform:uppercase;font-size:9.5px;display:block;margin-bottom:3px}
+.tblock b{color:var(--ink);font-weight:500}
+.tblock .mark{color:var(--mark)}
+
+@media(max-width:860px){
+  .body{padding:28px 22px 18px}
+  .fig{grid-template-columns:1fr;gap:34px}
+  h1{font-size:38px}
+  .cells{grid-template-columns:1fr 1fr}
+  .cell:nth-child(2n){border-right:none}
+  .details{grid-template-columns:1fr}
+  .tblock{grid-template-columns:1fr}
+  .tblock > div{border-right:none;border-top:1px solid var(--line-dim)}
+  .zone nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="zone">
+    <span class="doc">DWG MAA-CV-01</span>
+    <span>SHT 1/1</span>
+    <span>SCALE 1:1</span>
+    <nav>
+      <a href="index-blueprint.html" class="on">About</a><a href="resume-carbon.html">Resume</a><a href="#">Contact</a><a href="#">Blog</a>
+    </nav>
+  </div>
+
+  <div class="body">
+    <section class="fig">
+      <div>
+        <div class="photo">
+          <div class="dim-x"><i>232 px</i></div>
+          <div class="dim-y"><i>232 px</i></div>
+          <img src="profile-pic.jpg" alt="Mohamed Aly Amin">
+        </div>
+        <div class="fig-cap">FIG. 1 — <b>SUBJECT</b>, ANKARA STATION</div>
+        <div class="avail"><span class="dot"></span>AVAILABLE — FREELANCE / FULL-TIME</div>
+      </div>
+
+      <div class="spec">
+        <div class="lbl">Component specification</div>
+        <h1>Mohamed<br>Aly Amin</h1>
+        <div class="role">security &amp; infrastructure engineer <span class="cur"></span></div>
+        <p class="sum">Works where security meets systems: formed and led a <b>six-engineer
+        DevSecOps team</b>, sole-built a real-time Go detection engine sustaining
+        <b>~400k events/sec</b>, first-authored a peer-reviewed intrusion-detection
+        paper (<b>AINA 2024, Springer</b>).</p>
+        <div class="kv">
+          <div><span class="k">OPEN-TO</span> <b>DevSecOps · Platform/Backend (Go) · Security · Tech Lead</b></div>
+          <div><span class="k">LOCATION</span> <b>Ankara</b> — Istanbul / relocation / remote</div>
+          <div><span class="k">LANGUAGES</span> Arabic (native) · English (C1) · Turkish (B2)</div>
+        </div>
+        <div class="cta">
+          <a class="btn solid" href="#">↓ Download CV</a>
+          <a class="btn ghost" href="#">Contact</a>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/mohamedalyamin">LinkedIn</a>
+            <a href="https://github.com/skylight74">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="table">
+      <div class="cap">TABLE 1 — <b>MEASURED PERFORMANCE</b></div>
+      <div class="cells">
+        <div class="cell"><div class="num">~400k/s</div><div class="l">events — Go detection engine</div></div>
+        <div class="cell"><div class="num">98.11%</div><div class="l">IDS accuracy — AINA 2024 (Springer)</div></div>
+        <div class="cell"><div class="num">3 MO</div><div class="l">SIEM/SOAR MVP vs 6–12 mo norm</div></div>
+        <div class="cell"><div class="num">6 ENG</div><div class="l">DevSecOps team formed &amp; led</div></div>
+      </div>
+    </section>
+
+    <section class="details">
+      <div class="detail" data-ref="DETAIL A">
+        <h3>DevSecOps &amp; Cloud Security</h3>
+        <p>CI/CD hardening, SIEM/SOAR on open-source stacks (ELK, Wazuh, TheHive), Kubernetes and Terraform infrastructure, AWS security.</p>
+      </div>
+      <div class="detail" data-ref="DETAIL B">
+        <h3>Go Backend &amp; Streaming</h3>
+        <p>Real-time pipelines in Go with Kafka, ClickHouse, and Redis; filtering engine sustaining ~400k events/sec, OpenTelemetry end to end.</p>
+      </div>
+      <div class="detail" data-ref="DETAIL C">
+        <h3>Security Assessment &amp; DD</h3>
+        <p>Architecture and code review, penetration-testing tooling, technical due diligence on venture investments (15+ assessed).</p>
+      </div>
+    </section>
+
+    <section class="rev">
+      <div class="cap">TABLE 2 — <b>REVISION HISTORY (HONORS)</b></div>
+      <table>
+        <tr><td>REV A</td><td>International Chemistry Olympiad (IChO) 2012</td><td>Egypt national team — Washington, D.C.</td></tr>
+        <tr><td>REV B</td><td>Türkiye Bursları — Government Scholarship 2014</td><td>Funded BSc at Middle East Technical University</td></tr>
+        <tr><td>REV C</td><td>MIT Enterprise Forum Pan-Arab 2017</td><td>Startup competition finalist</td></tr>
+      </table>
+    </section>
+
+    <div class="tblock">
+      <div><span class="t">Project</span><b>MOHAMEDALYAMIN.COM</b> — personal site of a security &amp; infrastructure engineer</div>
+      <div><span class="t">Drawn / Checked</span><b>M. ALY AMIN</b> / <span class="mark">CI PIPELINE ✓</span></div>
+      <div><span class="t">Rev / Date</span><b class="mark">REV C</b> — 2026-07-11</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
