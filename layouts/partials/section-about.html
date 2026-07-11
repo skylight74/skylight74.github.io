@@ -166,6 +166,34 @@
                                 <div class="elementor-container elementor-column-gap-no">
                                     <div class="elementor-column elementor-col-100 elementor-top-column">
                                         <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="content custom-text">
+                                                <div class="title"><span>Volunteering</span></div>
+                                            </div>
+{{ range site.Data.volunteering.volunteering }}
+                                            <div class="skills-item">
+                                                <div class="skills-list list">
+                                                    <div class="skill-title border-line-h">
+                                                        <div class="name"><span>{{ .role }} — {{ .organization }} ({{ .period }})</span></div>
+                                                    </div>
+                                                    <ul>
+{{ range .highlights }}
+                                                        <li class="border-line-h">
+                                                            <div class="name"><span>{{ . }}</span></div>
+                                                        </li>
+{{ end }}
+                                                    </ul>
+                                                </div>
+                                            </div>
+{{ end }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
+                                class="elementor-section elementor-top-section elementor-element elementor-section-full_width elementor-section-height-default">
+                                <div class="elementor-container elementor-column-gap-no">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="content services">
                                                 <div class="title"><span>My Services</span></div>
                                                 <div class="row service-items">
