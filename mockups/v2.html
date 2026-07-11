@@ -104,8 +104,10 @@ h1{font:600 42px/1.08 var(--head);letter-spacing:-.015em;margin-bottom:var(--s2)
 .stat .num{font:600 30px var(--mono);color:var(--accent)}
 .stat .lbl{font:400 11.5px var(--mono);color:var(--fg-dim)}
 html[data-role="devsecops"] .stat.s-mvp{order:-2}html[data-role="devsecops"] .stat.s-acc{order:-1}
-html[data-role="platform"] .stat.s-eps{order:-2}html[data-role="platform"] .stat.s-acc{order:-1}
 html[data-role="lead"] .stat.s-team{order:-2}html[data-role="lead"] .stat.s-mvp{order:-1}
+html[data-role="research"] .stat.s-acc{order:-2}html[data-role="research"] .stat.s-eps{order:-1}
+html[data-role="aisec"] .stat.s-acc{order:-2}html[data-role="aisec"] .stat.s-eps{order:-1}
+html[data-role="platform"] .stat.s-eps{order:-2}html[data-role="platform"] .stat.s-mvp{order:-1}
 .imp-note{margin-top:var(--s3);font:400 11.5px var(--mono);color:var(--fg-dim)}
 
 /* ---- experience ---- */
@@ -225,12 +227,14 @@ html[data-skin="paper"][data-role="platform"]{--accent:#0e7f96;--accent-dim:#0e7
 html[data-skin="paper"][data-role="lead"]{--accent:#a63d2f;--accent-dim:#a63d2f22}
 html[data-skin="ink"][data-role="default"]{--accent:#2458ff;--accent-dim:#2458ff1e}
 html[data-skin="ink"][data-role="devsecops"]{--accent:#0e8a45;--accent-dim:#0e8a4522}
-html[data-skin="ink"][data-role="platform"]{--accent:#0779a3;--accent-dim:#0779a322}
+html[data-skin="ink"][data-role="platform"]{--accent:#2458ff;--accent-dim:#2458ff1e}
 html[data-skin="ink"][data-role="lead"]{--accent:#c22f4b;--accent-dim:#c22f4b22}
 html[data-skin="steel"][data-role="default"]{--accent:#5fd3e8;--accent-dim:#5fd3e822}
 html[data-skin="steel"][data-role="devsecops"]{--accent:#57e08d;--accent-dim:#57e08d22}
 html[data-skin="steel"][data-role="platform"]{--accent:#6aa7ff;--accent-dim:#6aa7ff22}
 html[data-skin="steel"][data-role="lead"]{--accent:#e8a15f;--accent-dim:#e8a15f26}
+html[data-skin="steel"]{--act:#5fd3e8;--act-dim:#5fd3e822;--act-glow:#5fd3e83a}
+html[data-skin="steel"][data-role="research"]{--accent:#9ab8d8;--accent-dim:#9ab8d822}
 
 
 /* ===== batch-2 skins ===== */
@@ -264,50 +268,110 @@ html[data-skin="oxo"][data-role="default"]{--accent:#3ddbd9;--accent-dim:#3ddbd9
 html[data-skin="oxo"][data-role="devsecops"]{--accent:#42be65;--accent-dim:#42be6522}
 html[data-skin="oxo"][data-role="platform"]{--accent:#78a9ff;--accent-dim:#78a9ff22}
 html[data-skin="oxo"][data-role="lead"]{--accent:#be95ff;--accent-dim:#be95ff26}
+html[data-skin="oxo"][data-role="research"]{--accent:#be95ff;--accent-dim:#be95ff26}
 
 
 
 
-/* ===== OXO dual-accent system — semantic: teal reads, magenta acts =====
-   RULES: magenta appears ONLY on (a) primary actions + their hover/focus,
-   (b) liveness (availability, cursor, selection), (c) emphasis rims (.hot).
-   Everything informational stays teal. Hover on interactive = warms to magenta
-   (intent = action). Focus-visible = magenta ring (keyboard = acting). */
-html[data-skin="oxo"]{--act:#ff2e88;--act-dim:#ff2e8829;--act-glow:#ff2e8859}
-/* actions */
-html[data-skin="oxo"] .strip .cv,
-html[data-skin="oxo"] .btn.solid{background:var(--act);border-color:var(--act);color:#000;
-  box-shadow:0 0 14px var(--act-glow),0 0 3px var(--act-dim)}
-html[data-skin="oxo"] .btn.solid:hover,
-html[data-skin="oxo"] .strip .cv:hover{box-shadow:0 0 22px var(--act-glow),0 0 0 3px var(--act-dim);filter:brightness(1.08)}
-html[data-skin="oxo"] .btn.ghost{border-color:var(--hairline);color:var(--fg)}
-html[data-skin="oxo"] .btn.ghost:hover{border-color:var(--act);color:var(--act);background:transparent}
-/* hover-intent on textual interactives */
-html[data-skin="oxo"] .socials a:hover{color:var(--act);border-bottom-color:var(--act)}
-html[data-skin="oxo"] .strip nav a:hover{color:var(--act)}
-html[data-skin="oxo"] .proj a:hover,
-html[data-skin="oxo"] .pub a:hover,
-html[data-skin="oxo"] .post a:hover{color:var(--act);border-bottom-color:var(--act)}
+
+
+/* ============================================================
+   ACTION SEMANTICS (all skins) — info accent reads, --act acts.
+   --act appears ONLY on: primary actions + hover-intent, liveness
+   (availability/cursor/selection/Present), emphasis rims, focus.
+   ============================================================ */
+html[data-skin="oxo"]{--act:#ee5396;--act-dim:#ee539629;--act-glow:#ee539652}
+html[data-skin="ink"]{--act:var(--accent);--act-dim:color-mix(in srgb,var(--accent) 16%,transparent);--act-glow:transparent} /* ink = single-accent, as in skin-selection round */
+html[data-skin="mono"]{--act:#e02418;--act-dim:#e0241816;--act-glow:transparent}
+/* primary actions */
+.strip .cv,.btn.solid{background:var(--act);border-color:var(--act);color:var(--accent-ink);
+  box-shadow:0 0 14px var(--act-glow)}
+.btn.solid:hover,.strip .cv:hover{box-shadow:0 0 22px var(--act-glow),0 0 0 3px var(--act-dim);filter:brightness(1.07)}
+.btn.ghost{border-color:var(--hairline);color:var(--fg)}
+.btn.ghost:hover{border-color:var(--act);color:var(--act);background:transparent}
+/* hover-intent on every textual interactive */
+.strip nav a:hover,.socials a:hover,
+.proj a:hover,.pub a:hover,.post a:hover{color:var(--act);border-bottom-color:var(--act)}
 /* liveness */
-html[data-skin="oxo"] .avail .dot{background:var(--act);animation-name:pulseact}
+.avail .dot{background:var(--act);animation-name:pulseact}
 @keyframes pulseact{0%{box-shadow:0 0 0 0 var(--act-dim)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
-html[data-skin="oxo"] .cursor{background:var(--act)}
-html[data-skin="oxo"] ::selection{background:var(--act);color:#000}
+.cursor{background:var(--act)}
+::selection{background:var(--act);color:var(--accent-ink)}
+.when .now{color:var(--act)}
+.cinfo b.live{color:var(--act)}
+.foot .ok{color:var(--act)}
+.pipe::before{content:"● ";color:var(--act)}
 /* emphasis rims */
-html[data-skin="oxo"] .tag.hot{border-color:color-mix(in srgb,var(--act) 60%,var(--hairline))}
-/* forms: focusing a field = acting */
-html[data-skin="oxo"] .field input:focus,
-html[data-skin="oxo"] .field textarea:focus{border-color:var(--act);box-shadow:0 0 0 3px var(--act-dim)}
-/* keyboard a11y */
-html[data-skin="oxo"] :focus-visible{outline:2px solid var(--act);outline-offset:2px;border-radius:2px}
+.tag.hot{border-color:color-mix(in srgb,var(--act) 55%,var(--hairline))}
+/* forms = acting */
+.field input:focus,.field textarea:focus{border-color:var(--act);box-shadow:0 0 0 3px var(--act-dim)}
+/* keyboard */
+:focus-visible{outline:2px solid var(--act);outline-offset:2px;border-radius:2px}
+/* scrollbar: quiet, informational */
+html{scrollbar-width:none}
+::-webkit-scrollbar{display:none}
+/* logo placeholder: solid info accent (real asset replaces .monogram) */
+.monogram{background:var(--accent);color:var(--accent-ink)}
 
-/* liveness recolor across sections */
-html[data-skin="oxo"] .when .now{color:var(--act)}
-html[data-skin="oxo"] .cinfo b.live{color:var(--act)}
-html[data-skin="oxo"] .foot .ok{color:var(--act)}
-html[data-skin="oxo"] .pipe::before{content:"● ";color:var(--act)}
-/* logo: solid placeholder until real asset (replace .monogram content+bg with logo img) */
-html[data-skin="oxo"] .monogram{background:var(--accent);color:#000}
+
+/* ===== LEAD voice pack (editorial) ===== */
+html[data-role="lead"] .prompt,html[data-role="research"] .prompt{display:none}
+html[data-role="lead"] .sec-label,html[data-role="research"] .sec-label{letter-spacing:.22em}
+html[data-role="lead"] .sec-label b,html[data-role="research"] .sec-label b{display:none}
+html[data-role="lead"] .typedline{font:italic 500 18px/1.4 var(--serif);color:var(--fg-dim)}
+html[data-role="lead"] .typedline .cursor{display:none}
+html[data-role="lead"] .stat .num{font:600 28px var(--serif)}
+html[data-role="lead"] .stat .num sup{font:italic 500 13px var(--serif);color:var(--act)}
+html[data-role="lead"] .pic{position:relative}
+html[data-role="lead"] .pic::before{content:"";position:absolute;inset:10px -10px -10px 10px;border:1.5px solid var(--fg);z-index:-1}
+html[data-role="lead"] .pic img{border-radius:0}
+
+
+/* LEAD round-2 */
+html[data-role="lead"] .honors{display:flex;flex-direction:column;gap:var(--s3)}
+html[data-role="lead"] .honor{border-left-width:2px}
+html[data-role="lead"] .honor.leadship{order:-1;border-left:3px solid var(--act);padding:var(--s2) 0 var(--s2) var(--s3)}
+html[data-role="lead"] .honor.leadship .t{font:600 15px var(--serif)}
+html[data-role="lead"] .imp-note{display:none}
+
+
+/* ===== RSRCH skin candidates ===== */
+/* (a) LATEX — academic paper: cream white, serif headings, maroon accent */
+html[data-skin="latex"]{--bg:#faf7f0;--bg-2:#f1ede2;--surface:#fffdf8;--surface-2:#f1ede2;
+  --hairline:#d9d2c0;--fg:#1d1b16;--fg-dim:#6f6a5c;--fg-faint:#6f6a5c17;--accent-ink:#fffdf8;
+  --head:var(--serif)}
+html[data-skin="latex"]{--accent:#8a2231;--accent-dim:#8a223120;--act:#8a2231;--act-dim:#8a223120;--act-glow:transparent}
+/* (b) GRAPHITE — ML-plot dark: neutral graphite + viridis green */
+html[data-skin="graphite"]{--bg:#191b1d;--bg-2:#131517;--surface:#212427;--surface-2:#2a2e32;
+  --hairline:#383d42;--fg:#e8eaec;--fg-dim:#8f969c;--fg-faint:#8f969c1d;--accent-ink:#131517}
+html[data-skin="graphite"]{--accent:#35b779;--accent-dim:#35b77922;--act:#fde725;--act-dim:#fde72522;--act-glow:#fde72540}
+
+
+/* ===== RSRCH variations ===== */
+/* graphite-plasma: magenta info / plasma-orange act */
+html[data-skin="graphite2"]{--bg:#191b1d;--bg-2:#131517;--surface:#212427;--surface-2:#2a2e32;
+  --hairline:#383d42;--fg:#e8eaec;--fg-dim:#8f969c;--fg-faint:#8f969c1d;--accent-ink:#131517;
+  --accent:#cc4778;--accent-dim:#cc477822;--act:#f89441;--act-dim:#f8944122;--act-glow:#f894413d}
+/* graphite-ice: cividis ice info / warm yellow act */
+html[data-skin="graphite3"]{--bg:#191b1d;--bg-2:#131517;--surface:#212427;--surface-2:#2a2e32;
+  --hairline:#383d42;--fg:#e8eaec;--fg-dim:#8f969c;--fg-faint:#8f969c1d;--accent-ink:#131517;
+  --accent:#6ec5e0;--accent-dim:#6ec5e022;--act:#ffea46;--act-dim:#ffea4622;--act-glow:#ffea4638}
+/* latex-navy: classic hyperref blue */
+html[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;--surface:#fffdf8;--surface-2:#f1ede2;
+  --hairline:#d9d2c0;--fg:#1d1b16;--fg-dim:#6f6a5c;--fg-faint:#6f6a5c17;--accent-ink:#fffdf8;
+  --head:var(--serif);--accent:#1a4fa0;--accent-dim:#1a4fa01e;--act:#1a4fa0;--act-dim:#1a4fa01e;--act-glow:transparent}
+/* latex-forest: old-journal deep green */
+html[data-skin="latex3"]{--bg:#faf7f0;--bg-2:#f1ede2;--surface:#fffdf8;--surface-2:#f1ede2;
+  --hairline:#d9d2c0;--fg:#1d1b16;--fg-dim:#6f6a5c;--fg-faint:#6f6a5c17;--accent-ink:#fffdf8;
+  --head:var(--serif);--accent:#1e6b4f;--accent-dim:#1e6b4f1e;--act:#1e6b4f;--act-dim:#1e6b4f1e;--act-glow:transparent}
+
+
+/* per-preset skills order (from CV lane skills_order) */
+#skills .in{display:flex;flex-direction:column}
+#skills .sec-label{order:-10}#skills h2{order:-9}
+html[data-role="platform"] .sg-backend{order:-2}html[data-role="platform"] .sg-cloud{order:-1}
+html[data-role="aisec"] .sg-sec{order:-2}html[data-role="aisec"] .sg-ml{order:-1}
+html[data-role="research"] .sg-ml{order:-2}html[data-role="research"] .sg-lang{order:-1}
 
 </style>
 </head>
@@ -324,12 +388,9 @@ html[data-skin="oxo"] .monogram{background:var(--accent);color:#000}
     <button data-r="default" aria-pressed="true">CORE</button>
     <button data-r="devsecops" aria-pressed="false">SEC</button>
     <button data-r="platform" aria-pressed="false">GO</button>
+    <button data-r="aisec" aria-pressed="false">AI-SEC</button>
+    <button data-r="research" aria-pressed="false">RSRCH</button>
     <button data-r="lead" aria-pressed="false">LEAD</button>
-  </div>
-  <div class="roles" title="skins">
-    <button data-s="oxo" aria-pressed="true">OXO</button>
-    <button data-s="ink" aria-pressed="false">INK</button>
-    <button data-s="mono" aria-pressed="false">MONO</button>
   </div>
   <a class="cv" href="#">↓ CV</a>
 </header>
@@ -387,51 +448,95 @@ html[data-skin="oxo"] .monogram{background:var(--accent);color:#000}
     <div class="sec-label"><b>02</b>experience --core</div>
     <h2>Experience</h2>
     <div class="row">
-      <div class="when"><span class="now">Jan 2023 — Present</span><br>project-based</div>
-      <div>
-        <div class="role">Security &amp; Software Engineer</div>
-        <div class="org">INDEPENDENT / FREELANCE</div>
-        <ul>
-          <li>Sole-built the 10-microservice rebuild of a 270k-user real-estate platform on AWS; in staging.</li>
-          <li>Built OCPP / SunSpec-Modbus protocol adapters normalizing multi-vendor energy-device data.</li>
-          <li>Assessed 15+ crypto/fintech ventures for VC investment decisions.</li>
-        </ul>
+        <div class="when"><span class="now">Jan 2023 — Present</span><br>project-based</div>
+        <div>
+          <div class="role">Security &amp; Software Engineer</div>
+          <div class="org">INDEPENDENT / FREELANCE</div>
+          <ul>
+            <li>Sole-built the 10-microservice PHP/Laravel rebuild of a live housing-listings platform (270k registered users, 360k+ cumulative listings) on AWS; in staging.</li>
+            <li>Built protocol adapters (OCPP for EV chargers, SunSpec/Modbus for solar inverters, IEC 62056 for smart meters) for a smart-grid monitoring stack (InfluxDB, Grafana).</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="when">Aug 2024 — May 2025</div>
-      <div>
-        <div class="role">R&amp;D Engineer — Cybersecurity</div>
-        <div class="org">DOLUSOFT</div>
-        <ul>
-          <li>Sustained ~400k events/sec: sole-designed modular real-time filtering engine in Go (Kafka → ClickHouse, Redis state, OpenTelemetry).</li>
-          <li>Designed chained, first-seen, and z-score anomaly-detection rules cutting false-positive noise.</li>
-        </ul>
+      <div class="row">
+        <div class="when">Aug 2024 — May 2025</div>
+        <div>
+          <div class="role">R&amp;D Engineer — Cybersecurity</div>
+          <div class="org">DOLUSOFT</div>
+          <ul>
+            <li>Sustained ~400k events/sec: sole-designed a modular real-time filtering engine in Go from 80+ sources (Kafka → ClickHouse, Redis state, OpenTelemetry).</li>
+            <li>Designed chained, first-seen, and z-score anomaly-detection rules cutting false-positive noise.</li>
+            <li>Built a Go multi-channel alerting service (Slack, email, webhook) with rate limiting and policy-based routing.</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="when">Jan 2022 — Apr 2025<br>part-time</div>
-      <div>
-        <div class="role">Research Assistant (TÜBİTAK-funded)</div>
-        <div class="org">MIDDLE EAST TECHNICAL UNIVERSITY (METU)</div>
-        <ul>
-          <li>98.11% intrusion-detection accuracy (SGD one-class SVM); first-author at AINA 2024.</li>
-          <li>Built end-to-end GPU training pipeline for the DIONA LSTM intrusion-detection system.</li>
-        </ul>
+      <div class="row">
+        <div class="when">Dec 2023 — Apr 2024<br>contract</div>
+        <div>
+          <div class="role">Technical Consultant</div>
+          <div class="org">CASTRUM</div>
+          <ul>
+            <li>Assessed the codebases, architecture, and technical risk of 15–20 startup ventures to support investment decisions.</li>
+            <li>Joined investor meetings and produced feasibility assessments for prospective deals.</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="when">Jul 2021 — May 2022</div>
-      <div>
-        <div class="role">Cyber Security Specialist (Tech Lead — OSSArch)</div>
-        <div class="org">INTERPROBE BILGI TEKNOLOJILERI</div>
-        <ul>
-          <li>Shipped MVP SIEM/SOAR in 3 months vs the 6–12 month norm; formed and led a 6-engineer DevSecOps team.</li>
-          <li>Trained 4 engineers + ASELSAN partners; taught at Istanbul Aydın University; POCs at GISEC Dubai.</li>
-        </ul>
+      <div class="row">
+        <div class="when">Sep 2023 — Jul 2024<br>contract</div>
+        <div>
+          <div class="role">Web3 Security Engineer / DevSecOps</div>
+          <div class="org">SARDIS</div>
+          <ul>
+            <li>Investigated and remediated a security incident on the network's web infrastructure.</li>
+            <li>Reviewed and redesigned infrastructure; quality-reviewed smart contracts written by the core team.</li>
+            <li>Top contributor to the network's StakeDex staking-platform frontend (7 commits, TypeScript).</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="early">// earlier — business development &amp; IT ops: <b>Boraq-Group, Apply Center · 2018–2020</b></div>
+      <div class="row">
+        <div class="when">Jan 2022 — Apr 2025<br>part-time</div>
+        <div>
+          <div class="role">Research Assistant (TÜBİTAK-funded)</div>
+          <div class="org">MIDDLE EAST TECHNICAL UNIVERSITY (METU)</div>
+          <ul>
+            <li>98.11% intrusion-detection accuracy (SGD one-class SVM); first-author publication at AINA 2024 (Springer).</li>
+            <li>Created a container-specific vulnerability dataset for Kubernetes environments.</li>
+            <li>Built the end-to-end GPU training pipeline for the DIONA LSTM intrusion-detection system.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Jul 2021 — May 2022</div>
+        <div>
+          <div class="role">Cyber Security Specialist (Tech Lead — OSSArch)</div>
+          <div class="org">INTERPROBE BILGI TEKNOLOJILERI</div>
+          <ul>
+            <li>Shipped an MVP SIEM/SOAR platform in 3 months vs the 6–12 month norm; formed and led a 6-engineer DevSecOps team (TDD, DDD, daily agile).</li>
+            <li>Deployed EDR/EPP, WAF, and DNS-security for enterprise clients incl. a defense contractor and a municipality; ran a penetration test for the municipal client.</li>
+            <li>Trained 4 engineers + ASELSAN partners; taught at Istanbul Aydın University; POCs at GISEC Dubai.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Jun 2019 — Jan 2020</div>
+        <div>
+          <div class="role">Sales / IT Manager</div>
+          <div class="org">APPLY CENTER (STARTUP)</div>
+          <ul>
+            <li>Administered the company's Zoho CRM and ran its social media; Odoo/Zoho ERP across sales and IT operations.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Jul 2018 — Sep 2018</div>
+        <div>
+          <div class="role">Business Development Analyst</div>
+          <div class="org">BORAQ-GROUP</div>
+          <ul>
+            <li>Developed proposals and pitched to prospective clients; maintained business relationships and CRM records through market research.</li>
+          </ul>
+        </div>
+      </div>
   </div>
 </section>
 
@@ -442,20 +547,42 @@ html[data-skin="oxo"] .monogram{background:var(--accent);color:#000}
     <h2>Selected work</h2>
     <div class="projs">
       <div class="proj">
-        <div class="yr">2024</div>
-        <h3>SmartGridLedger</h3>
-        <p>Multi-org Hyperledger Fabric chaincode (TypeScript) on Kubernetes + Istio for secure energy-distribution settlement; published at MedPower 2024.</p>
-        <span><a href="https://github.com/skylight74/SmartGridLedger">github ↗</a></span>
-      </div>
-      <div class="proj">
         <div class="yr">2024 – 2025</div>
         <h3>Real-Time Detection Engine</h3>
         <p>Go stream-processing engine, Kafka → ClickHouse at ~400k events/sec with Redis state, OpenTelemetry, and a configurable detection + alerting rule engine.</p>
       </div>
       <div class="proj">
         <div class="yr">2022 – 2025</div>
-        <h3>DIONA — LSTM IDS</h3>
-        <p>TÜBİTAK-funded research system at METU; built the end-to-end GPU training pipeline. Enterprise pilot at Koç Sistem (Azure Sentinel/Defender phase).</p>
+        <h3>DIONA — LSTM Intrusion Detection</h3>
+        <p>TÜBİTAK-funded METU research system; built the end-to-end GPU training pipeline. Enterprise pilot at Koç Sistem (Azure Sentinel/Defender phase). Ecosystem: ML training engine, GPU-LSTM prediction, ai4iot monitoring stack.</p>
+        <span><a href="https://github.com/nightswall/DIONA">github ↗</a></span>
+      </div>
+      <div class="proj">
+        <div class="yr">2024</div>
+        <h3>SmartGridLedger</h3>
+        <p>Multi-org Hyperledger Fabric chaincode (TypeScript) on Kubernetes + Istio for secure energy-distribution settlement; published at MedPower 2024.</p>
+        <span><a href="https://github.com/skylight74/SmartGridLedger">github ↗</a> · <a href="https://mohamed-amins-personal-organizat.gitbook.io/smart-grid-ledger">docs ↗</a></span>
+      </div>
+      <div class="proj">
+        <div class="yr">2021 – 2022</div>
+        <h3>OSSArch — Open-Source SIEM/SOAR</h3>
+        <p>Modular NOC/SOC platform, tiered packaging, built entirely on open source (TheHive, Cortex, MISP, ELK, Wazuh, Snort, pfSense) with OSINT enrichment; delivered by the 6-engineer team led at Interprobe.</p>
+      </div>
+      <div class="proj">
+        <div class="yr">2022</div>
+        <h3>Container Security Vulnerability Assessment</h3>
+        <p>Assessed microservices apps (Pitstop, Robot Shop, Kubernetes Goat); documented SQLi, NoSQLi, RabbitMQ, and SMTP vulnerabilities. Groundwork for the AINA 2024 research.</p>
+      </div>
+    </div>
+    <div class="skill-group" style="margin-top:var(--s4)">
+      <div class="skill-label"><b>»</b>Open source</div>
+      <div class="post" style="border-bottom:1px solid var(--hairline)">
+        <div class="d">merged</div>
+        <div><a href="https://github.com/chadsr/waybar-crypto/pull/105">waybar-crypto #105</a><p>Custom formatting options — global and per-coin format strings, case-sensitive tickers.</p></div>
+      </div>
+      <div class="post">
+        <div class="d">PR</div>
+        <div><a href="https://github.com/anomalyco/opencode/pull/9208">opencode #9208</a><p>Documented theme hot-reloading (SIGUSR2), discovered through source-code analysis.</p></div>
       </div>
     </div>
   </div>
@@ -466,16 +593,20 @@ html[data-skin="oxo"] .monogram{background:var(--accent);color:#000}
   <div class="in reveal">
     <div class="sec-label"><b>04</b>skills --grouped</div>
     <h2>Skills</h2>
-    <div class="skill-group"><div class="skill-label"><b>»</b>Security &amp; DevSecOps</div>
-      <div class="tags"><span class="tag hot">DevSecOps</span><span class="tag">secure SDLC</span><span class="tag">SAST/DAST/SCA</span><span class="tag hot">SIEM/SOAR (ELK · Wazuh · TheHive · MISP · Suricata · Sentinel)</span><span class="tag">detection engineering</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">threat hunting</span><span class="tag">red/blue team</span><span class="tag">Burp · ZAP · Nmap · Metasploit</span><span class="tag">ISO 27001</span></div></div>
-    <div class="skill-group"><div class="skill-label"><b>»</b>Cloud &amp; Infrastructure</div>
+    <div class="skill-group sg-sec"><div class="skill-label"><b>»</b>Security &amp; DevSecOps</div>
+      <div class="tags"><span class="tag hot">DevSecOps</span><span class="tag">secure SDLC</span><span class="tag">SAST/DAST/SCA</span><span class="tag hot">SIEM/SOAR (ELK · Wazuh · TheHive · MISP · Suricata · Sentinel)</span><span class="tag">detection engineering</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">threat hunting</span><span class="tag">red/blue team</span><span class="tag">Burp · ZAP · Nmap · Metasploit</span><span class="tag">FortiGate (NGFW)</span><span class="tag">ISO 27001</span><span class="tag">GDPR &amp; CIS (familiarity)</span></div></div>
+    <div class="skill-group sg-cloud"><div class="skill-label"><b>»</b>Cloud &amp; Infrastructure</div>
       <div class="tags"><span class="tag hot">Kubernetes (Helm · Istio)</span><span class="tag">Docker</span><span class="tag hot">Terraform</span><span class="tag">Ansible</span><span class="tag">AWS</span><span class="tag">CI/CD · GitOps</span><span class="tag">OpenTelemetry</span><span class="tag">Prometheus · Grafana</span><span class="tag">Proxmox</span></div></div>
-    <div class="skill-group"><div class="skill-label"><b>»</b>Backend &amp; Streaming</div>
+    <div class="skill-group sg-backend"><div class="skill-label"><b>»</b>Backend &amp; Streaming</div>
       <div class="tags"><span class="tag hot">Go</span><span class="tag hot">Python</span><span class="tag">C#</span><span class="tag">TypeScript</span><span class="tag">Bash</span><span class="tag hot">Kafka</span><span class="tag">ClickHouse</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">gRPC · REST</span><span class="tag">event-driven</span></div></div>
-    <div class="skill-group"><div class="skill-label"><b>»</b>Applied ML &amp; Data</div>
+    <div class="skill-group sg-ml"><div class="skill-label"><b>»</b>Applied ML &amp; Data</div>
       <div class="tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span><span class="tag">MLOps (GPU K8s)</span><span class="tag">anomaly detection</span><span class="tag">LSTM</span></div></div>
-    <div class="skill-group"><div class="skill-label"><b>»</b>Fintech &amp; DLT · Languages</div>
-      <div class="tags"><span class="tag">technical due diligence</span><span class="tag">Hyperledger Fabric</span><span class="tag">PCI DSS &amp; SOC 2 (familiarity)</span><span class="tag">Arabic (native)</span><span class="tag">English (C1)</span><span class="tag">Turkish (B2)</span></div></div>
+    <div class="skill-group sg-fin"><div class="skill-label"><b>»</b>Fintech &amp; DLT</div>
+      <div class="tags"><span class="tag">technical due diligence</span><span class="tag">Hyperledger Fabric (chaincode)</span><span class="tag">transaction-grade streaming</span><span class="tag">PCI DSS &amp; SOC 2 (familiarity)</span></div></div>
+    <div class="skill-group sg-cert"><div class="skill-label"><b>»</b>Certifications</div>
+      <div class="tags"><span class="tag">planned 2026: AWS Solutions Architect – Associate</span><span class="tag">then CKA</span></div></div>
+    <div class="skill-group sg-lang"><div class="skill-label"><b>»</b>Languages</div>
+      <div class="tags"><span class="tag hot">Arabic (native)</span><span class="tag">English (C1)</span><span class="tag">Turkish (B2)</span></div></div>
   </div>
 </section>
 
@@ -489,20 +620,21 @@ html[data-skin="oxo"] .monogram{background:var(--accent);color:#000}
       <div>
         <div class="t">Misuse Detection and Response for Orchestrated Microservices Based Software</div>
         <div class="a">M. Aly Amin, A. H. Dogan, E. S. Kuru, Y. Sever, P. Angin — first author</div>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-031-57942-4_22">springer ↗</a>
+        <a href="https://link.springer.com/chapter/10.1007/978-3-031-57942-4_22">springer ↗</a><div class="a">Presented in Japan · TÜBİTAK Grant #120E537 · TÜBA GEBİP Program</div>
       </div>
     </div>
     <div class="pub">
       <div class="v">MedPower<br>2024</div>
       <div>
         <div class="t">Permissioned Blockchain-Based Monitoring Framework for DER-Integrated Distribution Networks</div>
-        <div class="a">P. Angin et al., incl. M. Aly Amin</div>
+        <div class="a">P. Angin et al., incl. M. Aly Amin · TÜBİTAK Grant #120E537</div>
       </div>
     </div>
     <div class="honors">
+      <div class="honor leadship"><div class="y">2016 — 2019</div><div class="t">Chairman — METU International Student Association</div><div class="d">Led a 200+ member organization; 5+ events incl. a refugee-support conference (METU · ASAM · HÜGO).</div></div>
       <div class="honor"><div class="y">2012</div><div class="t">International Chemistry Olympiad</div><div class="d">Egypt national team — Washington, D.C.</div></div>
       <div class="honor"><div class="y">2014</div><div class="t">Türkiye Bursları Scholarship</div><div class="d">Funded BSc at METU</div></div>
-      <div class="honor"><div class="y">2017</div><div class="t">MIT Enterprise Forum Pan-Arab</div><div class="d">Startup competition finalist</div></div>
+      <div class="honor"><div class="y">2018</div><div class="t">MIT Enterprise Forum Pan-Arab</div><div class="d">Three-day intensive entrepreneurship program — Amman, Jordan</div></div>
     </div>
   </div>
 </section>
@@ -516,6 +648,8 @@ html[data-skin="oxo"] .monogram{background:var(--accent);color:#000}
       <div class="svc"><div class="no">01</div><h3>DevSecOps &amp; Cloud Security</h3><p>CI/CD hardening, SIEM/SOAR on open-source stacks (ELK, Wazuh, TheHive), Kubernetes and Terraform infrastructure, AWS security.</p></div>
       <div class="svc"><div class="no">02</div><h3>Go Backend &amp; Streaming Systems</h3><p>Real-time pipelines in Go with Kafka, ClickHouse, and Redis; filtering engine sustaining ~400k events/sec, OpenTelemetry end to end.</p></div>
       <div class="svc"><div class="no">03</div><h3>Security Assessment &amp; Technical DD</h3><p>Architecture and code review, penetration-testing tooling, technical due diligence on venture investments (15+ assessed).</p></div>
+      <div class="svc"><div class="no">04</div><h3>Web3 Development</h3><p>Permissioned blockchain on Hyperledger Fabric: multi-org chaincode in TypeScript on Kubernetes; published at MedPower 2024.</p></div>
+      <div class="svc"><div class="no">05</div><h3>Blockchain Security</h3><p>Smart-contract and chaincode review, permissioned-network security, technical risk assessment of crypto ventures.</p></div>
     </div>
   </div>
 </section>
@@ -569,18 +703,47 @@ if(!del&&i<w.length){i++;setTimeout(tick,55);}else if(!del){del=true;setTimeout(
 else if(i>0){i--;setTimeout(tick,26);}else{del=false;r=(r+1)%roles.length;setTimeout(tick,280);}})();}
 
 /* role presets */
-const kickers={default:"Security & Infrastructure Engineering",devsecops:"DevSecOps — pipelines, detection, response",platform:"Platform & Backend — Go, streaming, scale",lead:"Engineering Leadership — teams that ship"};
-document.querySelectorAll('.roles button[data-s]').forEach(b=>b.addEventListener('click',()=>{
-  document.documentElement.dataset.skin=b.dataset.s;
-  document.querySelectorAll('.roles button[data-s]').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  draw();
-}));
-document.querySelectorAll('.roles button[data-r]').forEach(b=>b.addEventListener('click',()=>{
-  document.documentElement.dataset.role=b.dataset.r;
+const kickers={default:"Security & Infrastructure Engineering",devsecops:"DevSecOps — pipelines, detection, response",platform:"Platform & Backend — Go, streaming, scale",lead:"Engineering Leadership — teams that ship",research:"Security-ML Research — detection, published",aisec:"AI × Security — detection models in production"};
+const sums={
+ aisec:'Detection engineer bridging <b>security and applied ML</b>: 98.11% IDS accuracy (<b>one-class SVM, AINA 2024</b>), the OSSArch SIEM/SOAR stack, and a <b>~400k events/sec Go engine</b> with detection-as-code anomaly rules — MLOps on <b>GPU Kubernetes</b>.',
+ research:'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM; LSTM sequence models in PyTorch</b>); built the end-to-end <b>GPU training pipeline on Kubernetes</b> for the DIONA IDS (TÜBİTAK #120E537, <b>Koç Sistem pilot</b>) and a container-specific vulnerability dataset.',
+ devsecops:'DevSecOps engineer: formed and led a <b>six-engineer team</b> that shipped a SIEM/SOAR platform in <b>3 months</b>; builds secure <b>CI/CD, Kubernetes, and Terraform</b> pipelines; sole-built a real-time Go detection engine at <b>~400k events/sec</b> (SAST/DAST/SCA · ELK/Wazuh/Sentinel · AWS).',
+ platform:'Backend engineer for <b>high-throughput Go systems</b>: sole-built a Kafka → ClickHouse stream engine sustaining <b>~400k events/sec</b> (Redis, OpenTelemetry), rebuilt a <b>270k-user platform into 10 microservices</b> on AWS — event-driven architecture, gRPC, distributed systems.',
+ default:'I work where security meets systems: formed and led a <b>six-engineer DevSecOps team</b>, sole-built a <b>real-time Go detection engine</b>, and first-authored a peer-reviewed intrusion-detection paper (<b>AINA 2024, Springer</b>).',
+ lead:'I build teams that ship: <b>formed and led six engineers</b> to deliver an MVP SIEM/SOAR in <b>3 months vs the 6–12 month norm</b>, <b>trained 4 engineers and ASELSAN partners</b>, taught at university, and led a <b>200+ member organization</b>.'
+};
+const stat3={default:['98.11%','IDS accuracy — first-author, AINA 2024 (Springer)'],lead:['4+','engineers & ASELSAN partners trained']};
+const stat4={research:['2','peer-reviewed papers — AINA (Springer) · MedPower, TÜBİTAK-funded']};
+const statMvp={platform:['270k','user platform rebuilt as 10 microservices on AWS']};
+const tagline='Engineering leader — security, platform, delivery.';
+const heroImg=()=>document.querySelector('.pic img');const basePhoto='profile-pic.jpg',leadPhoto='lead-photo.jpg';
+const openTo={default:'DevSecOps · Platform/Backend (Go) · Security · Tech Lead',devsecops:'DevSecOps · Security Engineering · Platform/Cloud',platform:'Platform / Backend (Go) · SRE · DevSecOps',lead:'Tech Lead / Engineering Lead · DevSecOps · Platform · Security',research:'Security-ML Research · Detection Engineering · Applied ML R&D',aisec:'AI Security / Detection Engineering · Security-ML · DevSecOps'};
+const eduLabels={impact:'Impact',experience:'Experience',projects:'Selected work',skills:'Skills',research:'Research, Honors & Leadership',services:'Services',writing:'Writing',contact:'Contact'};
+const labelMap={lead:eduLabels,research:eduLabels};
+const labelOrig={};document.querySelectorAll('section.card').forEach(sc=>{const l=sc.querySelector('.sec-label');if(l)labelOrig[sc.id]=l.innerHTML;});
+const roleSkin={default:'oxo',devsecops:'mono',platform:'ink',lead:'ink',research:'latex2',aisec:'graphite'};
+function applyRole(rname){const b={dataset:{r:rname}};
+  document.documentElement.dataset.role=rname;
+  document.documentElement.dataset.skin=roleSkin[rname];
   document.getElementById('kicker').textContent=kickers[b.dataset.r];
-  document.querySelectorAll('.roles button[data-r]').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  draw();
-}));
+  document.querySelector('.sum').innerHTML=sums[b.dataset.r]||sums.default;
+  const s3=stat3[b.dataset.r]||stat3.default;
+  const acc=document.querySelector('.stat.s-acc');acc.querySelector('.num').textContent=s3[0];acc.querySelector('.lbl').textContent=s3[1];
+  const mv=document.querySelector('.stat.s-mvp');
+  if(statMvp[b.dataset.r]){mv.querySelector('.num').textContent=statMvp[b.dataset.r][0];mv.querySelector('.lbl').textContent=statMvp[b.dataset.r][1];}
+  else{mv.querySelector('.num').textContent='3 mo';mv.querySelector('.lbl').textContent='SIEM/SOAR MVP shipped vs 6–12 mo company norm';}
+  const t4=document.querySelector('.stat.s-team');
+  if(stat4[b.dataset.r]){t4.querySelector('.num').textContent=stat4[b.dataset.r][0];t4.querySelector('.lbl').textContent=stat4[b.dataset.r][1];}
+  else{t4.querySelector('.num').textContent='6 eng';t4.querySelector('.lbl').textContent='DevSecOps team formed, led, and trained';}
+  if((b.dataset.r==='research'||b.dataset.r==='aisec')&&!rm){r=roles.indexOf('Security-ML Researcher');i=0;}
+  if(b.dataset.r==='lead'){el.textContent=tagline;heroImg().src=leadPhoto;}else{heroImg().src=basePhoto;if(rm)el.textContent=roles[0];}
+  document.querySelector('.kv b').textContent=openTo[b.dataset.r]||openTo.default;
+  document.querySelectorAll('section.card').forEach(sc=>{const l=sc.querySelector('.sec-label');if(!l)return;
+    if(labelMap[b.dataset.r]&&labelMap[b.dataset.r][sc.id]){l.textContent=labelMap[b.dataset.r][sc.id];}else if(labelOrig[sc.id]){l.innerHTML=labelOrig[sc.id];}});
+  document.querySelectorAll('.roles button[data-r]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.r===rname));
+  renderStatic();draw();
+}
+document.querySelectorAll('.roles button[data-r]').forEach(b=>b.addEventListener('click',()=>applyRole(b.dataset.r)));
 
 /* scrollspy + crumb + reveal */
 const secs=[...document.querySelectorAll('section.card')];
@@ -608,19 +771,35 @@ const cu=new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.6});
 document.querySelectorAll('.stat .num').forEach(n=>cu.observe(n));
 
-/* canvas dot grid — cursor-reactive, cheap */
+/* canvas dot grid — static layer pre-rendered offscreen; per-frame work =
+   composite + ~120 glow dots near cursor. Colors read ONCE per render. */
 const cv=document.getElementById('grid'),cx=cv.getContext('2d');
-let W,H,mx=-999,my=-999;const GAP=34;
-function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;draw();}
-function draw(){cx.clearRect(0,0,W,H);
+let W,H,mx=-999,my=-999;const GAP=34,R=180;
+const off=document.createElement('canvas');const ox=off.getContext('2d');
+function renderStatic(){
+  if(!W||!H)return;
+  const css=getComputedStyle(document.documentElement);
+  const base=css.getPropertyValue('--fg-dim').trim();
+  off.width=W;off.height=H;ox.clearRect(0,0,W,H);
+  ox.fillStyle=base;ox.globalAlpha=0.09;
+  for(let x=GAP/2;x<W;x+=GAP)for(let y=GAP/2;y<H;y+=GAP)ox.fillRect(x-.5,y-.5,1,1);
+  ox.globalAlpha=1;}
+function draw(){
+  if(!W||!H||!off.width)return;
+  cx.clearRect(0,0,W,H);cx.drawImage(off,0,0);
+  if(mx<0)return;
   const acc=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
-  for(let x=GAP/2;x<W;x+=GAP)for(let y=GAP/2;y<H;y+=GAP){
-    const d=Math.hypot(x-mx,y-my);const near=Math.max(0,1-d/180);
-    const base=getComputedStyle(document.documentElement).getPropertyValue('--fg-dim').trim();cx.fillStyle=near>0?acc:base;
-    cx.globalAlpha=0.09+near*0.5;
-    const s=1+near*1.6;cx.fillRect(x-s/2,y-s/2,s,s);}
+  const x0=Math.max(GAP/2,Math.floor((mx-R)/GAP)*GAP+GAP/2),x1=Math.min(W,mx+R);
+  const y0=Math.max(GAP/2,Math.floor((my-R)/GAP)*GAP+GAP/2),y1=Math.min(H,my+R);
+  cx.fillStyle=acc;
+  for(let x=x0;x<=x1;x+=GAP)for(let y=y0;y<=y1;y+=GAP){
+    const d=Math.hypot(x-mx,y-my);if(d>R)continue;
+    const near=1-d/R;cx.globalAlpha=0.09+near*0.5;
+    const sz=1+near*1.6;cx.fillRect(x-sz/2,y-sz/2,sz,sz);}
   cx.globalAlpha=1;}
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;renderStatic();draw();}
 addEventListener('resize',size);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){mx=my=-999;}});
 if(!rm&&matchMedia('(hover:hover)').matches){
   let raf=null;
   addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;if(!raf)raf=requestAnimationFrame(()=>{draw();raf=null;});});
@@ -629,9 +808,9 @@ size();
 /* allow #skin=...&role=... for direct links/screenshots */
 const h=new URLSearchParams(location.hash.slice(1));
 if(h.get('skin'))document.documentElement.dataset.skin=h.get('skin');
-if(h.get('role'))document.documentElement.dataset.role=h.get('role');
+if(h.get('role'))applyRole(h.get('role'));
 if(h.get('accent')){document.documentElement.style.setProperty('--accent','#'+h.get('accent'));document.documentElement.style.setProperty('--accent-dim','#'+h.get('accent')+'22');}
-draw();
+renderStatic();draw();
 </script>
 </body>
 </html>
