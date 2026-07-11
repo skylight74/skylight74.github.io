@@ -266,17 +266,48 @@ html[data-skin="oxo"][data-role="platform"]{--accent:#78a9ff;--accent-dim:#78a9f
 html[data-skin="oxo"][data-role="lead"]{--accent:#be95ff;--accent-dim:#be95ff26}
 
 
-/* ===== oxo dual-accent: teal informs, magenta acts ===== */
-html[data-skin="oxo"]{--accent2:#ee5396;--accent2-dim:#ee539622}
+
+
+/* ===== OXO dual-accent system — semantic: teal reads, magenta acts =====
+   RULES: magenta appears ONLY on (a) primary actions + their hover/focus,
+   (b) liveness (availability, cursor, selection), (c) emphasis rims (.hot).
+   Everything informational stays teal. Hover on interactive = warms to magenta
+   (intent = action). Focus-visible = magenta ring (keyboard = acting). */
+html[data-skin="oxo"]{--act:#ff2e88;--act-dim:#ff2e8829;--act-glow:#ff2e8859}
+/* actions */
 html[data-skin="oxo"] .strip .cv,
-html[data-skin="oxo"] .btn.solid{background:var(--accent2);border-color:var(--accent2);color:#000}
-html[data-skin="oxo"] .btn.solid:hover{filter:brightness(1.12)}
-html[data-skin="oxo"] .avail .dot{background:var(--accent2);animation-name:pulse2}
-@keyframes pulse2{0%{box-shadow:0 0 0 0 var(--accent2-dim)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
-html[data-skin="oxo"] .cursor{background:var(--accent2)}
-html[data-skin="oxo"] ::selection{background:var(--accent2);color:#000}
-html[data-skin="oxo"] .tag.hot{border-color:color-mix(in srgb,var(--accent2) 60%,var(--hairline));color:var(--fg)}
-html[data-skin="oxo"] .monogram{background:linear-gradient(135deg,var(--accent) 0 55%,var(--accent2) 55% 100%);color:#000}
+html[data-skin="oxo"] .btn.solid{background:var(--act);border-color:var(--act);color:#000;
+  box-shadow:0 0 14px var(--act-glow),0 0 3px var(--act-dim)}
+html[data-skin="oxo"] .btn.solid:hover,
+html[data-skin="oxo"] .strip .cv:hover{box-shadow:0 0 22px var(--act-glow),0 0 0 3px var(--act-dim);filter:brightness(1.08)}
+html[data-skin="oxo"] .btn.ghost{border-color:var(--hairline);color:var(--fg)}
+html[data-skin="oxo"] .btn.ghost:hover{border-color:var(--act);color:var(--act);background:transparent}
+/* hover-intent on textual interactives */
+html[data-skin="oxo"] .socials a:hover{color:var(--act);border-bottom-color:var(--act)}
+html[data-skin="oxo"] .strip nav a:hover{color:var(--act)}
+html[data-skin="oxo"] .proj a:hover,
+html[data-skin="oxo"] .pub a:hover,
+html[data-skin="oxo"] .post a:hover{color:var(--act);border-bottom-color:var(--act)}
+/* liveness */
+html[data-skin="oxo"] .avail .dot{background:var(--act);animation-name:pulseact}
+@keyframes pulseact{0%{box-shadow:0 0 0 0 var(--act-dim)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+html[data-skin="oxo"] .cursor{background:var(--act)}
+html[data-skin="oxo"] ::selection{background:var(--act);color:#000}
+/* emphasis rims */
+html[data-skin="oxo"] .tag.hot{border-color:color-mix(in srgb,var(--act) 60%,var(--hairline))}
+/* forms: focusing a field = acting */
+html[data-skin="oxo"] .field input:focus,
+html[data-skin="oxo"] .field textarea:focus{border-color:var(--act);box-shadow:0 0 0 3px var(--act-dim)}
+/* keyboard a11y */
+html[data-skin="oxo"] :focus-visible{outline:2px solid var(--act);outline-offset:2px;border-radius:2px}
+
+/* liveness recolor across sections */
+html[data-skin="oxo"] .when .now{color:var(--act)}
+html[data-skin="oxo"] .cinfo b.live{color:var(--act)}
+html[data-skin="oxo"] .foot .ok{color:var(--act)}
+html[data-skin="oxo"] .pipe::before{content:"● ";color:var(--act)}
+/* logo: solid placeholder until real asset (replace .monogram content+bg with logo img) */
+html[data-skin="oxo"] .monogram{background:var(--accent);color:#000}
 
 </style>
 </head>
@@ -517,7 +548,7 @@ html[data-skin="oxo"] .monogram{background:linear-gradient(135deg,var(--accent) 
       <div class="cinfo">
         <div><span class="k">email</span><b>contact@mohamedalyamin.com</b></div>
         <div><span class="k">base</span><b>Çankaya / Ankara</b> — Istanbul · relocation · remote</div>
-        <div><span class="k">status</span><b>Available</b> — freelance / full-time</div>
+        <div><span class="k">status</span><b class="live">Available</b> — freelance / full-time</div>
         <div><span class="k">elsewhere</span><b>LinkedIn · GitHub · Telegram</b></div>
       </div>
     </div>

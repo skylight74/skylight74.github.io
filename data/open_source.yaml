@@ -1,0 +1,10 @@
+# Selected open-source contributions (his go 2026-07-11: small + humble,
+# external-validation items only). StakeDex deliberately NOT here — it's
+# Sardis's own org, folded into the Sardis experience entry instead.
+contributions:
+  - name: "waybar-crypto"
+    detail: "PR #105 (merged): custom formatting options — global and per-coin format strings, case-sensitive ticker support."
+    url: "https://github.com/chadsr/waybar-crypto/pull/105"
+  - name: "opencode"
+    detail: "PR #9208: documented the theme hot-reloading feature (SIGUSR2), discovered through source-code analysis."
+    url: "https://github.com/anomalyco/opencode/pull/9208"
