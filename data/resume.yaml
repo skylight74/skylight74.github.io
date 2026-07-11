@@ -44,6 +44,7 @@ experience:
       <ul>
           <li>Investigated and remediated a security incident on the network's web infrastructure.</li>
           <li>Reviewed and redesigned infrastructure, and quality-reviewed smart contracts written by the core team.</li>
+          <li>Top contributor to the network's StakeDex staking-platform frontend (7 commits, TypeScript).</li>
       </ul>
   - period: "Jan 2022 - Apr 2025"
     title: "RESEARCH ASSISTANT (PART-TIME, TÜBİTAK-FUNDED)"
@@ -93,7 +94,7 @@ education:
     title: "Middle East Technical University (METU)"
     place: "Ankara, Turkey"
     body_html: |-
-      <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient.</p>
+      <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient. Built a containerized MPLAB X development environment used by METU embedded-systems students.</p>
   # DROPPED 2026-07-10 (his call, delegated: "do what you recommend and feel
   # wouldn't push recruiters away"). Was: "Cyber security specialty program,"
   # May 2021 - Nov 2021, "Certificate preparation program at Interprobe."

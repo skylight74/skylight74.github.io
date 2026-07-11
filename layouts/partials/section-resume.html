@@ -273,6 +273,29 @@
                                 </div>
                             </section>
                             <section
+                                class="elementor-section elementor-top-section elementor-element elementor-section-full_width elementor-section-height-default">
+                                <div class="elementor-container elementor-column-gap-no">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="content custom-text">
+                                                <div class="title"><span>Selected Open-Source Contributions</span></div>
+                                            </div>
+                                            <div class="skills-item">
+                                                <div class="skills-list list">
+                                                    <ul>
+{{ range site.Data.open_source.contributions }}
+                                                        <li class="border-line-h">
+                                                            <div class="name"><span><strong>{{ .name }}</strong> — {{ .detail }}{{ with .url }} <a href="{{ . }}" target="_blank">PR</a>{{ end }}</span></div>
+                                                        </li>
+{{ end }}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section
                                 class="elementor-section elementor-top-section elementor-element elementor-element-d0f4f70 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                                 data-id="d0f4f70" data-element_type="section">
                                 <div class="elementor-container elementor-column-gap-no">
