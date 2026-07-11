@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Aly Amin — Security &amp; Infrastructure Engineer</title>
+<style>
+/* ====== DIRECTION B: editorial paper — magazine CV ====== */
+:root{
+  --paper:#f6f2e9; --paper-2:#efe9dc; --ink:#1d1c18; --ink-dim:#6b675c;
+  --rule:#d8d1c0; --accent:#a63d2f;            /* deep brick red */
+  --accent-soft:#a63d2f14;
+  --serif:"IBM Plex Serif",Georgia,serif;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:72px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6}
+/* masthead */
+.mast{display:flex;align-items:baseline;gap:var(--s4);padding:var(--s4) var(--s5);
+  border-bottom:2px solid var(--ink)}
+.mast .brand{font:600 15px var(--serif);letter-spacing:.01em}
+.mast nav{margin-left:auto;display:flex;gap:var(--s4)}
+.mast nav a{font:500 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-dim);text-decoration:none}
+.mast nav a.on{color:var(--accent)}
+.mast nav a:hover{color:var(--ink)}
+
+.wrap{max-width:960px;margin:0 auto;padding:var(--s6) var(--s5) var(--s7)}
+
+/* hero: asymmetric editorial spread */
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:var(--s6);align-items:start}
+.kicker{font:500 12px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:var(--s3)}
+h1{font:600 56px/1.05 var(--serif);letter-spacing:-.02em;margin-bottom:var(--s3)}
+h1 em{font-style:italic;color:var(--accent)}
+.roleline{font:italic 500 19px/1.4 var(--serif);color:var(--ink-dim);margin-bottom:var(--s4)}
+.sum{font-size:16px;max-width:54ch;margin-bottom:var(--s4)}
+.sum strong{font-weight:600}
+.facts{border-top:1px solid var(--ink);padding-top:var(--s3);display:grid;gap:var(--s2);
+  font-size:13.5px;color:var(--ink-dim)}
+.facts b{color:var(--ink);font-weight:600}
+.facts .k{font:500 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  display:inline-block;width:92px}
+.cta{margin-top:var(--s4);display:flex;gap:var(--s3);align-items:center;flex-wrap:wrap}
+.btn{font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  padding:13px 24px;border:1.5px solid var(--ink);color:var(--ink)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft)}
+.socials{display:flex;gap:var(--s3);margin-left:var(--s2)}
+.socials a{font:400 12px var(--sans);color:var(--ink-dim);text-decoration:underline;text-underline-offset:3px}
+.socials a:hover{color:var(--accent)}
+
+.side{position:relative}
+.side img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:contrast(1.03)}
+.side .frame{position:absolute;inset:12px -12px -12px 12px;border:1.5px solid var(--ink);z-index:-1}
+.avail{margin-top:var(--s4);font:500 12px var(--mono);letter-spacing:.08em;color:var(--ink)}
+.avail .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--accent);margin-right:8px}
+
+/* stats: newspaper figures row */
+.stats{margin-top:var(--s6);display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:2px solid var(--ink);border-bottom:1px solid var(--rule)}
+.stat{padding:var(--s4) var(--s3);border-right:1px solid var(--rule)}
+.stat:last-child{border-right:none}
+.stat .num{font:600 30px var(--serif);color:var(--ink)}
+.stat .num sup{font:italic 500 14px var(--serif);color:var(--accent)}
+.stat .lbl{font-size:12px;color:var(--ink-dim);margin-top:4px}
+
+/* services: numbered essay list */
+.sect{margin-top:var(--s6)}
+.sect .label{font:500 11.5px var(--mono);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:var(--s4)}
+.svc{display:grid;grid-template-columns:64px 240px 1fr;gap:var(--s4);
+  padding:var(--s4) 0;border-bottom:1px solid var(--rule)}
+.svc:first-of-type{border-top:1px solid var(--rule)}
+.svc .no{font:italic 500 22px var(--serif);color:var(--accent)}
+.svc h3{font:600 18px var(--serif)}
+.svc p{font-size:14px;color:var(--ink-dim)}
+
+/* honors: footnote strip */
+.honors{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);margin-top:var(--s3)}
+.honor{border-left:2px solid var(--accent);padding-left:var(--s3)}
+.honor .y{font:italic 500 14px var(--serif);color:var(--accent)}
+.honor .t{font:600 13.5px var(--sans);margin:2px 0}
+.honor .d{font-size:12px;color:var(--ink-dim)}
+
+.colo{margin-top:var(--s7);border-top:2px solid var(--ink);padding-top:var(--s3);
+  display:flex;justify-content:space-between;font:400 11px var(--mono);color:var(--ink-dim)}
+
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr}
+  .side{order:-1;max-width:260px}
+  h1{font-size:40px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2n){border-right:none}
+  .svc{grid-template-columns:1fr;gap:var(--s2)}
+  .mast nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="brand">Mohamed Aly Amin</div>
+  <nav>
+    <a href="index-editorial.html" class="on">About</a><a href="resume-carbon.html">Resume</a><a href="#">Contact</a><a href="#">Blog</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="kicker">Security &amp; Infrastructure Engineering</div>
+      <h1>Where security <em>meets</em> systems.</h1>
+      <div class="roleline">Mohamed Aly Amin — DevSecOps engineer, Go backend developer, security-ML researcher.</div>
+      <p class="sum">Led a <strong>six-engineer DevSecOps team</strong>, sole-built a real-time Go detection
+      engine sustaining <strong>~400k events/sec</strong>, and first-authored a peer-reviewed
+      intrusion-detection paper (<strong>AINA 2024, Springer</strong>).</p>
+      <div class="facts">
+        <div><span class="k">open to</span> <b>DevSecOps · Platform / Backend (Go) · Security Engineering</b></div>
+        <div><span class="k">location</span> <b>Ankara</b> — open to Istanbul / relocation / remote</div>
+        <div><span class="k">languages</span> Arabic (native) · English (C1) · Turkish (B2)</div>
+      </div>
+      <div class="cta">
+        <a class="btn solid" href="#">Download CV</a>
+        <a class="btn ghost" href="#">Contact</a>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/mohamedalyamin">LinkedIn</a>
+          <a href="https://github.com/skylight74">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="side">
+      <img src="profile-pic.jpg" alt="Mohamed Aly Amin">
+      <div class="frame"></div>
+      <div class="avail"><span class="dot"></span>AVAILABLE — FREELANCE / FULL-TIME</div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><div class="num">~400k<sup>/s</sup></div><div class="lbl">events — Go detection engine</div></div>
+    <div class="stat"><div class="num">98.11<sup>%</sup></div><div class="lbl">IDS accuracy — AINA 2024 (Springer)</div></div>
+    <div class="stat"><div class="num">3<sup>mo</sup></div><div class="lbl">SIEM/SOAR MVP vs 6–12 mo norm</div></div>
+    <div class="stat"><div class="num">15<sup>+</sup></div><div class="lbl">ventures assessed — technical DD</div></div>
+  </section>
+
+  <section class="sect">
+    <div class="label">Services</div>
+    <div class="svc">
+      <div class="no">01</div>
+      <h3>DevSecOps &amp; Cloud Security</h3>
+      <p>CI/CD hardening, SIEM/SOAR on open-source stacks (ELK, Wazuh, TheHive), Kubernetes and Terraform infrastructure, AWS security.</p>
+    </div>
+    <div class="svc">
+      <div class="no">02</div>
+      <h3>Go Backend &amp; Streaming Systems</h3>
+      <p>Real-time pipelines in Go with Kafka, ClickHouse, and Redis; filtering engine sustaining ~400k events/sec with OpenTelemetry end to end.</p>
+    </div>
+    <div class="svc">
+      <div class="no">03</div>
+      <h3>Security Assessment &amp; Technical Due Diligence</h3>
+      <p>Architecture and code review, penetration-testing tooling, and technical due diligence on venture investments (15+ assessed).</p>
+    </div>
+  </section>
+
+  <section class="sect">
+    <div class="label">Honors</div>
+    <div class="honors">
+      <div class="honor"><div class="y">2012</div><div class="t">International Chemistry Olympiad</div><div class="d">Egypt national team — Washington, D.C.</div></div>
+      <div class="honor"><div class="y">2014</div><div class="t">Türkiye Bursları Scholarship</div><div class="d">Funded BSc at METU</div></div>
+      <div class="honor"><div class="y">2017</div><div class="t">MIT Enterprise Forum Pan-Arab</div><div class="d">Startup competition finalist</div></div>
+    </div>
+  </section>
+
+  <div class="colo">
+    <span>set in ibm plex serif / sans / mono — 1 stylesheet, 0 frameworks</span>
+    <span>last updated 2026-07-10</span>
+  </div>
+</main>
+</body>
+</html>

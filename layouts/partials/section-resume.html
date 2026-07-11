@@ -262,7 +262,7 @@
                                                 <ul>
 {{ range site.Data.projects.projects }}
                                                     <li class="border-line-h">
-                                                        <div class="name"><span><strong>{{ .name }}</strong> ({{ .date }}). {{ .body }}{{ with .url }} <a href="{{ . }}" target="_blank">GitHub</a>{{ end }}</span></div>
+                                                        <div class="name"><span><strong>{{ .name }}</strong> ({{ .date }}). {{ .body }}{{ with .url }} <a href="{{ . }}" target="_blank">GitHub</a>{{ end }}{{ with .docs }} &middot; <a href="{{ . }}" target="_blank">docs</a>{{ end }}</span></div>
                                                     </li>
 {{ end }}
                                                 </ul>

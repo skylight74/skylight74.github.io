@@ -7,6 +7,7 @@ projects:
   - name: "SmartGridLedger — Permissioned Blockchain (Hyperledger Fabric)"
     date: "2024"
     url: "https://github.com/skylight74/SmartGridLedger"
+    docs: "https://mohamed-amins-personal-organizat.gitbook.io/smart-grid-ledger"
     body: "Authored original multi-org Fabric chaincode (TypeScript) on a Kubernetes + Istio network for secure energy-distribution settlement; published at MedPower 2024 (TÜBİTAK-funded)."
   - name: "Real-Time Detection Engine (Go)"
     date: "2024 – 2025"
@@ -14,4 +15,5 @@ projects:
   # Koç Sistem pilot confirmed true + public by Mohamed 2026-07-11.
   - name: "DIONA — LSTM Intrusion-Detection System"
     date: "2022 – 2025"
+    url: "https://github.com/nightswall/DIONA"
     body: "TÜBİTAK-funded research system at METU; built the end-to-end GPU training pipeline (GPU-enabled Kubernetes cluster, dataset curation, evaluation). Ran an enterprise pilot at Koç Sistem (Azure Sentinel/Defender integration phase)."
