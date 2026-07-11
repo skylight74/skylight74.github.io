@@ -4,6 +4,15 @@
 # unverified claims (the Koç Sistem pilot detail stays off until he
 # confirms it).
 projects:
+  # OSSArch + Container Security added 2026-07-11 (his ask). Wording from
+  # legacy master-cv (its top-5 project strategy listed both); detail here
+  # deliberately complements, not repeats, the experience bullets.
+  - name: "OSSArch — Open-Source SIEM/SOAR Platform"
+    date: "2021 – 2022"
+    body: "Modular NOC/SOC platform with tiered packaging (Zero-Dollar, Pro, Enterprise), built entirely on open source: TheHive, Cortex, MISP, ELK/Beats, Grafana, Snort, Wazuh, Zabbix, pfSense — with OSINT enrichment from VirusTotal and AlienVault OTX. Designed and delivered by the 6-engineer team formed and led at Interprobe."
+  - name: "Container Security Vulnerability Assessment"
+    date: "2022"
+    body: "Security assessment of microservices applications (Pitstop, Robot Shop, Kubernetes Goat); identified and documented SQL injection, NoSQL injection, RabbitMQ, and SMTP vulnerabilities. Groundwork for the AINA 2024 container-security research."
   - name: "SmartGridLedger — Permissioned Blockchain (Hyperledger Fabric)"
     date: "2024"
     url: "https://github.com/skylight74/SmartGridLedger"
