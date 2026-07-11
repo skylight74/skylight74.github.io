@@ -25,7 +25,9 @@ experience:
       </ul>
   # Added 2026-07-11 (his ask): LinkedIn-parity entries the site was missing.
   # Wording/dates from prep/linkedin-checklist.md live-verified ledger 2026-07-07.
-  - period: "Dec 2023 - May 2024"
+  # End month corrected 2026-07-11, his attestation: "Dec 2023 to late April
+  # 2024". LinkedIn shows May 2024 — off by one, his-hands fix queued.
+  - period: "Dec 2023 - Apr 2024"
     title: "TECHNICAL DUE DILIGENCE ENGINEER (CONTRACT)"
     company: "CASTRUM"
     body_html: |-
