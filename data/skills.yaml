@@ -11,7 +11,7 @@
 # layouts scope and belongs to the rebuild lane.
 categories:
   - label: "Security & DevSecOps"
-    details: "DevSecOps, secure SDLC, SAST/DAST/SCA, SIEM/SOAR (ELK, Wazuh, TheHive, Cortex, MISP, Suricata, Microsoft Sentinel), detection engineering, MITRE ATT&CK, threat hunting, vulnerability management, red/blue team, penetration-testing tooling (Burp Suite, OWASP ZAP, Nmap, Metasploit), FortiGate (NGFW), ISO 27001"
+    details: "DevSecOps, secure SDLC, SAST/DAST/SCA, SIEM/SOAR (ELK, Wazuh, TheHive, Cortex, MISP, Suricata, Microsoft Sentinel), detection engineering, MITRE ATT&CK, threat hunting, vulnerability management, red/blue team, penetration-testing tooling (Burp Suite, OWASP ZAP, Nmap, Metasploit), FortiGate (NGFW), ISO 27001, GDPR & CIS Controls (familiarity)"
   - label: "Cloud & Infrastructure"
     details: "Kubernetes (Helm, Skaffold, Istio, Kind, MetalLB), Docker, Terraform, Ansible, AWS (EC2, Lightsail, RDS, S3, IAM), CI/CD, GitOps, OpenTelemetry, Prometheus, Grafana, Proxmox"
   - label: "Backend & Streaming"
