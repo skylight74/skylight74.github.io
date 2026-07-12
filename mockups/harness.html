@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Task 2 verification harness — throwaway test page, NOT part of the built site.
+     Loads the real static/css/site.css + static/js/site.js and exercises: skin/role
+     token resolution, typed-roles init from #site-cfg, canvas dot-grid, stat count-up,
+     and the .reveal fade-in. -->
+<html lang="en" data-skin="oxo" data-role="core">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>site.css / site.js harness</title>
+<link rel="stylesheet" href="../static/css/site.css">
+</head>
+<body>
+<canvas id="grid" aria-hidden="true"></canvas>
+
+<header class="strip">
+  <div class="monogram">M</div>
+  <div class="who">harness<small id="crumb">~/test</small></div>
+</header>
+
+<div class="card">
+  <div class="in">
+    <div class="prompt"><span class="path">~</span> $ whoami</div>
+    <div class="typedline"><span class="t" id="typed"></span><span class="cursor"></span></div>
+    <div class="stats">
+      <div class="stat"><div class="num" data-count="98.11" data-post="%">98.11%</div><div class="lbl">harness stat — count-up + suffix</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="reveal"><p>Reveal block — should gain class "vis" shortly after load (IntersectionObserver).</p></div>
+
+<script id="site-cfg" type="application/json">{"roles":["Harness Role A","Harness Role B"]}</script>
+<script src="../static/js/site.js"></script>
+</body>
+</html>
