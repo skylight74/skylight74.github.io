@@ -1,0 +1,10 @@
+{{ $p := .p }}
+<div class="in reveal">
+  <div class="sec-label"><b>01</b>impact --measured</div>
+  <h2>Numbers that survived review.</h2>
+  <div class="stats">
+    {{ range $p.stats }}{{ $s := index site.Data.presets.stats . }}
+    <div class="stat"><div class="num"{{ with $s.count }} data-count="{{ . }}"{{ end }}{{ with $s.pre }} data-pre="{{ . }}"{{ end }}{{ with $s.post }} data-post="{{ . }}"{{ end }}>{{ $s.num }}</div><div class="lbl">{{ $s.label }}</div></div>
+    {{ end }}
+  </div>
+</div>
