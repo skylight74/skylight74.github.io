@@ -1,5 +1,6 @@
+{{ $p := .p }}
 <div class="in reveal">
-  <div class="sec-label"><b>02</b>experience --core</div>
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Experience</div>{{ else }}<div class="sec-label"><b>02</b>experience --core</div>{{ end }}
   <h2>Experience</h2>
   {{ range site.Data.resume.experience }}
   {{ $when := replace .period " - " " — " }}

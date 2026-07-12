@@ -1,5 +1,6 @@
+{{ $p := .p }}
 <div class="in reveal">
-  <div class="sec-label"><b>03</b>projects --selected</div>
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Selected work</div>{{ else }}<div class="sec-label"><b>03</b>projects --selected</div>{{ end }}
   <h2>Selected work</h2>
   <div class="projs">
     {{ range site.Data.projects.projects }}
