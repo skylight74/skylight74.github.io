@@ -1,12 +1,12 @@
-{{ $p := .p }}{{ $pg := .page }}
+{{ $p := .p }}{{ $pg := .page }}{{ $isPreset := or $pg.IsHome $pg.Params.preset }}{{ $isBlogPost := and (not $isPreset) $pg.IsPage (eq $pg.Section "blog") }}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if $pg.IsHome }}Mohamed Aly Amin — Security & Infrastructure Engineer{{ else }}{{ $pg.Title }}{{ end }}</title>
-<meta name="description" content="{{ $p.summary_html | plainify | truncate 155 }}">
+{{ $desc := $p.summary_html | plainify | truncate 155 }}{{ if $isBlogPost }}{{ with $pg.Summary | plainify | truncate 155 }}{{ $desc = . }}{{ end }}{{ end }}<meta name="description" content="{{ $desc }}">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="canonical" href="{{ site.BaseURL }}">
-<meta property="og:type" content="profile">
-<meta property="og:title" content="Mohamed Aly Amin — {{ $p.kicker }}">
+<link rel="canonical" href="{{ if $isPreset }}{{ site.BaseURL }}{{ else }}{{ $pg.Permalink }}{{ end }}">
+<meta property="og:type" content="{{ if $isBlogPost }}article{{ else }}profile{{ end }}">
+<meta property="og:title" content="{{ if $isBlogPost }}{{ $pg.Title }}{{ else }}Mohamed Aly Amin — {{ $p.kicker }}{{ end }}">
 <meta property="og:description" content="{{ $p.summary_html | plainify | truncate 200 }}">
 <meta property="og:image" content="{{ site.BaseURL }}media/profile-pic.jpg">
 <meta property="og:url" content="{{ $pg.Permalink }}">
