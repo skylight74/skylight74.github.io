@@ -1,0 +1,22 @@
+{{ $p := .p }}{{ $pg := .page }}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if $pg.IsHome }}Mohamed Aly Amin — Security & Infrastructure Engineer{{ else }}{{ $pg.Title }}{{ end }}</title>
+<meta name="description" content="{{ $p.summary_html | plainify | truncate 155 }}">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="canonical" href="{{ site.BaseURL }}">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mohamed Aly Amin — {{ $p.kicker }}">
+<meta property="og:description" content="{{ $p.summary_html | plainify | truncate 200 }}">
+<meta property="og:image" content="{{ site.BaseURL }}media/profile-pic.jpg">
+<meta property="og:url" content="{{ $pg.Permalink }}">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/rss+xml" title="Mohamed Aly Amin » Feed" href="/index.xml">
+<link rel="stylesheet" href="/css/site.css">
+<script defer src="/js/site.js"></script>
+{{ if $pg.IsHome }}<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Mohamed Aly Amin",
+"jobTitle":"Security & Infrastructure Engineer","url":"{{ site.BaseURL }}",
+"email":"mailto:{{ site.Data.contact.email }}","address":{"@type":"PostalAddress","addressLocality":"Ankara","addressCountry":"TR"},
+"alumniOf":"Middle East Technical University","sameAs":["https://www.linkedin.com/in/mohamedalyamin","https://github.com/skylight74"]}
+</script>{{ end }}

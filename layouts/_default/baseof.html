@@ -1,1 +1,9 @@
-{{ partial "head.html" . }}{{ partial "body-open.html" . }}{{ partial "sidebar-nav.html" . }}{{ partial "card-profile.html" . }}{{ partial "sidebar-widgets.html" . }}{{ block "main" . }}{{ end }}{{ partial "tail-scripts.html" . }}
+<!DOCTYPE html>
+<html lang="en-US" data-skin="{{ (index site.Data.presets.presets (.Params.preset | default "core")).skin }}" data-role="{{ .Params.preset | default "core" }}">
+<head>{{ partial "new/head.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}</head>
+<body>
+<canvas id="grid" aria-hidden="true"></canvas>
+{{ partial "new/strip.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}
+{{ block "main" . }}{{ end }}
+</body>
+</html>
