@@ -1,13 +1,13 @@
 {{ define "main" }}
 {{ $p := index site.Data.presets.presets (.Params.preset | default "core") }}
 {{ $ctx := dict "page" . "p" $p }}
-<section class="card" id="hero">{{ partial "new/hero.html" $ctx }}</section>
-<section class="card" id="impact">{{ partial "new/section-impact.html" $ctx }}</section>
-<section class="card" id="experience">{{ partial "new/section-experience.html" $ctx }}</section>
-<section class="card" id="projects">{{ partial "new/section-projects.html" $ctx }}</section>
-<section class="card" id="skills">{{ partial "new/section-skills.html" $ctx }}</section>
-<section class="card" id="research">{{ partial "new/section-research.html" $ctx }}</section>
-<section class="card" id="services">{{ partial "new/section-services.html" $ctx }}</section>
-<section class="card" id="writing">{{ partial "new/section-writing.html" $ctx }}</section>
-<section class="card" id="contact">{{ partial "new/section-contact.html" $ctx }}</section>
+<section class="card" id="hero">{{ partial "hero.html" $ctx }}</section>
+<section class="card" id="impact">{{ partial "section-impact.html" $ctx }}</section>
+<section class="card" id="experience">{{ partial "section-experience.html" $ctx }}</section>
+<section class="card" id="projects">{{ partial "section-projects.html" $ctx }}</section>
+<section class="card" id="skills">{{ partial "section-skills.html" $ctx }}</section>
+<section class="card" id="research">{{ partial "section-research.html" $ctx }}</section>
+<section class="card" id="services">{{ partial "section-services.html" $ctx }}</section>
+<section class="card" id="writing">{{ partial "section-writing.html" $ctx }}</section>
+<section class="card" id="contact">{{ partial "section-contact.html" $ctx }}</section>
 {{ end }}

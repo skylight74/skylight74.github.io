@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-US" data-skin="{{ (index site.Data.presets.presets (.Params.preset | default "core")).skin }}" data-role="{{ .Params.preset | default "core" }}">
-<head>{{ partial "new/head.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}</head>
+<head>{{ partial "head.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}</head>
 <body>
 <canvas id="grid" aria-hidden="true"></canvas>
-{{ partial "new/strip.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}
+{{ partial "strip.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}
 {{ block "main" . }}{{ end }}
 </body>
 </html>
