@@ -59,7 +59,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px
 .strip{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;row-gap:6px;
   padding:12px var(--s4);border-bottom:1px solid var(--hairline);
   background:color-mix(in srgb,var(--bg-2) 88%,transparent);backdrop-filter:blur(8px)}
-.monogram{width:32px;height:32px;flex:0 0 32px;background:var(--accent);color:var(--accent-ink);
+.monogram{width:32px;height:32px;flex:0 0 32px;text-decoration:none;background:var(--accent);color:var(--accent-ink);
   font:700 18px/32px var(--mono);text-align:center;border-radius:0 0 11px 0}
 .strip .who{font:500 13px var(--mono)}
 .strip .who small{display:block;color:var(--fg-dim);font-size:10px;font-weight:400}

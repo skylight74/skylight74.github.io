@@ -1,8 +1,9 @@
 <header class="strip">
-  <div class="monogram">M</div>
+  <a class="monogram" href="/" aria-label="Home">M</a>
   <div class="who">mohamedalyamin.com<small id="crumb">~/home</small></div>
+  {{ $pfx := "" }}{{ if not (or .page.IsHome .page.Params.preset) }}{{ $pfx = "/" }}{{ end }}
   <nav id="nav">
-    <a href="#hero" class="on">About</a><a href="#impact">Impact</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#research">Research</a><a href="#contact">Contact</a><a href="/blog/">Blog</a>
+    <a href="{{ $pfx }}#hero"{{ if not $pfx }} class="on"{{ end }}>About</a><a href="{{ $pfx }}#impact">Impact</a><a href="{{ $pfx }}#experience">Experience</a><a href="{{ $pfx }}#projects">Projects</a><a href="{{ $pfx }}#skills">Skills</a><a href="{{ $pfx }}#research">Research</a><a href="{{ $pfx }}#contact">Contact</a><a href="/blog/"{{ if eq .page.Section "blog" }} class="on"{{ end }}>Blog</a>
   </nav>
   <a class="cv" href="/media/Mohamed_Aly_Amin_CV.pdf" download>↓ CV</a>
 </header>
