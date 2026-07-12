@@ -1,0 +1,26 @@
+<div class="in reveal">
+  <div class="sec-label"><b>02</b>experience --core</div>
+  <h2>Experience</h2>
+  {{ range site.Data.resume.experience }}
+  {{ $when := replace .period " - " " — " }}
+  <div class="row">
+    <div class="when">{{ if in .period "Present" }}<span class="now">{{ $when }}</span>{{ else }}{{ $when }}{{ end }}{{ with .qualifier }}<br>{{ . }}{{ end }}</div>
+    <div>
+      <div class="role">{{ .title }}</div>
+      <div class="org">{{ .company }}</div>
+      {{ .body_html | safeHTML }}
+    </div>
+  </div>
+  {{ end }}
+  <div class="sec-label" style="margin-top:var(--s4)">Education</div>
+  {{ range site.Data.resume.education }}
+  <div class="row">
+    <div class="when">{{ .period }}</div>
+    <div>
+      <div class="role">{{ .title }}</div>
+      <div class="org">{{ .place }}</div>
+      {{ .body_html | safeHTML }}
+    </div>
+  </div>
+  {{ end }}
+</div>

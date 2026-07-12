@@ -1,0 +1,23 @@
+<div class="in reveal">
+  <div class="sec-label"><b>03</b>projects --selected</div>
+  <h2>Selected work</h2>
+  <div class="projs">
+    {{ range site.Data.projects.projects }}
+    <div class="proj">
+      <div class="yr">{{ .date }}</div>
+      <h3>{{ .name }}</h3>
+      <p>{{ .body }}</p>
+      {{ if or .url .docs }}<span>{{ with .url }}<a href="{{ . }}">github ↗</a>{{ end }}{{ with .docs }} · <a href="{{ . }}">docs ↗</a>{{ end }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <div class="skill-group" style="margin-top:var(--s4)">
+    <div class="skill-label"><b>»</b>Open source</div>
+    {{ range site.Data.open_source.contributions }}
+    <div class="post">
+      <div class="d">PR</div>
+      <div><a href="{{ .url }}">{{ .name }}</a><p>{{ .detail }}</p></div>
+    </div>
+    {{ end }}
+  </div>
+</div>

@@ -5,8 +5,9 @@
 # template; only the per-entry text nodes and description inner-HTML live here.
 experience:
   - period: "Jan 2023 - Present"
-    title: "SECURITY & SOFTWARE ENGINEER"
-    company: "INDEPENDENT / FREELANCE (PROJECT-BASED)"
+    title: "Security & Software Engineer"
+    company: "INDEPENDENT / FREELANCE"
+    qualifier: "project-based"
     logo: "/media/pngegg.png"
     body_html: |-
       <ul>
@@ -14,7 +15,7 @@ experience:
           <li>Built protocol adapters (OCPP for EV chargers, SunSpec/Modbus for solar inverters, IEC 62056 for smart meters) to normalize multi-vendor energy-device data for a smart-grid monitoring stack (InfluxDB, Grafana).</li>
       </ul>
   - period: "Aug 2024 - May 2025"
-    title: "R&D ENGINEER - CYBERSECURITY"
+    title: "R&D Engineer — Cybersecurity"
     company: "DOLUSOFT"
     body_html: |-
       <ul>
@@ -27,8 +28,9 @@ experience:
   # End month corrected 2026-07-11, his attestation: "Dec 2023 to late April
   # 2024". LinkedIn shows May 2024 — off by one, his-hands fix queued.
   - period: "Dec 2023 - Apr 2024"
-    title: "TECHNICAL CONSULTANT (CONTRACT)"
+    title: "Technical Consultant"
     company: "CASTRUM"
+    qualifier: "contract"
     body_html: |-
       <ul>
           <li>Assessed the codebases, architecture, and technical risk of 15-20 startup ventures to support investment decisions.</li>
@@ -37,8 +39,9 @@ experience:
   # Dates his final attestation 2026-07-11: Sep 2023 - Jul 2024 (start was
   # September; LinkedIn's Jul 2023 start wrong, its Jul 2024 end right).
   - period: "Sep 2023 - Jul 2024"
-    title: "WEB3 SECURITY ENGINEER / DEVSECOPS (CONTRACT)"
+    title: "Web3 Security Engineer / DevSecOps"
     company: "SARDIS"
+    qualifier: "contract"
     body_html: |-
       <ul>
           <li>Investigated and remediated a security incident on the network's web infrastructure.</li>
@@ -46,8 +49,9 @@ experience:
           <li>Top contributor to the network's StakeDex staking-platform frontend (7 commits, TypeScript).</li>
       </ul>
   - period: "Jan 2022 - Apr 2025"
-    title: "RESEARCH ASSISTANT (PART-TIME, TÜBİTAK-FUNDED)"
+    title: "Research Assistant (TÜBİTAK-funded)"
     company: "MIDDLE EAST TECHNICAL UNIVERSITY (METU)"
+    qualifier: "part-time"
     body_html: |-
       <ul>
           <li>Reached 98.11% intrusion-detection accuracy by developing an SGD one-class SVM model for containerized microservices; first-author publication at AINA 2024 (Springer).</li>
@@ -55,7 +59,7 @@ experience:
           <li>Built the end-to-end GPU training pipeline (GPU-enabled Kubernetes cluster, dataset curation, evaluation) for the DIONA LSTM intrusion-detection system.</li>
       </ul>
   - period: "Jul 2021 - May 2022"
-    title: "CYBER SECURITY SPECIALIST (TECH LEAD - OSSARCH)"
+    title: "Cyber Security Specialist (Tech Lead — OSSArch)"
     company: "INTERPROBE BILGI TEKNOLOJILERI"
     logo: "/media/961e34a2-f8f6-42a8-8566-85ad6e895b04.jpeg"
     body_html: |-
@@ -69,7 +73,7 @@ experience:
   # early July... we could say July." LinkedIn (live-verified 2026-07-07) also
   # said Jul-Sep 2018.
   - period: "Jun 2019 - Jan 2020"
-    title: "SALES/IT MANAGER"
+    title: "Sales / IT Manager"
     company: "APPLY CENTER (STARTUP)"
     logo: "/media/ApplyCenter-Logo.png"
     body_html: |-
@@ -80,7 +84,7 @@ experience:
   # logo: is ignored by the current fixed-block template; it is there for the
   # range-loop rework (rebuild lane).
   - period: "Jul 2018 - Sep 2018"
-    title: "BUSINESS DEVELOPMENT ANALYST"
+    title: "Business Development Analyst"
     company: "BORAQ-GROUP"
     logo: "/media/Boraq-Group_.png"
     body_html: |-

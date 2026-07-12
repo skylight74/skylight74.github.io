@@ -129,11 +129,6 @@ h1{font:600 42px/1.08 var(--head);letter-spacing:-.015em;margin-bottom:var(--s2)
 .stat{background:var(--surface);padding:var(--s4);display:flex;flex-direction:column;gap:4px}
 .stat .num{font:600 30px var(--mono);color:var(--accent)}
 .stat .lbl{font:400 11.5px var(--mono);color:var(--fg-dim)}
-html[data-role="devsecops"] .stat.s-mvp{order:-2}html[data-role="devsecops"] .stat.s-acc{order:-1}
-html[data-role="lead"] .stat.s-team{order:-2}html[data-role="lead"] .stat.s-mvp{order:-1}
-html[data-role="research"] .stat.s-acc{order:-2}html[data-role="research"] .stat.s-eps{order:-1}
-html[data-role="aisec"] .stat.s-acc{order:-2}html[data-role="aisec"] .stat.s-eps{order:-1}
-html[data-role="platform"] .stat.s-eps{order:-2}html[data-role="platform"] .stat.s-mvp{order:-1}
 .imp-note{margin-top:var(--s3);font:400 11.5px var(--mono);color:var(--fg-dim)}
 
 /* ---- experience ---- */
