@@ -1,6 +1,7 @@
 <!-- tags hand-curated from data/skills.yaml (approved mockup); keep in sync -->
+{{ $p := .p }}
 <div class="in reveal">
-  <div class="sec-label"><b>04</b>skills --grouped</div>
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Skills</div>{{ else }}<div class="sec-label"><b>04</b>skills --grouped</div>{{ end }}
   <h2>Skills</h2>
   <div class="skill-group sg-sec"><div class="skill-label"><b>»</b>Security &amp; DevSecOps</div>
     <div class="tags"><span class="tag hot">DevSecOps</span><span class="tag">secure SDLC</span><span class="tag">SAST/DAST/SCA</span><span class="tag hot">SIEM/SOAR (ELK · Wazuh · TheHive · MISP · Suricata · Sentinel)</span><span class="tag">detection engineering</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">threat hunting</span><span class="tag">red/blue team</span><span class="tag">Burp · ZAP · Nmap · Metasploit</span><span class="tag">FortiGate (NGFW)</span><span class="tag">ISO 27001</span><span class="tag">GDPR &amp; CIS (familiarity)</span></div></div>

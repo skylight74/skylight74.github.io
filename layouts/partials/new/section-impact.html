@@ -1,6 +1,6 @@
 {{ $p := .p }}
 <div class="in reveal">
-  <div class="sec-label"><b>01</b>impact --measured</div>
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Impact</div>{{ else }}<div class="sec-label"><b>01</b>impact --measured</div>{{ end }}
   <h2>Numbers that survived review.</h2>
   <div class="stats">
     {{ range $p.stats }}{{ $s := index site.Data.presets.stats . }}
