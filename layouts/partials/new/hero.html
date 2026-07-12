@@ -1,0 +1,27 @@
+{{ $p := .p }}{{ $pg := .page }}
+<div class="in">
+  <div class="pic hero-item">
+    <img src="{{ $p.photo | default "/media/profile-pic.jpg" }}" alt="{{ site.Data.profile.name }}">
+    <div class="avail"><span class="dot"></span> {{ site.Data.profile.availability }}</div>
+  </div>
+  <div>
+    {{ if eq $p.voice "terminal" }}<div class="prompt hero-item"><span class="path">~</span> $ whoami</div>{{ end }}
+    <div class="kicker hero-item" id="kicker">{{ $p.kicker }}</div>
+    <h1 class="hero-item">{{ site.Data.profile.name }}</h1>
+    <div class="typedline hero-item"><span class="t" id="typed" data-pin="{{ $p.typed_pin | default 0 }}"{{ with $p.tagline }} data-static="{{ . }}"{{ end }}></span>{{ if eq $p.voice "terminal" }}<span class="cursor"></span>{{ end }}</div>
+    <p class="sum hero-item">{{ $p.summary_html | safeHTML }}</p>
+    <div class="kv hero-item">
+      <div><span class="k">open-to</span> <b>{{ $p.open_to }}</b></div>
+      <div><span class="k">location</span> {{ site.Data.profile.location_line }}</div>
+      <div><span class="k">languages</span> {{ site.Data.profile.languages_line }}</div>
+    </div>
+    <div class="cta hero-item">
+      <a class="btn solid" href="/media/Mohamed_Aly_Amin_CV.pdf" download>↓ Download CV</a>
+      <a class="btn ghost" href="#contact">Contact</a>
+      <div class="socials">
+        {{ range site.Data.profile.socials }}{{ if in .icon "linkedin" }}<a href="{{ .url }}">LinkedIn</a>{{ end }}{{ end }}{{ range site.Data.profile.socials }}{{ if in .icon "github" }}<a href="{{ .url }}">GitHub</a>{{ end }}{{ end }}{{ range site.Data.profile.socials }}{{ if in .icon "telegram" }}<a href="{{ .url }}">Telegram</a>{{ end }}{{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+<script id="site-cfg" type="application/json">{{ dict "roles" site.Data.profile.roles | jsonify | safeJS }}</script>
