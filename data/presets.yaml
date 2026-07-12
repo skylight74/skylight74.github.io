@@ -50,7 +50,10 @@ presets:
     skin: latex2
     voice: editorial
     kicker: "Security-ML Research — detection, published"
-    summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM; LSTM sequence models in PyTorch</b>); built the end-to-end <b>GPU training pipeline on Kubernetes</b> for the DIONA IDS (TÜBİTAK #120E537, <b>Koç Sistem pilot</b>) and a container-specific vulnerability dataset.'
+    # Grant #120E537 removed from DIONA attribution (Mohamed 2026-07-12: DIONA is his
+    # graduation project, separate from the #120E537 research project; grant number
+    # stays only on the two papers where publications.yaml attests it).
+    summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM; LSTM sequence models in PyTorch</b>); built the end-to-end <b>GPU training pipeline on Kubernetes</b> for the DIONA IDS (TÜBİTAK-funded, <b>Koç Sistem pilot</b>) and a container-specific vulnerability dataset.'
     open_to: "Security-ML Research · Detection Engineering · Applied ML R&D"
     stats: [acc, eps, mvp, papers]
     typed_pin: 5
