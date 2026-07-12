@@ -12,7 +12,7 @@ function initTyped(){
   if(!roles.length) return;
   const staticLine=el.dataset.static;               // editorial presets: fixed tagline
   if(staticLine){el.textContent=staticLine;return}
-  if(rm){el.textContent=roles[0];return}
+  if(rm){el.textContent=roles[+(el.dataset.pin||0)];return}
   let r=+(el.dataset.pin||0),i=0,del=false;
   (function tick(){const w=roles[r];el.textContent=w.slice(0,i);
     if(!del&&i<w.length){i++;setTimeout(tick,55)}
@@ -68,7 +68,7 @@ function initSpy(){
     if(e.isIntersecting){
       e.target.querySelector('.in')?.classList.add('vis');
       const id=e.target.id;
-      navA.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));
+      navA.forEach(a=>{const cur=a.getAttribute('href')==='#'+id;a.classList.toggle('on',cur);cur?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current');});
       document.getElementById('crumb').textContent='~/'+(id==='hero'?'home':id);
     }
   }),{threshold:.45});
