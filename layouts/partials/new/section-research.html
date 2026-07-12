@@ -1,0 +1,7 @@
+{{ $p := .p }}
+<div class="in reveal">
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Research, Honors &amp; Leadership</div>{{ else }}<div class="sec-label"><b>05</b>research --published</div>{{ end }}
+  <h2>Research &amp; honors</h2>
+  {{ range site.Data.publications.publications }}<div class="pub"><div class="v">{{ $parts := split .venue "(" }}{{ if gt (len $parts) 1 }}{{ trim (index $parts 0) " " }}<br>{{ trim (index $parts 1) ")" }}{{ else }}{{ $yr := index (findRE "[0-9]{4}" .venue) 0 }}{{ trim (replace .venue $yr "") " " }}<br>{{ $yr }}{{ end }}</div><div><div class="t">{{ .title }}</div><div class="a">{{ replace (delimit .authors " · ") "Mohamed Aly Amin" "<b>Mohamed Aly Amin</b>" | safeHTML }}</div>{{ with .url }}<a href="{{ . }}">springer ↗</a>{{ end }}{{ with .note }}<div class="a">{{ . }}</div>{{ end }}</div></div>{{ end }}
+  <div class="honors">{{ with index site.Data.volunteering.volunteering 0 }}{{ $yrs := findRE "[0-9]{4}" .period }}<div class="honor leadship"><div class="y">{{ index $yrs 0 }} — {{ index $yrs 1 }}</div><div class="t">{{ .role }} — {{ .organization }}</div><div class="d">{{ index .highlights 0 }}</div></div>{{ end }}{{ range site.Data.honors.honors }}<div class="honor"><div class="y">{{ index (findRE "[0-9]{4}" .title) 0 }}</div><div class="t">{{ .title }}</div><div class="d">{{ .detail }}</div></div>{{ end }}</div>
+</div>
