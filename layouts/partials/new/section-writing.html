@@ -1,0 +1,7 @@
+{{ $p := .p }}
+<div class="in reveal">
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Writing</div>{{ else }}<div class="sec-label"><b>07</b>writing --latest</div>{{ end }}
+  <h2>Writing</h2>
+  {{ range first 3 (where site.RegularPages "Section" "blog") }}<div class="post"><div class="d">{{ .Date.Format "2006-01-02" }}</div><div><a href="{{ .RelPermalink }}">{{ .Title }}</a><p>{{ .Summary | plainify | truncate 90 }}</p></div></div>{{ end }}
+  <div class="pipe">// pipeline: the 400k events/sec engine write-up — in progress</div>
+</div>
