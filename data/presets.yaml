@@ -1,0 +1,67 @@
+# Role-preset content packs. Values approved in mockup v2 (2026-07-12 spec).
+# Content lane may tune wording here; keys/structure belong to the rebuild.
+stats:
+  eps:     { num: "~400k/s", label: "security events — Go detection engine, 80+ sources", count: "400", pre: "~", post: "k/s" }
+  acc:     { num: "98.11%",  label: "IDS accuracy — first-author, AINA 2024 (Springer)", count: "98.11", post: "%" }
+  mvp:     { num: "3 mo",    label: "SIEM/SOAR MVP shipped vs 6–12 mo company norm", count: "3", post: " mo" }
+  team:    { num: "6 eng",   label: "DevSecOps team formed, led, and trained", count: "6", post: " eng" }
+  users:   { num: "270k",    label: "user platform rebuilt as 10 microservices on AWS", count: "270", post: "k" }
+  papers:  { num: "2",       label: "peer-reviewed papers — AINA (Springer) · MedPower, TÜBİTAK-funded", count: "2" }
+  trained: { num: "4+",      label: "engineers & ASELSAN partners trained", count: "4", post: "+" }
+presets:
+  core:
+    url: "/"
+    skin: oxo
+    voice: terminal
+    kicker: "Security & Infrastructure Engineering"
+    summary_html: 'I work where security meets systems: formed and led a <b>six-engineer DevSecOps team</b>, sole-built a <b>real-time Go detection engine</b>, and first-authored a peer-reviewed intrusion-detection paper (<b>AINA 2024, Springer</b>).'
+    open_to: "DevSecOps · Platform/Backend (Go) · Security · Tech Lead"
+    stats: [eps, acc, mvp, team]
+    typed_pin: 0
+  devsecops:
+    url: "/for/devsecops/"
+    skin: mono
+    voice: terminal
+    kicker: "DevSecOps — pipelines, detection, response"
+    summary_html: 'DevSecOps engineer: formed and led a <b>six-engineer team</b> that shipped a SIEM/SOAR platform in <b>3 months</b>; builds secure <b>CI/CD, Kubernetes, and Terraform</b> pipelines; sole-built a real-time Go detection engine at <b>~400k events/sec</b> (SAST/DAST/SCA · ELK/Wazuh/Sentinel · AWS).'
+    open_to: "DevSecOps · Security Engineering · Platform/Cloud"
+    stats: [mvp, acc, eps, team]
+    typed_pin: 0
+  platform:
+    url: "/for/platform/"
+    skin: ink
+    voice: terminal
+    kicker: "Platform & Backend — Go, streaming, scale"
+    summary_html: 'Backend engineer for <b>high-throughput Go systems</b>: sole-built a Kafka → ClickHouse stream engine sustaining <b>~400k events/sec</b> (Redis, OpenTelemetry), rebuilt a <b>270k-user platform into 10 microservices</b> on AWS — event-driven architecture, gRPC, distributed systems.'
+    open_to: "Platform / Backend (Go) · SRE · DevSecOps"
+    stats: [eps, users, acc, team]
+    typed_pin: 2
+  aisec:
+    url: "/for/ai-security/"
+    skin: graphite
+    voice: terminal
+    kicker: "AI × Security — detection models in production"
+    summary_html: 'Detection engineer bridging <b>security and applied ML</b>: 98.11% IDS accuracy (<b>one-class SVM, AINA 2024</b>), the OSSArch SIEM/SOAR stack, and a <b>~400k events/sec Go engine</b> with detection-as-code anomaly rules — MLOps on <b>GPU Kubernetes</b>.'
+    open_to: "AI Security / Detection Engineering · Security-ML · DevSecOps"
+    stats: [acc, eps, mvp, team]
+    typed_pin: 5
+  research:
+    url: "/for/research/"
+    skin: latex2
+    voice: editorial
+    kicker: "Security-ML Research — detection, published"
+    summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM; LSTM sequence models in PyTorch</b>); built the end-to-end <b>GPU training pipeline on Kubernetes</b> for the DIONA IDS (TÜBİTAK #120E537, <b>Koç Sistem pilot</b>) and a container-specific vulnerability dataset.'
+    open_to: "Security-ML Research · Detection Engineering · Applied ML R&D"
+    stats: [acc, eps, mvp, papers]
+    typed_pin: 5
+  lead:
+    url: "/for/lead/"
+    skin: ink
+    voice: editorial
+    serif: true
+    photo: "/media/lead-photo.jpg"
+    tagline: "Engineering leader — security, platform, delivery."
+    kicker: "Engineering Leadership — teams that ship"
+    summary_html: 'I build teams that ship: <b>formed and led six engineers</b> to deliver an MVP SIEM/SOAR in <b>3 months vs the 6–12 month norm</b>, <b>trained 4 engineers and ASELSAN partners</b>, taught at university, and led a <b>200+ member organization</b>.'
+    open_to: "Tech Lead / Engineering Lead · DevSecOps · Platform · Security"
+    stats: [team, mvp, trained, eps]

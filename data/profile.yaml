@@ -20,3 +20,15 @@ socials:
     url: "https://discordapp.com/users/skylight74#3990"
   - icon: "fab fa-brands fa-linkedin-in"
     url: "https://www.linkedin.com/in/mohamedalyamin"
+# --- added by rebuild lane 2026-07-12 (content lane owns values hereafter) ---
+open_to: "DevSecOps · Platform/Backend (Go) · Security · Tech Lead"
+roles:
+  - "DevSecOps Engineer"
+  - "Security Engineer"
+  - "Backend Developer (Go)"
+  - "Site Reliability Engineer"
+  - "Tech Lead"
+  - "Security-ML Researcher"
+availability: "Available — freelance / full-time"
+location_line: "Ankara — Istanbul / relocation / remote"
+languages_line: "Arabic (native) · English (C1) · Turkish (B2)"
