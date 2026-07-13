@@ -42,7 +42,9 @@ presets:
     kicker: "Platform & Backend — Go, streaming, scale"
     summary_html: 'Backend engineer for <b>high-throughput Go systems</b>: sole-built a Kafka → ClickHouse stream engine sustaining <b>~400k events/sec</b> (Redis, OpenTelemetry), rebuilt a <b>270k-user platform into 10 microservices</b> on AWS — event-driven architecture, gRPC, distributed systems.'
     open_to: "Platform / Backend (Go) · SRE · DevSecOps"
-    stats: [eps, users, listings, team]
+    # go-backend lane keeps the AINA/ML edge and reads IC ("sole-designed") — acc restored,
+    # listings dropped (same project as users cell = padding), team = seniority tail.
+    stats: [eps, users, acc, team]
     typed_pin: 2
   aisec:
     url: "/for/ai-security/"
@@ -75,4 +77,5 @@ presets:
     kicker: "Engineering Leadership — teams that ship"
     summary_html: 'I build teams that ship: <b>formed and led six engineers</b> to deliver an MVP SIEM/SOAR in <b>3 months vs the 6–12 month norm</b>, <b>trained 4 engineers and ASELSAN partners</b>, taught at university, and led a <b>200+ member organization</b>.'
     open_to: "Tech Lead / Engineering Lead · DevSecOps · Platform · Security"
-    stats: [team, trained, members, ventures]
+    # EM/TL screens: delivery outcome (mvp) beats investor-side DD (ventures dropped).
+    stats: [team, trained, mvp, members]
