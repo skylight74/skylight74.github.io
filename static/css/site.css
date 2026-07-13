@@ -215,7 +215,7 @@ h1{font:600 42px/1.08 var(--head);letter-spacing:-.015em;margin-bottom:var(--s2)
 /* ---- experience ---- */
 .row{display:grid;grid-template-columns:172px 1fr;gap:var(--s4);padding:var(--s4) 0;
   border-bottom:1px solid var(--hairline);border-left:2px solid transparent}
-.row:hover{border-left-color:var(--accent);background:linear-gradient(90deg,var(--accent-dim),transparent 30%)}
+@media (hover:hover){.row:hover{border-left-color:var(--accent);background:linear-gradient(90deg,var(--accent-dim),transparent 30%)}}
 .row:last-of-type{border-bottom:none}
 .when{font:400 12px var(--mono);color:var(--fg-dim);padding-top:3px}
 .when .now{color:var(--accent)}
