@@ -2,6 +2,7 @@
 <html lang="en-US" data-skin="{{ (index site.Data.presets.presets (.Params.preset | default "core")).skin }}" data-role="{{ .Params.preset | default "core" }}">
 <head>{{ partial "head.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}</head>
 <body>
+<span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
 <canvas id="grid" aria-hidden="true"></canvas>
 {{ if not .Params.nostrip }}{{ partial "strip.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}{{ end }}
 {{ block "main" . }}{{ end }}
