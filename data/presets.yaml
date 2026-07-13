@@ -32,6 +32,9 @@ presets:
     kicker: "Security & Infrastructure Engineering"
     summary_html: 'I work where security meets systems: formed and led a <b>six-engineer DevSecOps team</b>, sole-built a <b>real-time Go detection engine</b>, and first-authored a peer-reviewed intrusion-detection paper (<b>AINA 2024, Springer</b>).'
     open_to: "DevSecOps · Platform/Backend (Go) · Security · Tech Lead"
+    # Explicit approved-5 list (final review caught refconf+housing leaking onto
+    # core via the no-filter fallback after the set grew to 7).
+    projects: [rtengine, diona, sgl, ossarch, containerva]
     stats: [eps, acc, mvp, team]
     typed_pin: 0
   devsecops:

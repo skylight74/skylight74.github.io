@@ -42,7 +42,7 @@ projects:
   # experience bullet on the same page. Shown only via preset selection (platform).
   - name: "Housing-Listings Platform — 10-Microservice Rebuild"
     key: housing
-    date: "2023 – 2025"
+    date: "2023 – Present"
     body: "Sole rebuild of a live housing-listings platform into 10 microservices on AWS (EC2, RDS, S3) — 270k registered users, 360k+ cumulative listings; event-driven architecture, currently in staging."
   - name: "Container Security Vulnerability Assessment"
     key: containerva
