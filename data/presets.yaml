@@ -67,7 +67,7 @@ presets:
     open_to: "AI Security / Detection Engineering · Security-ML · DevSecOps"
     stats: [acc, eps, sources, mvp]
     typed_pin: 0
-    roles: ["Security-ML Researcher", "Security Engineer", "DevSecOps Engineer"]
+    roles: ["Security-ML Researcher", "MLOps Engineer", "Security Engineer", "DevSecOps Engineer"]
   research:
     url: "/for/research/"
     skin: latex2
