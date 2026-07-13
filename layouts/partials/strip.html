@@ -1,5 +1,7 @@
 <header class="strip">
-  <a class="monogram" href="/" aria-label="Home">M</a>
+  {{/* Name-mark: Muhammad/Ali rotational ambigram (= Mohamed Aly), adapted from
+       Wikimedia Commons (Juzer/Gothika, CC BY-SA 3.0) — see static/media/mark-ambigram.svg */}}
+  <a class="monogram mark" href="/" aria-label="Home — Mohamed Aly name ambigram">{{ (readFile "static/media/mark-ambigram.svg") | safeHTML }}</a>
   <div class="who">mohamedalyamin.com<small id="crumb">~/home</small></div>
   {{ $pfx := "" }}{{ if not (or .page.IsHome .page.Params.preset) }}{{ $pfx = "/" }}{{ end }}
   <nav id="nav">
