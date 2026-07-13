@@ -13,6 +13,8 @@ projects:
     key: diona
     date: "2022 – 2025"
     url: "https://github.com/nightswall/DIONA"
+    # Front-facing site attested + verified loading 2026-07-13 (title: "DIONA").
+    docs: "https://nightswall.github.io/"
     # MLOps wording attested by Mohamed 2026-07-13 ("I did MLOps in DIONA").
     body: "Graduation project (BSc, METU); built the end-to-end MLOps pipeline (GPU-enabled Kubernetes cluster, dataset curation, training, evaluation). Ran an enterprise pilot at Koç Sistem (Azure Sentinel/Defender integration phase). Ecosystem repos: ML training engine, GPU-LSTM prediction engine, and a Kubernetes IoT monitoring stack (ai4iot)."
   - name: "SmartGridLedger — Permissioned Blockchain (Hyperledger Fabric)"
