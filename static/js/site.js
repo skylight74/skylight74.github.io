@@ -13,7 +13,7 @@ function initTyped(){
   const staticLine=el.dataset.static;               // editorial presets: fixed tagline
   if(staticLine){el.textContent=staticLine;return}
   if(rm){el.textContent=roles[+(el.dataset.pin||0)];return}
-  let r=+(el.dataset.pin||0),i=0,del=false;
+  let r=+(el.dataset.pin||0),i=0,del=false;if(r>=roles.length)r=0;
   (function tick(){const w=roles[r];el.textContent=w.slice(0,i);
     if(!del&&i<w.length){i++;setTimeout(tick,55)}
     else if(!del){del=true;setTimeout(tick,1500)}
