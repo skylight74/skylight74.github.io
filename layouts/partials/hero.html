@@ -16,7 +16,7 @@
       <div><span class="k">languages</span> {{ site.Data.profile.languages_line }}</div>
     </div>
     <div class="cta hero-item">
-      <a class="btn solid" href="/media/Mohamed_Aly_Amin_CV.pdf" download>↓ Download CV</a>
+      <a class="btn solid" href="{{ $p.cv | default "/media/Mohamed_Aly_Amin_CV.pdf" }}" download="Mohamed_Aly_Amin_CV.pdf">↓ Download CV</a>
       <a class="btn ghost" href="#contact">Contact</a>
       <div class="socials">
         {{ range site.Data.profile.socials }}{{ if in .icon "linkedin" }}<a href="{{ .url }}">LinkedIn</a>{{ end }}{{ end }}{{ range site.Data.profile.socials }}{{ if in .icon "github" }}<a href="{{ .url }}">GitHub</a>{{ end }}{{ end }}{{ range site.Data.profile.socials }}{{ if in .icon "telegram" }}<a href="{{ .url }}">Telegram</a>{{ end }}{{ end }}
