@@ -60,7 +60,10 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
 .cdhome:hover{color:var(--fg);border-color:var(--accent)}
 .peeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s4);margin-top:var(--s4);perspective:1400px}
 .peek{position:relative;display:block;min-height:260px;text-decoration:none;color:var(--fg);
-  transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.25,1)}
+  transform-style:preserve-3d;opacity:0;translate:0 12px;
+  transition:opacity .5s ease var(--d,0s),translate .5s ease var(--d,0s),transform .55s cubic-bezier(.2,.7,.25,1)}
+.reveal.vis .peek{opacity:1;translate:none}
+.peek:nth-child(2){--d:.06s}.peek:nth-child(3){--d:.12s}.peek:nth-child(4){--d:.18s}.peek:nth-child(5){--d:.24s}.peek:nth-child(6){--d:.3s}
 .peek:hover,.peek:focus-visible{transform:rotateY(180deg)}
 .peek .face{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s2);
   padding:var(--s4);border-radius:0 0 18px 0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;
@@ -69,13 +72,20 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
     linear-gradient(150deg,#ffffff14,transparent 45%);
   -webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15);
   box-shadow:0 14px 34px #04123394}
+.peek[data-skin="mono"] .face,.peek[data-skin="ink"] .face,.peek[data-skin="latex2"] .face{
+  background:linear-gradient(150deg,color-mix(in srgb,var(--bg) 86%,transparent),color-mix(in srgb,var(--bg) 94%,transparent)),
+    linear-gradient(150deg,#ffffff10,transparent 45%)}
 .peek .back{transform:rotateY(180deg);justify-content:center}
+.peek .rk{font:600 21px var(--mono);letter-spacing:.05em;color:var(--fg)}
+.peek .dft{font:500 10px var(--mono);letter-spacing:.06em;color:var(--act)}
+.peek .fc{position:absolute;right:14px;bottom:12px;font:400 10px var(--mono);color:var(--fg-dim);opacity:.75}
 .peek .pk{font:600 13.5px var(--head);letter-spacing:.01em;color:var(--accent)}
 .peek em{font:400 11px var(--mono);font-style:normal;color:var(--fg-dim)}
 .peek .u{font:500 10.5px var(--mono);letter-spacing:.08em;color:var(--act)}
 .peek .bs{font:400 12.5px/1.5 var(--sans);color:var(--fg)}
 .peek .bs b{color:var(--accent);font-weight:600}
 @media (prefers-reduced-motion: reduce){
+  .peek{opacity:1;translate:none}
   .peek:hover,.peek:focus-visible{transform:none}
   .peek:hover .front,.peek:focus-visible .front{opacity:0}
   .peek:hover .back,.peek:focus-visible .back{transform:none}

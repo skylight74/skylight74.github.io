@@ -3,16 +3,20 @@
   <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
   <div class="in reveal">
     <a class="cdhome" href="/">cd /&nbsp;&nbsp;# home</a>
-    <div class="sec-label"><b>~</b>for --choose-your-lens</div>
-    <h2>One engineer, six lenses.</h2>
-    <p class="sum">Same attested work — each page reorders the evidence for a different hiring conversation. Flip a card, pick yours.</p>
+    <div class="sec-label"><b>~</b>for --off-menu</div>
+    <h2>You found the switchboard.</h2>
+    <p class="sum">This page isn't linked from anywhere — nicely done. Six tailored views of the same attested work, one per hiring conversation. Flip a card, pick yours.</p>
     <div class="peeks">
+      {{ $lbl := dict "core" "CORE" "devsecops" "SEC" "platform" "GO" "aisec" "AI-SEC" "research" "RSRCH" "lead" "LEAD" }}
       {{ range $k := slice "core" "devsecops" "platform" "aisec" "research" "lead" }}{{ $pp := index site.Data.presets.presets $k }}
       <a class="peek" href="{{ $pp.url }}" data-skin="{{ $pp.skin }}" data-role="{{ $k }}">
         <span class="face front">
+          <span class="rk">{{ index $lbl $k }}</span>
           <span class="pk">{{ $pp.kicker }}</span>
           <em>{{ $pp.open_to }}</em>
           <span class="u">→ {{ $pp.url }}</span>
+          {{ if eq $k "core" }}<span class="dft">● default — this is /</span>{{ end }}
+          <span class="fc" aria-hidden="true">⟳ hover</span>
         </span>
         <span class="face back">
           <span class="bs">{{ $pp.summary_html | safeHTML }}</span>
