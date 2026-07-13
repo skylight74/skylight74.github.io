@@ -48,14 +48,16 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
   --head:var(--serif);--accent:#1a4fa0;--accent-dim:#1a4fa01e;--act:#1a4fa0;--act-dim:#1a4fa01e;--act-glow:transparent}
 
 /* /for role-picker: glass flip cards over a BSOD-blue backdrop (each card wears its role's skin tokens) */
-#for.glassfor{background:radial-gradient(52% 44% at 18% 12%,#6fa8ff26,transparent 60%),
-  radial-gradient(40% 38% at 82% 88%,#ee539618,transparent 60%),
-  linear-gradient(160deg,#071c4d,#0a2a6e 55%,#071737)}
-#for.glassfor .sec-label{color:#b7cbf0}#for.glassfor .sec-label b{color:#6fa8ff}
-#for.glassfor h2{color:#eaf1ff}#for.glassfor .sum{color:#b7cbf0}
+#for.glassfor{background:#000;position:relative;overflow:hidden}
+#for.glassfor>.in{position:relative;z-index:1}
+.orb{position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(72px);opacity:.45;z-index:0;pointer-events:none}
+.o1{background:radial-gradient(circle,#3ddbd9,transparent 66%);top:8%;left:4%;animation:drift1 26s ease-in-out infinite alternate}
+.o2{background:radial-gradient(circle,#ee5396,transparent 66%);bottom:6%;right:2%;animation:drift2 34s ease-in-out infinite alternate}
+@keyframes drift1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(52vw,26vh) scale(1.18)}100%{transform:translate(18vw,52vh) scale(.92)}}
+@keyframes drift2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-46vw,-30vh) scale(1.12)}100%{transform:translate(-14vw,-6vh) scale(1.25)}}
 .cdhome{display:inline-block;margin-bottom:var(--s4);font:500 12px var(--mono);text-decoration:none;
-  color:#0a2a6e;background:#eaf1ff;padding:8px 14px;border-radius:3px}
-.cdhome:hover{background:#fff}
+  color:var(--fg-dim);background:#161616;border:1px solid #393939;padding:8px 14px;border-radius:0 0 9px 0}
+.cdhome:hover{color:var(--fg);border-color:var(--accent)}
 .peeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s4);margin-top:var(--s4);perspective:1400px}
 .peek{position:relative;display:block;min-height:260px;text-decoration:none;color:var(--fg);
   transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.25,1)}
