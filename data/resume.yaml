@@ -8,6 +8,7 @@ experience:
   - period: "Jan 2023 - Present"
     title: "Security & Software Engineer"
     company: "INDEPENDENT / FREELANCE"
+    key: freelance
     qualifier: "project-based"
     logo: "/media/pngegg.png"
     body_html: |-
@@ -18,6 +19,7 @@ experience:
   - period: "Aug 2024 - May 2025"
     title: "R&D Engineer — Cybersecurity"
     company: "DOLUSOFT"
+    key: dolusoft
     body_html: |-
       <ul>
           <li>Sustained ~400k events/sec by sole-designing and building a modular real-time filtering engine in Go, ingesting security events from 80+ sources (Kafka in, filter/aggregate, ClickHouse out, Redis-backed state, OpenTelemetry tracing).</li>
@@ -31,6 +33,7 @@ experience:
   - period: "Dec 2023 - Apr 2024"
     title: "Technical Consultant"
     company: "CASTRUM"
+    key: castrum
     qualifier: "contract"
     body_html: |-
       <ul>
@@ -42,6 +45,7 @@ experience:
   - period: "Sep 2023 - Jul 2024"
     title: "Web3 Security Engineer / DevSecOps"
     company: "SARDIS"
+    key: sardis
     qualifier: "contract"
     body_html: |-
       <ul>
@@ -52,6 +56,7 @@ experience:
   - period: "Jan 2022 - Apr 2025"
     title: "Research Assistant (TÜBİTAK-funded)"
     company: "MIDDLE EAST TECHNICAL UNIVERSITY (METU)"
+    key: metu
     qualifier: "part-time"
     body_html: |-
       <ul>
@@ -62,6 +67,7 @@ experience:
   - period: "Jul 2021 - May 2022"
     title: "Cyber Security Specialist (Tech Lead — OSSArch)"
     company: "INTERPROBE BILGI TEKNOLOJILERI"
+    key: interprobe
     logo: "/media/961e34a2-f8f6-42a8-8566-85ad6e895b04.jpeg"
     body_html: |-
       <ul>
@@ -76,6 +82,7 @@ experience:
   - period: "Jun 2019 - Jan 2020"
     title: "Sales / IT Manager"
     company: "APPLY CENTER (STARTUP)"
+    key: apply
     logo: "/media/ApplyCenter-Logo.png"
     body_html: |-
       <ul>
@@ -87,6 +94,7 @@ experience:
   - period: "Jul 2018 - Sep 2018"
     title: "Business Development Analyst"
     company: "BORAQ-GROUP"
+    key: boraq
     logo: "/media/Boraq-Group_.png"
     body_html: |-
       <ul>

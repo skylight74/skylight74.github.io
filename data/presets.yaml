@@ -36,6 +36,8 @@ presets:
     typed_pin: 0
   devsecops:
     url: "/for/devsecops/"
+    # Experience filter (recruiter review 2026-07-13): specialist pages drop non-eng early entries.
+    experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-devsecops.pdf"
     skin: mono
     voice: terminal
@@ -49,6 +51,7 @@ presets:
     roles: ["DevSecOps Engineer", "Security Engineer", "Site Reliability Engineer"]
   platform:
     url: "/for/platform/"
+    experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-go-backend.pdf"
     skin: ink
     voice: terminal
@@ -64,6 +67,7 @@ presets:
     roles: ["Backend Developer (Go)", "Site Reliability Engineer", "DevSecOps Engineer"]
   aisec:
     url: "/for/ai-security/"
+    experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-detection-secml.pdf"
     skin: graphite
     voice: terminal
@@ -75,6 +79,7 @@ presets:
     roles: ["Security-ML Researcher", "MLOps Engineer", "Security Engineer", "DevSecOps Engineer"]
   research:
     url: "/for/research/"
+    experience: [freelance, dolusoft, metu, interprobe]
     cv: "/media/cv-research-ml.pdf"
     skin: latex2
     voice: editorial
