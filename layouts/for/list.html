@@ -11,7 +11,6 @@
       {{ range $k := slice "core" "devsecops" "platform" "aisec" "research" "lead" }}{{ $pp := index site.Data.presets.presets $k }}
       <a class="peek" href="{{ $pp.url }}" data-skin="{{ $pp.skin }}" data-role="{{ $k }}">
         <span class="face front">
-          <span class="sw" aria-hidden="true"></span>
           <span class="rk">{{ index $lbl $k }}</span>
           <span class="pk">{{ $pp.kicker }}</span>
           <em>{{ $pp.open_to }}</em>
