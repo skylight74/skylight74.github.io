@@ -11,11 +11,11 @@ contributions:
   # commits ahead of carlosperate/rpi-os-custom-image via compare API.
   - name: "mplabx-ide-odtu"
     kind: "tool"
-    detail: "Containerized MPLAB X development environment, adopted by METU embedded-systems students."
+    detail: "Containerized MPLAB X development environment, used by METU embedded-systems students."
     url: "https://github.com/skylight74/mplabx-ide-odtu"
   - name: "rpi-os-custom-image-with-sensors"
     kind: "fork"
-    detail: "Maintained fork, +14 commits: Raspberry Pi OS images with sensor integrations for IoT deployments."
+    detail: "Maintained fork, +14 commits: Raspberry Pi OS images with sensor simulation for IoT test environments."
     url: "https://github.com/skylight74/rpi-os-custom-image-with-sensors"
   # opencode PR #9208 removed 2026-07-13 (projects deep-check): PR closed
   # UNMERGED — fails the "external-validation only" rule; a rejected PR as
