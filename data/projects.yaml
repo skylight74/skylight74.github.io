@@ -18,7 +18,8 @@ projects:
   - name: "SmartGridLedger — Permissioned Blockchain (Hyperledger Fabric)"
     key: sgl
     date: "2024"
-    url: "https://github.com/skylight74/SmartGridLedger"
+    # github url removed 2026-07-13 (repo private/404 publicly — Mohamed chose
+    # docs-only; GitBook verified loading: "Project Overview | Smart Grid Ledger").
     docs: "https://mohamed-amins-personal-organizat.gitbook.io/smart-grid-ledger"
     body: "Authored original multi-org Fabric chaincode (TypeScript) on a Kubernetes + Istio network for secure energy-distribution settlement; published at MedPower 2024 (TÜBİTAK-funded)."
   # OSSArch + Container Security added 2026-07-11 (his ask). Wording from

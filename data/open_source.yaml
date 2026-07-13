@@ -5,6 +5,6 @@ contributions:
   - name: "waybar-crypto"
     detail: "PR #105 (merged): custom formatting options — global and per-coin format strings, case-sensitive ticker support."
     url: "https://github.com/chadsr/waybar-crypto/pull/105"
-  - name: "opencode"
-    detail: "PR #9208: documented the theme hot-reloading feature (SIGUSR2), discovered through source-code analysis."
-    url: "https://github.com/anomalyco/opencode/pull/9208"
+  # opencode PR #9208 removed 2026-07-13 (projects deep-check): PR closed
+  # UNMERGED — fails the "external-validation only" rule; a rejected PR as
+  # portfolio proof is negative signal.

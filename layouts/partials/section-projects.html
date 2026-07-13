@@ -10,7 +10,7 @@
       <div class="yr">{{ .date }}</div>
       <h3>{{ .name }}</h3>
       <p>{{ .body }}</p>
-      {{ if or .url .docs }}<span>{{ with .url }}<a href="{{ . }}">github ↗</a>{{ end }}{{ with .docs }} · <a href="{{ . }}">docs ↗</a>{{ end }}</span>{{ end }}
+      {{ if or .url .docs }}<span>{{ $u := .url }}{{ with .url }}<a href="{{ . }}">github ↗</a>{{ end }}{{ with .docs }}{{ if $u }} · {{ end }}<a href="{{ . }}">docs ↗</a>{{ end }}</span>{{ end }}
     </div>
     {{ end }}
   </div>
