@@ -61,6 +61,12 @@ body>.orb{position:fixed;z-index:-2;opacity:.32}
 html[data-skin="mono"] body>.orb,html[data-skin="ink"] body>.orb,html[data-skin="latex2"] body>.orb{opacity:.16}
 @keyframes drift1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(52vw,26vh) scale(1.18)}100%{transform:translate(18vw,52vh) scale(.92)}}
 @keyframes drift2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-46vw,-30vh) scale(1.12)}100%{transform:translate(-14vw,-6vh) scale(1.25)}}
+/* /for backdrop: concentric counter-rotating 8-point stars (Mohamed 2026-07-13) */
+.cstar{position:absolute;top:50%;left:50%;z-index:0;pointer-events:none;transform:translate(-50%,-50%)}
+.cstar.c1{width:150vmin;height:150vmin;color:var(--accent);opacity:.12;animation:cspin 90s linear infinite}
+.cstar.c2{width:96vmin;height:96vmin;color:var(--act,var(--accent));opacity:.14;animation:cspinr 60s linear infinite}
+@keyframes cspin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes cspinr{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(-360deg)}}
 .cdhome{display:inline-block;margin-bottom:var(--s4);font:500 12px var(--mono);text-decoration:none;
   color:var(--fg-dim);background:#161616;border:1px solid #393939;padding:8px 14px;border-radius:0 0 9px 0}
 .cdhome:hover{color:var(--fg);border-color:var(--accent)}
