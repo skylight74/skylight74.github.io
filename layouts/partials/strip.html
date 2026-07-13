@@ -5,5 +5,5 @@
   <nav id="nav">
     <a href="{{ $pfx }}#hero"{{ if not $pfx }} class="on"{{ end }}>About</a><a href="{{ $pfx }}#impact">Impact</a><a href="{{ $pfx }}#experience">Experience</a><a href="{{ $pfx }}#projects">Projects</a><a href="{{ $pfx }}#skills">Skills</a><a href="{{ $pfx }}#research">Research</a><a href="{{ $pfx }}#contact">Contact</a><a href="/blog/{{ with .page.Params.preset }}#skin={{ $.p.skin }}&role={{ . }}{{ end }}"{{ if eq .page.Section "blog" }} class="on"{{ end }}>Blog</a>
   </nav>
-  <a class="cv" href="/media/Mohamed_Aly_Amin_CV.pdf" download>↓ CV</a>
+  <a class="cv" href="{{ .p.cv | default "/media/Mohamed_Aly_Amin_CV.pdf" }}" download="Mohamed_Aly_Amin_CV.pdf">↓ CV</a>
 </header>

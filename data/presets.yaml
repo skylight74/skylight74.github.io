@@ -36,6 +36,7 @@ presets:
     typed_pin: 0
   devsecops:
     url: "/for/devsecops/"
+    cv: "/media/cv-devsecops.pdf"
     skin: mono
     voice: terminal
     kicker: "DevSecOps — pipelines, detection, response"
@@ -48,6 +49,7 @@ presets:
     roles: ["DevSecOps Engineer", "Security Engineer", "Site Reliability Engineer"]
   platform:
     url: "/for/platform/"
+    cv: "/media/cv-go-backend.pdf"
     skin: ink
     voice: terminal
     kicker: "Platform & Backend — Go, streaming, scale"
@@ -62,16 +64,18 @@ presets:
     roles: ["Backend Developer (Go)", "Site Reliability Engineer", "DevSecOps Engineer"]
   aisec:
     url: "/for/ai-security/"
+    cv: "/media/cv-detection-secml.pdf"
     skin: graphite
     voice: terminal
     kicker: "AI × Security — detection models in production"
     summary_html: 'Detection engineer bridging <b>security and applied ML</b>: 98.11% IDS accuracy (<b>one-class SVM, AINA 2024</b>), the OSSArch SIEM/SOAR stack, and a <b>~400k events/sec Go engine</b> with detection-as-code anomaly rules — MLOps on <b>GPU Kubernetes</b>.'
-    open_to: "AI Security / Detection Engineering · Security-ML · DevSecOps"
+    open_to: "AI Security / Detection Engineering · Security-ML · MLOps"
     stats: [acc, eps, sources, mvp]
     typed_pin: 0
     roles: ["Security-ML Researcher", "MLOps Engineer", "Security Engineer", "DevSecOps Engineer"]
   research:
     url: "/for/research/"
+    cv: "/media/cv-research-ml.pdf"
     skin: latex2
     voice: editorial
     kicker: "Security-ML Research — detection, published"
