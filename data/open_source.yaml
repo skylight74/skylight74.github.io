@@ -3,8 +3,20 @@
 # Sardis's own org, folded into the Sardis experience entry instead.
 contributions:
   - name: "waybar-crypto"
+    kind: "PR"
     detail: "PR #105 (merged): custom formatting options — global and per-coin format strings, case-sensitive ticker support."
     url: "https://github.com/chadsr/waybar-crypto/pull/105"
+  # Added 2026-07-13 (Mohamed: "dig into my github repos... add to open source").
+  # mplabx adoption attested by the education bullet; rpi-os fork verified +14
+  # commits ahead of carlosperate/rpi-os-custom-image via compare API.
+  - name: "mplabx-ide-odtu"
+    kind: "tool"
+    detail: "Containerized MPLAB X development environment, adopted by METU embedded-systems students."
+    url: "https://github.com/skylight74/mplabx-ide-odtu"
+  - name: "rpi-os-custom-image-with-sensors"
+    kind: "fork"
+    detail: "Maintained fork, +14 commits: Raspberry Pi OS images with sensor integrations for IoT deployments."
+    url: "https://github.com/skylight74/rpi-os-custom-image-with-sensors"
   # opencode PR #9208 removed 2026-07-13 (projects deep-check): PR closed
   # UNMERGED — fails the "external-validation only" rule; a rejected PR as
   # portfolio proof is negative signal.

@@ -41,4 +41,4 @@ projects:
   - name: "Container Security Vulnerability Assessment"
     key: containerva
     date: "2022"
-    body: "Security assessment of microservices applications (Pitstop, Robot Shop, Kubernetes Goat); identified and documented SQL injection, NoSQL injection, RabbitMQ, and SMTP vulnerabilities. Groundwork for the AINA 2024 container-security research."
+    body: "Security assessment of microservices applications (Pitstop, Robot Shop, Kubernetes Goat); identified and documented SQL injection, NoSQL injection, RabbitMQ, and SMTP vulnerabilities. Groundwork for the AINA 2024 container-security research — presented at the international conference in Japan."
