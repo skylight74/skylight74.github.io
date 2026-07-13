@@ -76,8 +76,6 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
   -webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15);
   box-shadow:0 16px 38px rgba(0,0,0,.62)}
 .peek .back{transform:rotateY(180deg);justify-content:center}
-.peek .sw{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:0 0 7px 0;
-  background:linear-gradient(135deg,var(--bg) 50%,var(--accent) 50%);border:1px solid #ffffff2e}
 .peek .rk{font:600 21px var(--mono);letter-spacing:.05em;color:#f2f4f8}
 .peek .dft{font:500 10px var(--mono);letter-spacing:.06em;color:var(--pa)}
 .peek .fc{position:absolute;right:14px;bottom:12px;font:400 10px var(--mono);color:#8d8d8d;opacity:.8}
