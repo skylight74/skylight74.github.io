@@ -111,12 +111,6 @@ body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px
 .strip{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;row-gap:6px;
   padding:12px var(--s4);border-bottom:1px solid var(--hairline);
   background:color-mix(in srgb,var(--bg-2) 88%,transparent);backdrop-filter:blur(8px)}
-/* faint khatam (8-point star) tile — token-colored via mask, felt not seen */
-.strip>*{position:relative;z-index:1}
-.strip::before{content:"";position:absolute;inset:0;z-index:0;background:var(--accent);opacity:.05;pointer-events:none;
-  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cg fill='black'%3E%3Crect x='19' y='19' width='6' height='6'/%3E%3Crect x='19' y='19' width='6' height='6' transform='rotate(45 22 22)'/%3E%3C/g%3E%3C/svg%3E");
-  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cg fill='black'%3E%3Crect x='19' y='19' width='6' height='6'/%3E%3Crect x='19' y='19' width='6' height='6' transform='rotate(45 22 22)'/%3E%3C/g%3E%3C/svg%3E");
-  -webkit-mask-size:44px 44px;mask-size:44px 44px}
 .monogram{width:32px;height:32px;flex:0 0 32px;text-decoration:none;background:var(--accent);color:var(--accent-ink);
   font:700 18px/32px var(--mono);text-align:center;border-radius:0 0 11px 0}
 .monogram.mark{width:76px;flex-basis:76px;background:none;color:var(--accent);display:flex;align-items:center}
