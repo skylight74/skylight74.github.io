@@ -48,7 +48,7 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
   --head:var(--serif);--accent:#1a4fa0;--accent-dim:#1a4fa01e;--act:#1a4fa0;--act-dim:#1a4fa01e;--act-glow:transparent}
 
 /* /for role-picker: glass flip cards over a BSOD-blue backdrop (each card wears its role's skin tokens) */
-#for.glassfor{background:#000;position:relative;overflow:hidden;padding:48px var(--s4)}
+#for.glassfor{position:relative;overflow:hidden;padding:48px var(--s4)}
 #for.glassfor>.in{position:relative;z-index:1}
 /* orbs: pre-softened gradients (no blur filter surface — QtWebEngine RAM);
    animation paused when tab hidden via html.tab-hidden (site.js) */
@@ -63,8 +63,8 @@ html[data-skin="mono"] body>.orb,html[data-skin="ink"] body>.orb,html[data-skin=
 @keyframes drift2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-46vw,-30vh) scale(1.12)}100%{transform:translate(-14vw,-6vh) scale(1.25)}}
 /* /for backdrop: concentric counter-rotating 8-point stars (Mohamed 2026-07-13) */
 .cstar{position:absolute;top:50%;left:50%;z-index:0;pointer-events:none;transform:translate(-50%,-50%)}
-.cstar.c1{width:88vmin;height:88vmin;color:var(--accent);opacity:.12;animation:cspin 90s linear infinite}
-.cstar.c2{width:56vmin;height:56vmin;color:var(--act,var(--accent));opacity:.14;animation:cspinr 60s linear infinite}
+.cstar.c1{width:56vmin;height:56vmin;color:var(--accent);opacity:.12;animation:cspin 90s linear infinite}
+.cstar.c2{width:34vmin;height:34vmin;color:var(--act,var(--accent));opacity:.14;animation:cspinr 60s linear infinite}
 @keyframes cspin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes cspinr{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(-360deg)}}
 .cdhome{display:inline-block;margin-bottom:var(--s4);font:500 12px var(--mono);text-decoration:none;
