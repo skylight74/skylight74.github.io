@@ -213,7 +213,15 @@ h1{font:600 42px/1.08 var(--head);letter-spacing:-.015em;margin-bottom:var(--s2)
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font:400 12px var(--mono);background:var(--surface-2);border:1px solid var(--hairline);
   padding:3px 9px;border-radius:0 0 8px 0;color:color-mix(in srgb,var(--fg) 88%,var(--fg-dim))}
-.tag.hot{border-color:color-mix(in srgb,var(--accent) 55%,var(--hairline));color:var(--fg)}
+/* per-role hot skills (evidence-linked picks; slugs = data-k in section-skills.html) */
+.tag.hot,
+html[data-role="core"] .tag:is([data-k="devsecops"],[data-k="siem"],[data-k="k8s"],[data-k="terraform"],[data-k="go"],[data-k="python"],[data-k="kafka"],[data-k="arabic"]),
+html[data-role="devsecops"] .tag:is([data-k="devsecops"],[data-k="sdlc"],[data-k="sast"],[data-k="siem"],[data-k="terraform"],[data-k="k8s"],[data-k="cicd"],[data-k="aws"]),
+html[data-role="platform"] .tag:is([data-k="go"],[data-k="kafka"],[data-k="clickhouse"],[data-k="redis"],[data-k="grpc"],[data-k="event"],[data-k="otel"],[data-k="aws"]),
+html[data-role="aisec"] .tag:is([data-k="deteng"],[data-k="anomaly"],[data-k="siem"],[data-k="python"],[data-k="pytorch"],[data-k="mlops"],[data-k="go"],[data-k="mitre"]),
+html[data-role="research"] .tag:is([data-k="python"],[data-k="pytorch"],[data-k="tensorflow"],[data-k="scikit"],[data-k="lstm"],[data-k="anomaly"],[data-k="mlops"],[data-k="k8s"]),
+html[data-role="lead"] .tag:is([data-k="devsecops"],[data-k="tdd"],[data-k="cicd"],[data-k="siem"],[data-k="iso"],[data-k="aws"],[data-k="go"],[data-k="arabic"]){
+  border-color:color-mix(in srgb,var(--accent) 55%,var(--hairline));color:var(--fg)}
 
 /* ---- research ---- */
 .pub{display:grid;grid-template-columns:96px 1fr;gap:var(--s3);padding:var(--s3) 0;border-bottom:1px solid var(--hairline)}
@@ -322,7 +330,14 @@ html[data-skin="mono"],.peek[data-skin="mono"]{--act:#e02418;--act-dim:#e0241816
 .foot .ok{color:var(--act)}
 .pipe::before{content:"● ";color:var(--act)}
 /* emphasis rims */
-.tag.hot{border-color:color-mix(in srgb,var(--act) 55%,var(--hairline))}
+.tag.hot,
+html[data-role="core"] .tag:is([data-k="devsecops"],[data-k="siem"],[data-k="k8s"],[data-k="terraform"],[data-k="go"],[data-k="python"],[data-k="kafka"],[data-k="arabic"]),
+html[data-role="devsecops"] .tag:is([data-k="devsecops"],[data-k="sdlc"],[data-k="sast"],[data-k="siem"],[data-k="terraform"],[data-k="k8s"],[data-k="cicd"],[data-k="aws"]),
+html[data-role="platform"] .tag:is([data-k="go"],[data-k="kafka"],[data-k="clickhouse"],[data-k="redis"],[data-k="grpc"],[data-k="event"],[data-k="otel"],[data-k="aws"]),
+html[data-role="aisec"] .tag:is([data-k="deteng"],[data-k="anomaly"],[data-k="siem"],[data-k="python"],[data-k="pytorch"],[data-k="mlops"],[data-k="go"],[data-k="mitre"]),
+html[data-role="research"] .tag:is([data-k="python"],[data-k="pytorch"],[data-k="tensorflow"],[data-k="scikit"],[data-k="lstm"],[data-k="anomaly"],[data-k="mlops"],[data-k="k8s"]),
+html[data-role="lead"] .tag:is([data-k="devsecops"],[data-k="tdd"],[data-k="cicd"],[data-k="siem"],[data-k="iso"],[data-k="aws"],[data-k="go"],[data-k="arabic"]){
+  border-color:color-mix(in srgb,var(--act) 55%,var(--hairline))}
 /* forms = acting */
 .field input:focus,.field textarea:focus{border-color:var(--act);box-shadow:0 0 0 3px var(--act-dim)}
 /* keyboard */
