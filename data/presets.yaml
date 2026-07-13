@@ -39,6 +39,8 @@ presets:
     typed_pin: 0
   devsecops:
     url: "/for/devsecops/"
+    # Services curated 2026-07-13: crypto items off security employment pages.
+    services_list: [devsec, assess, gostream]
     projects: [ossarch, rtengine, containerva, diona]
     # Experience filter (recruiter review 2026-07-13): specialist pages drop non-eng early entries.
     experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
@@ -56,6 +58,7 @@ presets:
     roles: ["DevSecOps Engineer", "Security Engineer", "Site Reliability Engineer"]
   platform:
     url: "/for/platform/"
+    services_list: [gostream, devsec, web3, assess]
     projects: [rtengine, housing, sgl, diona]
     # Sardis cut on GO (2026-07-13 final judgment): Web3-security signal + TS frontend artifact = mismatch on a Go-backend page.
     experience: [freelance, dolusoft, castrum, metu, interprobe]
@@ -75,6 +78,7 @@ presets:
     roles: ["Backend Developer (Go)", "Site Reliability Engineer", "DevSecOps Engineer"]
   aisec:
     url: "/for/ai-security/"
+    services_list: [devsec, assess, gostream]
     projects: [diona, rtengine, ossarch, containerva]
     experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-detection-secml.pdf"
