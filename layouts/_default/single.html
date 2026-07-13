@@ -1,15 +1,11 @@
 {{ define "main" }}
-<div class="card-inner animated active" id="card-post">
-  <div class="card-wrap">
-    <div class="content blog-post">
-      <div class="title"><span class="title_inner">{{ .Title }}</span></div>
-      <div class="date">{{ .Date.Format "2 Jan 2006" }}{{ range .Params.categories }} &middot; <a href="/categories/{{ . | urlize }}/">{{ . }}</a>{{ end }}</div>
-      <div class="single-post-text">{{ .Content }}</div>
-      <p><a class="lnk" href="/blog/"><span class="text">&laquo; All posts</span></a></p>
-    </div>
+<section class="card page" id="post">
+  <div class="in reveal">
+    <div class="sec-label"><b>07</b>writing --post</div>
+    <h1>{{ .Title }}</h1>
+    <div class="post-meta">{{ .Date.Format "2006-01-02" }}{{ range .Params.categories }} &middot; <a href="/categories/{{ . | urlize }}/">{{ . }}</a>{{ end }}</div>
+    <div class="prose">{{ .Content | safeHTML }}</div>
+    <p style="margin-top:var(--s6)"><a class="btn ghost" href="/blog/">&laquo; All posts</a></p>
   </div>
-</div>
-{{/* Close .container and .page (opened in body-open.html); on the home page section-contacts.html closes these. */}}
-</div>
-</div>
+</section>
 {{ end }}

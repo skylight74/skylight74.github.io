@@ -1,16 +1,12 @@
 {{ define "main" }}
-<div class="card-inner animated active" id="card-search">
-  <div class="card-wrap">
-    <div class="content blog">
-      <div class="title"><span class="title_inner">Search</span></div>
-      <p id="search-summary">Loading&hellip;</p>
-      <div class="resume-items" id="search-results"></div>
-    </div>
+<section class="card page" id="search">
+  <div class="in reveal">
+    <div class="sec-label"><b>~</b>blog --search</div>
+    <h1>Search</h1>
+    <p class="imp-note" id="search-summary">Loading&hellip;</p>
+    <div id="search-results"></div>
   </div>
-</div>
-{{/* Close .container and .page (opened in body-open.html); on the home page section-contacts.html closes these. */}}
-</div>
-</div>
+</section>
 <script>
 (function () {
   var q = (new URLSearchParams(window.location.search).get('s') || '').trim();
@@ -29,24 +25,24 @@
     box.textContent = '';
     if (!hits.length) {
       var none = document.createElement('p');
+      none.className = 'imp-note';
       none.textContent = 'No posts matched. Try a shorter word.';
       box.appendChild(none);
       return;
     }
     hits.forEach(function (p) {
       var item = document.createElement('div');
-      item.className = 'resume-item';
+      item.className = 'post';
       var date = document.createElement('div');
-      date.className = 'date';
+      date.className = 'd';
       date.textContent = p.date;
-      var name = document.createElement('div');
-      name.className = 'name';
+      var body = document.createElement('div');
       var a = document.createElement('a');
       a.setAttribute('href', p.url);
       a.textContent = p.title;
-      name.appendChild(a);
+      body.appendChild(a);
       item.appendChild(date);
-      item.appendChild(name);
+      item.appendChild(body);
       box.appendChild(item);
     });
   }).catch(function () { summary.textContent = 'Search index failed to load.'; });

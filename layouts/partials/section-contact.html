@@ -1,0 +1,25 @@
+{{ $p := .p }}
+<div class="in reveal">
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Contact</div>{{ else }}<div class="sec-label"><b>09</b>contact --open</div>{{ end }}
+  <h2>Get in touch</h2>
+  <div class="contact-grid">
+    <form action="https://formspree.io/f/mwvdzgqv" method="POST">
+      <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="mohamedalyamin.com contact form">
+      <div class="field"><label for="your-name">Name</label><input type="text" id="your-name" name="your-name" required></div>
+      <div class="field"><label for="your-email">Email</label><input type="email" id="your-email" name="your-email" required></div>
+      <div class="field"><label for="your-message">Message</label><textarea id="your-message" name="your-message" rows="5" required></textarea></div>
+      <button class="btn solid" type="submit">Send →</button>
+    </form>
+    <div class="cinfo">
+      <div><span class="k">email</span><b>{{ site.Data.contact.email }}</b></div>
+      <div><span class="k">base</span><b>{{ site.Data.contact.address }}</b> — Istanbul · relocation · remote</div>
+      <div><span class="k">status</span><b class="live">{{ site.Data.contact.freelance }}</b> — freelance / full-time</div>
+      <div><span class="k">elsewhere</span><b>{{ range site.Data.profile.socials }}{{ if in .icon "linkedin" }}LinkedIn{{ end }}{{ end }} · {{ range site.Data.profile.socials }}{{ if in .icon "github" }}GitHub{{ end }}{{ end }} · {{ range site.Data.profile.socials }}{{ if in .icon "telegram" }}Telegram{{ end }}{{ end }}</b></div>
+    </div>
+  </div>
+  <div class="foot">
+    <span><span class="ok">✴</span> 1 stylesheet · 0 frameworks · plex mono/sans/serif · name-mark: <a href="https://commons.wikimedia.org/wiki/File:Ambigram_-_Muhammad_and_Ali2.svg">Muhammad/Ali ambigram</a> (Juzer/Gothika, CC BY-SA 3.0)</span>
+    <span>last updated {{ now.Format "2006-01-02" }}</span>
+  </div>
+</div>

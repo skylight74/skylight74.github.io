@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume — Carbon terminal direction</title>
+<style>
+/* ============================================================
+   TOKENS — the whole design hangs off these.
+   Swap --accent (or click the switcher) and the site retunes.
+   Wallust-for-web: same philosophy as the desktop rice.
+   ============================================================ */
+:root {
+  /* base: charcoal-olive heritage (#292922 family), deepened */
+  --bg:        #131312;
+  --surface:   #1b1b18;
+  --surface-2: #211f1b;
+  --hairline:  #33322c;
+  --fg:        #e9e4d3;
+  --fg-dim:    #97927f;
+  --fg-faint:  #66625426;
+
+  --accent:      #e0a832;   /* gold — default theme */
+  --accent-dim:  #e0a83226;
+  --accent-ink:  #131312;
+
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --sans: "IBM Plex Sans", system-ui, sans-serif;
+
+  /* spacing scale (Carbon-ish 8px grid) */
+  --s1: 4px; --s2: 8px; --s3: 16px; --s4: 24px; --s5: 32px; --s6: 48px; --s7: 64px;
+}
+[data-accent="phosphor"] { --accent:#4fdc7b; --accent-dim:#4fdc7b26; }
+[data-accent="cyan"]     { --accent:#41c7e0; --accent-dim:#41c7e026; }
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  min-height: 100vh;
+  /* faint grid texture — engineered paper, not flat void */
+  background-image:
+    linear-gradient(var(--fg-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--fg-faint) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ---------- top strip: grounds the silhouette ---------- */
+.strip {
+  display:flex; align-items:center; gap:var(--s3);
+  padding: var(--s3) var(--s4);
+  border-bottom: 1px solid var(--hairline);
+  background: color-mix(in srgb, var(--bg) 92%, black);
+  position: sticky; top:0; z-index:5;
+}
+.monogram {
+  width:34px; height:34px; flex:0 0 34px;
+  background: var(--accent); color: var(--accent-ink);
+  font: 700 19px/34px var(--mono); text-align:center;
+  border-radius: 0 0 12px 0;   /* the eww corner motif */
+}
+.strip .who { font: 500 14px var(--mono); letter-spacing:.02em; }
+.strip .who small { display:block; color:var(--fg-dim); font-size:11px; font-weight:400; }
+.strip nav { margin-left:auto; display:flex; gap:var(--s3); }
+.strip nav a {
+  font: 400 11px var(--mono); letter-spacing:.14em; text-transform:uppercase;
+  color: var(--fg-dim); text-decoration:none; padding: var(--s1) 2px;
+  border-bottom: 2px solid transparent;
+}
+.strip nav a:hover { color: var(--fg); }
+.strip nav a.on { color: var(--fg); border-bottom-color: var(--accent); }
+
+/* accent switcher — proof the token system works */
+.themes { display:flex; gap:var(--s2); margin-left:var(--s4); }
+.themes button {
+  width:14px; height:14px; border:1px solid var(--hairline); cursor:pointer;
+  background: var(--sw); border-radius: 0 0 5px 0;
+}
+.themes button[aria-pressed="true"] { outline:1px solid var(--fg-dim); outline-offset:2px; }
+
+/* ---------- the card ---------- */
+.wrap { max-width: 880px; margin: var(--s6) auto var(--s7); padding: 0 var(--s4); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 0 0 40px 0;   /* single soft corner on a square surface */
+  overflow: hidden;
+}
+
+.card-head {
+  padding: var(--s4) var(--s5) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.prompt {
+  font: 400 12px var(--mono); color: var(--fg-dim); margin-bottom: var(--s3);
+}
+.prompt .path { color: var(--accent); }
+.cursor {
+  display:inline-block; width:7px; height:14px; vertical-align:-2px;
+  background: var(--accent); animation: blink 1.1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity:0; } }
+h1 {
+  font: 600 26px/1.2 var(--sans); letter-spacing:-0.01em;
+  margin-bottom: var(--s4);
+}
+h1 .idx { font: 400 13px var(--mono); color: var(--fg-dim); margin-left: var(--s2); }
+
+/* ---------- sub-tabs (the split) ---------- */
+.tabs { display:flex; gap:var(--s4); }
+.tabs button {
+  appearance:none; background:none; border:none; cursor:pointer;
+  font: 500 12px var(--mono); letter-spacing:.14em; text-transform:uppercase;
+  color: var(--fg-dim); padding: var(--s2) 2px var(--s3);
+  border-bottom: 2px solid transparent; margin-bottom:-1px;
+}
+.tabs button:hover { color: var(--fg); }
+.tabs button[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--accent); }
+.tabs .n { color: var(--accent); margin-right: var(--s1); }
+
+.panel { display:none; padding: var(--s4) var(--s5) var(--s5); }
+.panel.on { display:block; }
+
+/* ---------- experience / education rows ---------- */
+.row {
+  display:grid; grid-template-columns: 168px 1fr; gap: var(--s4);
+  padding: var(--s4) 0;
+  border-bottom: 1px solid var(--hairline);
+  border-left: 2px solid transparent;
+  animation: rise .45s both;
+}
+.row:hover { border-left-color: var(--accent); background: linear-gradient(90deg, var(--accent-dim), transparent 30%); }
+.row:last-child { border-bottom:none; }
+.row:nth-child(2){ animation-delay:.06s } .row:nth-child(3){ animation-delay:.12s }
+.row:nth-child(4){ animation-delay:.18s } .row:nth-child(5){ animation-delay:.24s }
+@keyframes rise { from { opacity:0; transform: translateY(6px);} }
+
+.when { font: 400 12px var(--mono); color: var(--fg-dim); padding-top:3px; }
+.when .now { color: var(--accent); }
+.role { font: 600 15px var(--sans); }
+.org  { font: 400 12px var(--mono); color: var(--fg-dim); letter-spacing:.06em; margin: 2px 0 var(--s2); }
+.row ul { list-style:none; }
+.row li {
+  color: color-mix(in srgb, var(--fg) 82%, var(--fg-dim));
+  font-size: 13.5px; padding-left: var(--s3); position:relative; margin-bottom: var(--s1);
+}
+.row li::before { content:"·"; position:absolute; left:2px; color: var(--accent); }
+.row p { color: color-mix(in srgb, var(--fg) 82%, var(--fg-dim)); font-size:13.5px; }
+
+/* ---------- skills: tags, not fake bars ---------- */
+.skill-group { padding: var(--s3) 0; border-bottom: 1px solid var(--hairline); animation: rise .45s both; }
+.skill-group:last-child { border-bottom:none; }
+.skill-label {
+  font: 500 11px var(--mono); letter-spacing:.14em; text-transform:uppercase;
+  color: var(--fg-dim); margin-bottom: var(--s2);
+}
+.skill-label b { color: var(--accent); font-weight:500; margin-right:var(--s1); }
+.tags { display:flex; flex-wrap:wrap; gap: 6px; }
+.tag {
+  font: 400 12px var(--mono);
+  background: var(--surface-2); border: 1px solid var(--hairline);
+  padding: 3px 9px; border-radius: 0 0 8px 0;
+  color: color-mix(in srgb, var(--fg) 88%, var(--fg-dim));
+}
+.tag.hot { border-color: color-mix(in srgb, var(--accent) 55%, var(--hairline)); color: var(--fg); }
+
+.foot {
+  padding: var(--s3) var(--s5);
+  border-top: 1px solid var(--hairline);
+  font: 400 11px var(--mono); color: var(--fg-dim);
+  display:flex; justify-content:space-between;
+}
+.foot .ok { color: var(--accent); }
+
+@media (max-width: 700px) {
+  .row { grid-template-columns: 1fr; gap: var(--s2); }
+  .wrap { margin-top: var(--s4); }
+  .card { border-radius: 0 0 28px 0; }
+  .strip nav { display:none; }
+}
+</style>
+</head>
+<body>
+
+<header class="strip">
+  <div class="monogram">M</div>
+  <div class="who">Mohamed Aly Amin<small>security &amp; infrastructure engineer</small></div>
+  <nav>
+    <a href="index-carbon.html">About</a><a href="#" class="on">Resume</a><a href="#">Contact</a><a href="#">Blog</a>
+  </nav>
+  <div class="themes" title="accent tokens — click">
+    <button style="--sw:#e0a832" data-t="" aria-pressed="true" aria-label="gold"></button>
+    <button style="--sw:#4fdc7b" data-t="phosphor" aria-pressed="false" aria-label="phosphor"></button>
+    <button style="--sw:#41c7e0" data-t="cyan" aria-pressed="false" aria-label="cyan"></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="prompt"><span class="path">~/resume</span> $ show --section <span id="secname">experience</span> <span class="cursor"></span></div>
+      <h1>Resume <span class="idx" id="secidx">01 / 03</span></h1>
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true"  data-p="exp"><span class="n">01</span>Experience</button>
+        <button role="tab" aria-selected="false" data-p="edu"><span class="n">02</span>Education</button>
+        <button role="tab" aria-selected="false" data-p="skl"><span class="n">03</span>Skills</button>
+      </div>
+    </div>
+
+    <!-- 01 EXPERIENCE -->
+    <section class="panel on" id="exp">
+      <div class="row">
+        <div class="when"><span class="now">Jan 2023 — Present</span></div>
+        <div>
+          <div class="role">Security &amp; Software Engineer</div>
+          <div class="org">INDEPENDENT / FREELANCE (PROJECT-BASED)</div>
+          <ul>
+            <li>Sole-built the 10-microservice PHP/Laravel rebuild of a 270k-registered-user real-estate platform on AWS (EC2, RDS, S3); currently in staging.</li>
+            <li>Built protocol adapters (OCPP for EV chargers, SunSpec/Modbus for solar inverters) to normalize multi-vendor energy-device data for a smart-grid monitoring stack.</li>
+            <li>Assessed 15+ crypto/fintech ventures' codebases, architecture, and technical risk for venture-capital investment decisions.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Aug 2024 — May 2025</div>
+        <div>
+          <div class="role">R&amp;D Engineer — Cybersecurity</div>
+          <div class="org">DOLUSOFT</div>
+          <ul>
+            <li>Sustained ~400k events/sec by sole-designing a modular real-time filtering engine in Go, ingesting security events from 80+ sources (Kafka → ClickHouse, Redis-backed state, OpenTelemetry).</li>
+            <li>Designed chained, first-seen, and z-score anomaly-detection rules in a configurable detection engine to cut false-positive noise.</li>
+            <li>Built a Go multi-channel alerting service (Slack, email, webhook) with rate limiting and policy-based routing.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Jan 2022 — Apr 2025</div>
+        <div>
+          <div class="role">Research Assistant (Part-time, TÜBİTAK-funded)</div>
+          <div class="org">MIDDLE EAST TECHNICAL UNIVERSITY (METU)</div>
+          <ul>
+            <li>Reached 98.11% intrusion-detection accuracy with an SGD one-class SVM for containerized microservices; first-author publication at AINA 2024 (Springer).</li>
+            <li>Built the end-to-end GPU training pipeline (GPU-enabled Kubernetes, dataset curation, evaluation) for the DIONA LSTM intrusion-detection system.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Jul 2021 — May 2022</div>
+        <div>
+          <div class="role">Cyber Security Specialist (Tech Lead — OSSArch)</div>
+          <div class="org">INTERPROBE BILGI TEKNOLOJILERI</div>
+          <ul>
+            <li>Shipped an MVP SIEM/SOAR platform in 3 months, against the company's 6–12 month norm, by forming and leading a 6-engineer DevSecOps team (TDD, DDD, daily agile).</li>
+            <li>Automated threat enrichment by integrating ELK, Wazuh, TheHive, Cortex, MISP, and Suricata with OSINT feeds.</li>
+            <li>Trained 4 engineers and ASELSAN partners; taught at Istanbul Aydın University; ran POCs at GISEC Dubai.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Jul 2018 — Sep 2018</div>
+        <div>
+          <div class="role">Business Development Analyst</div>
+          <div class="org">BORAQ-GROUP</div>
+          <ul>
+            <li>Developed proposals and pitched them to leads and prospective clients.</li>
+            <li>Maintained business relationships and CRM records through direct and indirect research and market analysis.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 EDUCATION -->
+    <section class="panel" id="edu">
+      <div class="row">
+        <div class="when">Class of 2023</div>
+        <div>
+          <div class="role">Middle East Technical University (METU)</div>
+          <div class="org">ANKARA, TURKEY</div>
+          <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">May 2021 — Nov 2021</div>
+        <div>
+          <div class="role">Cyber Security Specialty Program</div>
+          <div class="org">INTERPROBE — ANKARA</div>
+          <ul>
+            <li>Pentesting (web applications + networks)</li>
+            <li>Security tools utilization; system security monitoring</li>
+            <li>Malware analysis; Bash/PowerShell scripting</li>
+            <li>Secure production deployment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 SKILLS -->
+    <section class="panel" id="skl">
+      <div class="skill-group">
+        <div class="skill-label"><b>»</b>Security &amp; DevSecOps</div>
+        <div class="tags">
+          <span class="tag hot">DevSecOps</span><span class="tag">secure SDLC</span><span class="tag">SAST/DAST/SCA</span><span class="tag hot">SIEM/SOAR (ELK, Wazuh, TheHive, Cortex, MISP, Suricata, Sentinel)</span><span class="tag">detection engineering</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">threat hunting</span><span class="tag">vulnerability management</span><span class="tag">red/blue team</span><span class="tag">Burp Suite · ZAP · Nmap · Metasploit</span><span class="tag">FortiGate (NGFW)</span><span class="tag">ISO 27001</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label"><b>»</b>Cloud &amp; Infrastructure</div>
+        <div class="tags">
+          <span class="tag hot">Kubernetes (Helm, Skaffold, Istio)</span><span class="tag">Docker</span><span class="tag hot">Terraform</span><span class="tag">Ansible</span><span class="tag">AWS (EC2, Lightsail, RDS, S3, IAM)</span><span class="tag">CI/CD · GitOps</span><span class="tag">OpenTelemetry</span><span class="tag">Prometheus · Grafana</span><span class="tag">Proxmox</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label"><b>»</b>Backend &amp; Streaming</div>
+        <div class="tags">
+          <span class="tag hot">Go</span><span class="tag hot">Python</span><span class="tag">C#</span><span class="tag">TypeScript</span><span class="tag">Bash</span><span class="tag hot">Kafka</span><span class="tag">ClickHouse</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">gRPC · REST</span><span class="tag">microservices · event-driven</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label"><b>»</b>Applied ML &amp; Data</div>
+        <div class="tags">
+          <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span><span class="tag">OpenCV</span><span class="tag">MLOps (GPU Kubernetes)</span><span class="tag">anomaly detection</span><span class="tag">LSTM</span><span class="tag">InfluxDB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label"><b>»</b>Fintech &amp; DLT</div>
+        <div class="tags">
+          <span class="tag">technical due diligence</span><span class="tag">Hyperledger Fabric</span><span class="tag">transaction-grade streaming</span><span class="tag">PCI DSS &amp; SOC 2 (familiarity)</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label"><b>»</b>Languages</div>
+        <div class="tags">
+          <span class="tag">Arabic (native)</span><span class="tag">Turkish (B2)</span><span class="tag">English (C1)</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">
+      <span><span class="ok">●</span> tokens: 3 accents · 1 stylesheet · 0 frameworks</span>
+      <span>plex mono / plex sans</span>
+    </div>
+  </div>
+</main>
+
+<script>
+// tabs
+const tabs = document.querySelectorAll('.tabs button');
+const names = { exp:['experience','01 / 03'], edu:['education','02 / 03'], skl:['skills','03 / 03'] };
+tabs.forEach(t => t.addEventListener('click', () => {
+  tabs.forEach(x => x.setAttribute('aria-selected', x===t));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.id===t.dataset.p));
+  document.getElementById('secname').textContent = names[t.dataset.p][0];
+  document.getElementById('secidx').textContent  = names[t.dataset.p][1];
+}));
+// accent tokens
+document.querySelectorAll('.themes button').forEach(b => b.addEventListener('click', () => {
+  document.documentElement.dataset.accent = b.dataset.t;
+  document.querySelectorAll('.themes button').forEach(x => x.setAttribute('aria-pressed', x===b));
+}));
+</script>
+</body>
+</html>

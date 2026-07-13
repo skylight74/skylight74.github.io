@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="card glassfor" id="for">
+  <svg class="cstar c1" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="0.5"><rect x="15" y="15" width="70" height="70"/><rect x="15" y="15" width="70" height="70" transform="rotate(45 50 50)"/></g></svg><svg class="cstar c2" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="0.55"><rect x="15" y="15" width="70" height="70"/><rect x="15" y="15" width="70" height="70" transform="rotate(45 50 50)"/></g></svg><svg class="cstar c3" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="0.6"><rect x="15" y="15" width="70" height="70"/><rect x="15" y="15" width="70" height="70" transform="rotate(45 50 50)"/></g></svg><svg class="cstar c4" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="0.65"><rect x="15" y="15" width="70" height="70"/><rect x="15" y="15" width="70" height="70" transform="rotate(45 50 50)"/></g></svg><svg class="cstar c5" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="0.7"><rect x="15" y="15" width="70" height="70"/><rect x="15" y="15" width="70" height="70" transform="rotate(45 50 50)"/></g></svg>
+  <div class="in reveal">
+    <a class="cdhome" href="/">cd /&nbsp;&nbsp;# home</a>
+    <div class="sec-label"><b>~</b>for --off-menu</div>
+    <h2>You found the switchboard.</h2>
+    <p class="sum">This page isn't linked from anywhere — nicely done. Six tailored views of the same attested work, one per hiring conversation. Flip a card, pick yours.</p>
+    <div class="peeks">
+      {{ $lbl := dict "core" "CORE" "devsecops" "SEC" "platform" "GO" "aisec" "AI-SEC" "research" "RSRCH" "lead" "LEAD" }}
+      {{ range $k := slice "core" "devsecops" "platform" "aisec" "research" "lead" }}{{ $pp := index site.Data.presets.presets $k }}
+      <a class="peek" href="{{ $pp.url }}" data-skin="{{ $pp.skin }}" data-role="{{ $k }}">
+        <span class="flip">
+          <span class="face front gpat">
+            <span class="rk">{{ index $lbl $k }}</span>
+            <span class="pk">{{ $pp.kicker }}</span>
+            <em>{{ $pp.open_to }}</em>
+            <span class="u">→ {{ $pp.url }}</span>
+            {{ if eq $k "core" }}<span class="dft">● default — this is /</span>{{ end }}
+            <span class="fc" aria-hidden="true">⟳ hover</span>
+          </span>
+          <span class="face back gpat">
+            <span class="bs">{{ $pp.summary_html | safeHTML }}</span>
+            <span class="u">enter →</span>
+          </span>
+        </span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

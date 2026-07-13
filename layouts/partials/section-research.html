@@ -1,0 +1,6 @@
+{{ $p := .p }}
+<div class="in reveal">
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Research</div>{{ else }}<div class="sec-label"><b>05</b>research --published</div>{{ end }}
+  <h2>Research</h2>
+  {{ range site.Data.publications.publications }}<div class="pub"><div class="v">{{ $parts := split .venue "(" }}{{ if gt (len $parts) 1 }}{{ trim (index $parts 0) " " }}<br>{{ trim (index $parts 1) ")" }}{{ else }}{{ $yr := index (findRE "[0-9]{4}" .venue) 0 }}{{ trim (replace .venue $yr "") " " }}<br>{{ $yr }}{{ end }}</div><div><div class="t">{{ .title }}</div><div class="a">{{ replace (delimit .authors " · ") "Mohamed Aly Amin" "<b>Mohamed Aly Amin</b>" | safeHTML }}</div>{{ with .url }}<a href="{{ . }}">springer ↗</a>{{ end }}{{ with .note }}<div class="a">{{ . }}</div>{{ end }}</div></div>{{ end }}
+</div>

@@ -1,0 +1,50 @@
+# Projects content, added 2026-07-10 per Mohamed's decision (add projects
+# section incl. DIONA). Wording exactly-true to Projects/CV/base-cv.yaml;
+# DIONA entry states his attested role (GPU training pipeline), no
+# unverified claims (the Koç Sistem pilot detail stays off until he
+# confirms it).
+projects:
+  - name: "Real-Time Detection Engine (Go)"
+    key: rtengine
+    date: "2024 – 2025"
+    body: "Kafka → ClickHouse stream-processing engine at ~400k events/sec with Redis state, OpenTelemetry observability, and a configurable detection + alerting rule engine."
+  # Koç Sistem pilot confirmed true + public by Mohamed 2026-07-11.
+  - name: "DIONA — LSTM Intrusion-Detection System"
+    key: diona
+    date: "2022 – 2025"
+    url: "https://github.com/nightswall/DIONA"
+    # Front-facing site attested + verified loading 2026-07-13 (title: "DIONA").
+    docs: "https://nightswall.github.io/"
+    # MLOps wording attested by Mohamed 2026-07-13 ("I did MLOps in DIONA").
+    body: "Graduation project (BSc, METU); built the end-to-end MLOps pipeline (GPU-enabled Kubernetes cluster, dataset curation, training, evaluation). Ran an enterprise pilot at Koç Sistem (Azure Sentinel/Defender integration phase). Ecosystem repos: ML training engine, GPU-LSTM prediction engine, and a Kubernetes IoT monitoring stack (ai4iot)."
+  - name: "SmartGridLedger — Permissioned Blockchain (Hyperledger Fabric)"
+    key: sgl
+    date: "2024"
+    # github url removed 2026-07-13 (repo private/404 publicly — Mohamed chose
+    # docs-only; GitBook verified loading: "Project Overview | Smart Grid Ledger").
+    docs: "https://mohamed-amins-personal-organizat.gitbook.io/smart-grid-ledger"
+    body: "Authored original multi-org Fabric chaincode (TypeScript) on a Kubernetes + Istio network for secure energy-distribution settlement; published at MedPower 2024 (TÜBİTAK-funded)."
+  # OSSArch + Container Security added 2026-07-11 (his ask). Wording from
+  # legacy master-cv (its top-5 project strategy listed both); detail here
+  # deliberately complements, not repeats, the experience bullets.
+  - name: "OSSArch — Open-Source SIEM/SOAR Platform"
+    key: ossarch
+    date: "2021 – 2022"
+    body: "Modular NOC/SOC platform with tiered packaging (Zero-Dollar, Pro, Enterprise), built entirely on open source: TheHive, Cortex, MISP, ELK/Beats, Grafana, Snort, Wazuh, Zabbix, pfSense — with OSINT enrichment from VirusTotal and AlienVault OTX. Designed and delivered by the 6-engineer team formed and led at Interprobe."
+  # Added 2026-07-13, Mohamed attestation: title = recorded name (no "Breaking
+  # Barriers" prefix), year 2018, LEAD placement. Facts from volunteering.yaml.
+  - name: "Joining Efforts for Refugees — Conference"
+    key: refconf
+    date: "2018"
+    body: "Organized under the METU International Student Association chairmanship: a refugee-integration conference sponsored by METU, ASAM, and HÜGO — one of 5+ events serving a 200+ member community."
+  # Added 2026-07-13 (projects review): GO-page card for the attested freelance
+  # platform rebuild (resume bullet). Architecture-first body; stack named in the
+  # experience bullet on the same page. Shown only via preset selection (platform).
+  - name: "Housing-Listings Platform — 10-Microservice Rebuild"
+    key: housing
+    date: "2023 – Present"
+    body: "Sole rebuild of a live housing-listings platform into 10 microservices on AWS (EC2, RDS, S3) — 270k registered users, 360k+ cumulative listings; event-driven architecture, currently in staging."
+  - name: "Container Security Vulnerability Assessment"
+    key: containerva
+    date: "2022"
+    body: "Security assessment of microservices applications (Pitstop, Robot Shop, Kubernetes Goat); identified and documented SQL injection, NoSQL injection, RabbitMQ, and SMTP vulnerabilities. Groundwork for the AINA 2024 container-security research — presented at the international conference in Japan."

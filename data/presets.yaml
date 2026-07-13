@@ -1,0 +1,134 @@
+# Role-preset content packs. Values approved in mockup v2 (2026-07-12 spec).
+# Content lane may tune wording here; keys/structure belong to the rebuild.
+stats:
+  eps:     { num: "~400k/s", label: "security events — Go detection engine, 80+ sources", count: "400", pre: "~", post: "k/s" }
+  acc:     { num: "98.11%",  label: "IDS accuracy — first-author, AINA 2024 (Springer)", count: "98.11", post: "%" }
+  mvp:     { num: "3 mo",    label: "SIEM/SOAR MVP shipped vs 6–12 mo company norm", count: "3", post: " mo" }
+  team:    { num: "6 eng",   label: "DevSecOps team formed, led, and trained", count: "6", post: " eng" }
+  users:   { num: "270k",    label: "user platform rebuilt as 10 microservices on AWS", count: "270", post: "k" }
+  papers:  { num: "2",       label: "peer-reviewed papers — AINA (Springer) · MedPower, TÜBİTAK-funded", count: "2" }
+  trained: { num: "4+",      label: "engineers & ASELSAN partners trained", count: "4", post: "+" }
+  # Added 2026-07-13 (Mohamed: "give what's needed not what exists"). All attested:
+  # sources — same claim as eps label (resume: "80+ sources"); listings — resume freelance
+  # bullet "360k+ cumulative listings"; members — volunteering.yaml "200+ members";
+  # ventures — resume Castrum bullet "15–20 startup ventures".
+  sources:  { num: "80+",    label: "event sources integrated — one Go detection engine", count: "80", post: "+" }
+  listings: { num: "360k+",  label: "cumulative listings — 270k-user platform, 10 microservices", count: "360", post: "k+" }
+  members:  { num: "200+",   label: "members — chaired METU International Students Association", count: "200", post: "+" }
+  ventures: { num: "15–20",  label: "startup ventures technically assessed for investment", count: "15", post: "–20" }
+  # Added 2026-07-13, Mohamed direct attestation ("1 conference…"; "I used to teach the
+  # cybersecurity class in Istanbul Aydın via Interprobe"). Conference = AINA 2024
+  # presentation (publications.yaml note: "Presented in Japan").
+  conf:     { num: "1",      label: "international conference presentation — AINA 2024, Japan" }
+  # Title: Mohamed proposed "visiting professor"; shipped as "visiting lecturer" per the
+  # exactly-true rule (industry-guest teaching ≠ professorship; lecturer survives checks).
+  # Course name attested by Mohamed 2026-07-13: "Introduction to Cybersecurity".
+  taught:   { num: "1",      label: "course taught as visiting lecturer — Introduction to Cybersecurity, Istanbul Aydın University" }
+presets:
+  core:
+    url: "/"
+    skin: oxo
+    voice: terminal
+    kicker: "Security & Infrastructure Engineering"
+    summary_html: 'I work where security meets systems: formed and led a <b>six-engineer DevSecOps team</b>, sole-built a <b>real-time Go detection engine</b>, and first-authored a peer-reviewed intrusion-detection paper (<b>AINA 2024, Springer</b>).'
+    open_to: "DevSecOps · Platform/Backend (Go) · Security · Tech Lead"
+    # Explicit approved-5 list (final review caught refconf+housing leaking onto
+    # core via the no-filter fallback after the set grew to 7).
+    projects: [rtengine, diona, sgl, ossarch, containerva]
+    stats: [eps, acc, mvp, team]
+    typed_pin: 0
+  devsecops:
+    url: "/for/devsecops/"
+    # Honors trimmed on specialist pages 2026-07-13 (recruiter matrix): IChO-2012
+    # participation = oldest/weakest row, no lane value outside academic/complete pages.
+    honors_list: [burslari, mitef]
+    # Services curated 2026-07-13: crypto items off security employment pages.
+    services_list: [devsec, assess, gostream]
+    projects: [ossarch, rtengine, containerva, diona]
+    # Experience filter (recruiter review 2026-07-13): specialist pages drop non-eng early entries.
+    experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
+    cv: "/media/cv-devsecops.pdf"
+    cv_dl: "Mohamed_Aly_Amin_CV_DevSecOps.pdf"
+    skin: mono
+    voice: terminal
+    kicker: "DevSecOps — pipelines, detection, response"
+    # 2026-07-13: AINA tail restored per devsecops lane ("with a first-author security-ML paper").
+    summary_html: 'DevSecOps engineer: formed and led a <b>six-engineer team</b> that shipped a SIEM/SOAR platform in <b>3 months</b>; builds secure <b>CI/CD, Kubernetes, and Terraform</b> pipelines; sole-built a real-time Go detection engine at <b>~400k events/sec</b> (SAST/DAST/SCA · ELK/Wazuh/Sentinel · AWS) — with a first-author security-ML paper (<b>AINA 2024</b>).'
+    open_to: "DevSecOps · Security Engineering · Platform/Cloud"
+    stats: [mvp, sources, eps, team]
+    typed_pin: 0
+    # Typed rotation curated per role (subset of profile.roles; Mohamed 2026-07-13 "optimize about per role").
+    roles: ["DevSecOps Engineer", "Security Engineer", "Site Reliability Engineer"]
+  platform:
+    url: "/for/platform/"
+    honors_list: [burslari, mitef]
+    services_list: [gostream, devsec, web3, assess]
+    projects: [rtengine, housing, sgl, diona]
+    # Sardis cut on GO (2026-07-13 final judgment): Web3-security signal + TS frontend artifact = mismatch on a Go-backend page.
+    experience: [freelance, dolusoft, castrum, metu, interprobe]
+    cv: "/media/cv-go-backend.pdf"
+    cv_dl: "Mohamed_Aly_Amin_CV_Go_Backend.pdf"
+    skin: ink
+    voice: terminal
+    kicker: "Platform & Backend — Go, streaming, scale"
+    # 2026-07-13: ML-edge tail restored per go-backend lane ("security and applied-ML edge").
+    summary_html: 'Backend engineer for <b>high-throughput Go systems</b>: sole-built a Kafka → ClickHouse stream engine sustaining <b>~400k events/sec</b> (Redis, OpenTelemetry), rebuilt a <b>270k-user platform into 10 microservices</b> on AWS — event-driven, gRPC, distributed systems, with a security and applied-ML edge (<b>AINA 2024, first author</b>).'
+    open_to: "Platform / Backend (Go) · SRE · DevSecOps"
+    # go-backend lane keeps the AINA/ML edge and reads IC ("sole-designed") — acc restored,
+    # listings dropped (same project as users cell = padding), team cut (IC lane, no fluff:
+    # Mohamed 2026-07-13 "optimal per role, count free").
+    stats: [eps, users, acc]
+    typed_pin: 0
+    roles: ["Backend Developer (Go)", "Site Reliability Engineer", "DevSecOps Engineer"]
+  aisec:
+    url: "/for/ai-security/"
+    honors_list: [burslari, mitef]
+    services_list: [mlsec, devsec, assess, gostream]
+    projects: [diona, rtengine, ossarch, containerva]
+    experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
+    cv: "/media/cv-detection-secml.pdf"
+    cv_dl: "Mohamed_Aly_Amin_CV_Detection_SecML.pdf"
+    skin: graphite
+    voice: terminal
+    kicker: "AI × Security — detection models in production"
+    summary_html: 'Detection engineer bridging <b>security and applied ML</b>: 98.11% IDS accuracy (<b>one-class SVM, AINA 2024</b>), the OSSArch SIEM/SOAR stack, and a <b>~400k events/sec Go engine</b> with detection-as-code anomaly rules — MLOps on <b>GPU Kubernetes</b>.'
+    open_to: "AI Security / Detection Engineering · Security-ML · MLOps"
+    stats: [acc, eps, sources, mvp]
+    typed_pin: 0
+    roles: ["Security-ML Researcher", "MLOps Engineer", "Security Engineer", "DevSecOps Engineer"]
+  research:
+    url: "/for/research/"
+    services: false
+    projects: [diona, sgl, containerva]
+    experience: [freelance, dolusoft, metu, interprobe]
+    cv: "/media/cv-research-ml.pdf"
+    cv_dl: "Mohamed_Aly_Amin_CV_Research_ML.pdf"
+    skin: latex2
+    voice: editorial
+    kicker: "Security-ML Research — detection, published"
+    # PROJECT MAPPING (Mohamed, final, 2026-07-13): TÜBİTAK-funded project = the AINA
+    # paper + its research + its dataset. DIONA = graduation project, SEPARATE (LSTM,
+    # GPU/MLOps pipeline, Koç Sistem pilot). Never re-attach TÜBİTAK or the grant number
+    # to DIONA.
+    summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM</b>) and a container-specific vulnerability dataset, TÜBİTAK-funded; separately built the end-to-end <b>GPU/MLOps training pipeline in PyTorch on Kubernetes</b> for the DIONA <b>LSTM</b> IDS (graduation project — <b>Koç Sistem pilot</b>).'
+    open_to: "Security-ML Research · Detection Engineering · Applied ML R&D"
+    # Academic buyer: accuracy → publications → production credibility. MVP cut (corporate
+    # delivery metric, not an academic screen). Teaching lives in the Interprobe bullet.
+    stats: [acc, papers, eps]
+    typed_pin: 0
+    roles: ["Security-ML Researcher", "Security Engineer"]
+  lead:
+    url: "/for/lead/"
+    services: false
+    projects: [ossarch, refconf, rtengine, diona]
+    skin: ink
+    voice: editorial
+    serif: true
+    photo: "/media/lead-photo.jpg"
+    tagline: "Engineering leader — security, platform, delivery."
+    kicker: "Engineering Leadership — teams that ship"
+    # 2026-07-13: university named per Mohamed's teaching attestation.
+    summary_html: 'I build teams that ship: <b>formed and led six engineers</b> to deliver an MVP SIEM/SOAR in <b>3 months vs the 6–12 month norm</b>, <b>trained 4 engineers and ASELSAN partners</b>, taught at Istanbul Aydın University, and led a <b>200+ member organization</b>.'
+    open_to: "Tech Lead / Engineering Lead · DevSecOps · Platform · Security"
+    # EM/TL screens: delivery outcome (mvp) beats investor-side DD (ventures dropped).
+    stats: [team, trained, mvp, members]
