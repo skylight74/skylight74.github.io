@@ -47,14 +47,34 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
   --hairline:#d9d2c0;--fg:#1d1b16;--fg-dim:#6f6a5c;--fg-faint:#6f6a5c17;--accent-ink:#fffdf8;
   --head:var(--serif);--accent:#1a4fa0;--accent-dim:#1a4fa01e;--act:#1a4fa0;--act-dim:#1a4fa01e;--act-glow:transparent}
 
-/* /for role-picker peek cards (each card wears its target skin's tokens) */
-.peeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--s3);margin-top:var(--s4)}
-.peek{display:block;background:var(--bg);color:var(--fg);border:1px solid var(--hairline);border-radius:0 0 14px 0;
-  padding:var(--s4);text-decoration:none;transition:border-color .18s ease,transform .18s ease}
-.peek:hover{border-color:var(--act);transform:translateY(-2px)}
-.peek .pk{display:block;font:600 13px var(--head);letter-spacing:.02em;color:var(--accent);margin-bottom:var(--s2)}
-.peek em{display:block;font:400 11px var(--mono);font-style:normal;color:var(--fg-dim);margin-bottom:var(--s3)}
+/* /for role-picker: glass flip cards over a BSOD-blue backdrop (each card wears its role's skin tokens) */
+#for.glassfor{background:radial-gradient(52% 44% at 18% 12%,#6fa8ff26,transparent 60%),
+  radial-gradient(40% 38% at 82% 88%,#ee539618,transparent 60%),
+  linear-gradient(160deg,#071c4d,#0a2a6e 55%,#071737)}
+#for.glassfor .sec-label{color:#b7cbf0}#for.glassfor .sec-label b{color:#6fa8ff}
+#for.glassfor h2{color:#eaf1ff}#for.glassfor .sum{color:#b7cbf0}
+.peeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s4);margin-top:var(--s4);perspective:1400px}
+.peek{position:relative;display:block;min-height:260px;text-decoration:none;color:var(--fg);
+  transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.25,1)}
+.peek:hover,.peek:focus-visible{transform:rotateY(180deg)}
+.peek .face{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s2);
+  padding:var(--s4);border-radius:0 0 18px 0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border:1px solid color-mix(in srgb,var(--accent) 38%,#ffffff2e);
+  background:linear-gradient(150deg,color-mix(in srgb,var(--bg) 52%,transparent),color-mix(in srgb,var(--bg) 74%,transparent)),
+    linear-gradient(150deg,#ffffff14,transparent 45%);
+  -webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15);
+  box-shadow:0 14px 34px #04123394}
+.peek .back{transform:rotateY(180deg);justify-content:center}
+.peek .pk{font:600 13.5px var(--head);letter-spacing:.01em;color:var(--accent)}
+.peek em{font:400 11px var(--mono);font-style:normal;color:var(--fg-dim)}
 .peek .u{font:500 10.5px var(--mono);letter-spacing:.08em;color:var(--act)}
+.peek .bs{font:400 12.5px/1.5 var(--sans);color:var(--fg)}
+.peek .bs b{color:var(--accent);font-weight:600}
+@media (prefers-reduced-motion: reduce){
+  .peek:hover,.peek:focus-visible{transform:none}
+  .peek:hover .front,.peek:focus-visible .front{opacity:0}
+  .peek:hover .back,.peek:focus-visible .back{transform:none}
+}
 
 /* base */
 *{margin:0;padding:0;box-sizing:border-box}
