@@ -99,6 +99,16 @@ html[data-skin="mono"] body>.orb,html[data-skin="ink"] body>.orb,html[data-skin=
   .peek:hover .back,.peek:focus-visible .back{transform:none}
 }
 
+/* girih star-and-cross interlace (original, kaleidoscope 8-fold) — token-colored mask */
+.gpat::before{content:"";position:absolute;inset:0;z-index:0;background:var(--accent);opacity:.09;pointer-events:none;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Cg fill=%27none%27 stroke=%27black%27 stroke-width=%271.6%27%3E%3Cpath d=%27M58.4 58.4 L21.6 58.4 L21.6 21.6 L58.4 21.6 Z%27/%3E%3Cpath d=%27M40.0 66.0 L14.0 40.0 L40.0 14.0 L66.0 40.0 Z%27/%3E%3Cpath d=%27M9.9 9.9 L-9.9 9.9 L-9.9 -9.9 L9.9 -9.9 Z%27/%3E%3Cpath d=%27M0.0 14.0 L-14.0 0.0 L-0.0 -14.0 L14.0 -0.0 Z%27/%3E%3Cpath d=%27M89.9 9.9 L70.1 9.9 L70.1 -9.9 L89.9 -9.9 Z%27/%3E%3Cpath d=%27M80.0 14.0 L66.0 0.0 L80.0 -14.0 L94.0 -0.0 Z%27/%3E%3Cpath d=%27M9.9 89.9 L-9.9 89.9 L-9.9 70.1 L9.9 70.1 Z%27/%3E%3Cpath d=%27M0.0 94.0 L-14.0 80.0 L-0.0 66.0 L14.0 80.0 Z%27/%3E%3Cpath d=%27M89.9 89.9 L70.1 89.9 L70.1 70.1 L89.9 70.1 Z%27/%3E%3Cpath d=%27M80.0 94.0 L66.0 80.0 L80.0 66.0 L94.0 80.0 Z%27/%3E%3C/g%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 80%27%3E%3Cg fill=%27none%27 stroke=%27black%27 stroke-width=%271.6%27%3E%3Cpath d=%27M58.4 58.4 L21.6 58.4 L21.6 21.6 L58.4 21.6 Z%27/%3E%3Cpath d=%27M40.0 66.0 L14.0 40.0 L40.0 14.0 L66.0 40.0 Z%27/%3E%3Cpath d=%27M9.9 9.9 L-9.9 9.9 L-9.9 -9.9 L9.9 -9.9 Z%27/%3E%3Cpath d=%27M0.0 14.0 L-14.0 0.0 L-0.0 -14.0 L14.0 -0.0 Z%27/%3E%3Cpath d=%27M89.9 9.9 L70.1 9.9 L70.1 -9.9 L89.9 -9.9 Z%27/%3E%3Cpath d=%27M80.0 14.0 L66.0 0.0 L80.0 -14.0 L94.0 -0.0 Z%27/%3E%3Cpath d=%27M9.9 89.9 L-9.9 89.9 L-9.9 70.1 L9.9 70.1 Z%27/%3E%3Cpath d=%27M0.0 94.0 L-14.0 80.0 L-0.0 66.0 L14.0 80.0 Z%27/%3E%3Cpath d=%27M89.9 89.9 L70.1 89.9 L70.1 70.1 L89.9 70.1 Z%27/%3E%3Cpath d=%27M80.0 94.0 L66.0 80.0 L80.0 66.0 L94.0 80.0 Z%27/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-size:80px 80px;mask-size:80px 80px}
+.strip.gpat::before{opacity:.10}
+.proj.gpat::before,.svc.gpat::before{opacity:.05}
+.strip>*{position:relative;z-index:1}
+.proj.gpat,.svc.gpat{position:relative;overflow:hidden}
+.proj.gpat>*,.svc.gpat>*{position:relative;z-index:1}
+
 /* base */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-snap-type:y proximity;scroll-behavior:smooth}

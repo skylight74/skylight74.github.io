@@ -1,8 +1,8 @@
 {{ $p := .p }}
 <div class="in reveal">
-  {{ if eq $p.voice "editorial" }}<div class="sec-label">Services</div>{{ else }}<div class="sec-label"><b>06</b>services --list</div>{{ end }}
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Services</div>{{ else }}<div class="sec-label"><b>07</b>services --list</div>{{ end }}
   <h2>Services</h2>
   <div class="svcs">
-    {{ range $i, $s := site.Data.services.services }}<div class="svc"><div class="no">{{ printf "%02d" (add $i 1) }}</div><h3>{{ $s.title }}</h3><p>{{ $s.body }}</p></div>{{ end }}
+    {{ range $i, $s := site.Data.services.services }}<div class="svc gpat"><div class="no">{{ printf "%02d" (add $i 1) }}</div><h3>{{ $s.title }}</h3><p>{{ $s.body }}</p></div>{{ end }}
   </div>
 </div>

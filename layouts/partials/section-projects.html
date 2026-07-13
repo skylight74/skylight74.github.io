@@ -6,7 +6,7 @@
     {{ $sel := $p.projects }}{{ $all := site.Data.projects.projects }}
     {{ $list := $all }}{{ if $sel }}{{ $list = slice }}{{ range $k := $sel }}{{ range where $all "key" $k }}{{ $list = $list | append . }}{{ end }}{{ end }}{{ end }}
     {{ range $list }}
-    <div class="proj">
+    <div class="proj gpat">
       <div class="yr">{{ .date }}</div>
       <h3>{{ .name }}</h3>
       <p>{{ .body }}</p>

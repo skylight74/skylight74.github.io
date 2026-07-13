@@ -91,6 +91,18 @@ experience:
       </ul>
   # logo: is ignored by the current fixed-block template; it is there for the
   # range-loop rework (rebuild lane).
+  # Chairman moved here 2026-07-13 (Mohamed: "chairman is either in volunteering
+  # or experience"). Facts from volunteering.yaml; renders via qualifier "volunteer".
+  - period: "Apr 2016 - Jan 2019"
+    title: "Chairman"
+    company: "METU INTERNATIONAL STUDENT ASSOCIATION"
+    key: misa
+    qualifier: "volunteer"
+    body_html: |-
+      <ul>
+          <li>Led the 200+ member International Student Association at METU; worked alongside NGOs on student integration.</li>
+          <li>Organized 5+ events including the 'Joining Efforts for Refugees' conference (METU, ASAM, HÜGO).</li>
+      </ul>
   - period: "Jul 2018 - Sep 2018"
     title: "Business Development Analyst"
     company: "BORAQ-GROUP"
