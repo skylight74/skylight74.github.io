@@ -36,6 +36,7 @@ presets:
     typed_pin: 0
   devsecops:
     url: "/for/devsecops/"
+    projects: [ossarch, rtengine, containerva, diona]
     # Experience filter (recruiter review 2026-07-13): specialist pages drop non-eng early entries.
     experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-devsecops.pdf"
@@ -51,6 +52,7 @@ presets:
     roles: ["DevSecOps Engineer", "Security Engineer", "Site Reliability Engineer"]
   platform:
     url: "/for/platform/"
+    projects: [rtengine, sgl, diona]
     # Sardis cut on GO (2026-07-13 final judgment): Web3-security signal + TS frontend artifact = mismatch on a Go-backend page.
     experience: [freelance, dolusoft, castrum, metu, interprobe]
     cv: "/media/cv-go-backend.pdf"
@@ -68,6 +70,7 @@ presets:
     roles: ["Backend Developer (Go)", "Site Reliability Engineer", "DevSecOps Engineer"]
   aisec:
     url: "/for/ai-security/"
+    projects: [diona, rtengine, ossarch, containerva]
     experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-detection-secml.pdf"
     skin: graphite
@@ -80,6 +83,7 @@ presets:
     roles: ["Security-ML Researcher", "MLOps Engineer", "Security Engineer", "DevSecOps Engineer"]
   research:
     url: "/for/research/"
+    projects: [diona, sgl, containerva]
     experience: [freelance, dolusoft, metu, interprobe]
     cv: "/media/cv-research-ml.pdf"
     skin: latex2
@@ -98,6 +102,7 @@ presets:
     roles: ["Security-ML Researcher", "Security Engineer"]
   lead:
     url: "/for/lead/"
+    projects: [ossarch, rtengine, diona]
     skin: ink
     voice: editorial
     serif: true

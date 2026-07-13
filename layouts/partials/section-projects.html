@@ -3,7 +3,9 @@
   {{ if eq $p.voice "editorial" }}<div class="sec-label">Selected work</div>{{ else }}<div class="sec-label"><b>03</b>projects --selected</div>{{ end }}
   <h2>Selected work</h2>
   <div class="projs">
-    {{ range site.Data.projects.projects }}
+    {{ $sel := $p.projects }}{{ $all := site.Data.projects.projects }}
+    {{ $list := $all }}{{ if $sel }}{{ $list = slice }}{{ range $k := $sel }}{{ range where $all "key" $k }}{{ $list = $list | append . }}{{ end }}{{ end }}{{ end }}
+    {{ range $list }}
     <div class="proj">
       <div class="yr">{{ .date }}</div>
       <h3>{{ .name }}</h3>
