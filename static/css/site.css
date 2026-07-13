@@ -48,11 +48,14 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
   --head:var(--serif);--accent:#1a4fa0;--accent-dim:#1a4fa01e;--act:#1a4fa0;--act-dim:#1a4fa01e;--act-glow:transparent}
 
 /* /for role-picker: glass flip cards over a BSOD-blue backdrop (each card wears its role's skin tokens) */
-#for.glassfor{background:radial-gradient(52% 44% at 18% 12%,#6fa8ff26,transparent 60%),
-  radial-gradient(40% 38% at 82% 88%,#ee539618,transparent 60%),
-  linear-gradient(160deg,#071c4d,#0a2a6e 55%,#071737)}
-#for.glassfor .sec-label{color:#b7cbf0}#for.glassfor .sec-label b{color:#6fa8ff}
-#for.glassfor h2{color:#eaf1ff}#for.glassfor .sum{color:#b7cbf0}
+#for.glassfor{background:radial-gradient(52% 44% at 18% 12%,#ffffff21,transparent 60%),
+  radial-gradient(40% 38% at 82% 88%,#00294d33,transparent 62%),
+  linear-gradient(160deg,#0063b4,#0078d7 55%,#005ba6)}
+#for.glassfor .sec-label{color:#dcefff}#for.glassfor .sec-label b{color:#ffffff}
+#for.glassfor h2{color:#ffffff}#for.glassfor .sum{color:#dcefff}
+.cdhome{display:inline-block;margin-bottom:var(--s4);font:500 12px var(--mono);text-decoration:none;
+  color:#005ba6;background:#eaf1ff;padding:8px 14px;border-radius:3px}
+.cdhome:hover{background:#fff}
 .peeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s4);margin-top:var(--s4);perspective:1400px}
 .peek{position:relative;display:block;min-height:260px;text-decoration:none;color:var(--fg);
   transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.25,1)}
