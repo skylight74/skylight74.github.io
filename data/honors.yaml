@@ -1,5 +1,5 @@
-# Honors/awards content, prepared 2026-07-10. NOTHING RENDERS THIS YET: no
-# dedicated honors section exists on the site. The closest thing is one line
+# Honors/awards content, prepared 2026-07-10. Rendered by
+# layouts/partials/section-research.html (honors grid) since the rebuild. The closest thing is one line
 # in the "Fun Facts" widget (layouts/partials/section-about.html) mentioning
 # the chemistry olympiad, mixed in with unrelated personal trivia (karate,
 # countries visited) — that stays as-is, it's a different content category
@@ -15,3 +15,7 @@ honors:
   # January (old site's "Dec 2017 - Jan 2018" span resolved to Jan 2018).
   - title: "MIT Enterprise Forum Pan-Arab, January 2018"
     detail: "Three-day intensive entrepreneurship program (Amman, Jordan)."
+  # Added 2026-07-13 (Mohamed: "the conference is the actual priority").
+  # Attested by publications.yaml AINA note: "Presented in Japan."
+  - title: "AINA 2024 — International Conference Presentation, Japan"
+    detail: "Presented the first-author intrusion-detection paper at Springer's 38th AINA conference."
