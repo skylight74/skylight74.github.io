@@ -48,7 +48,7 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
   --head:var(--serif);--accent:#1a4fa0;--accent-dim:#1a4fa01e;--act:#1a4fa0;--act-dim:#1a4fa01e;--act-glow:transparent}
 
 /* /for role-picker: glass flip cards over a BSOD-blue backdrop (each card wears its role's skin tokens) */
-#for.glassfor{background:#000;position:relative;overflow:hidden}
+#for.glassfor{background:#000;position:relative;overflow:hidden;padding:48px var(--s4)}
 #for.glassfor>.in{position:relative;z-index:1}
 .orb{position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(72px);opacity:.45;z-index:0;pointer-events:none}
 .o1{background:radial-gradient(circle,#3ddbd9,transparent 66%);top:8%;left:4%;animation:drift1 26s ease-in-out infinite alternate}
@@ -71,10 +71,10 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
   background:linear-gradient(150deg,color-mix(in srgb,var(--bg) 52%,transparent),color-mix(in srgb,var(--bg) 74%,transparent)),
     linear-gradient(150deg,#ffffff14,transparent 45%);
   -webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15);
-  box-shadow:0 14px 34px #04123394}
+  box-shadow:0 16px 38px rgba(0,0,0,.62)}
 .peek[data-skin="mono"] .face,.peek[data-skin="ink"] .face,.peek[data-skin="latex2"] .face{
-  background:linear-gradient(150deg,color-mix(in srgb,var(--bg) 86%,transparent),color-mix(in srgb,var(--bg) 94%,transparent)),
-    linear-gradient(150deg,#ffffff10,transparent 45%)}
+  background:linear-gradient(150deg,color-mix(in srgb,var(--bg) 74%,transparent),color-mix(in srgb,var(--bg) 86%,transparent)),
+    linear-gradient(150deg,#ffffff0c,transparent 45%)}
 .peek .back{transform:rotateY(180deg);justify-content:center}
 .peek .rk{font:600 21px var(--mono);letter-spacing:.05em;color:var(--fg)}
 .peek .dft{font:500 10px var(--mono);letter-spacing:.06em;color:var(--act)}
