@@ -51,8 +51,9 @@ presets:
     summary_html: 'Backend engineer for <b>high-throughput Go systems</b>: sole-built a Kafka → ClickHouse stream engine sustaining <b>~400k events/sec</b> (Redis, OpenTelemetry), rebuilt a <b>270k-user platform into 10 microservices</b> on AWS — event-driven architecture, gRPC, distributed systems.'
     open_to: "Platform / Backend (Go) · SRE · DevSecOps"
     # go-backend lane keeps the AINA/ML edge and reads IC ("sole-designed") — acc restored,
-    # listings dropped (same project as users cell = padding), team = seniority tail.
-    stats: [eps, users, acc, team]
+    # listings dropped (same project as users cell = padding), team cut (IC lane, no fluff:
+    # Mohamed 2026-07-13 "optimal per role, count free").
+    stats: [eps, users, acc]
     typed_pin: 2
   aisec:
     url: "/for/ai-security/"
@@ -73,10 +74,9 @@ presets:
     # stays only on the two papers where publications.yaml attests it).
     summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM; LSTM sequence models in PyTorch</b>); built the end-to-end <b>GPU training pipeline on Kubernetes</b> for the DIONA IDS (TÜBİTAK-funded, <b>Koç Sistem pilot</b>) and a container-specific vulnerability dataset.'
     open_to: "Security-ML Research · Detection Engineering · Applied ML R&D"
-    # Academic buyer: accuracy → publications → production credibility → delivery.
-    # Teaching ("1") judged too weak as a strip number (recruiter review 2026-07-13);
-    # the fact lives in the Interprobe experience bullet with title + course name.
-    stats: [acc, papers, eps, mvp]
+    # Academic buyer: accuracy → publications → production credibility. MVP cut (corporate
+    # delivery metric, not an academic screen). Teaching lives in the Interprobe bullet.
+    stats: [acc, papers, eps]
     typed_pin: 5
   lead:
     url: "/for/lead/"
