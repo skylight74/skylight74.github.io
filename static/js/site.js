@@ -90,10 +90,9 @@ function initCount(){
   document.querySelectorAll('.stat .num').forEach(n=>cu.observe(n));
 }
 
-/* ---- contact form (ported from old static/js/contact-form.js: fetch POST,
-   inline success/error, double-submit guard). The old WP markup (.wpcf7-form /
-   .wpcf7-response-output) is gone; this targets the Formspree action directly
-   and creates its own .form-msg output node if the template didn't provide one. ---- */
+/* ---- contact form: fetch POST, inline success/error, double-submit guard.
+   Targets the Formspree action directly and creates its own .form-msg output
+   node if the template didn't provide one. ---- */
 function initForm(){
   const form=document.querySelector('form[action^="https://formspree.io"]');
   if(!form) return;

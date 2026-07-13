@@ -1,8 +1,9 @@
-# Resume experience/education entries (layouts/partials/section-resume.html).
+# Resume experience/education entries (rendered by layouts/partials/section-experience.html).
 # Synced 2026-07-09 to the attested master CV (Projects/CV/base-cv.yaml) and
 # LinkedIn: titles and dates identical across all three surfaces.
-# Elementor wrapper divs (data-ids, active-state classes) stay literal in the
-# template; only the per-entry text nodes and description inner-HTML live here.
+# 2026-07-12: titles display-cased + qualifier: fields added to match approved
+# mockup v2 rendering (facts unchanged). logo: fields currently unrendered
+# (text-only design) — kept for possible future use.
 experience:
   - period: "Jan 2023 - Present"
     title: "Security & Software Engineer"
