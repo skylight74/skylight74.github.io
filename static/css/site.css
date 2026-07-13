@@ -105,6 +105,7 @@ html[data-skin="mono"] body>.orb,html[data-skin="ink"] body>.orb,html[data-skin=
   -webkit-mask-size:80px 80px;mask-size:80px 80px}
 .strip.gpat::before{opacity:.035}
 .proj.gpat::before,.svc.gpat::before{opacity:.02}
+.peek .face.gpat::before{opacity:.02;z-index:0}
 .strip>*{position:relative;z-index:1}
 .proj.gpat,.svc.gpat,.stat.gpat{position:relative;overflow:hidden}
 .proj.gpat>*,.svc.gpat>*,.stat.gpat>*{position:relative;z-index:1}
