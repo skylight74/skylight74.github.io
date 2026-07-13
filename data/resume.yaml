@@ -57,7 +57,6 @@ experience:
       <ul>
           <li>Reached 98.11% intrusion-detection accuracy by developing an SGD one-class SVM model for containerized microservices; first-author publication at AINA 2024 (Springer).</li>
           <li>Created a container-specific vulnerability dataset for Kubernetes environments as part of the AINA 2024 work.</li>
-          <li>Built the end-to-end GPU training pipeline (GPU-enabled Kubernetes cluster, dataset curation, evaluation) for the DIONA LSTM intrusion-detection system.</li>
       </ul>
   - period: "Jul 2021 - May 2022"
     title: "Cyber Security Specialist (Tech Lead — OSSArch)"
@@ -98,7 +97,7 @@ education:
     title: "Middle East Technical University (METU)"
     place: "Ankara, Turkey"
     body_html: |-
-      <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient. Built a containerized MPLAB X development environment used by METU embedded-systems students.</p>
+      <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient. Graduation project: DIONA — built the end-to-end MLOps/GPU training pipeline for an LSTM intrusion-detection system. Built a containerized MPLAB X development environment used by METU embedded-systems students.</p>
   # DROPPED 2026-07-10 (his call, delegated: "do what you recommend and feel
   # wouldn't push recruiters away"). Was: "Cyber security specialty program,"
   # May 2021 - Nov 2021, "Certificate preparation program at Interprobe."

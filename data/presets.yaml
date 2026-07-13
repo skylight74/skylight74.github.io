@@ -75,10 +75,11 @@ presets:
     skin: latex2
     voice: editorial
     kicker: "Security-ML Research — detection, published"
-    # Grant #120E537 removed from DIONA attribution (Mohamed 2026-07-12: DIONA is his
-    # graduation project, separate from the #120E537 research project; grant number
-    # stays only on the two papers where publications.yaml attests it).
-    summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM; LSTM sequence models in PyTorch</b>); built the end-to-end <b>GPU training pipeline on Kubernetes</b> for the DIONA IDS (TÜBİTAK-funded, <b>Koç Sistem pilot</b>) and a container-specific vulnerability dataset.'
+    # PROJECT MAPPING (Mohamed, final, 2026-07-13): TÜBİTAK-funded project = the AINA
+    # paper + its research + its dataset. DIONA = graduation project, SEPARATE (LSTM,
+    # GPU/MLOps pipeline, Koç Sistem pilot). Never re-attach TÜBİTAK or the grant number
+    # to DIONA.
+    summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM</b>) and a container-specific vulnerability dataset, TÜBİTAK-funded; separately built the end-to-end <b>GPU/MLOps training pipeline in PyTorch on Kubernetes</b> for the DIONA <b>LSTM</b> IDS (graduation project — <b>Koç Sistem pilot</b>).'
     open_to: "Security-ML Research · Detection Engineering · Applied ML R&D"
     # Academic buyer: accuracy → publications → production credibility. MVP cut (corporate
     # delivery metric, not an academic screen). Teaching lives in the Interprobe bullet.
