@@ -108,7 +108,7 @@ presets:
   lead:
     url: "/for/lead/"
     services: false
-    projects: [ossarch, rtengine, diona]
+    projects: [ossarch, refconf, rtengine, diona]
     skin: ink
     voice: editorial
     serif: true

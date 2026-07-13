@@ -31,6 +31,12 @@ projects:
     key: ossarch
     date: "2021 – 2022"
     body: "Modular NOC/SOC platform with tiered packaging (Zero-Dollar, Pro, Enterprise), built entirely on open source: TheHive, Cortex, MISP, ELK/Beats, Grafana, Snort, Wazuh, Zabbix, pfSense — with OSINT enrichment from VirusTotal and AlienVault OTX. Designed and delivered by the 6-engineer team formed and led at Interprobe."
+  # Added 2026-07-13, Mohamed attestation: title = recorded name (no "Breaking
+  # Barriers" prefix), year 2018, LEAD placement. Facts from volunteering.yaml.
+  - name: "Joining Efforts for Refugees — Conference"
+    key: refconf
+    date: "2018"
+    body: "Organized under the METU International Student Association chairmanship: a refugee-integration conference sponsored by METU, ASAM, and HÜGO — one of 5+ events serving a 200+ member community."
   # Added 2026-07-13 (projects review): GO-page card for the attested freelance
   # platform rebuild (resume bullet). Architecture-first body; stack named in the
   # experience bullet on the same page. Shown only via preset selection (platform).
