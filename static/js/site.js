@@ -30,13 +30,17 @@ function initCanvas(){
   const cx=cv.getContext('2d');
   let W,H,mx=-999,my=-999;const GAP=34,R=180;
   const off=document.createElement('canvas');const ox=off.getContext('2d');
+  function star(c,x,y,r){c.save();c.translate(x,y);
+    c.fillRect(-r,-r*.28,2*r,r*.56);c.fillRect(-r*.28,-r,r*.56,2*r);
+    c.rotate(Math.PI/4);c.fillRect(-r*.62,-r*.18,1.24*r,.36*r);c.fillRect(-r*.18,-r*.62,.36*r,1.24*r);
+    c.restore();}
   function renderStatic(){
     if(!W||!H)return;
     const css=getComputedStyle(document.documentElement);
     const base=css.getPropertyValue('--fg-dim').trim();
     off.width=W;off.height=H;ox.clearRect(0,0,W,H);
     ox.fillStyle=base;ox.globalAlpha=0.09;
-    for(let x=GAP/2;x<W;x+=GAP)for(let y=GAP/2;y<H;y+=GAP)ox.fillRect(x-.5,y-.5,1,1);
+    for(let x=GAP/2;x<W;x+=GAP)for(let y=GAP/2;y<H;y+=GAP)star(ox,x,y,1.5);
     ox.globalAlpha=1;}
   function draw(){
     if(!W||!H||!off.width)return;
@@ -49,7 +53,7 @@ function initCanvas(){
     for(let x=x0;x<=x1;x+=GAP)for(let y=y0;y<=y1;y+=GAP){
       const d=Math.hypot(x-mx,y-my);if(d>R)continue;
       const near=1-d/R;cx.globalAlpha=0.09+near*0.5;
-      const sz=1+near*1.6;cx.fillRect(x-sz/2,y-sz/2,sz,sz);}
+      star(cx,x,y,1.5+near*2.4);}
     cx.globalAlpha=1;}
   function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;renderStatic();draw();}
   addEventListener('resize',size);
