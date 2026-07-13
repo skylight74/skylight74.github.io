@@ -28,6 +28,13 @@ projects:
     key: ossarch
     date: "2021 – 2022"
     body: "Modular NOC/SOC platform with tiered packaging (Zero-Dollar, Pro, Enterprise), built entirely on open source: TheHive, Cortex, MISP, ELK/Beats, Grafana, Snort, Wazuh, Zabbix, pfSense — with OSINT enrichment from VirusTotal and AlienVault OTX. Designed and delivered by the 6-engineer team formed and led at Interprobe."
+  # Added 2026-07-13 (projects review): GO-page card for the attested freelance
+  # platform rebuild (resume bullet). Architecture-first body; stack named in the
+  # experience bullet on the same page. Shown only via preset selection (platform).
+  - name: "Housing-Listings Platform — 10-Microservice Rebuild"
+    key: housing
+    date: "2023 – 2025"
+    body: "Sole rebuild of a live housing-listings platform into 10 microservices on AWS (EC2, RDS, S3) — 270k registered users, 360k+ cumulative listings; event-driven architecture, currently in staging."
   - name: "Container Security Vulnerability Assessment"
     key: containerva
     date: "2022"

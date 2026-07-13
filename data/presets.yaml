@@ -53,7 +53,7 @@ presets:
     roles: ["DevSecOps Engineer", "Security Engineer", "Site Reliability Engineer"]
   platform:
     url: "/for/platform/"
-    projects: [rtengine, sgl, diona]
+    projects: [rtengine, housing, sgl, diona]
     # Sardis cut on GO (2026-07-13 final judgment): Web3-security signal + TS frontend artifact = mismatch on a Go-backend page.
     experience: [freelance, dolusoft, castrum, metu, interprobe]
     cv: "/media/cv-go-backend.pdf"
