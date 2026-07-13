@@ -130,5 +130,11 @@ function initForm(){
   });
 }
 
-document.addEventListener('DOMContentLoaded',()=>{initTyped();initCanvas();initSpy();initCount();initForm();});
+/* ---- skin continuity: forward a #skin= fragment to blog/search-internal links ---- */
+function initSkinLinks(){
+  if(!/skin=(oxo|mono|ink|graphite|latex2)\b/.test(location.hash))return;
+  document.querySelectorAll('a[href^="/blog/"],a[href^="/search/"]').forEach(a=>{if(!a.hash)a.href+=location.hash;});
+}
+
+document.addEventListener('DOMContentLoaded',()=>{initTyped();initCanvas();initSpy();initCount();initForm();initSkinLinks();});
 })();
