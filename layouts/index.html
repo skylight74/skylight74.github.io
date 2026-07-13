@@ -7,7 +7,7 @@
 <section class="card" id="projects">{{ partial "section-projects.html" $ctx }}</section>
 <section class="card" id="skills">{{ partial "section-skills.html" $ctx }}</section>
 <section class="card" id="research">{{ partial "section-research.html" $ctx }}</section>
-<section class="card" id="services">{{ partial "section-services.html" $ctx }}</section>
+{{ if ne $p.services false }}<section class="card" id="services">{{ partial "section-services.html" $ctx }}</section>{{ end }}
 <section class="card" id="writing">{{ partial "section-writing.html" $ctx }}</section>
 <section class="card" id="contact">{{ partial "section-contact.html" $ctx }}</section>
 {{ end }}

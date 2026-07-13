@@ -83,6 +83,7 @@ presets:
     roles: ["Security-ML Researcher", "MLOps Engineer", "Security Engineer", "DevSecOps Engineer"]
   research:
     url: "/for/research/"
+    services: false
     projects: [diona, sgl, containerva]
     experience: [freelance, dolusoft, metu, interprobe]
     cv: "/media/cv-research-ml.pdf"
@@ -102,6 +103,7 @@ presets:
     roles: ["Security-ML Researcher", "Security Engineer"]
   lead:
     url: "/for/lead/"
+    services: false
     projects: [ossarch, rtengine, diona]
     skin: ink
     voice: editorial
