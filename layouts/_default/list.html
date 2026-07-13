@@ -1,7 +1,7 @@
 {{ define "main" }}
-<section class="card" id="blog">
+<section class="card page" id="blog">
   <div class="in reveal">
-    <div class="sec-label"><b>07</b>writing --all</div>
+    <div class="sec-label"><b>~</b>blog --index</div>
     <h1>Writing</h1>
     {{ range .Paginator.Pages }}<div class="post"><div class="d">{{ .Date.Format "2006-01-02" }}</div><div><a href="{{ .RelPermalink }}">{{ .Title }}</a><p>{{ .Summary | plainify }}</p></div></div>{{ end }}
     {{ if gt .Paginator.TotalPages 1 }}
