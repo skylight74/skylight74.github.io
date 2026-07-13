@@ -1,0 +1,6 @@
+{{ $p := .p }}
+<div class="in reveal">
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Honors</div>{{ else }}<div class="sec-label"><b>06</b>honors --awarded</div>{{ end }}
+  <h2>Honors</h2>
+  <div class="honors">{{ $sel := $p.honors_list }}{{ $all := site.Data.honors.honors }}{{ $list := $all }}{{ if $sel }}{{ $list = slice }}{{ range $k := $sel }}{{ range where $all "key" $k }}{{ $list = $list | append . }}{{ end }}{{ end }}{{ end }}{{ range $list }}<div class="honor"><div class="y">{{ index (findRE "[0-9]{4}" .title) 0 }}</div><div class="t">{{ .title }}</div><div class="d">{{ .detail }}</div></div>{{ end }}</div>
+</div>

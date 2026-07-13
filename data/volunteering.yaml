@@ -1,0 +1,13 @@
+# Volunteering (added 2026-07-11, his ask: "say the achievements and
+# participants and all the stuff"). Content from legacy master-cv.yaml
+# Chairman entry (the attested detail set). End date RESOLVED 2026-07-11:
+# Jan 2019 — handover period Sep 2018 to Jan 2019 was one full semester,
+# his call that Jan 2019 fits better. Matches LinkedIn.
+volunteering:
+  - period: "Apr 2016 - Jan 2019"
+    role: "Chairman"
+    organization: "METU International Student Association"
+    highlights:
+      - "Led the 200+ member International Student Association at Middle East Technical University."
+      - "Worked alongside NGOs to support student integration and adaptation into society."
+      - "Organized 5+ events including the 'Joining Efforts for Refugees' conference, sponsored by METU, ASAM, and HÜGO."

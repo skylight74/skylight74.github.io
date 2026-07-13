@@ -1,0 +1,26 @@
+{{ $p := .p }}
+<div class="in reveal">
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Selected work</div>{{ else }}<div class="sec-label"><b>03</b>projects --selected</div>{{ end }}
+  <h2>Selected work</h2>
+  <div class="projs">
+    {{ $sel := $p.projects }}{{ $all := site.Data.projects.projects }}
+    {{ $list := $all }}{{ if $sel }}{{ $list = slice }}{{ range $k := $sel }}{{ range where $all "key" $k }}{{ $list = $list | append . }}{{ end }}{{ end }}{{ end }}
+    {{ range $list }}
+    <div class="proj gpat">
+      <div class="yr">{{ .date }}</div>
+      <h3>{{ .name }}</h3>
+      <p>{{ .body }}</p>
+      {{ if or .url .docs }}<span>{{ $u := .url }}{{ with .url }}<a href="{{ . }}">github ↗</a>{{ end }}{{ with .docs }}{{ if $u }} · {{ end }}<a href="{{ . }}">docs ↗</a>{{ end }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <div class="skill-group" style="margin-top:var(--s4)">
+    <div class="skill-label"><b>»</b>Open source</div>
+    {{ range site.Data.open_source.contributions }}
+    <div class="post">
+      <div class="d">{{ .kind | default "PR" }}</div>
+      <div><a href="{{ .url }}">{{ .name }}</a><p>{{ .detail }}</p></div>
+    </div>
+    {{ end }}
+  </div>
+</div>

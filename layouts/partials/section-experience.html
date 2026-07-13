@@ -1,0 +1,28 @@
+{{ $p := .p }}
+<div class="in reveal">
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Experience</div>{{ else }}<div class="sec-label"><b>02</b>experience --core</div>{{ end }}
+  <h2>Experience</h2>
+  {{ $keys := $p.experience }}
+  {{ range site.Data.resume.experience }}{{ if or (not $keys) (in $keys .key) }}
+  {{ $when := replace .period " - " " — " }}
+  <div class="row">
+    <div class="when">{{ if in .period "Present" }}<span class="now">{{ $when }}</span>{{ else }}{{ $when }}{{ end }}{{ with .qualifier }}<br>{{ . }}{{ end }}</div>
+    <div>
+      <div class="role">{{ .title }}</div>
+      <div class="org">{{ .company }}</div>
+      {{ .body_html | safeHTML }}
+    </div>
+  </div>
+  {{ end }}{{ end }}
+  <div class="sec-label" style="margin-top:var(--s4)">Education</div>
+  {{ range site.Data.resume.education }}
+  <div class="row">
+    <div class="when">{{ .period }}</div>
+    <div>
+      <div class="role">{{ .title }}</div>
+      <div class="org">{{ .place }}</div>
+      {{ .body_html | safeHTML }}
+    </div>
+  </div>
+  {{ end }}
+</div>
