@@ -24,28 +24,37 @@
 /* skins */
 
 /* ===== oxocarbon OLED ===== */
-html[data-skin="oxo"]{--bg:#000000;--bg-2:#0b0b0b;--surface:#161616;--surface-2:#262626;
+html[data-skin="oxo"],.peek[data-skin="oxo"]{--bg:#000000;--bg-2:#0b0b0b;--surface:#161616;--surface-2:#262626;
   --hairline:#393939;--fg:#f2f4f8;--fg-dim:#8d8d8d;--fg-faint:#8d8d8d1f;--accent-ink:#000000}
-html[data-skin="oxo"][data-role="core"]{--accent:#3ddbd9;--accent-dim:#3ddbd922}
-html[data-skin="oxo"][data-role="devsecops"]{--accent:#42be65;--accent-dim:#42be6522}
-html[data-skin="oxo"][data-role="platform"]{--accent:#78a9ff;--accent-dim:#78a9ff22}
-html[data-skin="oxo"][data-role="lead"]{--accent:#be95ff;--accent-dim:#be95ff26}
-html[data-skin="oxo"][data-role="research"]{--accent:#be95ff;--accent-dim:#be95ff26}
+html[data-skin="oxo"][data-role="core"],.peek[data-skin="oxo"][data-role="core"]{--accent:#3ddbd9;--accent-dim:#3ddbd922}
+html[data-skin="oxo"][data-role="devsecops"],.peek[data-skin="oxo"][data-role="devsecops"]{--accent:#42be65;--accent-dim:#42be6522}
+html[data-skin="oxo"][data-role="platform"],.peek[data-skin="oxo"][data-role="platform"]{--accent:#78a9ff;--accent-dim:#78a9ff22}
+html[data-skin="oxo"][data-role="lead"],.peek[data-skin="oxo"][data-role="lead"]{--accent:#be95ff;--accent-dim:#be95ff26}
+html[data-skin="oxo"][data-role="research"],.peek[data-skin="oxo"][data-role="research"]{--accent:#be95ff;--accent-dim:#be95ff26}
 
-html[data-skin="mono"]{--bg:#ffffff;--bg-2:#f4f4f4;--surface:#ffffff;--surface-2:#f4f4f4;
+html[data-skin="mono"],.peek[data-skin="mono"]{--bg:#ffffff;--bg-2:#f4f4f4;--surface:#ffffff;--surface-2:#f4f4f4;
   --hairline:#141414;--fg:#0c0c0c;--fg-dim:#565656;--fg-faint:#56565614;--accent-ink:#ffffff}
-html[data-skin="mono"]{--accent:#e02418;--accent-dim:#e0241814} /* one accent, all roles — brutal concept */
+html[data-skin="mono"],.peek[data-skin="mono"]{--accent:#e02418;--accent-dim:#e0241814} /* one accent, all roles — brutal concept */
 
-html[data-skin="ink"]{--bg:#f7f8fa;--bg-2:#eef0f4;--surface:#ffffff;--surface-2:#eef0f4;
+html[data-skin="ink"],.peek[data-skin="ink"]{--bg:#f7f8fa;--bg-2:#eef0f4;--surface:#ffffff;--surface-2:#eef0f4;
   --hairline:#d7dbe2;--fg:#181a1f;--fg-dim:#697080;--fg-faint:#69708026;--accent-ink:#ffffff}
 
-html[data-skin="graphite"]{--bg:#191b1d;--bg-2:#131517;--surface:#212427;--surface-2:#2a2e32;
+html[data-skin="graphite"],.peek[data-skin="graphite"]{--bg:#191b1d;--bg-2:#131517;--surface:#212427;--surface-2:#2a2e32;
   --hairline:#383d42;--fg:#e8eaec;--fg-dim:#8f969c;--fg-faint:#8f969c1d;--accent-ink:#131517}
-html[data-skin="graphite"]{--accent:#35b779;--accent-dim:#35b77922;--act:#fde725;--act-dim:#fde72522;--act-glow:#fde72540}
+html[data-skin="graphite"],.peek[data-skin="graphite"]{--accent:#35b779;--accent-dim:#35b77922;--act:#fde725;--act-dim:#fde72522;--act-glow:#fde72540}
 
-html[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;--surface:#fffdf8;--surface-2:#f1ede2;
+html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;--surface:#fffdf8;--surface-2:#f1ede2;
   --hairline:#d9d2c0;--fg:#1d1b16;--fg-dim:#6f6a5c;--fg-faint:#6f6a5c17;--accent-ink:#fffdf8;
   --head:var(--serif);--accent:#1a4fa0;--accent-dim:#1a4fa01e;--act:#1a4fa0;--act-dim:#1a4fa01e;--act-glow:transparent}
+
+/* /for role-picker peek cards (each card wears its target skin's tokens) */
+.peeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--s3);margin-top:var(--s4)}
+.peek{display:block;background:var(--bg);color:var(--fg);border:1px solid var(--hairline);border-radius:0 0 14px 0;
+  padding:var(--s4);text-decoration:none;transition:border-color .18s ease,transform .18s ease}
+.peek:hover{border-color:var(--act);transform:translateY(-2px)}
+.peek .pk{display:block;font:600 13px var(--head);letter-spacing:.02em;color:var(--accent);margin-bottom:var(--s2)}
+.peek em{display:block;font:400 11px var(--mono);font-style:normal;color:var(--fg-dim);margin-bottom:var(--s3)}
+.peek .u{font:500 10.5px var(--mono);letter-spacing:.08em;color:var(--act)}
 
 /* base */
 *{margin:0;padding:0;box-sizing:border-box}
@@ -254,9 +263,9 @@ h1{font:600 42px/1.08 var(--head);letter-spacing:-.015em;margin-bottom:var(--s2)
    --act appears ONLY on: primary actions + hover-intent, liveness
    (availability/cursor/selection/Present), emphasis rims, focus.
    ============================================================ */
-html[data-skin="oxo"]{--act:#ee5396;--act-dim:#ee539629;--act-glow:#ee539652}
-html[data-skin="ink"]{--act:var(--accent);--act-dim:color-mix(in srgb,var(--accent) 16%,transparent);--act-glow:transparent} /* ink = single-accent, as in skin-selection round */
-html[data-skin="mono"]{--act:#e02418;--act-dim:#e0241816;--act-glow:transparent}
+html[data-skin="oxo"],.peek[data-skin="oxo"]{--act:#ee5396;--act-dim:#ee539629;--act-glow:#ee539652}
+html[data-skin="ink"],.peek[data-skin="ink"]{--act:var(--accent);--act-dim:color-mix(in srgb,var(--accent) 16%,transparent);--act-glow:transparent} /* ink = single-accent, as in skin-selection round */
+html[data-skin="mono"],.peek[data-skin="mono"]{--act:#e02418;--act-dim:#e0241816;--act-glow:transparent}
 /* primary actions */
 .strip .cv,.btn.solid{background:var(--act);border-color:var(--act);color:var(--accent-ink);
   box-shadow:0 0 14px var(--act-glow)}
@@ -315,8 +324,8 @@ html[data-role="research"] .sg-ml{order:-2}html[data-role="research"] .sg-lang{o
 
 /* preset accent bindings */
 html[data-role="core"][data-skin="oxo"],html[data-skin="oxo"]{/* teal defaults already in skin block */}
-html[data-skin="ink"][data-role="platform"]{--accent:#2458ff;--accent-dim:#2458ff1e}
-html[data-skin="ink"][data-role="lead"]{--accent:#c22f4b;--accent-dim:#c22f4b24;--head:var(--serif)}
+html[data-skin="ink"][data-role="platform"],.peek[data-skin="ink"][data-role="platform"]{--accent:#2458ff;--accent-dim:#2458ff1e}
+html[data-skin="ink"][data-role="lead"],.peek[data-skin="ink"][data-role="lead"]{--accent:#c22f4b;--accent-dim:#c22f4b24;--head:var(--serif)}
 
 /* print */
 @media print{

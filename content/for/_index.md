@@ -1,5 +1,6 @@
 ---
-# Suppress Hugo's auto-generated /for/ section list page (and its sitemap
-# entry). The five /for/<role>/ preset pages are the only intended outputs.
-build: { render: never, list: never }
+# /for/ renders as the role-preset picker (layouts/for/list.html — per-skin
+# "peek" cards). list:never keeps the five child pages out of paginators.
+title: "Mohamed Aly Amin — Role Presets"
+build: { list: never }
 ---
