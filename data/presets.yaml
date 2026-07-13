@@ -16,6 +16,11 @@ stats:
   listings: { num: "360k+",  label: "cumulative listings — 270k-user platform, 10 microservices", count: "360", post: "k+" }
   members:  { num: "200+",   label: "members — chaired METU International Students Association", count: "200", post: "+" }
   ventures: { num: "15–20",  label: "startup ventures technically assessed for investment", count: "15", post: "–20" }
+  # Added 2026-07-13, Mohamed direct attestation ("1 conference…"; "I used to teach the
+  # cybersecurity class in Istanbul Aydın via Interprobe"). Conference = AINA 2024
+  # presentation (publications.yaml note: "Presented in Japan").
+  conf:     { num: "1",      label: "international conference presentation — AINA 2024, Japan" }
+  taught:   { num: "1",      label: "university cybersecurity course taught — Istanbul Aydın" }
 presets:
   core:
     url: "/"
@@ -65,7 +70,8 @@ presets:
     # stays only on the two papers where publications.yaml attests it).
     summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM; LSTM sequence models in PyTorch</b>); built the end-to-end <b>GPU training pipeline on Kubernetes</b> for the DIONA IDS (TÜBİTAK-funded, <b>Koç Sistem pilot</b>) and a container-specific vulnerability dataset.'
     open_to: "Security-ML Research · Detection Engineering · Applied ML R&D"
-    stats: [acc, papers, eps, mvp]
+    # Academic buyer: accuracy → publications → teaching → production credibility.
+    stats: [acc, papers, taught, eps]
     typed_pin: 5
   lead:
     url: "/for/lead/"
