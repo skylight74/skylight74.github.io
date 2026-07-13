@@ -13,7 +13,8 @@
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="application/rss+xml" title="Mohamed Aly Amin » Feed" href="/index.xml">
 <link rel="stylesheet" href="/css/site.css">
-<script defer src="/js/site.js"></script>
+{{ if not $isPreset }}<script>(function(){var h=location.hash,s=h.match(/skin=(oxo|mono|ink|graphite|latex2)\b/),r=h.match(/role=(core|devsecops|platform|aisec|research|lead)\b/),d=document.documentElement;if(s){d.setAttribute('data-skin',s[1]);if(r)d.setAttribute('data-role',r[1]);}})()</script>
+{{ end }}<script defer src="/js/site.js"></script>
 {{ if $pg.IsHome }}<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Mohamed Aly Amin",
 "jobTitle":"Security & Infrastructure Engineer","url":"{{ site.BaseURL }}",
