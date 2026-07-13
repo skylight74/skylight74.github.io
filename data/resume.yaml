@@ -57,6 +57,7 @@ experience:
       <ul>
           <li>Reached 98.11% intrusion-detection accuracy by developing an SGD one-class SVM model for containerized microservices; first-author publication at AINA 2024 (Springer).</li>
           <li>Created a container-specific vulnerability dataset for Kubernetes environments as part of the AINA 2024 work.</li>
+          <li>Built the end-to-end GPU training pipeline (GPU-enabled Kubernetes cluster, dataset curation, evaluation).</li>
       </ul>
   - period: "Jul 2021 - May 2022"
     title: "Cyber Security Specialist (Tech Lead — OSSArch)"
