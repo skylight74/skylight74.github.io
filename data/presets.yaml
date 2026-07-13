@@ -83,7 +83,7 @@ presets:
   aisec:
     url: "/for/ai-security/"
     honors_list: [burslari, mitef]
-    services_list: [devsec, assess, gostream]
+    services_list: [mlsec, devsec, assess, gostream]
     projects: [diona, rtengine, ossarch, containerva]
     experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-detection-secml.pdf"

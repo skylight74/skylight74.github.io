@@ -11,6 +11,12 @@ services:
   - title: "Security Assessment & Technical Due Diligence"
     key: assess
     body: "Architecture and code review, penetration-testing tooling, and technical due diligence on venture investments (15+ ventures assessed)."
+  # Added 2026-07-13 (Mohamed: "change the services to suit the actual role") —
+  # composed strictly from attested capabilities (AINA SVM/LSTM, detection-as-code
+  # rules, GPU-K8s MLOps); primary home = AI-SEC page.
+  - title: "Detection Engineering & Security-ML"
+    key: mlsec
+    body: "Anomaly-detection rules and models (one-class SVM, LSTM), detection-as-code on open-source SIEM stacks, and MLOps pipelines on GPU Kubernetes."
   # Added 2026-07-10 per Mohamed's KEEP ruling on the old services list.
   - title: "Web3 Development"
     key: web3
