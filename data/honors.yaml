@@ -11,10 +11,10 @@ honors:
     detail: "Egypt national team, competition held in Washington, D.C.; certificate of participation (no medal)."
   - title: "Türkiye Bursları (Turkish Government Scholarship), 2014"
     detail: "Funded his BSc studies at Middle East Technical University (METU)."
-  # Date + framing corrected 2026-07-10 per Mohamed: three-day intensive in
-  # January (old site's "Dec 2017 - Jan 2018" span resolved to Jan 2018).
-  - title: "MIT Enterprise Forum Pan-Arab, January 2018"
-    detail: "Three-day intensive entrepreneurship program (Amman, Jordan)."
+  # Date framing 2026-07-10 (Jan 2018). FINALIST attested by Mohamed 2026-07-13
+  # ("the honor was that we are finalists") — supersedes the earlier no-finalist note.
+  - title: "MIT Enterprise Forum Pan-Arab — Finalist, January 2018"
+    detail: "Finalist team; three-day intensive entrepreneurship program (Amman, Jordan)."
   # AINA presentation row REMOVED 2026-07-13 (Mohamed: honors = awards, not paper
   # credentials; the presentation stays visible in the publication note and the
   # ContainerVA project card). Original "1 conference" attestation actually meant

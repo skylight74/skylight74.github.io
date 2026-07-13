@@ -1,0 +1,6 @@
+{{ $p := .p }}
+<div class="in reveal">
+  {{ if eq $p.voice "editorial" }}<div class="sec-label">Honors</div>{{ else }}<div class="sec-label"><b>06</b>honors --awarded</div>{{ end }}
+  <h2>Honors</h2>
+  <div class="honors">{{ range site.Data.honors.honors }}<div class="honor"><div class="y">{{ index (findRE "[0-9]{4}" .title) 0 }}</div><div class="t">{{ .title }}</div><div class="d">{{ .detail }}</div></div>{{ end }}</div>
+</div>
