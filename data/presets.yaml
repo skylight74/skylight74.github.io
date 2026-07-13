@@ -20,7 +20,10 @@ stats:
   # cybersecurity class in Istanbul Aydın via Interprobe"). Conference = AINA 2024
   # presentation (publications.yaml note: "Presented in Japan").
   conf:     { num: "1",      label: "international conference presentation — AINA 2024, Japan" }
-  taught:   { num: "1",      label: "university cybersecurity course taught — Istanbul Aydın" }
+  # Title: Mohamed proposed "visiting professor"; shipped as "visiting lecturer" per the
+  # exactly-true rule (industry-guest teaching ≠ professorship; lecturer survives checks).
+  # Course name attested by Mohamed 2026-07-13: "Introduction to Cybersecurity".
+  taught:   { num: "1",      label: "course taught as visiting lecturer — Introduction to Cybersecurity, Istanbul Aydın University" }
 presets:
   core:
     url: "/"
