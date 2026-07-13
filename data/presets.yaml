@@ -73,8 +73,10 @@ presets:
     # stays only on the two papers where publications.yaml attests it).
     summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM; LSTM sequence models in PyTorch</b>); built the end-to-end <b>GPU training pipeline on Kubernetes</b> for the DIONA IDS (TÜBİTAK-funded, <b>Koç Sistem pilot</b>) and a container-specific vulnerability dataset.'
     open_to: "Security-ML Research · Detection Engineering · Applied ML R&D"
-    # Academic buyer: accuracy → publications → teaching → production credibility.
-    stats: [acc, papers, taught, eps]
+    # Academic buyer: accuracy → publications → production credibility → delivery.
+    # Teaching ("1") judged too weak as a strip number (recruiter review 2026-07-13);
+    # the fact lives in the Interprobe experience bullet with title + course name.
+    stats: [acc, papers, eps, mvp]
     typed_pin: 5
   lead:
     url: "/for/lead/"
