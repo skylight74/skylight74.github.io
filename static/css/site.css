@@ -60,14 +60,16 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
 .cdhome:hover{color:var(--fg);border-color:var(--accent)}
 .peeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s4);margin-top:var(--s4);perspective:1400px}
 .peek{position:relative;display:block;min-height:260px;text-decoration:none;color:#f2f4f8;--pa:var(--accent);
-  transform-style:preserve-3d;opacity:0;translate:0 12px;
-  transition:opacity .5s ease var(--d,0s),translate .5s ease var(--d,0s),transform .55s cubic-bezier(.2,.7,.25,1)}
+  perspective:1400px;opacity:0;translate:0 12px;
+  transition:opacity .5s ease var(--d,0s),translate .5s ease var(--d,0s)}
+.peek .flip{position:absolute;inset:0;transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.2,.7,.25,1)}
 /* light-skin accents brightened for the smoked glass (true values stay in the swatch chip) */
 .peek[data-role="devsecops"]{--pa:#ff5045}.peek[data-role="platform"]{--pa:#6f8cff}
 .peek[data-role="research"]{--pa:#7da3d8}.peek[data-role="lead"]{--pa:#e0718b}
 .reveal.vis .peek{opacity:1;translate:none}
 .peek:nth-child(2){--d:.06s}.peek:nth-child(3){--d:.12s}.peek:nth-child(4){--d:.18s}.peek:nth-child(5){--d:.24s}.peek:nth-child(6){--d:.3s}
-.peek:hover,.peek:focus-visible{transform:rotateY(180deg)}
+.peek:hover .flip,.peek:focus-visible .flip{transform:rotateY(180deg)}
 .peek .face{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:var(--s2);
   padding:var(--s4);border-radius:0 0 18px 0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;
   border:1px solid color-mix(in srgb,var(--pa) 45%,#ffffff26);
@@ -86,7 +88,7 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
 .peek .bs b{color:var(--pa);font-weight:600}
 @media (prefers-reduced-motion: reduce){
   .peek{opacity:1;translate:none}
-  .peek:hover,.peek:focus-visible{transform:none}
+  .peek:hover .flip,.peek:focus-visible .flip{transform:none}
   .peek:hover .front,.peek:focus-visible .front{opacity:0}
   .peek:hover .back,.peek:focus-visible .back{transform:none}
 }
