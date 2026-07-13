@@ -3,7 +3,7 @@
 <head>{{ partial "head.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}</head>
 <body>
 <canvas id="grid" aria-hidden="true"></canvas>
-{{ partial "strip.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}
+{{ if not .Params.nostrip }}{{ partial "strip.html" (dict "page" . "p" (index site.Data.presets.presets (.Params.preset | default "core"))) }}{{ end }}
 {{ block "main" . }}{{ end }}
 </body>
 </html>
