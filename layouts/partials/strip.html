@@ -5,7 +5,7 @@
   <div class="who">mohamedalyamin.com<small id="crumb">~/home</small></div>
   {{ $pfx := "" }}{{ if not (or .page.IsHome .page.Params.preset) }}{{ $pfx = "/" }}{{ end }}
   <nav id="nav">
-    <a href="{{ $pfx }}#hero"{{ if not $pfx }} class="on"{{ end }}>About</a><a href="{{ $pfx }}#impact">Impact</a><a href="{{ $pfx }}#experience">Experience</a><a href="{{ $pfx }}#projects">Projects</a><a href="{{ $pfx }}#skills">Skills</a><a href="{{ $pfx }}#research">Research</a><a href="{{ $pfx }}#contact">Contact</a>{{ if $pfx }}<a href="/blog/"{{ if eq .page.Section "blog" }} class="on"{{ end }}>Blog</a>{{ else }}<a href="#writing">Blog</a>{{ end }}
+    <a href="{{ $pfx }}#hero"{{ if not $pfx }} class="on"{{ end }}>About</a><a href="{{ $pfx }}#impact">Impact</a><a href="{{ $pfx }}#experience">Experience</a><a href="{{ $pfx }}#projects">Projects</a><a href="{{ $pfx }}#skills">Skills</a><a href="{{ $pfx }}#research">Research</a><a href="{{ $pfx }}#honors">Honors</a><a href="{{ $pfx }}#contact">Contact</a>{{ if $pfx }}<a href="/blog/"{{ if eq .page.Section "blog" }} class="on"{{ end }}>Blog</a>{{ else }}<a href="#writing">Blog</a>{{ end }}
   </nav>
   <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">☰</button>
   <a class="cv" href="{{ .p.cv | default "/media/Mohamed_Aly_Amin_CV.pdf" }}" download="{{ .p.cv_dl | default "Mohamed_Aly_Amin_CV.pdf" }}">↓ CV</a>
