@@ -170,7 +170,7 @@ h1{font:600 42px/1.08 var(--head);letter-spacing:-.015em;margin-bottom:var(--s2)
 .hero-item:nth-child(7){animation-delay:.47s}
 
 /* ---- impact ---- */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hairline);
   border:1px solid var(--hairline);border-radius:0 0 22px 0;overflow:hidden}
 .stat{background:var(--surface);padding:var(--s4);display:flex;flex-direction:column;gap:4px}
 .stat .num{font:600 30px var(--mono);color:var(--accent)}
