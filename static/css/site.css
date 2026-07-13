@@ -50,9 +50,12 @@ html[data-skin="latex2"],.peek[data-skin="latex2"]{--bg:#faf7f0;--bg-2:#f1ede2;-
 /* /for role-picker: glass flip cards over a BSOD-blue backdrop (each card wears its role's skin tokens) */
 #for.glassfor{background:#000;position:relative;overflow:hidden;padding:48px var(--s4)}
 #for.glassfor>.in{position:relative;z-index:1}
-.orb{position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(72px);opacity:.45;z-index:0;pointer-events:none}
-.o1{background:radial-gradient(circle,var(--accent),transparent 66%);top:8%;left:4%;animation:drift1 13s ease-in-out infinite alternate}
-.o2{background:radial-gradient(circle,var(--act,var(--accent)),transparent 66%);bottom:6%;right:2%;animation:drift2 17s ease-in-out infinite alternate}
+/* orbs: pre-softened gradients (no blur filter surface — QtWebEngine RAM);
+   animation paused when tab hidden via html.tab-hidden (site.js) */
+.orb{position:absolute;width:560px;height:560px;border-radius:50%;opacity:.4;z-index:0;pointer-events:none}
+.o1{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 85%,transparent) 0%,color-mix(in srgb,var(--accent) 35%,transparent) 28%,transparent 62%);top:4%;left:0;animation:drift1 13s ease-in-out infinite alternate}
+.o2{background:radial-gradient(circle,color-mix(in srgb,var(--act,var(--accent)) 85%,transparent) 0%,color-mix(in srgb,var(--act,var(--accent)) 35%,transparent) 28%,transparent 62%);bottom:2%;right:0;animation:drift2 17s ease-in-out infinite alternate}
+html.tab-hidden .orb{animation-play-state:paused}
 /* page-level orbs (baseof): fixed behind the dot grid, skin-token colored */
 body>.orb{position:fixed;z-index:-2;opacity:.32}
 html[data-skin="mono"] body>.orb,html[data-skin="ink"] body>.orb,html[data-skin="latex2"] body>.orb{opacity:.16}
