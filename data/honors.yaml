@@ -15,7 +15,7 @@ honors:
   # January (old site's "Dec 2017 - Jan 2018" span resolved to Jan 2018).
   - title: "MIT Enterprise Forum Pan-Arab, January 2018"
     detail: "Three-day intensive entrepreneurship program (Amman, Jordan)."
-  # Added 2026-07-13 (Mohamed: "the conference is the actual priority").
-  # Attested by publications.yaml AINA note: "Presented in Japan."
-  - title: "AINA 2024 — International Conference Presentation, Japan"
-    detail: "Presented the first-author intrusion-detection paper at Springer's 38th AINA conference."
+  # AINA presentation row REMOVED 2026-07-13 (Mohamed: honors = awards, not paper
+  # credentials; the presentation stays visible in the publication note and the
+  # ContainerVA project card). Original "1 conference" attestation actually meant
+  # the Joining Efforts for Refugees conference (now a LEAD project card).

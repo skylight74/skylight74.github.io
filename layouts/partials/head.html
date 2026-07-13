@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if $pg.IsHome }}Mohamed Aly Amin — Security & Infrastructure Engineer{{ else }}{{ $pg.Title }}{{ end }}</title>
 {{ $desc := $p.summary_html | plainify | truncate 155 }}{{ if $isBlogPost }}{{ with $pg.Summary | plainify | truncate 155 }}{{ $desc = . }}{{ end }}{{ end }}<meta name="description" content="{{ $desc }}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="canonical" href="{{ if $isPreset }}{{ site.BaseURL }}{{ else }}{{ $pg.Permalink }}{{ end }}">
 <meta property="og:type" content="{{ if $isBlogPost }}article{{ else }}profile{{ end }}">
