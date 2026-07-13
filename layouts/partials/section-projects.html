@@ -18,7 +18,7 @@
     <div class="skill-label"><b>»</b>Open source</div>
     {{ range site.Data.open_source.contributions }}
     <div class="post">
-      <div class="d">PR</div>
+      <div class="d">{{ .kind | default "PR" }}</div>
       <div><a href="{{ .url }}">{{ .name }}</a><p>{{ .detail }}</p></div>
     </div>
     {{ end }}
