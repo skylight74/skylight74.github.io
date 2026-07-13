@@ -40,6 +40,7 @@ presets:
     # Experience filter (recruiter review 2026-07-13): specialist pages drop non-eng early entries.
     experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-devsecops.pdf"
+    cv_dl: "Mohamed_Aly_Amin_CV_DevSecOps.pdf"
     skin: mono
     voice: terminal
     kicker: "DevSecOps — pipelines, detection, response"
@@ -56,6 +57,7 @@ presets:
     # Sardis cut on GO (2026-07-13 final judgment): Web3-security signal + TS frontend artifact = mismatch on a Go-backend page.
     experience: [freelance, dolusoft, castrum, metu, interprobe]
     cv: "/media/cv-go-backend.pdf"
+    cv_dl: "Mohamed_Aly_Amin_CV_Go_Backend.pdf"
     skin: ink
     voice: terminal
     kicker: "Platform & Backend — Go, streaming, scale"
@@ -73,6 +75,7 @@ presets:
     projects: [diona, rtengine, ossarch, containerva]
     experience: [freelance, dolusoft, castrum, sardis, metu, interprobe]
     cv: "/media/cv-detection-secml.pdf"
+    cv_dl: "Mohamed_Aly_Amin_CV_Detection_SecML.pdf"
     skin: graphite
     voice: terminal
     kicker: "AI × Security — detection models in production"
@@ -87,6 +90,7 @@ presets:
     projects: [diona, sgl, containerva]
     experience: [freelance, dolusoft, metu, interprobe]
     cv: "/media/cv-research-ml.pdf"
+    cv_dl: "Mohamed_Aly_Amin_CV_Research_ML.pdf"
     skin: latex2
     voice: editorial
     kicker: "Security-ML Research — detection, published"

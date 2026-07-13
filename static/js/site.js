@@ -12,8 +12,9 @@ function initTyped(){
   if(!roles.length) return;
   const staticLine=el.dataset.static;               // editorial presets: fixed tagline
   if(staticLine){el.textContent=staticLine;return}
-  if(rm){el.textContent=roles[+(el.dataset.pin||0)];return}
-  let r=+(el.dataset.pin||0),i=0,del=false;if(r>=roles.length)r=0;
+  let r=+(el.dataset.pin||0);if(r<0||r>=roles.length)r=0;
+  if(rm){el.textContent=roles[r];return}
+  let i=0,del=false;
   (function tick(){const w=roles[r];el.textContent=w.slice(0,i);
     if(!del&&i<w.length){i++;setTimeout(tick,55)}
     else if(!del){del=true;setTimeout(tick,1500)}
@@ -132,8 +133,10 @@ function initForm(){
 
 /* ---- skin continuity: forward a #skin= fragment to blog/search-internal links ---- */
 function initSkinLinks(){
-  if(!/skin=(oxo|mono|ink|graphite|latex2)\b/.test(location.hash))return;
-  document.querySelectorAll('a[href^="/blog/"],a[href^="/search/"]').forEach(a=>{if(!a.hash)a.href+=location.hash;});
+  const s=location.hash.match(/skin=(oxo|mono|ink|graphite|latex2)\b/),r=location.hash.match(/role=(core|devsecops|platform|aisec|research|lead)\b/);
+  if(!s)return;
+  const frag='#skin='+s[1]+(r?'&role='+r[1]:'');
+  document.querySelectorAll('a[href^="/blog/"],a[href^="/search/"]').forEach(a=>{if(!a.hash)a.href+=frag;});
 }
 
 document.addEventListener('DOMContentLoaded',()=>{initTyped();initCanvas();initSpy();initCount();initForm();initSkinLinks();});
