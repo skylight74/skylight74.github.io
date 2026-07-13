@@ -139,5 +139,6 @@ function initSkinLinks(){
   document.querySelectorAll('a[href^="/blog/"],a[href^="/search/"]').forEach(a=>{if(!a.hash)a.href+=frag;});
 }
 
+document.addEventListener('visibilitychange',()=>document.documentElement.classList.toggle('tab-hidden',document.hidden));
 document.addEventListener('DOMContentLoaded',()=>{initTyped();initCanvas();initSpy();initCount();initForm();initSkinLinks();});
 })();
