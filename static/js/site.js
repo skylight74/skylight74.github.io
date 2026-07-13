@@ -87,7 +87,7 @@ function initCount(){
       t.textContent=pre+(end*(.2+.8*p*p)).toFixed(dec).replace(/\.00$/,'')+post;
       if(p<1)requestAnimationFrame(step);else t.textContent=pre+end.toFixed(dec).replace(/\.00$/,'')+post;});
   }),{threshold:.6});
-  document.querySelectorAll('.stat .num').forEach(n=>cu.observe(n));
+  document.querySelectorAll('.stat .num[data-count]').forEach(n=>cu.observe(n));
 }
 
 /* ---- contact form: fetch POST, inline success/error, double-submit guard.
