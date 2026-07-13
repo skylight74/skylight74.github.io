@@ -8,12 +8,15 @@
 # data-driven honors section is layouts scope and belongs to the rebuild lane.
 honors:
   - title: "International Chemistry Olympiad (IChO) 2012"
+    key: icho
     detail: "Egypt national team, competition held in Washington, D.C.; certificate of participation (no medal)."
   - title: "Türkiye Bursları (Turkish Government Scholarship), 2014"
+    key: burslari
     detail: "Funded his BSc studies at Middle East Technical University (METU)."
   # Date framing 2026-07-10 (Jan 2018). FINALIST attested by Mohamed 2026-07-13
   # ("the honor was that we are finalists") — supersedes the earlier no-finalist note.
   - title: "MIT Enterprise Forum Pan-Arab — Finalist, January 2018"
+    key: mitef
     detail: "Finalist team; three-day intensive entrepreneurship program (Amman, Jordan)."
   # AINA presentation row REMOVED 2026-07-13 (Mohamed: honors = awards, not paper
   # credentials; the presentation stays visible in the publication note and the
