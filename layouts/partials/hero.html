@@ -24,4 +24,4 @@
     </div>
   </div>
 </div>
-<script id="site-cfg" type="application/json">{{ dict "roles" site.Data.profile.roles | jsonify | safeJS }}</script>
+<script id="site-cfg" type="application/json">{{ dict "roles" ($p.roles | default site.Data.profile.roles) | jsonify | safeJS }}</script>
