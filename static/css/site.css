@@ -63,11 +63,11 @@ html[data-skin="mono"] body>.orb,html[data-skin="ink"] body>.orb,html[data-skin=
 @keyframes drift2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-46vw,-30vh) scale(1.12)}100%{transform:translate(-14vw,-6vh) scale(1.25)}}
 /* /for backdrop: concentric counter-rotating 8-point stars (Mohamed 2026-07-13) */
 .cstar{position:absolute;top:50%;left:50%;z-index:0;pointer-events:none;transform:translate(-50%,-50%)}
-.cstar.c1{width:46vmin;height:46vmin;color:var(--accent);opacity:.10;animation:cspin 120s linear infinite}
-.cstar.c2{width:40vmin;height:40vmin;color:var(--act,var(--accent));opacity:.11;animation:cspinr 95s linear infinite}
-.cstar.c3{width:34vmin;height:34vmin;color:var(--accent);opacity:.12;animation:cspin 72s linear infinite}
-.cstar.c4{width:29vmin;height:29vmin;color:var(--act,var(--accent));opacity:.13;animation:cspinr 52s linear infinite}
-.cstar.c5{width:24vmin;height:24vmin;color:var(--accent);opacity:.14;animation:cspin 36s linear infinite}
+.cstar.c1{width:46vmin;height:46vmin;color:#3ddbd9;opacity:.10;animation:cspin 120s linear infinite}
+.cstar.c2{width:40vmin;height:40vmin;color:#ee5396;opacity:.11;animation:cspinr 95s linear infinite}
+.cstar.c3{width:34vmin;height:34vmin;color:#6f8cff;opacity:.12;animation:cspin 72s linear infinite}
+.cstar.c4{width:29vmin;height:29vmin;color:#35b779;opacity:.13;animation:cspinr 52s linear infinite}
+.cstar.c5{width:24vmin;height:24vmin;color:#ff5045;opacity:.14;animation:cspin 36s linear infinite}
 @keyframes cspin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes cspinr{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(-360deg)}}
 .cdhome{display:inline-block;margin-bottom:var(--s4);font:500 12px var(--mono);text-decoration:none;
