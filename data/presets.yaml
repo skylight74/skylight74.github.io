@@ -7,7 +7,8 @@ stats:
   team:    { num: "6 eng",   label: "DevSecOps team formed, led, and trained", count: "6", post: " eng" }
   users:   { num: "270k",    label: "user platform rebuilt as 10 microservices on AWS", count: "270", post: "k" }
   papers:  { num: "2",       label: "peer-reviewed papers — AINA (Springer) · MedPower, TÜBİTAK-funded", count: "2" }
-  trained: { num: "4+",      label: "engineers & ASELSAN partners trained", count: "4", post: "+" }
+  # "+" dropped 2026-07-13, Mohamed: "4+ trained was just 4."
+  trained: { num: "4",       label: "engineers & ASELSAN partners trained", count: "4" }
   # Added 2026-07-13 (Mohamed: "give what's needed not what exists"). All attested:
   # sources — same claim as eps label (resume: "80+ sources"); listings — resume freelance
   # bullet "360k+ cumulative listings"; members — volunteering.yaml "200+ members";
