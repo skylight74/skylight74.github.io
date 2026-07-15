@@ -15,7 +15,7 @@ stats:
   # ventures — resume Castrum bullet "15–20 startup ventures".
   sources:  { num: "80+",    label: "event sources integrated — one Go detection engine", count: "80", post: "+" }
   listings: { num: "360k+",  label: "cumulative listings — 270k-user platform, 10 microservices", count: "360", post: "k+" }
-  members:  { num: "200+",   label: "members — chaired METU International Students Association", count: "200", post: "+" }
+  members:  { num: "200+",   label: "members — chaired METU International Student Association", count: "200", post: "+" }
   ventures: { num: "15–20",  label: "startup ventures technically assessed for investment", count: "15", post: "–20" }
   # Added 2026-07-13, Mohamed direct attestation ("1 conference…"; "I used to teach the
   # cybersecurity class in Istanbul Aydın via Interprobe"). Conference = AINA 2024
@@ -91,7 +91,9 @@ presets:
     cv_dl: "Mohamed_Aly_Amin_CV_Detection_SecML.pdf"
     skin: graphite
     voice: terminal
-    kicker: "AI × Security — detection models in production"
+    # Reworded 2026-07-15 (his pick, audit finding): rules ARE in production
+    # (static, filtering engine); trained models = research/pilot only.
+    kicker: "AI × Security — detection rules in production · first-author security-ML research (AINA 2024)"
     summary_html: 'Detection engineer bridging <b>security and applied ML</b>: 98.11% IDS accuracy (<b>one-class SVM, AINA 2024</b>), the OSSArch SIEM/SOAR stack, and a <b>~400k events/sec Go engine</b> with detection-as-code anomaly rules — MLOps on <b>GPU Kubernetes</b>.'
     open_to: "AI Security / Detection Engineering · Security-ML · MLOps"
     stats: [acc, eps, sources, mvp]
