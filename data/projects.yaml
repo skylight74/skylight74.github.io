@@ -11,7 +11,7 @@ projects:
   # Koç Sistem pilot confirmed true + public by Mohamed 2026-07-11.
   - name: "DIONA — LSTM Intrusion-Detection System"
     key: diona
-    date: "2022 – 2025"
+    date: "2022 – 2023"
     url: "https://github.com/nightswall/DIONA"
     # Front-facing site attested + verified loading 2026-07-13 (title: "DIONA").
     docs: "https://nightswall.github.io/"
@@ -19,11 +19,12 @@ projects:
     body: "Graduation project (BSc, METU); built the end-to-end MLOps pipeline (GPU-enabled Kubernetes cluster, dataset curation, training, evaluation). Ran an enterprise pilot at Koç Sistem (Azure Sentinel/Defender integration phase). Ecosystem repos: ML training engine, GPU-LSTM prediction engine, and a Kubernetes IoT monitoring stack (ai4iot)."
   - name: "SmartGridLedger — Permissioned Blockchain (Hyperledger Fabric)"
     key: sgl
-    date: "2024"
+    # 2024 – 2025 per repo commits (Feb 2024 – Feb 2025), synced with base-cv 2026-10-22.
+    date: "2024 – 2025"
     # github url removed 2026-07-13 (repo private/404 publicly — Mohamed chose
     # docs-only; GitBook verified loading: "Project Overview | Smart Grid Ledger").
     docs: "https://mohamed-amins-personal-organizat.gitbook.io/smart-grid-ledger"
-    body: "Authored original multi-org Fabric chaincode (TypeScript) on a Kubernetes + Istio network for secure energy-distribution settlement; published at MedPower 2024 (TÜBİTAK-funded)."
+    body: "Authored original multi-org Fabric chaincode (TypeScript) on a Kubernetes + Istio network for secure energy-distribution settlement, published at MedPower 2024 (TÜBİTAK-funded)."
   # OSSArch + Container Security added 2026-07-11 (his ask). Wording from
   # legacy master-cv (its top-5 project strategy listed both); detail here
   # deliberately complements, not repeats, the experience bullets.

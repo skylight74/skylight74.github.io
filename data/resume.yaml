@@ -13,7 +13,7 @@ experience:
     logo: "/media/pngegg.png"
     body_html: |-
       <ul>
-          <li>Sole-built the 10-microservice PHP/Laravel rebuild of a live housing-listings platform (270k registered users, 360k+ cumulative listings) on AWS (EC2, RDS, S3); rebuild currently in staging.</li>
+          <li>Sole-built the 10-microservice PHP/Laravel rebuild of a live housing-listings platform (270k registered users, 360k+ cumulative listings) on AWS (EC2, RDS, S3), with the rebuild currently in staging.</li>
           <li>Built protocol adapters (OCPP for EV chargers, SunSpec/Modbus for solar inverters, IEC 62056 for smart meters) to normalize multi-vendor energy-device data for a smart-grid monitoring stack (InfluxDB, Grafana).</li>
       </ul>
   - period: "Aug 2024 - May 2025"
@@ -60,7 +60,7 @@ experience:
     qualifier: "part-time"
     body_html: |-
       <ul>
-          <li>Reached 98.11% intrusion-detection accuracy by developing an SGD one-class SVM model for containerized microservices; first-author publication at AINA 2024 (Springer).</li>
+          <li>Reached 98.11% intrusion-detection accuracy by developing an SGD one-class SVM model for containerized microservices (first-author publication, AINA 2024, Springer).</li>
           <li>Created a container-specific vulnerability dataset for Kubernetes environments as part of the AINA 2024 work.</li>
           <li>Built the end-to-end GPU training pipeline (GPU-enabled Kubernetes cluster, dataset curation, evaluation) for the DIONA graduation project, shared with the AINA intrusion-detection research.</li>
       </ul>
@@ -74,7 +74,7 @@ experience:
           <li>Shipped an MVP SIEM/SOAR platform (OSSArch) in 3 months, against the company's 6-12 month norm, by forming and technically leading a 6-engineer DevSecOps team (TDD, DDD, daily agile).</li>
           <li>Automated threat enrichment by integrating ELK, Wazuh, TheHive, Cortex, MISP, and Suricata with OSINT feeds (VirusTotal, AlienVault OTX).</li>
           <li>Deployed EDR/EPP, WAF, and DNS-security solutions for enterprise clients, including a defense contractor and a municipality, and ran a penetration test for the municipal client.</li>
-          <li>Trained 4 engineers and ASELSAN partners; taught Introduction to Cybersecurity as visiting lecturer at Istanbul Aydın University; ran pre-sales demos/POCs at GISEC Dubai.</li>
+          <li>Trained 4 engineers and ASELSAN partners, taught Introduction to Cybersecurity as visiting lecturer at Istanbul Aydın University, and ran pre-sales demos/POCs at GISEC Dubai.</li>
       </ul>
   # RESOLVED 2026-07-10 (his answer): Jul confirmed over Jun. "late June and
   # early July... we could say July." LinkedIn (live-verified 2026-07-07) also
