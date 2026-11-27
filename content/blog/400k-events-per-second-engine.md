@@ -16,7 +16,7 @@ The part I ended up caring about most was the rules. Three families did almost a
 
 Keeping the rules as JSON data instead of compiled code turned out to be the decision that aged best. Detection logic changed weekly. The engine did not have to.
 
-Alerts were their own small service, also Go. It published to Kafka topics that Slack and email integrations subscribed to, with rate limiting and time conditions so a noisy rule at 3am becomes one message, not four hundred. Routing is policy-based, so who gets woken up depends on what fired, not on who wrote the rule.
+Alerts were their own small service, also Go. It had rate limiting and time conditions, so a noisy rule at 3am becomes one message, not four hundred, and it published to Kafka topics that Slack and email integrations subscribed to. Routing is policy-based, so who gets woken up depends on what fired, not on who wrote the rule.
 
 Things I would tell someone building the same thing: measure before believing anything, the tracing paid for itself in the first week. Put every piece of state behind one interface, because you will swap it. And write the boring aggregation path first, the clever detections are worthless if the pipe under them drops events.
 
