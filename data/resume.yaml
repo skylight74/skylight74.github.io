@@ -24,7 +24,7 @@ experience:
       <ul>
           <li>Sustained ~400k events/sec in load tests by sole-designing and building a modular real-time filtering engine in Go, ingesting security events from 80+ sources (Kafka in, filter/aggregate, ClickHouse out, Redis-backed state, OpenTelemetry tracing).</li>
           <li>Designed chained, first-seen, and z-score anomaly-detection rules in a configurable detection engine to cut false-positive noise.</li>
-          <li>Built a Go multi-channel alerting service (Slack, email, webhook) with rate limiting and policy-based routing for faster incident response.</li>
+          <li>Built a Go alerting service with rate limiting and policy-based routing, publishing alerts to Kafka topics that Slack and email integrations subscribe to.</li>
       </ul>
   # Added 2026-07-11 (his ask): LinkedIn-parity entries the site was missing.
   # Wording/dates from prep/linkedin-checklist.md live-verified ledger 2026-07-07.
