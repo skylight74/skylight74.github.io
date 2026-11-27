@@ -1,11 +1,11 @@
 # Role-preset content packs. Values approved in mockup v2 (2026-07-12 spec).
 # Content lane may tune wording here; keys/structure belong to the rebuild.
 stats:
-  eps:     { num: "~400k/s", label: "security events — Go detection engine, 80+ sources", count: "400", pre: "~", post: "k/s" }
+  eps:     { num: "~400k/s", label: "security events in load tests — Go detection engine that handles 80+ sources", count: "400", pre: "~", post: "k/s" }
   acc:     { num: "98.11%",  label: "IDS accuracy — first-author, AINA 2024 (Springer)", count: "98.11", post: "%" }
   mvp:     { num: "3 mo",    label: "SIEM/SOAR MVP shipped vs 6–12 mo company norm", count: "3", post: " mo" }
   team:    { num: "6 eng",   label: "DevSecOps team formed, led, and trained", count: "6", post: " eng" }
-  users:   { num: "270k",    label: "user platform rebuilt as 10 microservices on AWS", count: "270", post: "k" }
+  users:   { num: "270k",    label: "user housing platform, backend rebuild on AWS in staging", count: "270", post: "k" }
   papers:  { num: "2",       label: "peer-reviewed papers — AINA (Springer) · MedPower, TÜBİTAK-funded", count: "2" }
   # "+" dropped 2026-07-13, Mohamed: "4+ trained was just 4."
   trained: { num: "4",       label: "engineers & ASELSAN partners trained", count: "4" }
@@ -14,7 +14,7 @@ stats:
   # bullet "360k+ cumulative listings"; members — volunteering.yaml "200+ members";
   # ventures — resume Castrum bullet "15–20 startup ventures".
   sources:  { num: "80+",    label: "event sources integrated — one Go detection engine", count: "80", post: "+" }
-  listings: { num: "360k+",  label: "cumulative listings — 270k-user platform, 10 microservices", count: "360", post: "k+" }
+  listings: { num: "360k+",  label: "cumulative listings — 270k-user housing platform", count: "360", post: "k+" }
   members:  { num: "200+",   label: "members — chaired METU International Student Association", count: "200", post: "+" }
   ventures: { num: "15–20",  label: "startup ventures technically assessed for investment", count: "15", post: "–20" }
   # Added 2026-07-13, Mohamed direct attestation ("1 conference…"; "I used to teach the
@@ -54,7 +54,7 @@ presets:
     voice: terminal
     kicker: "DevSecOps — pipelines, detection, response"
     # 2026-07-13: AINA tail restored per devsecops lane ("with a first-author security-ML paper").
-    summary_html: 'DevSecOps engineer: formed and led a <b>six-engineer team</b> that shipped a SIEM/SOAR platform in <b>3 months</b>; builds secure <b>CI/CD, Kubernetes, and Terraform</b> pipelines; sole-built a real-time Go detection engine at <b>~400k events/sec</b> (SAST/DAST/SCA · ELK/Wazuh/Sentinel · AWS) — with a first-author security-ML paper (<b>AINA 2024</b>).'
+    summary_html: 'DevSecOps engineer: formed and led a <b>six-engineer team</b> that shipped a SIEM/SOAR platform in <b>3 months</b>; builds secure <b>CI/CD, Kubernetes, and Terraform</b> pipelines; sole-built a real-time Go detection engine at <b>~400k events/sec</b> in load tests (SAST/DAST/SCA · ELK/Wazuh/Sentinel · AWS) — with a first-author security-ML paper (<b>AINA 2024</b>).'
     open_to: "DevSecOps · Security Engineering · Platform/Cloud"
     stats: [mvp, sources, eps, team]
     typed_pin: 0
@@ -73,7 +73,7 @@ presets:
     voice: terminal
     kicker: "Platform & Backend — Go, streaming, scale"
     # 2026-07-13: ML-edge tail restored per go-backend lane ("security and applied-ML edge").
-    summary_html: 'Backend engineer for <b>high-throughput Go systems</b>: sole-built a Kafka → ClickHouse stream engine sustaining <b>~400k events/sec</b> (Redis, OpenTelemetry), rebuilt a <b>270k-user platform into 10 microservices</b> on AWS — event-driven, gRPC, distributed systems, with a security and applied-ML edge (<b>AINA 2024, first author</b>).'
+    summary_html: 'Backend engineer for <b>high-throughput Go systems</b>: sole-built a Kafka → ClickHouse stream engine sustaining <b>~400k events/sec</b> in load tests (Redis, OpenTelemetry), built the backend of a <b>270k-user platform</b> rebuild on AWS (designed as 10 services, run as a monorepo, in staging) — event-driven, gRPC, distributed systems, with a security and applied-ML edge (<b>AINA 2024, first author</b>).'
     open_to: "Platform / Backend (Go) · SRE · DevSecOps"
     # go-backend lane keeps the AINA/ML edge and reads IC ("sole-designed") — acc restored,
     # listings dropped (same project as users cell = padding), team cut (IC lane, no fluff:
@@ -94,7 +94,7 @@ presets:
     # Reworded 2026-07-15 (his pick, audit finding): rules ARE in production
     # (static, filtering engine); trained models = research/pilot only.
     kicker: "AI × Security — detection rules in production · first-author security-ML research (AINA 2024)"
-    summary_html: 'Detection engineer bridging <b>security and applied ML</b>: 98.11% IDS accuracy (<b>one-class SVM, AINA 2024</b>), the OSSArch SIEM/SOAR stack, and a <b>~400k events/sec Go engine</b> with detection-as-code anomaly rules — MLOps on <b>GPU Kubernetes</b>.'
+    summary_html: 'Detection engineer bridging <b>security and applied ML</b>: 98.11% IDS accuracy (<b>one-class SVM, AINA 2024</b>), the OSSArch SIEM/SOAR stack, and a <b>Go engine at ~400k events/sec in load tests</b> with detection-as-code anomaly rules — MLOps on <b>GPU Kubernetes</b>.'
     open_to: "AI Security / Detection Engineering · Security-ML · MLOps"
     stats: [acc, eps, sources, mvp]
     typed_pin: 0
@@ -113,7 +113,7 @@ presets:
     # paper + its research + its dataset. DIONA = graduation project, SEPARATE (LSTM,
     # GPU/MLOps pipeline, Koç Sistem pilot). Never re-attach TÜBİTAK or the grant number
     # to DIONA.
-    summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM</b>) and a container-specific vulnerability dataset, TÜBİTAK-funded; separately built the end-to-end <b>GPU/MLOps training pipeline in PyTorch on Kubernetes</b> for the DIONA <b>LSTM</b> IDS (graduation project — <b>Koç Sistem pilot</b>).'
+    summary_html: 'ML research engineer, first author at <b>AINA 2024 (Springer)</b> — 98.11% intrusion-detection accuracy (<b>one-class SVM</b>) and a container-specific vulnerability dataset, TÜBİTAK-funded; separately built the <b>GPU training pipeline on Kubernetes</b> for the DIONA <b>LSTM</b> IDS (graduation project — <b>Koç Sistem pilot</b>).'
     open_to: "Security-ML Research · Detection Engineering · Applied ML R&D"
     # Academic buyer: accuracy → publications → production credibility. MVP cut (corporate
     # delivery metric, not an academic screen). Teaching lives in the Interprobe bullet.

@@ -7,7 +7,7 @@ projects:
   - name: "Real-Time Detection Engine (Go)"
     key: rtengine
     date: "2024 – 2025"
-    body: "Kafka → ClickHouse stream-processing engine at ~400k events/sec with Redis state, OpenTelemetry observability, and a configurable detection + alerting rule engine."
+    body: "Kafka → ClickHouse stream-processing engine, ~400k events/sec in load tests, with Redis state, OpenTelemetry observability, and a configurable detection + alerting rule engine."
   # Koç Sistem pilot confirmed true + public by Mohamed 2026-07-11.
   - name: "DIONA — LSTM Intrusion-Detection System"
     key: diona
@@ -16,7 +16,7 @@ projects:
     # Front-facing site attested + verified loading 2026-07-13 (title: "DIONA").
     docs: "https://nightswall.github.io/"
     # MLOps wording attested by Mohamed 2026-07-13 ("I did MLOps in DIONA").
-    body: "Graduation project (BSc, METU); built the end-to-end MLOps pipeline (GPU-enabled Kubernetes cluster, dataset curation, training, evaluation). Ran an enterprise pilot at Koç Sistem (Azure Sentinel/Defender integration phase). Ecosystem repos: ML training engine, GPU-LSTM prediction engine, and a Kubernetes IoT monitoring stack (ai4iot)."
+    body: "Graduation project (BSc, METU); built the GPU training and evaluation pipeline (GPU-enabled Kubernetes cluster, dataset curation). The system ran an enterprise pilot at Koç Sistem (Azure Sentinel/Defender integration phase). Ecosystem repos: ML training engine, GPU-LSTM prediction engine, and a Kubernetes IoT monitoring stack (ai4iot)."
   - name: "SmartGridLedger — Permissioned Blockchain (Hyperledger Fabric)"
     key: sgl
     # 2024 – 2025 per repo commits (Feb 2024 – Feb 2025), synced with base-cv 2026-10-22.
@@ -41,10 +41,10 @@ projects:
   # Added 2026-07-13 (projects review): GO-page card for the attested freelance
   # platform rebuild (resume bullet). Architecture-first body; stack named in the
   # experience bullet on the same page. Shown only via preset selection (platform).
-  - name: "Housing-Listings Platform — 10-Microservice Rebuild"
+  - name: "Housing-Listings Platform — Backend Rebuild"
     key: housing
     date: "2023 – Present"
-    body: "Sole rebuild of a live housing-listings platform into 10 microservices on AWS (EC2, RDS, S3) — 270k registered users, 360k+ cumulative listings; event-driven architecture, currently in staging."
+    body: "Built the PHP/Laravel backend of the rebuild of a live housing-listings platform on AWS (EC2, RDS, S3), designed as 10 services and run as a monorepo — 270k registered users, 360k+ cumulative listings; event-driven architecture, currently in staging."
   - name: "Container Security Vulnerability Assessment"
     key: containerva
     date: "2022"

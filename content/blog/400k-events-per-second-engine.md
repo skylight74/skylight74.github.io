@@ -1,10 +1,10 @@
 ---
-title: "The 400k events/sec engine"
+title: "A Go filtering engine, load-tested at 400k events/sec"
 date: 2025-06-10T21:30:00+03:00
 categories: ["Engineering"]
 ---
 
-I spent most of the last year building one thing: a real-time filtering engine in Go that takes security events from 80+ different sources and decides, per event, whether anyone should care. It sustained around 400k events per second. This is the write-up I kept promising myself.
+I spent most of the last year building one thing: a real-time filtering engine in Go that takes security events from 80+ different sources and decides, per event, whether anyone should care. It sustained around 400k events per second in load tests. This is the write-up I kept promising myself.
 
 The shape of it is simple to say and annoying to build. Kafka on the way in. A filtering and aggregation layer in the middle, with rules defined as JSON, not code. ClickHouse on the way out for analytics. Redis holds the state that rules need between events, and OpenTelemetry traces the whole path so I could actually see where time went.
 
