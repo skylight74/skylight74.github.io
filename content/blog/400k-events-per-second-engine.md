@@ -10,7 +10,7 @@ The shape of it is simple to say and annoying to build. Kafka on the way in. A f
 
 The part I ended up caring about most was the rules. Three families did almost all the work:
 
-- chain detection. Some attacks only make sense as a sequence. One failed login is noise, forty in a row from the same place is a brute force attempt. The rule engine tracks the chain in Redis and fires when the pattern completes.
+- chain detection. Some attacks only make sense as a sequence. One failed login is noise, forty in a row from the same place is a brute force attempt. The rule engine tracks the chain and fires when the pattern completes.
 - first-seen. The cheapest anomaly signal there is. A service talking to a host it has never talked to before is worth a look, and "never seen this pair before" is a set lookup.
 - z-score outliers. Plain statistics on top of aggregates. When a metric wanders too many deviations from its own history, that gets flagged. No model, no training, and it caught real problems.
 
@@ -20,4 +20,4 @@ Alerts were their own small service, also Go. Slack, email, webhooks, with rate 
 
 Things I would tell someone building the same thing: measure before believing anything, the tracing paid for itself in the first week. Put every piece of state behind one interface, because you will swap it. And write the boring aggregation path first, the clever detections are worthless if the pipe under them drops events.
 
-The number is nice to say out loud. The real result is quieter: false positives went down because the chained and statistical rules replaced a pile of single-event ones, and the on-call channel got readable again.
+The number is nice to say out loud. The real result is quieter: false positives went down because the chained and statistical rules replaced a pile of single-event ones, and the alert channel got readable again.
