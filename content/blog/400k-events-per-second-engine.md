@@ -1,5 +1,5 @@
 ---
-title: "A Go filtering engine, load-tested at 400k events/sec"
+title: "A Go filtering engine: 400k events/sec in load tests"
 date: 2025-06-10T21:30:00+03:00
 categories: ["Engineering"]
 ---
