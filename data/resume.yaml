@@ -13,7 +13,7 @@ experience:
     logo: "/media/pngegg.png"
     body_html: |-
       <ul>
-          <li>Sole-built the 10-microservice PHP/Laravel rebuild of a live housing-listings platform (270k registered users, 360k+ cumulative listings) on AWS (EC2, RDS, S3), with the rebuild currently in staging.</li>
+          <li>Built the PHP/Laravel backend of the rebuild of a live housing-listings platform (270k registered users, 360k+ cumulative listings) on AWS (EC2, RDS, S3), designed as 10 services and run as a monorepo; the rebuild is in staging.</li>
           <li>Built protocol adapters (OCPP for EV chargers, SunSpec/Modbus for solar inverters, IEC 62056 for smart meters) to normalize multi-vendor energy-device data for a smart-grid monitoring stack (InfluxDB, Grafana).</li>
       </ul>
   - period: "Aug 2024 - May 2025"
@@ -22,9 +22,9 @@ experience:
     key: dolusoft
     body_html: |-
       <ul>
-          <li>Sustained ~400k events/sec by sole-designing and building a modular real-time filtering engine in Go, ingesting security events from 80+ sources (Kafka in, filter/aggregate, ClickHouse out, Redis-backed state, OpenTelemetry tracing).</li>
+          <li>Sustained ~400k events/sec in load tests by sole-designing and building a modular real-time filtering engine in Go, ingesting security events from 80+ sources (Kafka in, filter/aggregate, ClickHouse out, Redis-backed state, OpenTelemetry tracing).</li>
           <li>Designed chained, first-seen, and z-score anomaly-detection rules in a configurable detection engine to cut false-positive noise.</li>
-          <li>Built a Go multi-channel alerting service (Slack, email, webhook) with rate limiting and policy-based routing for faster incident response.</li>
+          <li>Built a Go alerting service with rate limiting and policy-based routing, publishing alerts to Kafka topics that Slack and email integrations subscribe to.</li>
       </ul>
   # Added 2026-07-11 (his ask): LinkedIn-parity entries the site was missing.
   # Wording/dates from prep/linkedin-checklist.md live-verified ledger 2026-07-07.
@@ -50,8 +50,8 @@ experience:
     body_html: |-
       <ul>
           <li>Investigated and remediated a security incident on the network's web infrastructure.</li>
-          <li>Reviewed and redesigned infrastructure, and quality-reviewed smart contracts written by the core team.</li>
-          <li>Top contributor to the network's StakeDex staking-platform frontend (7 commits, TypeScript).</li>
+          <li>Reviewed and redesigned infrastructure, and quality-reviewed smart contracts.</li>
+          <li>Top contributor to the network's StakeDex web frontend (React, TypeScript).</li>
       </ul>
   - period: "Jan 2022 - Apr 2025"
     title: "Research Assistant (TÜBİTAK-funded)"
@@ -118,7 +118,7 @@ education:
     title: "Middle East Technical University (METU)"
     place: "Ankara, Turkey"
     body_html: |-
-      <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient. Graduation project: DIONA — built the end-to-end MLOps/GPU training pipeline for an LSTM intrusion-detection system. Built a containerized MPLAB X development environment used by METU embedded-systems students.</p>
+      <p>BSc Computer Engineering, Cyber Security specialization. Türkiye Bursları (Turkish Government Scholarship) recipient. Graduation project: DIONA — built the end-to-end GPU training pipeline for an LSTM intrusion-detection system. Built a containerized MPLAB X development environment used by METU embedded-systems students.</p>
   # DROPPED 2026-07-10 (his call, delegated: "do what you recommend and feel
   # wouldn't push recruiters away"). Was: "Cyber security specialty program,"
   # May 2021 - Nov 2021, "Certificate preparation program at Interprobe."
